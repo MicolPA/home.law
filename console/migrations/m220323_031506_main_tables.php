@@ -26,10 +26,11 @@ class m220323_031506_main_tables extends Migration
             'tipo_propiedad' => $this->integer(),
             'ubicacion_id' => $this->integer(),
             'habitaciones' => $this->integer(),
+            'parqueos' => $this->integer(),
             'baños' => $this->integer(),
             'detalles' => $this->text(),
             'created_by_user_id' => $this->integer(),
-            'user_id' => $this->integer(),
+            'assigned_to_user_id' => $this->integer(),
             'galeria_id' => $this->integer(),
             'fecha_publicacion' => $this->dateTime(),
             'portada' => $this->string(),
@@ -64,6 +65,7 @@ class m220323_031506_main_tables extends Migration
         $this->createTable('{{%ubicaciones}}', [
             'id' => $this->primaryKey(),
             'nombre' => $this->string(),
+            'portada' => $this->string(),
         ], $tableOptions);
 
         $this->createTable('{{%propiedades_extras}}', [

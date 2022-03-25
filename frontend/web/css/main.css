@@ -6,8 +6,15 @@
     font-size: 14px;
 }
 
+.small{
+    font-size: 0.7rem !important;
+}
+
 .second-menu{
     border-bottom-left-radius: 50px;
+}
+.rounded-1{
+    border-radius: 10% !important;
 }
 .rounded-2{
     border-radius: 35px !important;
@@ -23,9 +30,24 @@
 
 .fw-bold-2{
     font-weight: 500;
-    
 }
 
+.prop-title{
+    font-size: 22px;
+    margin-top: -1rem !important;
+}
+
+.prop-venta p{
+    letter-spacing: 2px;
+}
+
+.prop-precio{
+    margin-top: -1rem !important;
+    margin-left: -2.5rem !important;
+    font-size: 20px;
+    font-weight: light;
+    min-width: 200px;
+}
 
 
 .home-banner{

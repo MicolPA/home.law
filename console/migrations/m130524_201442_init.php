@@ -17,6 +17,7 @@ class m130524_201442_init extends Migration
             'username' => $this->string()->notNull()->unique(),
             'first_name' => $this->string(),
             'last_name' => $this->string(),
+            'photo_url' => $this->string(),
             'auth_key' => $this->string(32)->notNull(),
             'role_id' => $this->integer()->notNull()->defaultValue(2),
             'password_hash' => $this->string()->notNull(),
