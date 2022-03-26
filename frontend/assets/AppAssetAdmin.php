@@ -13,10 +13,12 @@ class AppAssetAdmin extends AssetBundle
     public $baseUrl = '@web';
 
     public $css = [
-       'assets-atlantis/css/bootstrap.min.css',
-       'assets-atlantis/css/atlantis.css',
-       'assets-atlantis/css/custom-styles.css',
+        'assets-atlantis/css/bootstrap.min.css',
+        'assets-atlantis/css/atlantis.css',
+        'assets-atlantis/css/custom-styles.css',
+        'css/admin.css',
         'css/fontawesome.min.css',
+        
 
     ];
 
@@ -29,17 +31,17 @@ class AppAssetAdmin extends AssetBundle
         'assets-atlantis/js/core/bootstrap.min.js',
 
 
-        'js/jquery.mask.min.js',
+        // 'js/jquery.mask.min.js',
 
         'assets-atlantis/js/plugin/jquery-ui-1.12.1.custom/jquery-ui.min.js',
         'assets-atlantis/js/plugin/jquery-ui-touch-punch/jquery.ui.touch-punch.min.js',
+        'assets-atlantis/js/plugin/bootstrap-toggle/bootstrap-toggle.min.js',
         'assets-atlantis/js/plugin/jquery-scrollbar/jquery.scrollbar.min.js',
-        'assets-atlantis/js/plugin/datatables/datatables.min.js',
+        // 'assets-atlantis/js/plugin/datatables/datatables.min.js',
 
 
-
-
-        'assets-atlantis/js/plugin/datepicker/bootstrap-datetimepicker.min.js',
+        // 'assets-atlantis/js/plugin/datepicker/bootstrap-datetimepicker.min.js',
+        'assets-atlantis/js/plugin/bootstrap-tagsinput/bootstrap-tagsinput.min.js',
         'assets-atlantis/js/atlantis.min.js',
         // 'js/fontawesome.min.js',
 
@@ -52,14 +54,9 @@ class AppAssetAdmin extends AssetBundle
         // '//cdnjs.cloudflare.com/ajax/libs/timepicker/1.3.5/jquery.timepicker.min.js',
         // 'https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js',
         
-        'https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.8/js/select2.min.js',
-        'js/jquery.numpad.js?v=2',
-        'js/JsBarcode.all.min.js?v=1',
-        'js/select2.min.js',
-        
+        // 'https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.8/js/select2.min.js',
 
-
-
+        'js/main.js',
     ];
 
     public $depends = [

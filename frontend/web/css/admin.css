@@ -1,0 +1,26 @@
+/*img[src=''] {
+    display: none;
+}
+img:not([src=""]){
+    display: block;
+}*/
+
+.inputFile label{
+    padding: .65rem 1.4rem;
+    background: #1a2035; 
+    display: table;
+    color: #fff !important;
+    width: 100%;
+    text-align: center;
+    border-radius: 2px;
+}
+
+input[type="file"] {
+    display: none;
+}
+
+.bootstrap-tagsinput{
+    width: 100%;
+    border: 1px solid #ced4da !important;
+    border-radius: 0.25rem !important;
+}

@@ -65,7 +65,7 @@ class PropiedadesSearch extends Propiedades
             'habitaciones' => $this->habitaciones,
             'baños' => $this->baños,
             'created_by_user_id' => $this->created_by_user_id,
-            'user_id' => $this->user_id,
+            'assigned_to_user_id' => $this->assigned_to_user_id,
             'galeria_id' => $this->galeria_id,
             'fecha_publicacion' => $this->fecha_publicacion,
             'precio' => $this->precio,

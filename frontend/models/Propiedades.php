@@ -46,7 +46,7 @@ class Propiedades extends \yii\db\ActiveRecord
     public function rules()
     {
         return [
-            [['tipo_propiedad', 'ubicacion_id', 'habitaciones', 'baños', 'created_by_user_id', 'user_id', 'galeria_id'], 'integer'],
+            [['tipo_propiedad', 'ubicacion_id', 'habitaciones', 'baños', 'created_by_user_id', 'assigned_to_user_id', 'galeria_id'], 'integer'],
             [['detalles', 'extra_text', 'tags'], 'string'],
             [['fecha_publicacion', 'date'], 'safe'],
             [['precio', 'metros', 'pies'], 'number'],
@@ -76,7 +76,7 @@ class Propiedades extends \yii\db\ActiveRecord
             'fecha_publicacion' => 'Fecha Publicacion',
             'portada' => 'Portada',
             'extra_text' => 'Extra Text',
-            'tags' => 'Tags',
+            'tags' => 'Etiquetas',
             'precio' => 'Precio',
             'metros' => 'Metros',
             'pies' => 'Pies',

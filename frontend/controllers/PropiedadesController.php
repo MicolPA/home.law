@@ -8,6 +8,7 @@ use frontend\models\Ubicaciones;
 use frontend\models\PropiedadesTipo;
 use frontend\models\PropiedadesGaleria;
 use frontend\models\PropiedadesExtras;
+use frontend\models\PropiedadesExtrasList;
 use frontend\models\PropiedadesSearch;
 use yii\web\Controller;
 use yii\web\NotFoundHttpException;
@@ -72,39 +73,23 @@ class PropiedadesController extends Controller
      * If creation is successful, the browser will be redirected to the 'view' page.
      * @return string|\yii\web\Response
      */
+
     public function actionRegistrar()
     {
         // $this->layout = '@app/views/layouts/main-admin';
         $this->layout = "main-admin";
         $model = new Propiedades();
-        $extras = new PropiedadesExtras();
+        $extras = PropiedadesExtrasList::find()->all();
         $galeria = new PropiedadesGaleria();
         $post = Yii::$app->request->post();
+
+        $model->created_by_user_id = Yii::$app->user->identity->id;
+        $model->date = date("Y-m-d H:i:s");
 
         if ($model->load($post)) {
         // if ($model->load($post) and $extras->load(Yii::$app->request->post())) {
 
-            // print_r($post);
-            // exit;
-            // $model = $this->get_photo_url($model);
-            // $galeria->foto_1 = $this->get_photo_url($galeria, $model->tipoPropiedad->nombre, $model->titulo_publicacion, 1);
-            $galeria->foto_2 = $this->get_photo_url($galeria, $model->tipoPropiedad->nombre, $model->titulo_publicacion, 2);
-            // $galeria->foto_3 = $this->get_photo_url($galeria, $model->tipoPropiedad->nombre, $model->titulo_publicacion, 3);
-            // $galeria->foto_4 = $this->get_photo_url($galeria, $model->tipoPropiedad->nombre, $model->titulo_publicacion, 4);
-            // $galeria->foto_5 = $this->get_photo_url($galeria, $model->tipoPropiedad->nombre, $model->titulo_publicacion, 5);
-            // $galeria->foto_6 = $this->get_photo_url($galeria, $model->tipoPropiedad->nombre, $model->titulo_publicacion, 6);
-            // $galeria->foto_7 = $this->get_photo_url($galeria, $model->tipoPropiedad->nombre, $model->titulo_publicacion, 7);
-            // $galeria->foto_8 = $this->get_photo_url($galeria, $model->tipoPropiedad->nombre, $model->titulo_publicacion, 8);
-            // $galeria->foto_9 = $this->get_photo_url($galeria, $model->tipoPropiedad->nombre, $model->titulo_publicacion, 9);
-            // $galeria->foto_10 = $this->get_photo_url($galeria, $model->tipoPropiedad->nombre, $model->titulo_publicacion, 10);
-            // $galeria->foto_11 = $this->get_photo_url($galeria, $model->tipoPropiedad->nombre, $model->titulo_publicacion, 11);
-            // $galeria->foto_12 = $this->get_photo_url($galeria, $model->tipoPropiedad->nombre, $model->titulo_publicacion, 12);
-
-            // if ($model->impuestos and $model->cargas_gramabes and $model->deslinde and $model->certificado_titulo) {
-            //     $model->riezgo_id = 1;
-            // }else{
-            //     $model->riezgo_id = 0;
-            // }
+            $this->savePhotos($model, $galeria);
 
             $galeria->save();
             $model->galeria_id = $galeria->id;
@@ -117,8 +102,9 @@ class PropiedadesController extends Controller
             // $extras->date = date("Y-m-d H:i:s");
             $extras->save();
 
-            Yii::$app->session->setFlash('success1','Propiedad registrada correctamente');
-            return $this->redirect(['ver', 'id' => $model->id]);
+            Yii::$app->session->setFlash('confirmacion_msg','Propiedad registrada correctamente');
+            return $this->redirect(['listado']);
+            // return $this->redirect(['ver', 'id' => $model->id]);
         }
 
         return $this->render('create', [
@@ -126,6 +112,30 @@ class PropiedadesController extends Controller
             'extras' => $extras,
             'galeria' => $galeria,
         ]);
+    }
+
+    function savePhotos($model, $galeria){
+
+        $model->portada = $this->get_photo_url($model, $model->tipoPropiedad->nombre, $model->titulo_publicacion, 0);
+
+        for ($i=2;$i<10;$i++) {
+
+            $galeria["foto_$i"] = $this->get_photo_url($galeria, $model->tipoPropiedad->nombre, $model->titulo_publicacion, $i);
+
+            // if (isset($galeria["foto_$i"]) and $_FILES["foto_$i"]) {
+            //     $filename = $_FILES["foto_$i"]["name"];
+            //     $tempname = $_FILES["foto_$i"]["tmp_name"];
+            //     $folder   = $filename;
+
+            //     if ( move_uploaded_file( $tempname, $folder ) ) {
+            //         echo "Image uploaded successfully";
+            //     } else{
+            //         echo "Failed to upload image";
+            //     }
+            // }
+            
+        }
+        
     }
 
     function get_photo_url($model, $tipo, $titulo, $i){
@@ -142,7 +152,7 @@ class PropiedadesController extends Controller
         if (!file_exists($path)) {
             mkdir($path, 0777, true);
         }
-        $field = "foto_$i";
+        $field = $i == 0 ? 'portada' : "foto_$i";
         if (UploadedFile::getInstance($model, "$field")) {
             $model[$field] = UploadedFile::getInstance($model, "$field");
             $imagen = $path . "foto-$i-" . date('Y-m-d H-i-s') . ".". $model[$field]->extension;
