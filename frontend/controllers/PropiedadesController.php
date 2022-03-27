@@ -88,8 +88,8 @@ class PropiedadesController extends Controller
 
         if ($model->load($post)) {
         // if ($model->load($post) and $extras->load(Yii::$app->request->post())) {
-
             $this->savePhotos($model, $galeria);
+            $model->extra_text = $this->getExtra($extras, $post);
 
             $galeria->save();
             $model->galeria_id = $galeria->id;
@@ -98,9 +98,9 @@ class PropiedadesController extends Controller
             $model->save();
             print_r($model->errors);
 
-            $extras->propiedad_id = $model->id;
+            // $extras->propiedad_id = $model->id;
             // $extras->date = date("Y-m-d H:i:s");
-            $extras->save();
+            // $extras->save();
 
             Yii::$app->session->setFlash('confirmacion_msg','Propiedad registrada correctamente');
             return $this->redirect(['listado']);
@@ -112,6 +112,18 @@ class PropiedadesController extends Controller
             'extras' => $extras,
             'galeria' => $galeria,
         ]);
+    }
+
+    function getExtra($extras, $post){
+
+        $extras_array = [];
+        foreach ($extras as $e) {
+            if (isset($post["extra_$e->id"])) {
+                $extras_array[] = $e->nombre;
+            }
+        }
+
+        return implode(',', $extras_array);
     }
 
     function savePhotos($model, $galeria){
@@ -141,7 +153,7 @@ class PropiedadesController extends Controller
     function get_photo_url($model, $tipo, $titulo, $i){
 
         $imagen = null;
-        $path = "images/".$tipo."/";
+        $path = "images/propiedades/".$tipo."/";
 
         if (!file_exists($path)) {
             mkdir($path, 0777, true);
