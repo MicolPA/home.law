@@ -69,7 +69,7 @@ $this->params['subtitle'] = $model->id ? "Editar Propiedad" : "Registrar Propied
                 <div class="col-md-4">
                     <div class="form-group">
                         <div class="custom-control custom-checkbox">
-                            <input type="checkbox" class="custom-control-input" id="checkbox_<?= $e->id ?>">
+                            <input type="checkbox" class="custom-control-input" name="extra_<?= $e->id ?>" id="checkbox_<?= $e->id ?>">
                             <label class="custom-control-label" for="checkbox_<?= $e->id ?>"><?= $e->nombre ?></label>
                         </div>
                     </div>

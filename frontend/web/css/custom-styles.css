@@ -6,6 +6,10 @@
 	color: #e92027;
 }
 
+/*.text-secondary{
+  color: #a8aab0 !important;
+}*/
+
 .bg-primary{
 	background: #004b70 !important;
 }
@@ -22,6 +26,9 @@
 	font-weight: 500;
 }
 
+.rounded {
+    border-radius: 1rem !important;
+}
 .m-0 {
   margin: 0 !important;
 }

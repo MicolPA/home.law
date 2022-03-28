@@ -43,13 +43,24 @@ class PropiedadesController extends Controller
      *
      * @return string
      */
+
+    public function actionIndex()
+    {
+        $searchModel = new PropiedadesSearch();
+        $dataProvider = $searchModel->search($this->request->queryParams);
+
+        return $this->render('index', [
+            'searchModel' => $searchModel,
+            'dataProvider' => $dataProvider,
+        ]);
+    }
     public function actionListado()
     {
         $this->layout = "main-admin";
         $searchModel = new PropiedadesSearch();
         $dataProvider = $searchModel->search($this->request->queryParams);
 
-        return $this->render('index', [
+        return $this->render('listado', [
             'searchModel' => $searchModel,
             'dataProvider' => $dataProvider,
         ]);
@@ -61,10 +72,13 @@ class PropiedadesController extends Controller
      * @return string
      * @throws NotFoundHttpException if the model cannot be found
      */
-    public function actionView($id)
+    public function actionVer($id)
     {
+        $model = $this->findModel($id);
+        $galeria = PropiedadesGaleria::findOne($model['galeria_id']);
         return $this->render('view', [
-            'model' => $this->findModel($id),
+            'model' => $model,
+            'galeria' => $galeria,
         ]);
     }
 
