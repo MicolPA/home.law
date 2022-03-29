@@ -10,16 +10,19 @@ use yii\bootstrap5\ActiveForm;
 $this->title = 'Signup';
 $this->params['breadcrumbs'][] = $this->title;
 ?>
-<div class="site-signup">
-    <h1><?= Html::encode($this->title) ?></h1>
 
-    <p>Please fill out the following fields to signup:</p>
+<div class="container">
+    <div class="row pt-5 pb-5">
+        <div class="col-lg-5 col-md-7 pt-5 m-auto">
+            <div class="card px-5 py-5">
+                <div class="text-center">
+                    <img src="<?= Yii::getAlias("@web") ?>/images/logo.png" width="150px" class="mb-3">
+                </div>
+                <?php $form = ActiveForm::begin(['id' => 'form-signup']); ?>
 
-    <div class="row">
-        <div class="col-lg-5">
-            <?php $form = ActiveForm::begin(['id' => 'form-signup']); ?>
-
-                <?= $form->field($model, 'username')->textInput(['autofocus' => true]) ?>
+                <?= $form->field($model, 'username')->textInput(['autofocus' => true])->label('Usuario') ?>
+                <?= $form->field($model, 'first_name')->textInput(['autofocus' => true])->label('Nombre') ?>
+                <?= $form->field($model, 'last_name')->textInput(['autofocus' => true])->label('Apellido') ?>
 
                 <?= $form->field($model, 'email') ?>
 
@@ -30,6 +33,7 @@ $this->params['breadcrumbs'][] = $this->title;
                 </div>
 
             <?php ActiveForm::end(); ?>
+            </div>
         </div>
     </div>
 </div>

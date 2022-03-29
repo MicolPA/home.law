@@ -104,6 +104,8 @@ class PropiedadesController extends Controller
         // if ($model->load($post) and $extras->load(Yii::$app->request->post())) {
             $this->savePhotos($model, $galeria);
             $galeria->save();
+            print_r($post);
+            // exit;
             $model->galeria_id = $galeria->id;
             // $model->user_id = Yii::$app->user->identity->id;
             $model->fecha_publicacion = date("Y-m-d H:i:s");
@@ -225,7 +227,8 @@ class PropiedadesController extends Controller
         $extras = PropiedadesExtrasList::find()->all();
 
         if ($this->request->isPost && $model->load($this->request->post())) {
-            print_r($this->request->post());
+            // print_r($this->request->post());
+            // print_r(UploadedFile::getInstance($model, "portada"));
             // exit;
             $this->getCaracteristicas($extras, $this->request->post(), $model);
             $this->savePhotos($model, $galeria);

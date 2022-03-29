@@ -16,7 +16,7 @@ img:not([src=""]){
 }
 
 input[type="file"] {
-    display: none;
+    visibility: hidden;
 }
 
 .bootstrap-tagsinput{

@@ -14,7 +14,7 @@ $this->params['subtitle'] = $model->id ? "Editar Propiedad" : "Registrar Propied
 </style>
 <div class="">
 
-    <?php $form = ActiveForm::begin(['enableClientScript' => false], ['enctype' => 'multipart/form-data', 'class' => 'dropzone']); ?>
+    <?php $form = ActiveForm::begin(['enableClientScript' => false], ['enctype' => 'multipart/form-data']); ?>
 
         <div class="row">
             
@@ -106,7 +106,6 @@ $this->params['subtitle'] = $model->id ? "Editar Propiedad" : "Registrar Propied
                 <?= $form->field($galeria, 'foto_6')->fileInput([])->label($galeria->foto_6 ? "CARGADA" : '<i class="fa-solid fa-cloud-arrow-up mr-2"></i> Foto 6') ?>
             </div>
 
-            <?= $form->field($model, 'portada')->fileInput(['class' => 'form-control', 'style' => 'visibility:hidden'])->label(false) ?>
 
             <!-- <?php //for($i=2;$i<10;$i++): ?>
                 <div class="col-md-2">
