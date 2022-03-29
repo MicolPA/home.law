@@ -2,16 +2,16 @@
 
 namespace frontend\controllers;
 
-use frontend\models\Ubicaciones;
-use frontend\models\UbicacionesSearch;
+use frontend\models\PropiedadesTipo;
+use frontend\models\PropiedadesTipoSearch;
 use yii\web\Controller;
 use yii\web\NotFoundHttpException;
 use yii\filters\VerbFilter;
 
 /**
- * UbicacionesController implements the CRUD actions for Ubicaciones model.
+ * PropiedadesTipoController implements the CRUD actions for PropiedadesTipo model.
  */
-class UbicacionesController extends Controller
+class PropiedadesTipoController extends Controller
 {
     /**
      * @inheritDoc
@@ -33,13 +33,13 @@ class UbicacionesController extends Controller
     }
 
     /**
-     * Lists all Ubicaciones models.
+     * Lists all PropiedadesTipo models.
      *
      * @return string
      */
     public function actionIndex()
     {
-        $searchModel = new UbicacionesSearch();
+        $searchModel = new PropiedadesTipoSearch();
         $dataProvider = $searchModel->search($this->request->queryParams);
 
         return $this->render('index', [
@@ -49,7 +49,7 @@ class UbicacionesController extends Controller
     }
 
     /**
-     * Displays a single Ubicaciones model.
+     * Displays a single PropiedadesTipo model.
      * @param int $id ID
      * @return string
      * @throws NotFoundHttpException if the model cannot be found
@@ -62,13 +62,13 @@ class UbicacionesController extends Controller
     }
 
     /**
-     * Creates a new Ubicaciones model.
+     * Creates a new PropiedadesTipo model.
      * If creation is successful, the browser will be redirected to the 'view' page.
      * @return string|\yii\web\Response
      */
     public function actionCreate()
     {
-        $model = new Ubicaciones();
+        $model = new PropiedadesTipo();
 
         if ($this->request->isPost) {
             if ($model->load($this->request->post()) && $model->save()) {
@@ -84,7 +84,7 @@ class UbicacionesController extends Controller
     }
 
     /**
-     * Updates an existing Ubicaciones model.
+     * Updates an existing PropiedadesTipo model.
      * If update is successful, the browser will be redirected to the 'view' page.
      * @param int $id ID
      * @return string|\yii\web\Response
@@ -104,7 +104,7 @@ class UbicacionesController extends Controller
     }
 
     /**
-     * Deletes an existing Ubicaciones model.
+     * Deletes an existing PropiedadesTipo model.
      * If deletion is successful, the browser will be redirected to the 'index' page.
      * @param int $id ID
      * @return \yii\web\Response
@@ -118,15 +118,15 @@ class UbicacionesController extends Controller
     }
 
     /**
-     * Finds the Ubicaciones model based on its primary key value.
+     * Finds the PropiedadesTipo model based on its primary key value.
      * If the model is not found, a 404 HTTP exception will be thrown.
      * @param int $id ID
-     * @return Ubicaciones the loaded model
+     * @return PropiedadesTipo the loaded model
      * @throws NotFoundHttpException if the model cannot be found
      */
     protected function findModel($id)
     {
-        if (($model = Ubicaciones::findOne(['id' => $id])) !== null) {
+        if (($model = PropiedadesTipo::findOne(['id' => $id])) !== null) {
             return $model;
         }
 

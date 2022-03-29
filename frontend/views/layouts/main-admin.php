@@ -113,12 +113,17 @@ $foto = '';
                                     </a>
                                 </li>
                                 <li>
+                                    <a href="<?= Yii::getAlias("@web") ?>/propiedades-tipo">
+                                        <span class="sub-item">Tipos</span>
+                                    </a>
+                                </li>
+                                <li>
                                     <a href="<?= Yii::getAlias("@web") ?>/ubicaciones">
                                         <span class="sub-item">Ubicaciones</span>
                                     </a>
                                 </li>
                                 <li>
-                                    <a href="../demo4/index.html">
+                                    <a href="<?= Yii::getAlias("@web") ?>/propiedades-extras-list">
                                         <span class="sub-item">Extras</span>
                                     </a>
                                 </li>
