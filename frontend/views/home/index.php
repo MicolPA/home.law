@@ -150,6 +150,7 @@
                 <div class="carousel-item active">
                     <div class="row">
                         <?php foreach ($ubicaciones as $u): ?>
+                            <?php $u->portada = !$u->portada ? 'images/ejemplo-360.jpg' : $u->portada ?>
                             <?php $count++ ?>
                             <?php if ($count <= 4): ?>
                                 <div class="col-md-3 p-0">
@@ -164,6 +165,7 @@
                 <div class="carousel-item">
                     <div class="row">
                         <?php foreach ($ubicaciones as $u): ?>
+                            <?php $u->portada = !$u->portada ? 'images/ejemplo-360.jpg' : $u->portada ?>
                             <?php $count++ ?>
                             <?php if ($count > 4): ?>
                                 <div class="col-md-3 p-0">
