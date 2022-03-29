@@ -102,10 +102,7 @@ class PropiedadesController extends Controller
 
         if ($model->load($post)) {
         // if ($model->load($post) and $extras->load(Yii::$app->request->post())) {
-           print_r(UploadedFile::getInstance($model, "foto_2"));
             $this->savePhotos($model, $galeria);
-print_r($this->request->post());
-            // exit;
             $galeria->save();
             $model->galeria_id = $galeria->id;
             // $model->user_id = Yii::$app->user->identity->id;
@@ -229,7 +226,7 @@ print_r($this->request->post());
 
         if ($this->request->isPost && $model->load($this->request->post())) {
             print_r($this->request->post());
-            // exit;
+            exit;
             $this->getCaracteristicas($extras, $this->request->post(), $model);
             $this->savePhotos($model, $galeria);
             if ($model->save()) {
