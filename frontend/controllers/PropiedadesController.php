@@ -226,7 +226,7 @@ class PropiedadesController extends Controller
 
         if ($this->request->isPost && $model->load($this->request->post())) {
             print_r($this->request->post());
-            exit;
+            // exit;
             $this->getCaracteristicas($extras, $this->request->post(), $model);
             $this->savePhotos($model, $galeria);
             if ($model->save()) {
