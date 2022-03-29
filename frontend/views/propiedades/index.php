@@ -10,7 +10,7 @@
             <div class="col-md-3 text-center mb-3">
                 <a class="text-decoration-none" href="<?= Yii::getAlias("@web") ?>/propiedades/ver/<?= $p->id ?>">
                     <div class="card rounded-1 p-3">
-                        <img class="rounded-1" src="<?= Yii::getAlias('@web') .'/'.$p->portada ?>" width="100%">
+                        <div class="rounded-1" style="width: 100%;height: 180px;background-image: url('/frontend/web/<?= $p->portada ?>');background-size:cover;background-position:center;"></div>
                         <span class="text-center prop-title">
                             <span class="badge rounded-pill bg-primary text-white py-2 px-3"><?= $p->titulo_publicacion ?></span>
                             <p class="small text-secondary mb-0"><?= $p->ubicacion->nombre ?></p>
