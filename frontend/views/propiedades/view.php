@@ -49,19 +49,19 @@ $this->title = $model->titulo_publicacion;
                         <div class="col-md-6">
                             <div class="row p-3 text-secondary h5 text-end">
                                 <div class="col-1"></div>
-                                <div class="col-2 border-3 p-1">
+                                <div class="col-2 text-center border-3 p-1">
                                     <div>
                                         <i class="fa-solid fa-car-side mr-1"></i>
                                         <?= $model->parqueos ?>
                                     </div>
                                 </div>
-                                <div class="col-2 border-3 p-1">
+                                <div class="col-2 text-center border-3 p-1">
                                     <div>
                                         <i class="fa-solid fa-bath mr-1"></i>
                                         <?= $model->baños ?>
                                     </div>
                                 </div>
-                                <div class="col-2 border-3 p-1">
+                                <div class="col-2 text-center border-3 p-1">
                                     <div>
                                         <i class="fa-solid fa-bed mr-1"></i>
                                         <?= $model->habitaciones ?>
@@ -73,7 +73,7 @@ $this->title = $model->titulo_publicacion;
                                         <small><?= $model->metros ?>M<sup>2</sup></small>
                                     </div>
                                 </div>
-                                <div class="col-3 border-3 p-1">
+                                <div class="col-3 border-3 p-1 text-end">
                                     <div>
                                         <small class="text-danger fw-bold">NO.<?= $model->codigo ?></small>
                                     </div>
@@ -159,13 +159,13 @@ $this->title = $model->titulo_publicacion;
                        <div class="mt-3">
                            <a href="#" class="text-decoration-none fw-bold text-primary">
                                <span class="btn btn-icon btn-sm btn-round text-white bg-gray mr-2"><i class="fa-solid fa-chart-line"></i></span> 
-                               CONTACTAR AGENTE
+                               TASAS HIPOTECARIAS
                            </a>
                        </div>
                        <div class="mt-3">
                            <a href="#" class="text-decoration-none fw-bold text-primary">
                                <span class="btn btn-icon btn-sm btn-round text-white bg-gray mr-2"><i class="fa-solid fa-arrow-down-long px-1"></i></span> 
-                               CONTACTAR AGENTE
+                               DESCARGAR DICTAMEN
                            </a>
                        </div>
                    </div>
@@ -175,7 +175,7 @@ $this->title = $model->titulo_publicacion;
        </div>
        <div class="row mt-5 pt-5  pb-5">
            <div class="col-md-12">
-               <h2 class="text-primary fw-lighter h4">
+               <h2 class="text-primary fw-lighter h4 mb-5">
                    <span class="fw-bold">Características</span> de la propiedad
                </h2>
 
