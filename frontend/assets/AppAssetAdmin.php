@@ -43,6 +43,7 @@ class AppAssetAdmin extends AssetBundle
         // 'assets-atlantis/js/plugin/datepicker/bootstrap-datetimepicker.min.js',
         'assets-atlantis/js/plugin/bootstrap-tagsinput/bootstrap-tagsinput.min.js',
         'assets-atlantis/js/atlantis.min.js',
+        'js/sweetalert.min.js',
         // 'js/fontawesome.min.js',
 
 

@@ -19,11 +19,11 @@ $this->params['subtitle'] = $model->id ? "Editar Propiedad" : "Registrar Propied
         <div class="row">
             
             <div class="col-md-6">
-                <?= $form->field($model, 'codigo')->textInput(['maxlength' => true]) ?>
+                <?= $form->field($model, 'codigo')->textInput(['required' => 'required']) ?>
             </div>
 
             <div class="col-md-6">
-                <?= $form->field($model, 'titulo_publicacion')->textInput(['maxlength' => true]) ?>
+                <?= $form->field($model, 'titulo_publicacion')->textInput(['required' => 'required']) ?>
             </div>
 
             <div class="col-md-6">
@@ -60,16 +60,17 @@ $this->params['subtitle'] = $model->id ? "Editar Propiedad" : "Registrar Propied
             </div>
             <div class="col-md-12">
                 <div class="form-group">
-                    Característica
+                    Características
                     <hr>
                 </div>
             </div>
 
             <?php foreach ($extras as $e): ?>
+                <?php $check = \frontend\models\PropiedadesExtras::find()->where(['propiedad_id' => $model->id, 'extra_id' => $e->id])->one(); ?>
                 <div class="col-md-4">
                     <div class="form-group">
                         <div class="custom-control custom-checkbox">
-                            <input type="checkbox" class="custom-control-input" name="extra_<?= $e->id ?>" id="checkbox_<?= $e->id ?>">
+                            <input type="checkbox" class="custom-control-input" name="extra_<?= $e->id ?>" id="checkbox_<?= $e->id ?>" <?= $check ? 'checked' : '' ?>>
                             <label class="custom-control-label" for="checkbox_<?= $e->id ?>"><?= $e->nombre ?></label>
                         </div>
                     </div>
@@ -80,23 +81,17 @@ $this->params['subtitle'] = $model->id ? "Editar Propiedad" : "Registrar Propied
             </div>
 
 
-            <div class="col-md-2">
+            <div class="col-md-2 inputFile ">
                 <div class="form-group">
-                    <div class="input-file input-file-image">
-                        <input type="file" class="form-control form-control-file" id="uploadImg2" name="uploadImg2" accept="image/*" required>
-                        <label for="uploadImg2" class="  label-input-file btn btn-primary btn-block">
-                            <span class="btn-label">
-                                <i class="fa-solid fa-cloud-arrow-up mr-2"></i>
-                            </span>
-                            Portada
-                        </label>
-                    </div>
+                    <label for="inputfile2" class="bg-primary">
+                        <i class="fa-solid fa-cloud-arrow-up mr-2"></i> Portada
+                    </label>
+                    <?= $form->field($model, 'portada')->fileInput([!$model ? "required" : "" => !$model ? "required" : "", 'id' => 'inputfile2', 'class' => 'bg-primary'])->label(false) ?>
                 </div>
             </div>
-            
 
             <div class="col-md-2 inputFile">
-                <?= $form->field($galeria, 'foto_2')->fileInput([!$model ? "required" : "" => !$model ? "required" : "", 'id' => 'inputfile2'])->label('<i class="fa-solid fa-cloud-arrow-up mr-2"></i> Foto 2') ?>
+                <?= $form->field($galeria, 'foto_2')->fileInput([!$model ? "required" : "" => !$model ? "required" : ""])->label('<i class="fa-solid fa-cloud-arrow-up mr-2"></i> Foto 2') ?>
             </div>
             <div class="col-md-2 inputFile">
                 <?= $form->field($galeria, 'foto_3')->fileInput([!$model ? "required" : "" => !$model ? "required" : "", 'id' => 'inputfile3'])->label('<i class="fa-solid fa-cloud-arrow-up mr-2"></i> Foto 3') ?>

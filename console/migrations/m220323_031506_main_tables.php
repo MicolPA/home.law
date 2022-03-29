@@ -21,7 +21,7 @@ class m220323_031506_main_tables extends Migration
 
         $this->createTable('{{%propiedades}}', [
             'id' => $this->primaryKey(),
-            'codigo' => $this->string(),
+            'codigo' => $this->string()->unique(),
             'titulo_publicacion' => $this->string(),
             'tipo_propiedad' => $this->integer(),
             'ubicacion_id' => $this->integer(),

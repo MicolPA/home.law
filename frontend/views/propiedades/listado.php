@@ -5,9 +5,6 @@ use yii\helpers\Url;
 use yii\grid\ActionColumn;
 use yii\grid\GridView;
 
-/* @var $this yii\web\View */
-/* @var $searchModel frontend\models\PropiedadesSearch */
-/* @var $dataProvider yii\data\ActiveDataProvider */
 
 $this->title = 'Listado de propiedades';
 $this->params['breadcrumbs'][] = $this->title;

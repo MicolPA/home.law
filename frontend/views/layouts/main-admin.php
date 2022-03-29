@@ -11,6 +11,10 @@ use yii\helpers\Url;
 AppAssetAdmin::register($this);
 
 $user = Yii::$app->user->identity;
+if (Yii::$app->user->isGuest) {
+    return Yii::$app->response->redirect(['/site/login']);
+}else{
+}
 
 $foto = '';
 ?>
@@ -109,7 +113,7 @@ $foto = '';
                                     </a>
                                 </li>
                                 <li>
-                                    <a href="../demo3/index.html">
+                                    <a href="<?= Yii::getAlias("@web") ?>/ubicaciones">
                                         <span class="sub-item">Ubicaciones</span>
                                     </a>
                                 </li>

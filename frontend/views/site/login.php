@@ -10,32 +10,39 @@ use yii\bootstrap5\ActiveForm;
 $this->title = 'Login';
 $this->params['breadcrumbs'][] = $this->title;
 ?>
-<div class="site-login">
-    <h1><?= Html::encode($this->title) ?></h1>
 
-    <p>Please fill out the following fields to login:</p>
+<div class="container">
 
-    <div class="row">
-        <div class="col-lg-5">
-            <?php $form = ActiveForm::begin(['id' => 'login-form']); ?>
-
-                <?= $form->field($model, 'username')->textInput(['autofocus' => true]) ?>
-
-                <?= $form->field($model, 'password')->passwordInput() ?>
-
-                <?= $form->field($model, 'rememberMe')->checkbox() ?>
-
-                <div class="my-1 mx-0" style="color:#999;">
-                    If you forgot your password you can <?= Html::a('reset it', ['site/request-password-reset']) ?>.
-                    <br>
-                    Need new verification email? <?= Html::a('Resend', ['site/resend-verification-email']) ?>
+    <div class="row pt-5 pb-5">
+        <div class="col-lg-5 col-md-7 pt-5 m-auto">
+            <div class="card px-5 py-5">
+                <div class="text-center">
+                    <img src="<?= Yii::getAlias("@web") ?>/images/logo.png" width="150px" class="mb-3">
                 </div>
+                <?php $form = ActiveForm::begin(['id' => 'login-form']); ?>
 
-                <div class="form-group">
-                    <?= Html::submitButton('Login', ['class' => 'btn btn-primary', 'name' => 'login-button']) ?>
-                </div>
+                    <?= $form->field($model, 'username')->textInput(['autofocus' => true])->label('Usuario') ?>
 
-            <?php ActiveForm::end(); ?>
+                    <?= $form->field($model, 'password')->passwordInput()->label('Clave') ?>
+
+                    <div class="row">
+                        <div class="col-md-6">
+                            <?= $form->field($model, 'rememberMe')->checkbox()->label("Recordar usuario") ?>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="form-group text-end">
+                                <?= Html::submitButton('Iniciar sesión', ['class' => 'btn text-white bg-primary', 'name' => 'login-button']) ?>
+                            </div>
+                        </div>
+
+                        <div class="col-md-12 text-center mt-5 mb-3">
+                            <span class="msg">Don't have an account yet ?</span>
+                            <a href="<?= Yii::getAlias("@web") ?>/site/signup" class="link">Regístrate aquí.</a>
+                        </div>
+                    </div>
+
+                <?php ActiveForm::end(); ?>
+            </div>
         </div>
     </div>
 </div>

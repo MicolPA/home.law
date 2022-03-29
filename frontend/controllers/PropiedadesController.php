@@ -102,23 +102,25 @@ class PropiedadesController extends Controller
 
         if ($model->load($post)) {
         // if ($model->load($post) and $extras->load(Yii::$app->request->post())) {
+           print_r(UploadedFile::getInstance($model, "foto_2"));
             $this->savePhotos($model, $galeria);
-            $model->extra_text = $this->getExtra($extras, $post);
-
+print_r($this->request->post());
+            // exit;
             $galeria->save();
             $model->galeria_id = $galeria->id;
             // $model->user_id = Yii::$app->user->identity->id;
             $model->fecha_publicacion = date("Y-m-d H:i:s");
-            $model->save();
-            print_r($model->errors);
 
-            // $extras->propiedad_id = $model->id;
-            // $extras->date = date("Y-m-d H:i:s");
-            // $extras->save();
+            if ($model->save()) {
+                $this->getCaracteristicas($extras, $post, $model);
+                Yii::$app->session->setFlash('confirmacion_msg','Propiedad registrada correctamente');
+                return $this->redirect(['listado']);
 
-            Yii::$app->session->setFlash('confirmacion_msg','Propiedad registrada correctamente');
-            return $this->redirect(['listado']);
-            // return $this->redirect(['ver', 'id' => $model->id]);
+            }else{
+                print_r($model->errors);
+                exit;
+            }
+
         }
 
         return $this->render('create', [
@@ -128,16 +130,36 @@ class PropiedadesController extends Controller
         ]);
     }
 
-    function getExtra($extras, $post){
+    function getCaracteristicas($extras, $post, $propiedad){
 
         $extras_array = [];
         foreach ($extras as $e) {
             if (isset($post["extra_$e->id"])) {
                 $extras_array[] = $e->nombre;
+                $this->saveExtraList($e->id, $propiedad->id, 1);
+            }else{
+                $this->saveExtraList($e->id, $propiedad->id, 0);
             }
         }
 
-        return implode(',', $extras_array);
+        $propiedad->extra_text = implode(',', $extras_array);
+        $propiedad->save();
+    }
+
+    function saveExtraList($extra_id, $propiedad_id, $type){
+
+        $propiedad_extra = PropiedadesExtras::find()->where(['extra_id' => $extra_id ,'propiedad_id' => $propiedad_id])->one();
+        if ($propiedad_extra) {
+            
+            if (!$type) {
+                $propiedad_extra->delete();
+            }
+        }else{
+            $propiedad_extra = new PropiedadesExtras();
+            $propiedad_extra->extra_id = $extra_id;
+            $propiedad_extra->propiedad_id = $propiedad_id;
+            $propiedad_extra->save();
+        }
     }
 
     function savePhotos($model, $galeria){
@@ -200,14 +222,30 @@ class PropiedadesController extends Controller
      */
     public function actionUpdate($id)
     {
+        $this->layout = "main-admin";
         $model = $this->findModel($id);
+        $galeria = PropiedadesGaleria::findOne($model['galeria_id']);
+        $extras = PropiedadesExtrasList::find()->all();
 
-        if ($this->request->isPost && $model->load($this->request->post()) && $model->save()) {
-            return $this->redirect(['view', 'id' => $model->id]);
+        if ($this->request->isPost && $model->load($this->request->post())) {
+            print_r($this->request->post());
+            // exit;
+            $this->getCaracteristicas($extras, $this->request->post(), $model);
+            $this->savePhotos($model, $galeria);
+            if ($model->save()) {
+                Yii::$app->session->setFlash('confirmacion_msg','Propiedad modificada correctamente');
+                return $this->redirect(['listado']);
+
+            }else{
+                print_r($model->errors);
+                exit;
+            }
         }
 
         return $this->render('update', [
             'model' => $model,
+            'extras' => $extras,
+            'galeria' => $galeria,
         ]);
     }
 
@@ -222,7 +260,7 @@ class PropiedadesController extends Controller
     {
         $this->findModel($id)->delete();
 
-        return $this->redirect(['index']);
+        return $this->redirect(['listado']);
     }
 
     /**
