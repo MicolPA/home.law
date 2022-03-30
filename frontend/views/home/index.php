@@ -70,6 +70,7 @@
                     <?php endforeach ?>
                 </div>
             </div>
+            <?php if (count($propiedades) > 4): ?>
             <div class="carousel-item">
                 <div class="row">
                     <?php $count = 0; ?>
@@ -81,6 +82,7 @@
                     <?php endforeach ?>
                 </div>
             </div>
+            <?php endif ?>
             <?php if (count($propiedades) > 8): ?>
             <div class="carousel-item">
                 <div class="row">
