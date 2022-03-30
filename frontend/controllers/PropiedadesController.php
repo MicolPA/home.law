@@ -195,7 +195,7 @@ class PropiedadesController extends Controller
             mkdir($path, 0777, true);
         }
 
-        $path = "$path/$titulo/";
+        $path = "$path/$titulo";
 
         if (!file_exists($path)) {
             mkdir($path, 0777, true);
