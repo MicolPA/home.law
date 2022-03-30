@@ -54,16 +54,46 @@
             <div class="carousel-indicators">
                 <button type="button" data-bs-target="#carouselProp" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
                 <button type="button" data-bs-target="#carouselProp" data-bs-slide-to="1" aria-label="Slide 2"></button>
-                <button type="button" data-bs-target="#carouselProp" data-bs-slide-to="2" aria-label="Slide 3"></button>
+                <?php if (count($propiedades) > 8): ?>
+                    <button type="button" data-bs-target="#carouselProp" data-bs-slide-to="2" aria-label="Slide 3"></button>
+                <?php endif ?>
             </div>
           <div class="carousel-inner">
             <div class="carousel-item active ">
                 <div class="row">
+                    <?php $count = 0; ?>
                     <?php foreach ($propiedades as $propiedad): ?>
-                        <?= $this->render('/propiedades/_grid_propiedades', ['propiedad' => $propiedad]) ?>
+                        <?php $count++ ?>
+                        <?php if ($count <= 4): ?>
+                            <?= $this->render('/propiedades/_grid_propiedades', ['propiedad' => $propiedad]) ?>
+                        <?php endif ?>
                     <?php endforeach ?>
                 </div>
             </div>
+            <div class="carousel-item">
+                <div class="row">
+                    <?php $count = 0; ?>
+                    <?php foreach ($propiedades as $propiedad): ?>
+                        <?php $count++ ?>
+                        <?php if ($count > 4 and $count < 9): ?>
+                            <?= $this->render('/propiedades/_grid_propiedades', ['propiedad' => $propiedad]) ?>
+                        <?php endif ?>
+                    <?php endforeach ?>
+                </div>
+            </div>
+            <?php if (count($propiedades) > 8): ?>
+            <div class="carousel-item">
+                <div class="row">
+                    <?php $count = 0; ?>
+                    <?php foreach ($propiedades as $propiedad): ?>
+                        <?php $count++ ?>
+                        <?php if ($count > 8): ?>
+                            <?= $this->render('/propiedades/_grid_propiedades', ['propiedad' => $propiedad]) ?>
+                        <?php endif ?>
+                    <?php endforeach ?>
+                </div>
+            </div>
+            <?php endif ?>
           </div>
           <button class="carousel-control-prev" type="button" data-bs-target="#carouselProp" data-bs-slide="prev">
             <span class="carousel-control-prev-icon" aria-hidden="true"></span>
