@@ -116,7 +116,7 @@ class PropiedadesController extends Controller
                 return $this->redirect(['listado']);
 
             }else{
-                print_r($model->errors);
+                // print_r($model->errors);
                 exit;
             }
 
