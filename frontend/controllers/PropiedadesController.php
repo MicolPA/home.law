@@ -104,7 +104,7 @@ class PropiedadesController extends Controller
         // if ($model->load($post) and $extras->load(Yii::$app->request->post())) {
             $this->savePhotos($model, $galeria);
             $galeria->save();
-            print_r($post);
+            // print_r($post);
             // exit;
             $model->galeria_id = $galeria->id;
             // $model->user_id = Yii::$app->user->identity->id;
