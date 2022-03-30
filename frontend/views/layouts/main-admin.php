@@ -43,13 +43,13 @@ $foto = '';
         </a>
         <button class="navbar-toggler sidenav-toggler ml-auto" type="button" data-toggle="collapse" data-target="collapse" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon">
-                <i class="icon-menu"></i>
+                <i class="fa-solid fa-bars"></i>
             </span>
         </button>
         <button class="topbar-toggler more"><i class="icon-options-vertical"></i></button>
         <div class="nav-toggle">
             <button class="btn btn-toggle toggle-sidebar">
-                <i class="icon-menu"></i>
+                <i class="fa-solid fa-bars"></i>
             </button>
         </div>
     </div>
@@ -81,19 +81,12 @@ $foto = '';
                         <div class="collapse in" id="collapseExample">
                             <ul class="nav">
                                 <li>
-                                    <a href="#profile">
-                                        <span class="link-collapse">My Profile</span>
+                                    <a href="<?= Yii::getAlias("@web") ?>/user/<?= $user->id ?>">
+                                        <span class="link-collapse">Mi perfil</span>
                                     </a>
                                 </li>
                                 <li>
-                                    <a href="#edit">
-                                        <span class="link-collapse">Edit Profile</span>
-                                    </a>
-                                </li>
-                                <li>
-                                    <a href="#settings">
-                                        <span class="link-collapse">Settings</span>
-                                    </a>
+                                    <?=  Html::a('<span class="link-collapse">Cerrar sesión</span>', Url::to(['site/logout']), ['data-method' => 'POST']); ?>
                                 </li>
                             </ul>
                         </div>
