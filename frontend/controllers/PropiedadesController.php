@@ -116,7 +116,7 @@ class PropiedadesController extends Controller
                 return $this->redirect(['listado']);
 
             }else{
-                // print_r($model->errors);
+                print_r($model->errors);
                 exit;
             }
 
@@ -227,7 +227,7 @@ class PropiedadesController extends Controller
         $extras = PropiedadesExtrasList::find()->all();
 
         if ($this->request->isPost && $model->load($this->request->post())) {
-            print_r($this->request->post());
+            // print_r($this->request->post());
             // print_r(UploadedFile::getInstance($model, "portada"));
             $this->savePhotos($model, $galeria);
             // exit;
