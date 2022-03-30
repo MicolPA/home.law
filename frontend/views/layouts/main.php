@@ -35,12 +35,12 @@ AppAsset::register($this);
 </style>
 
     <div class="border-bottom">
-        <div class="container">
+        <div class="container px-4">
             <header class="d-flex flex-wrap justify-content-center py-2 align-items-center">
               <a href="/" class="d-flex align-items-center mb-3 mb-md-0 me-md-auto text-dark text-decoration-none">
                 <svg class="bi me-2" width="40" height="32"><use xlink:href="#bootstrap"/></svg>
                 <span class="fs-4">
-                    <img src="<?= Yii::getAlias("@web") ?>/images/logo.png" width="120px">
+                    <img src="<?= Yii::getAlias("@web") ?>/images/logo.png" width="150px">
                 </span>
               </a>
 
@@ -71,11 +71,11 @@ AppAsset::register($this);
                   </a>
 
                   <ul class="nav nav-pills">
-                    <li class="nav-item"><a href="#" class="nav-link text-white font-14">PROPIEDADES</a></li>
-                    <li class="nav-item"><a href="#" class="nav-link text-white font-14">RENTAS</a></li>
-                    <li class="nav-item"><a href="#" class="nav-link text-white font-14">VENTAS</a></li>
-                    <li class="nav-item"><a href="#" class="nav-link text-white font-14">AGENTES</a></li>
-                    <li class="nav-item"><a href="#" class="nav-link text-white font-14">CONTACTOS</a></li>
+                    <li class="nav-item"><a href="#" class="nav-link text-white font-14">EXPLIRAR MAPA</a></li>
+                    <li class="nav-item"><a href="<?= Yii::getAlias("@web") ?>/tasas-hipotecarias" class="nav-link text-white font-14">TASAS HIPOTECARIAS</a></li>
+                    <li class="nav-item"><a href="<?= Yii::getAlias("@web") ?>/iniciar-sesion" class="nav-link text-white font-14">INICIAR SESIÓN</a></li>
+                    <li class="nav-item"><a href="#" class="nav-link text-white font-14">IDIOMAS</a></li>
+                    <!-- <li class="nav-item"><a href="#" class="nav-link text-white font-14">CONTACTOS</a></li> -->
                   </ul>
                 </div>
             </div>

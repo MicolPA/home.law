@@ -8,40 +8,52 @@ use yii\widgets\ActiveForm;
 /* @var $form yii\widgets\ActiveForm */
 ?>
 
-<div class="tasas-hipotecarias-form">
+<?php $form = ActiveForm::begin(); ?>
+    <div class="row">
+        <div class="col-md-12">
+            <?= $form->field($model, 'nombre_banco')->textInput(['maxlength' => true]) ?>
+        </div>
 
-    <?php $form = ActiveForm::begin(); ?>
+        <div class="col-md-6">
+            <?= $form->field($model, 'correo')->textInput(['maxlength' => true]) ?>
+        </div>
 
-    <?= $form->field($model, 'nombre_banco')->textInput(['maxlength' => true]) ?>
+        <div class="col-md-6">
+            <?= $form->field($model, 'telefono')->textInput(['maxlength' => true]) ?>
+        </div>
 
-    <?= $form->field($model, 'photo_url')->textInput(['maxlength' => true]) ?>
+        <div class="col-md-6">
+            <?= $form->field($model, 'duracion_1')->textInput(['maxlength' => true]) ?>
+        </div>
 
-    <?= $form->field($model, 'tasa')->textInput() ?>
+        <div class="col-md-6">
+            <?= $form->field($model, 'tasa_1')->textInput(['maxlength' => true]) ?>
+        </div>
 
-    <?= $form->field($model, 'duracion')->textInput(['maxlength' => true]) ?>
 
-    <?= $form->field($model, 'correo')->textInput(['maxlength' => true]) ?>
+        <div class="col-md-6">
+            <?= $form->field($model, 'duracion_2')->textInput(['maxlength' => true]) ?>
+        </div>
 
-    <?= $form->field($model, 'telefono')->textInput(['maxlength' => true]) ?>
+        <div class="col-md-6">
+            <?= $form->field($model, 'tasa_2')->textInput(['maxlength' => true]) ?>
+        </div>
 
-    <?= $form->field($model, 'tasa_1')->textInput(['maxlength' => true]) ?>
+        <div class="col-md-6">
+            <?= $form->field($model, 'duracion_3')->textInput(['maxlength' => true]) ?>
+        </div>
 
-    <?= $form->field($model, 'duracion_1')->textInput(['maxlength' => true]) ?>
+        <div class="col-md-6">
+            <?= $form->field($model, 'tasa_3')->textInput(['maxlength' => true]) ?>
+        </div>
 
-    <?= $form->field($model, 'tasa_2')->textInput(['maxlength' => true]) ?>
+        
+        <div class="col-md-6 inputFile">
+            <?= $form->field($model, 'photo_url')->fileInput([!$model ? "required" : "" => !$model ? "required" : ""])->label('<i class="fa-solid fa-cloud-arrow-up mr-2"></i> Portada') ?>
+        </div>
 
-    <?= $form->field($model, 'duracion_2')->textInput(['maxlength' => true]) ?>
-
-    <?= $form->field($model, 'tasa_3')->textInput(['maxlength' => true]) ?>
-
-    <?= $form->field($model, 'duracion_3')->textInput(['maxlength' => true]) ?>
-
-    <?= $form->field($model, 'date')->textInput() ?>
-
-    <div class="form-group">
-        <?= Html::submitButton('Save', ['class' => 'btn btn-success']) ?>
+        <div class="form-group text-right">
+            <?= Html::submitButton('Guardar', ['class' => 'btn btn-success pr-5 pl-5']) ?>
+        </div>
     </div>
-
-    <?php ActiveForm::end(); ?>
-
-</div>
+<?php ActiveForm::end(); ?>

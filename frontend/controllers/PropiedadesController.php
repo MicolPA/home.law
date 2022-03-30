@@ -189,13 +189,13 @@ class PropiedadesController extends Controller
 
         $field = $i == 0 ? 'portada' : "foto_$i";
         $imagen = $model[$field];
-        $path = "images/propiedades/".$tipo."/";
+        $path = "images/propiedades/".$tipo;
 
         if (!file_exists($path)) {
             mkdir($path, 0777, true);
         }
 
-        $path = "$path/$titulo";
+        $path = "$path/$titulo/";
 
         if (!file_exists($path)) {
             mkdir($path, 0777, true);

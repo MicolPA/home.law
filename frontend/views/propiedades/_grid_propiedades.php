@@ -3,7 +3,7 @@
         <div class="card ">
             <div class=" prop-card-img" style="background-image: url('/frontend/web/<?= $propiedad->portada ?>');"></div>
             <span class="text-center ">
-                <span class=" prop-title bg-primary text-white py-2 w-100 "><?= $propiedad->titulo_publicacion ?></span>
+                <span class=" prop-title bg-primary text-white py-2 w-100"><?= $propiedad->titulo_publicacion ?></span>
                 <p class="small text-muted mb-2 mt-5"><?= $propiedad->ubicacion->nombre ?></p>
             </span>
             <div class="row p-3 text-secondary small text-center">

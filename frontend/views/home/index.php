@@ -59,7 +59,7 @@
                 <?php endif ?>
             </div>
           <div class="carousel-inner">
-            <div class="carousel-item active ">
+            <div class="carousel-item active">
                 <div class="row">
                     <?php $count = 0; ?>
                     <?php foreach ($propiedades as $propiedad): ?>
