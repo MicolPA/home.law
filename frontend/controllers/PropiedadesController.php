@@ -208,7 +208,7 @@ class PropiedadesController extends Controller
         }else{
             $imagen = $model[$field];
         }
-        print_r($imagen);
+        // print_r($imagen);
         return $imagen;
 
     }
