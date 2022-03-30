@@ -34,11 +34,15 @@ $this->params['subtitle'] = $model->id ? "Editar Propiedad" : "Registrar Propied
                 <?php echo $form->field($model, 'ubicacion_id')->dropDownList(ArrayHelper::map(\frontend\models\Ubicaciones::find()->all(), 'id', 'nombre'),['prompt'=>'Seleccionar...', 'required' => 'required']) ?>
             </div>
 
-            <div class="col-md-3">
+            <div class="col-md-2">
+                <?= $form->field($model, 'parqueos')->textInput(['type' => 'number']) ?>
+            </div>
+
+            <div class="col-md-2">
                 <?= $form->field($model, 'habitaciones')->textInput(['type' => 'number']) ?>
             </div>
 
-            <div class="col-md-3">
+            <div class="col-md-2">
                 <?= $form->field($model, 'baños')->textInput(['type' => 'number']) ?>
             </div>
             <div class="col-md-6">
@@ -81,7 +85,7 @@ $this->params['subtitle'] = $model->id ? "Editar Propiedad" : "Registrar Propied
             </div>
 
 
-            <div class="col-md-2 inputFile ">
+            <div class="col-md-2 inputFile">
                 <div class="form-group">
                     <label for="inputfile2" class="bg-primary">
                         <i class="fa-solid fa-cloud-arrow-up mr-2"></i> Portada

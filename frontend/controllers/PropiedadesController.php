@@ -187,7 +187,8 @@ class PropiedadesController extends Controller
 
     function get_photo_url($model, $tipo, $titulo, $i){
 
-        $imagen = null;
+        $field = $i == 0 ? 'portada' : "foto_$i";
+        $imagen = $model[$field];
         $path = "images/propiedades/".$tipo."/";
 
         if (!file_exists($path)) {
@@ -199,7 +200,6 @@ class PropiedadesController extends Controller
         if (!file_exists($path)) {
             mkdir($path, 0777, true);
         }
-        $field = $i == 0 ? 'portada' : "foto_$i";
         if (UploadedFile::getInstance($model, "$field")) {
             $model[$field] = UploadedFile::getInstance($model, "$field");
             $imagen = $path . "foto-$i-" . date('Y-m-d H-i-s') . ".". $model[$field]->extension;
@@ -208,7 +208,7 @@ class PropiedadesController extends Controller
         }else{
             $imagen = $model[$field];
         }
-
+        print_r($imagen);
         return $imagen;
 
     }
@@ -227,11 +227,11 @@ class PropiedadesController extends Controller
         $extras = PropiedadesExtrasList::find()->all();
 
         if ($this->request->isPost && $model->load($this->request->post())) {
-            // print_r($this->request->post());
+            print_r($this->request->post());
             // print_r(UploadedFile::getInstance($model, "portada"));
+            $this->savePhotos($model, $galeria);
             // exit;
             $this->getCaracteristicas($extras, $this->request->post(), $model);
-            $this->savePhotos($model, $galeria);
             if ($model->save()) {
                 Yii::$app->session->setFlash('confirmacion_msg','Propiedad modificada correctamente');
                 return $this->redirect(['listado']);

@@ -50,49 +50,31 @@
                 <span class="fw-bold">Best </span> Property
             </p>
         </div>
-
-        <?php foreach ($propiedades as $p): ?>
-            <div class="col-md-3 text-center mb-3">
-                <div class="card rounded-1 p-3">
-                    <div class="rounded-1" style="width: 100%;height: 180px;background-image: url('/frontend/web/<?= $p->portada ?>');background-size:cover;background-position:center;"></div>
-                    <span class="text-center prop-title">
-                        <span class="badge rounded-pill bg-primary text-white py-2 px-3"><?= $p->titulo_publicacion ?></span>
-                        <p class="small text-secondary mb-0"><?= $p->ubicacion->nombre ?></p>
-                    </span>
-                    <div class="row p-3 text-secondary small text-center">
-                        <div class="col-3 border-3 border-bottom border-end p-1">
-                            <div>
-                                <i class="fa-solid fa-car-side mr-1"></i>
-                                <?= $p->parqueos ?>
-                            </div>
-                        </div>
-                        <div class="col-3 border-3 border-bottom border-end p-1">
-                            <div>
-                                <i class="fa-solid fa-bath mr-1"></i>
-                                <?= $p->baños ?>
-                            </div>
-                        </div>
-                        <div class="col-3 border-3 border-bottom border-end p-1">
-                            <div>
-                                <i class="fa-solid fa-bed mr-1"></i>
-                                <?= $p->habitaciones ?>
-                            </div>
-                        </div>
-                        <div class="col-3 border-3 border-bottom p-1">
-                            <div>
-                                <i class="fa-solid fa-ruler-combined"></i>
-                                <small style="font-size: 9px;"><?= $p->metros ?>M<sup>2</sup></small>
-                            </div>
-                        </div>
-                        
-                    </div>
-                    <div class="prop-venta">
-                        <p class="text-primary fw-bold text-center">VENTA</p>
-                    </div>
-                    <p class="rounded rounded-pill m-auto bg-danger text-white py-1 w-100 h5">US$<?= number_format($p->precio) ?></p>
+        <div id="carouselProp" class="carousel slide" data-bs-ride="carousel">
+            <div class="carousel-indicators">
+                <button type="button" data-bs-target="#carouselProp" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+                <button type="button" data-bs-target="#carouselProp" data-bs-slide-to="1" aria-label="Slide 2"></button>
+                <button type="button" data-bs-target="#carouselProp" data-bs-slide-to="2" aria-label="Slide 3"></button>
+            </div>
+          <div class="carousel-inner">
+            <div class="carousel-item active ">
+                <div class="row">
+                    <?php foreach ($propiedades as $propiedad): ?>
+                        <?= $this->render('/propiedades/_grid_propiedades', ['propiedad' => $propiedad]) ?>
+                    <?php endforeach ?>
                 </div>
             </div>
-        <?php endforeach ?>
+          </div>
+          <button class="carousel-control-prev" type="button" data-bs-target="#carouselProp" data-bs-slide="prev">
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Previous</span>
+          </button>
+          <button class="carousel-control-next" type="button" data-bs-target="#carouselProp" data-bs-slide="next">
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Next</span>
+          </button>
+        </div>
+        
     </div>
 
 </div>
@@ -154,7 +136,7 @@
                             <?php $count++ ?>
                             <?php if ($count <= 4): ?>
                                 <div class="col-md-3 p-0">
-                                    <img src="/frontend/web/<?= $u->portada ?>" class="d-block w-100">
+                                    <div class="prop-card-img" style="background-image: url('/frontend/web/<?= $u->portada ?>');"></div>
                                     <p class="text-center text-secondary font-14 mt-2"><?= mb_strtoupper($u->nombre) ?></p>
                                 </div>
                             <?php endif ?>
@@ -169,7 +151,7 @@
                             <?php $count++ ?>
                             <?php if ($count > 4): ?>
                                 <div class="col-md-3 p-0">
-                                    <img src="/frontend/web/<?= $u->portada ?>" class="d-block w-100">
+                                    <div class="prop-card-img" style="background-image: url('/frontend/web/<?= $u->portada ?>');"></div>
                                     <p class="text-center text-secondary font-14 mt-2"><?= mb_strtoupper($u->nombre) ?></p>
                                 </div>
                             <?php endif ?>
@@ -184,7 +166,7 @@
         <div class="col-1">
             <button class="carousel-control-next float-md-start" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="next">
                 <i class="fa-solid fa-angle-right text-primary fs-2"></i>
-              </button>
+            </button>
         </div>
     </div>
 

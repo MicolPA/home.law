@@ -67,6 +67,10 @@
     min-width: 200px;
 }
 
+.prop-card-img{
+    width: 100%;height: 180px;background-size:cover;background-position:center;
+}
+
 
 .home-banner{
     background: url('/frontend/web/images/banner.png');

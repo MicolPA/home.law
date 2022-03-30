@@ -38,7 +38,7 @@ $foto = '';
     <!-- Logo Header -->
     <div class="logo-header position-fixed" data-background-color="dark">
 
-        <a href="/" class="logo">
+        <a href="<?= Yii::getAlias("@web") ?>/admin" class="logo">
             <img src="<?= Yii::getAlias("@web") ?>/images/logo-blanco.png" alt="navbar brand" class="navbar-brand" width="120px">
         </a>
         <button class="navbar-toggler sidenav-toggler ml-auto" type="button" data-toggle="collapse" data-target="collapse" aria-expanded="false" aria-label="Toggle navigation">
@@ -60,7 +60,13 @@ $foto = '';
             <div class="sidebar-content">
                 <div class="user">
                     <div class="avatar-sm float-left mr-2">
-                        <img src="<?= Yii::getAlias("@web") . '/'. $user->photo_url ?>" alt="..." class="avatar-img rounded-circle">
+                        <?php if ($user->photo_url): ?>
+                            <img src="<?= Yii::getAlias("@web") . '/'. $user->photo_url ?>" alt="..." class="avatar-img rounded-circle">
+                        <?php else: ?>
+                            <button type="button" class="btn btn-icon btn-round btn-primary font-weight-bold">
+                                <?= substr($user->first_name, 0,1) ?>
+                            </button>
+                        <?php endif ?>
                     </div>
                     <div class="info">
                         <a data-toggle="collapse" href="#collapseExample" aria-expanded="true">
@@ -137,9 +143,9 @@ $foto = '';
                         <h4 class="text-section">Propiedades</h4>
                     </li>
                     <li class="nav-item">
-                        <a href="#">
-                            <i class="far fa-file-excel"></i>
-                            <p>Lorem Ipsum</p>
+                        <a href="<?= Yii::getAlias("@web") ?>/tasas-hipotecarias">
+                            <i class="fa-solid fa-chart-line"></i>
+                            <p>Tasas Hipotecarias</p>
                         </a>
                     </li>
                     <li class="nav-item">

@@ -1,5 +1,12 @@
 <?php
 /* @var $this yii\web\View */
+
+$ex =ctype_alnum(12);
+
+echo $ex;
+// echo hex2bin($ex);
+
+$this->title = "Administrador";
 ?>
 <h1>admin/index</h1>
 

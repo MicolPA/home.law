@@ -16,6 +16,7 @@ class SignupForm extends Model
     public $password;
     public $first_name;
     public $last_name;
+    public $photo_url;
 
 
     /**
@@ -37,6 +38,9 @@ class SignupForm extends Model
             ['last_name', 'trim'],
             ['last_name', 'required'],
             ['last_name', 'string', 'max' => 255],
+
+            ['photo_url', 'trim'],
+            ['photo_url', 'string', 'max' => 255],
 
 
             ['email', 'trim'],
@@ -64,6 +68,7 @@ class SignupForm extends Model
         $user = new User();
         $user->username = $this->username;
         $user->email = $this->email;
+        $user->photo_url = $this->photo_url;
         $user->status = 10;
         $user->role_id = 1;
         $user->setPassword($this->password);
