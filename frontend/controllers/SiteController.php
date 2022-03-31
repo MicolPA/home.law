@@ -139,7 +139,12 @@ class SiteController extends Controller
     }
 
     public function actionPerfil(){
-        return $this->render('perfil');
+
+        $propiedades = \frontend\models\Propiedades::find()->limit(10)->all();
+
+        return $this->render('perfil', [
+            'propiedades' => $propiedades
+        ]);
     }
 
     /**
