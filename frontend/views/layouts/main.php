@@ -94,7 +94,7 @@ AppAsset::register($this);
     </main>
 
     <footer class="footer mt-5 ">
-        <div class="container-fluid  ">
+        <div class="container my-5 ">
             <div class="row">
                 <div class="col-md-7">
                     <div class="pr-4">
@@ -110,8 +110,8 @@ AppAsset::register($this);
                     </div>
                 </div>
                 <div class="col-md-5">
-                    <div class="row bg-secondary  p-4">
-                        <div class="col-md-6">
+                    <div class="row   p-4">
+                        <div class="col-md-6 d-flex justify-content-center">
                             <ul class="list-unstyled text-dark">
                                 <li class="text-primary mb-2 fw-bold">Lugares <br> más buscados</li>
                                 <li>La Romana</li>
@@ -124,7 +124,7 @@ AppAsset::register($this);
                                 <li>Las Terrenas</li>
                             </ul>
                         </div>
-                        <div class="col-md-6">
+                        <div class="col-md-6 d-flex justify-content-center">
                             <ul class="list-unstyled text-dark">
                                 <li class="text-primary mb-2 fw-bold">Categorías <br> más buscadas</li>
                                 <li>La Romana</li>
@@ -159,26 +159,34 @@ AppAsset::register($this);
                         <a href=""><i class=" text-secondary mx-2 fa-brands fa-instagram"></i></a>
 
 
-                        <p class="py-2 text-center text-dark"> Copyright Todos los derechos reservados 2022, BEST LISTING</p>
+                        <p class=" text-center text-dark pt-4 "> Copyright Todos los derechos reservados 2022, BEST LISTING</p>
 
 
                     </div>
 
                     <div class="col-md-5 py-5 mt-5">
-                        <div class="row">
-                            <div class="col-md-7 p-0"><a class="text-decoration-none" href="#"> <input type="text" class=" rounded-3 form-control small px-2" placeholder="Email" aria-label="Email" aria-describedby="basic-addon1"> </a></div>
-                            <div class="col-md-5"> <a href="#" class="btn btn-xs btn-danger rounded-3 pl-4 pr-4 mb-5 mr-2 font-14">SUSCRIBIR</a></div>
+                        <div class="row pb-0 mb-n2 ">
+                            <div class="col-md-7   mb-1"><a class="text-decoration-none" href="#"> <input type="text" class=" rounded-3 form-control small px-2" placeholder="Email" aria-label="Email" aria-describedby="basic-addon1"> </a></div>
+
+                            <div class="col-md-5">
+                                <div class="d-grid gap-1 col-md-5 ">
+                                    <button class="btn btn-danger rounded-3 pl-4 pr-4 mb-5 mr-2 font-14" type="button">SUSCRIBIR</button>
+
+                                </div>
+                            </div>
+
+                            <!-- <div class="col-md-5"> <a href="#" class="btn btn-xs btn-danger rounded-3 pl-4 pr-4 mb-5 mr-2 font-14">SUSCRIBIR</a></div> -->
+
+
+
+
+                            <p class="small text-muted " style="width: 39rem;">Lorem ipsum dolor sit amet amdirfbf asjgfhjasd consectetur adipisicing elit. Perspiciatis, dignissimos corrupti vero aliquid libero consequuntur odio quasi.</p>
                         </div>
-
-
-
-                        <p class="small text-muted " style="width: 39rem;">Lorem ipsum dolor sit amet amdirfbf asjgfhjasd consectetur adipisicing elit. Perspiciatis, dignissimos corrupti vero aliquid libero consequuntur odio quasi.</p>
                     </div>
+
                 </div>
 
             </div>
-
-        </div>
 
 
     </footer>
