@@ -36,7 +36,7 @@
             <div class="prop-venta">
                 <p class="text-primary fw-bold text-center mb-0">VENTA</p>
             </div>
-            <p class=" rounded-pill mx-5 mb-4 bg-danger text-white fw-600 font-30">US$<?= number_format($propiedad->precio) ?></p>
+            <p class="  prop-precio rounded-pill mx-5 mb-4 bg-danger text-white  ">US$<?= number_format($propiedad->precio) ?></p>
         </div>
     </a>
 </div>
