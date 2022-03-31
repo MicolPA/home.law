@@ -138,6 +138,10 @@ class SiteController extends Controller
         ]);
     }
 
+    public function actionPerfil(){
+        return $this->render('perfil');
+    }
+
     /**
      * Displays about page.
      *
