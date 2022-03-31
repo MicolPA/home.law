@@ -102,7 +102,7 @@ AppAsset::register($this);
                         <p class="mt-5 text-muted mb-5">
                             Lorem ipsum, dolor sit amet consectetur, adipisicing elit. Aliquam, veniam deleniti dolor quis et provident doloribus ut eveniet, sed tenetur labore quaerat ab! Magnam ea repudiandae alias fugiat tenetur, nam obcaecati recusandae dignissimos inventore eos in, totam reprehenderit impedit, quaerat magni ipsam quasi cupiditate libero. Assumenda cupiditate perspiciatis aperiam ipsum.
                         </p>
-                        <div class="text-center">
+                        <div >
                             <a href="#" class="btn btn-xs btn-danger rounded-3 pl-4 pr-4 mb-5 mr-2 font-14">EXPLORAR MAPA</a>
                             <a href="#" class="btn btn-xs btn-secondary rounded-3 pl-4 pr-4 mb-5 mr-2 font-14">CONVIERTETE EN ASOCIADO</a>
                             <a href="#" class="btn btn-xs btn-primary bg-primary rounded-3 pl-4 pr-4 mb-5 font-14">REGISTRATE</a>
