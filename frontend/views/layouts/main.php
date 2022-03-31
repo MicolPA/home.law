@@ -15,44 +15,48 @@ AppAsset::register($this);
 <?php $this->beginPage() ?>
 <!DOCTYPE html>
 <html lang="<?= Yii::$app->language ?>" class="h-100">
+
 <head>
     <meta charset="<?= Yii::$app->charset ?>">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <?php $this->registerCsrfMetaTags() ?>
     <title><?= Html::encode($this->title) ?> | Home Law</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Hind+Siliguri:wght@300&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Hind+Siliguri:wght@300&display=swap" rel="stylesheet">
     <?php $this->head() ?>
 </head>
-<body class="">
-<?php $this->beginBody() ?>
 
-<style>
-    .nav-item{
-        float: right !important;
-    }
-</style>
+<body class="">
+    <?php $this->beginBody() ?>
+
+    <style>
+        .nav-item {
+            float: right !important;
+        }
+    </style>
 
     <div class="border-bottom">
         <div class="container px-4">
             <header class="d-flex flex-wrap justify-content-center py-2 align-items-center">
-              <a href="/" class="d-flex align-items-center mb-3 mb-md-0 me-md-auto text-dark text-decoration-none">
-                <svg class="bi me-2" width="40" height="32"><use xlink:href="#bootstrap"/></svg>
-                <span class="fs-4">
-                    <img src="<?= Yii::getAlias("@web") ?>/images/logo.png" width="150px">
-                </span>
-              </a>
+                <a href="/" class="d-flex align-items-center mb-3 mb-md-0 me-md-auto text-dark text-decoration-none">
+                    <svg class="bi me-2" width="40" height="32">
+                        <use xlink:href="#bootstrap" />
+                    </svg>
+                    <span class="fs-4">
+                        <img src="<?= Yii::getAlias("@web") ?>/images/logo.png" width="150px">
+                    </span>
+                </a>
 
-              <ul class="nav nav-pills">
-                <li class="nav-item"><a href="<?= Yii::getAlias("@web") ?>/propiedades" class="nav-link text-primary font-14">PROPIEDADES</a></li>
-                <li class="nav-item"><a href="#" class="nav-link text-primary font-14">RENTAS</a></li>
-                <li class="nav-item"><a href="#" class="nav-link text-primary font-14">VENTAS</a></li>
-                <li class="nav-item"><a href="#" class="nav-link text-primary font-14">AGENTES</a></li>
-                <li class="nav-item"><a href="#" class="nav-link text-primary font-14">CONTACTOS</a></li>
-                <li class="nav-item"><a href="#" class="nav-link text-primary font-14">REP DOM</a></li>
-              </ul>
-               <!--  <div class="text-end">
+                <ul class="nav nav-pills">
+                    <li class="nav-item"><a href="<?= Yii::getAlias("@web") ?>/propiedades" class="nav-link text-primary font-14">PROPIEDADES</a></li>
+                    <li class="nav-item"><a href="#" class="nav-link text-primary font-14">RENTAS</a></li>
+                    <li class="nav-item"><a href="#" class="nav-link text-primary font-14">VENTAS</a></li>
+                    <li class="nav-item"><a href="#" class="nav-link text-primary font-14">AGENTES</a></li>
+                    <li class="nav-item"><a href="#" class="nav-link text-primary font-14">CONTACTOS</a></li>
+                    <li class="nav-item"><a href="#" class="nav-link text-primary font-14">REP DOM</a></li>
+                </ul>
+                <!--  <div class="text-end">
                   <button type="button" class="btn btn-outline-dark me-2">Login</button>
                   <button type="button" class="btn btn-warning">Sign-up</button>
                 </div> -->
@@ -64,80 +68,123 @@ AppAsset::register($this);
         <div class="bg-danger w-50 float-end second-menu p-0">
             <div class="container">
                 <div class="d-flex flex-wrap justify-content-center">
-                  <a href="/" class="d-flex align-items-center mb-md-0 me-md-auto text-dark text-decoration-none">
-                    <svg class="bi me-2" width="40" height="32"><use xlink:href="#bootstrap"/></svg>
-                    <span class="fs-4">
-                    </span>
-                  </a>
+                    <a href="/" class="d-flex align-items-center mb-md-0 me-md-auto text-dark text-decoration-none">
+                        <svg class="bi me-2" width="40" height="32">
+                            <use xlink:href="#bootstrap" />
+                        </svg>
+                        <span class="fs-4">
+                        </span>
+                    </a>
 
-                  <ul class="nav nav-pills">
-                    <li class="nav-item"><a href="#" class="nav-link text-white font-14">EXPLIRAR MAPA</a></li>
-                    <li class="nav-item"><a href="<?= Yii::getAlias("@web") ?>/tasas-hipotecarias" class="nav-link text-white font-14">TASAS HIPOTECARIAS</a></li>
-                    <li class="nav-item"><a href="<?= Yii::getAlias("@web") ?>/iniciar-sesion" class="nav-link text-white font-14">INICIAR SESIÓN</a></li>
-                    <li class="nav-item"><a href="#" class="nav-link text-white font-14">IDIOMAS</a></li>
-                    <!-- <li class="nav-item"><a href="#" class="nav-link text-white font-14">CONTACTOS</a></li> -->
-                  </ul>
+                    <ul class="nav nav-pills">
+                        <li class="nav-item"><a href="#" class="nav-link text-white font-14">EXPLIRAR MAPA</a></li>
+                        <li class="nav-item"><a href="<?= Yii::getAlias("@web") ?>/tasas-hipotecarias" class="nav-link text-white font-14">TASAS HIPOTECARIAS</a></li>
+                        <li class="nav-item"><a href="<?= Yii::getAlias("@web") ?>/iniciar-sesion" class="nav-link text-white font-14">INICIAR SESIÓN</a></li>
+                        <li class="nav-item"><a href="#" class="nav-link text-white font-14">IDIOMAS</a></li>
+                        <!-- <li class="nav-item"><a href="#" class="nav-link text-white font-14">CONTACTOS</a></li> -->
+                    </ul>
                 </div>
             </div>
         </div>
     </section>
 
-<main role="main" class="flex-shrink-0 bg-secondary">
-    <?= Alert::widget() ?>
-    <?= $content ?>
-</main>
+    <main role="main" class="flex-shrink-0 bg-secondary">
+        <?= Alert::widget() ?>
+        <?= $content ?>
+    </main>
 
-<footer class="footer mt-5 p-5">
-    <div class="container">
-      <div class="row">
-        <div class="col-md-7">
-            <div class="pr-4">
-              <img src="/frontend/web/images/logo.png" width="120px">
-                <p class="mt-5 text-muted mb-5">
-                  Lorem ipsum, dolor sit amet consectetur, adipisicing elit. Aliquam, veniam deleniti dolor quis et provident doloribus ut eveniet, sed tenetur labore quaerat ab! Magnam ea repudiandae alias fugiat tenetur, nam obcaecati recusandae dignissimos inventore eos in, totam reprehenderit impedit, quaerat magni ipsam quasi cupiditate libero. Assumenda cupiditate perspiciatis aperiam ipsum.
-                </p>
-
-                <a href="#" class="btn btn-xs btn-danger rounded-3 pl-4 pr-4 mb-5 mr-2 font-14">EXPLORAR MAPA</a>
-                <a href="#" class="btn btn-xs btn-secondary rounded-3 pl-4 pr-4 mb-5 mr-2 font-14">CONVIERTETE EN ASOCIADO</a>
-                <a href="#" class="btn btn-xs btn-primary bg-primary rounded-3 pl-4 pr-4 mb-5 font-14">REGISTRATE</a>
-            </div>
-        </div>
-        <div class="col-md-5">
-            <div class="row bg-secondary rounded p-4">
-                <div class="col-md-6">
-                    <ul class="list-unstyled text-dark">
-                        <li class="text-primary mb-2 fw-bold">Lugares <br> más buscados</li>
-                        <li>La Romana</li>
-                        <li>Bayahibe</li>
-                        <li>Cap Cana</li>
-                        <li>Las Terrenas</li>
-                        <li>La Romana</li>
-                        <li>Bayahibe</li>
-                        <li>Cap Cana</li>
-                        <li>Las Terrenas</li>
-                    </ul>
+    <footer class="footer mt-5 ">
+        <div class="container-fluid  ">
+            <div class="row">
+                <div class="col-md-7">
+                    <div class="pr-4">
+                        <img src="/frontend/web/images/logo.png" width="120px">
+                        <p class="mt-5 text-muted mb-5">
+                            Lorem ipsum, dolor sit amet consectetur, adipisicing elit. Aliquam, veniam deleniti dolor quis et provident doloribus ut eveniet, sed tenetur labore quaerat ab! Magnam ea repudiandae alias fugiat tenetur, nam obcaecati recusandae dignissimos inventore eos in, totam reprehenderit impedit, quaerat magni ipsam quasi cupiditate libero. Assumenda cupiditate perspiciatis aperiam ipsum.
+                        </p>
+                        <div class="text-center">
+                            <a href="#" class="btn btn-xs btn-danger rounded-3 pl-4 pr-4 mb-5 mr-2 font-14">EXPLORAR MAPA</a>
+                            <a href="#" class="btn btn-xs btn-secondary rounded-3 pl-4 pr-4 mb-5 mr-2 font-14">CONVIERTETE EN ASOCIADO</a>
+                            <a href="#" class="btn btn-xs btn-primary bg-primary rounded-3 pl-4 pr-4 mb-5 font-14">REGISTRATE</a>
+                        </div>
+                    </div>
                 </div>
-                <div class="col-md-6">
-                    <ul class="list-unstyled text-dark">
-                        <li class="text-primary mb-2 fw-bold">Categorías <br> más buscadas</li>
-                        <li>La Romana</li>
-                        <li>Bayahibe</li>
-                        <li>Cap Cana</li>
-                        <li>Las Terrenas</li>
-                        <li>La Romana</li>
-                        <li>Bayahibe</li>
-                        <li>Cap Cana</li>
-                        <li>Las Terrenas</li>
-                    </ul>
-                </div>
-            </div>
-        </div>
-      </div>
-        <!-- <p class="pull-left">&copy; <?//= Html::encode(Yii::$app->name) ?> <?//= date('Y') ?></p> -->
-    </div>
-</footer>
+                <div class="col-md-5">
+                    <div class="row bg-secondary  p-4">
+                        <div class="col-md-6">
+                            <ul class="list-unstyled text-dark">
+                                <li class="text-primary mb-2 fw-bold">Lugares <br> más buscados</li>
+                                <li>La Romana</li>
+                                <li>Bayahibe</li>
+                                <li>Cap Cana</li>
+                                <li>Las Terrenas</li>
+                                <li>La Romana</li>
+                                <li>Bayahibe</li>
+                                <li>Cap Cana</li>
+                                <li>Las Terrenas</li>
+                            </ul>
+                        </div>
+                        <div class="col-md-6">
+                            <ul class="list-unstyled text-dark">
+                                <li class="text-primary mb-2 fw-bold">Categorías <br> más buscadas</li>
+                                <li>La Romana</li>
+                                <li>Bayahibe</li>
+                                <li>Cap Cana</li>
+                                <li>Las Terrenas</li>
+                                <li>La Romana</li>
+                                <li>Bayahibe</li>
+                                <li>Cap Cana</li>
+                                <li>Las Terrenas</li>
+                            </ul>
+                        </div>
+                    </div>
 
-<?php $this->endBody() ?>
+                </div>
+
+
+
+            </div>
+            <!-- <p class="pull-left">&copy; <? //= Html::encode(Yii::$app->name) 
+                                                ?> <? //= date('Y') 
+                                                                                    ?></p> -->
+        </div>
+
+        <div class="bg-secondary mt-0">
+            <div class="container-fluid ">
+                <div class="row ">
+                    <div class="col-md-7 py-5 mt-5 text-center ">
+                        <a href=""><i class=" text-secondary mx-2 fa-brands fa-facebook-f"></i></a>
+                        <a href=""><i class=" text-secondary mx-2 fa-brands fa-whatsapp"></i></a>
+                        <a href=""><i class=" text-secondary mx-2 fa-brands fa-twitter"></i></a>
+                        <a href=""><i class=" text-secondary mx-2 fa-brands fa-instagram"></i></a>
+
+
+                        <p class="py-2 text-center text-dark"> Copyright Todos los derechos reservados 2022, BEST LISTING</p>
+
+
+                    </div>
+
+                    <div class="col-md-5 py-5 mt-5">
+                        <div class="row">
+                            <div class="col-md-7 p-0"><a class="text-decoration-none" href="#"> <input type="text" class=" rounded-3 form-control small px-2" placeholder="Email" aria-label="Email" aria-describedby="basic-addon1"> </a></div>
+                            <div class="col-md-5"> <a href="#" class="btn btn-xs btn-danger rounded-3 pl-4 pr-4 mb-5 mr-2 font-14">SUSCRIBIR</a></div>
+                        </div>
+
+
+
+                        <p class="small text-muted " style="width: 39rem;">Lorem ipsum dolor sit amet amdirfbf asjgfhjasd consectetur adipisicing elit. Perspiciatis, dignissimos corrupti vero aliquid libero consequuntur odio quasi.</p>
+                    </div>
+                </div>
+
+            </div>
+
+        </div>
+
+
+    </footer>
+
+    <?php $this->endBody() ?>
 </body>
+
 </html>
 <?php $this->endPage();
