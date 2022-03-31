@@ -11,7 +11,7 @@
 
 <div class="container-fluid px-0 py-4">
     <div class="row w-100 m-0">
-        <div class="col-md-7 col-xs-12 pt-md-4">
+        <div class="col-lg-6 col-md-8 col-xs-12 pt-md-4">
             <div class="container">
                 <p class="text-center mb-0 lh-1">
                     <span class="fw-bold fs-3 text-primary -ml-3 mb-0">Find the best property</span>
@@ -34,7 +34,7 @@
                 </form>      
             </div>
         </div>
-        <div class="col-md-5 p-0 mobile-hidden">
+        <div class="col-md-6 p-0 mobile-hidden pl-4">
             <div class="home-banner">
                 
             </div>
@@ -45,27 +45,21 @@
 
 <div class="container pb-5">
     <div class="row">
-        <div class="col-md-12 text-center pt-lg-5">
-            <p class="text-primary h4 mb-lg-5">
+        <div class="col-md-12 text-center">
+            <p class="text-primary h4 mb-lg-5 mt-5">
                 <span class="fw-bold">Best </span> Property
             </p>
         </div>
         <div id="carouselProp" class="carousel slide" data-bs-ride="carousel">
-            <div class="carousel-indicators">
-                <button type="button" data-bs-target="#carouselProp" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
-                <button type="button" data-bs-target="#carouselProp" data-bs-slide-to="1" aria-label="Slide 2"></button>
-                <?php if (count($propiedades) > 8): ?>
-                    <button type="button" data-bs-target="#carouselProp" data-bs-slide-to="2" aria-label="Slide 3"></button>
-                <?php endif ?>
-            </div>
-          <div class="carousel-inner">
+            
+          <div class="carousel-inner mb-2">
             <div class="carousel-item active">
                 <div class="row">
                     <?php $count = 0; ?>
                     <?php foreach ($propiedades as $propiedad): ?>
                         <?php $count++ ?>
                         <?php if ($count <= 4): ?>
-                            <?= $this->render('/propiedades/_grid_propiedades', ['propiedad' => $propiedad]) ?>
+                            <?= $this->render('/propiedades/_grid_propiedades', ['propiedad' => $propiedad, 'count' => $count]) ?>
                         <?php endif ?>
                     <?php endforeach ?>
                 </div>
@@ -77,7 +71,7 @@
                     <?php foreach ($propiedades as $propiedad): ?>
                         <?php $count++ ?>
                         <?php if ($count > 4 and $count < 9): ?>
-                            <?= $this->render('/propiedades/_grid_propiedades', ['propiedad' => $propiedad]) ?>
+                            <?= $this->render('/propiedades/_grid_propiedades', ['propiedad' => $propiedad, 'count' => $count]) ?>
                         <?php endif ?>
                     <?php endforeach ?>
                 </div>
@@ -90,7 +84,7 @@
                     <?php foreach ($propiedades as $propiedad): ?>
                         <?php $count++ ?>
                         <?php if ($count > 8): ?>
-                            <?= $this->render('/propiedades/_grid_propiedades', ['propiedad' => $propiedad]) ?>
+                            <?= $this->render('/propiedades/_grid_propiedades', ['propiedad' => $propiedad, 'count' => $count]) ?>
                         <?php endif ?>
                     <?php endforeach ?>
                 </div>
@@ -99,6 +93,16 @@
           </div>
         </div>
         
+    </div>
+
+    <div class="row">
+        <div class="col-md-12 text-center">
+            <button class='btn btn-outline-light border-0' type="button" data-bs-target="#carouselProp" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"><i class="fa-regular fa-circle text-primary"></i></button>
+            <button class='btn btn-outline-light border-0' type="button" data-bs-target="#carouselProp" data-bs-slide-to="1" aria-label="Slide 2"><i class="fa-regular fa-circle text-primary"></i></button>
+            <?php if (count($propiedades) > 8): ?>
+                <button class='btn btn-outline-light border-0' type="button" data-bs-target="#carouselProp" data-bs-slide-to="2" aria-label="Slide 3"><i class="fa-regular fa-circle text-primary"></i></button>
+            <?php endif ?>
+        </div>
     </div>
 
 </div>
