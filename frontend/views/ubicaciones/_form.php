@@ -3,9 +3,6 @@
 use yii\helpers\Html;
 use yii\widgets\ActiveForm;
 
-/* @var $this yii\web\View */
-/* @var $model frontend\models\Ubicaciones */
-/* @var $form yii\widgets\ActiveForm */
 ?>
 
 <div class="ubicaciones-form">
@@ -14,8 +11,12 @@ use yii\widgets\ActiveForm;
 
     <?= $form->field($model, 'nombre')->textInput(['maxlength' => true]) ?>
 
-    <div class="form-group">
-        <?= Html::submitButton('Save', ['class' => 'btn btn-success']) ?>
+    <div class="w-25 inputFile">
+        <?= $form->field($model, 'portada')->fileInput([!$model ? "required" : "" => !$model ? "required" : ""])->label('<i class="fa-solid fa-cloud-arrow-up mr-2"></i> Portada') ?>
+    </div>
+
+    <div class="form-group text-right">
+        <?= Html::submitButton('Guardar', ['class' => 'btn btn-success pr-5 pl-5']) ?>
     </div>
 
     <?php ActiveForm::end(); ?>

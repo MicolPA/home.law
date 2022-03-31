@@ -46,7 +46,7 @@ $foto = '';
                 <i class="fa-solid fa-bars"></i>
             </span>
         </button>
-        <button class="topbar-toggler more"><i class="icon-options-vertical"></i></button>
+        <button class="topbar-toggler more"><i class="icono-ptions-vertical"></i></button>
         <div class="nav-toggle">
             <button class="btn btn-toggle toggle-sidebar">
                 <i class="fa-solid fa-bars"></i>
@@ -136,7 +136,7 @@ $foto = '';
                         <h4 class="text-section">Propiedades</h4>
                     </li>
                     <li class="nav-item">
-                        <a href="<?= Yii::getAlias("@web") ?>/tasas-hipotecarias">
+                        <a href="<?= Yii::getAlias("@web") ?>/tasas-hipotecarias/listado">
                             <i class="fa-solid fa-chart-line"></i>
                             <p>Tasas Hipotecarias</p>
                         </a>

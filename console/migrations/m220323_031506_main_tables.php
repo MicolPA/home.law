@@ -65,7 +65,7 @@ class m220323_031506_main_tables extends Migration
         $this->createTable('{{%ubicaciones}}', [
             'id' => $this->primaryKey(),
             'nombre' => $this->string(),
-            'portada' => $this->string(),
+            'portada' => $this->text(),
         ], $tableOptions);
 
         $this->createTable('{{%propiedades_extras}}', [
@@ -83,7 +83,7 @@ class m220323_031506_main_tables extends Migration
         $this->createTable('{{%tasas_hipotecarias}}', [
             'id' => $this->primaryKey(),
             'nombre_banco' => $this->string(),
-            'photo_url' => $this->string(),
+            'photo_url' => $this->text(),
             'tasa' => $this->float(),
             'duracion' => $this->string(),
             'correo' => $this->string(),

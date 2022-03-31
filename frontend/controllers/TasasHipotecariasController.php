@@ -7,6 +7,7 @@ use frontend\models\TasasHipotecariasSearch;
 use yii\web\Controller;
 use yii\web\NotFoundHttpException;
 use yii\filters\VerbFilter;
+use yii\web\UploadedFile;
 
 /**
  * TasasHipotecariasController implements the CRUD actions for TasasHipotecarias model.
@@ -18,6 +19,7 @@ class TasasHipotecariasController extends Controller
      */
     public function behaviors()
     {
+        $this->layout = "main-admin";
         return array_merge(
             parent::behaviors(),
             [
@@ -38,10 +40,21 @@ class TasasHipotecariasController extends Controller
      */
     public function actionIndex()
     {
+        $this->layout = "main";
         $searchModel = new TasasHipotecariasSearch();
         $dataProvider = $searchModel->search($this->request->queryParams);
 
         return $this->render('index', [
+            'searchModel' => $searchModel,
+            'dataProvider' => $dataProvider,
+        ]);
+    }
+    public function actionListado()
+    {
+        $searchModel = new TasasHipotecariasSearch();
+        $dataProvider = $searchModel->search($this->request->queryParams);
+
+        return $this->render('listado', [
             'searchModel' => $searchModel,
             'dataProvider' => $dataProvider,
         ]);
@@ -70,8 +83,12 @@ class TasasHipotecariasController extends Controller
         $model = new TasasHipotecarias();
 
         if ($this->request->isPost) {
-            if ($model->load($this->request->post()) && $model->save()) {
-                return $this->redirect(['view', 'id' => $model->id]);
+            if ($model->load($this->request->post())) {
+                $servicios = new \common\models\Servicios();
+                $model->photo_url = $servicios->savePhoto($model, $model->nombre_banco, 'photo_url', 'tasas-hipotecarias');
+                $model->save();
+
+                return $this->redirect(['listado']);
             }
         } else {
             $model->loadDefaultValues();
@@ -93,8 +110,12 @@ class TasasHipotecariasController extends Controller
     {
         $model = $this->findModel($id);
 
-        if ($this->request->isPost && $model->load($this->request->post()) && $model->save()) {
-            return $this->redirect(['view', 'id' => $model->id]);
+        if ($model->load($this->request->post())) {
+            $servicios = new \common\models\Servicios();
+            $model->photo_url = $servicios->savePhoto($model, $model->nombre_banco, 'photo_url', 'tasas-hipotecarias');
+            $model->save();
+
+            return $this->redirect(['listado']);
         }
 
         return $this->render('update', [

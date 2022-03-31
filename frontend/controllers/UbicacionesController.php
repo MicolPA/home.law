@@ -7,6 +7,7 @@ use frontend\models\UbicacionesSearch;
 use yii\web\Controller;
 use yii\web\NotFoundHttpException;
 use yii\filters\VerbFilter;
+use yii\web\UploadedFile;
 
 /**
  * UbicacionesController implements the CRUD actions for Ubicaciones model.
@@ -71,8 +72,13 @@ class UbicacionesController extends Controller
         $model = new Ubicaciones();
 
         if ($this->request->isPost) {
-            if ($model->load($this->request->post()) && $model->save()) {
-                return $this->redirect(['view', 'id' => $model->id]);
+            if ($model->load($this->request->post())) {
+                $servicios = new \common\models\Servicios();
+                $model->portada = $servicios->savePhoto($model, $model->nombre, 'portada', 'ubicaciones');
+                $model->date = date('Y-m-d H:i:s');
+                $model->save();
+
+                return $this->redirect(['index']);
             }
         } else {
             $model->loadDefaultValues();
@@ -82,6 +88,8 @@ class UbicacionesController extends Controller
             'model' => $model,
         ]);
     }
+
+    
 
     /**
      * Updates an existing Ubicaciones model.
@@ -94,8 +102,12 @@ class UbicacionesController extends Controller
     {
         $model = $this->findModel($id);
 
-        if ($this->request->isPost && $model->load($this->request->post()) && $model->save()) {
-            return $this->redirect(['view', 'id' => $model->id]);
+        if ($model->load($this->request->post())) {
+            $servicios = new \common\models\Servicios();
+            $model->portada = $servicios->savePhoto($model, $model->nombre, 'portada', 'ubicaciones');
+            $model->save();
+
+            return $this->redirect(['index']);
         }
 
         return $this->render('update', [

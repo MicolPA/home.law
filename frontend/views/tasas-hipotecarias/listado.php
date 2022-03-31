@@ -6,17 +6,13 @@ use yii\grid\ActionColumn;
 use yii\grid\GridView;
 
 /* @var $this yii\web\View */
-/* @var $searchModel frontend\models\UbicacionesSearch */
+/* @var $searchModel frontend\models\TasasHipotecariasSearch */
 /* @var $dataProvider yii\data\ActiveDataProvider */
 
-$this->title = 'Ubicaciones';
+$this->title = 'Tasas Hipotecarias';
 $this->params['breadcrumbs'][] = $this->title;
 ?>
-<div class="ubicaciones-index">
-
-    <p>
-        <?= Html::a('Create Ubicaciones', ['create'], ['class' => 'btn btn-success']) ?>
-    </p>
+<div class="tasas-hipotecarias-index">
 
     <?php // echo $this->render('_search', ['model' => $searchModel]); ?>
 
@@ -27,11 +23,22 @@ $this->params['breadcrumbs'][] = $this->title;
             ['class' => 'yii\grid\SerialColumn'],
 
             // 'id',
-            'nombre',
-            // 'portada',
+            'nombre_banco',
+            // 'photo_url:url',
+            // 'tasa',
+            // 'duracion',
+            //'correo',
+            //'telefono',
+            //'tasa_1',
+            //'duracion_1',
+            //'tasa_2',
+            //'duracion_2',
+            //'tasa_3',
+            //'duracion_3',
+            //'date',
             [
                 'class' => ActionColumn::className(),
-                'urlCreator' => function ($action, \frontend\models\Ubicaciones $model, $key, $index, $column) {
+                'urlCreator' => function ($action, \frontend\models\TasasHipotecarias $model, $key, $index, $column) {
                     return Url::toRoute([$action, 'id' => $model->id]);
                  }
             ],

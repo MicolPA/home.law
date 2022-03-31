@@ -104,7 +104,7 @@ class PropiedadesController extends Controller
         // if ($model->load($post) and $extras->load(Yii::$app->request->post())) {
             $this->savePhotos($model, $galeria);
             $galeria->save();
-            print_r($post);
+            // print_r($post);
             // exit;
             $model->galeria_id = $galeria->id;
             // $model->user_id = Yii::$app->user->identity->id;
@@ -189,13 +189,13 @@ class PropiedadesController extends Controller
 
         $field = $i == 0 ? 'portada' : "foto_$i";
         $imagen = $model[$field];
-        $path = "images/propiedades/".$tipo."/";
+        $path = "images/propiedades/".$tipo;
 
         if (!file_exists($path)) {
             mkdir($path, 0777, true);
         }
 
-        $path = "$path/$titulo";
+        $path = "$path/$titulo/";
 
         if (!file_exists($path)) {
             mkdir($path, 0777, true);
@@ -208,7 +208,7 @@ class PropiedadesController extends Controller
         }else{
             $imagen = $model[$field];
         }
-        print_r($imagen);
+        // print_r($imagen);
         return $imagen;
 
     }
@@ -227,7 +227,7 @@ class PropiedadesController extends Controller
         $extras = PropiedadesExtrasList::find()->all();
 
         if ($this->request->isPost && $model->load($this->request->post())) {
-            print_r($this->request->post());
+            // print_r($this->request->post());
             // print_r(UploadedFile::getInstance($model, "portada"));
             $this->savePhotos($model, $galeria);
             // exit;
