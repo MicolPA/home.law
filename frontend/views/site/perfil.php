@@ -1,17 +1,25 @@
-<div class="container bg-secondary py-5 mb-5 pb-5  " style="height: 10rem;">
 
 
-    <div class="mt-5 mb-n5 py-5"> <img class="rounded-circle mt-n4  " src="../../web/images/avatar.jpg" alt=""></div>
-</div>
 
+
+<div class="bg-blue-profile"   >
+<div class="container">
+
+
+    <div class="mt-5 mb-n5 py-5 px-5 mx-5" > 
+        <img  class="rounded-circle mt-n4 mx-5 px-5 photo-profile " src="../../web/images/avatar.jpg" alt="">
+    </div>
+      </div>
+
+      </div>
 
 
 <div class="bg-white">
     <div class="container">
 
-        <div class="row">
-            <div class="col-lg-5">
-                <div class="mt-5 py-3">
+        <div class="row px-5 mx-5">
+            <div class="col-lg-5 ">
+                <div class="mt-5 py-3 px-5 mx-5">
                     <a href=""><i class="text-warning  fa-solid fa-star"></i></a>
                     <a href=""><i class="text-warning fa-solid fa-star"></i></a>
                     <a href=""><i class="text-warning fa-solid fa-star"></i></a>
@@ -49,7 +57,7 @@
             <div class="col-lg-7 py-5 my-5 ">
 
 
-                <p class="text-primary h5 mt-5 mb-4">
+                <p class="text-primary fs-5 mt-5 mb-4">
                     <span class="fw-bold">Reseña </span> Personal
                 </p>
 
@@ -62,11 +70,12 @@
                 </p>
 
 
-                <p class="text-primary h5 my-5">
+                <p class="text-primary fs-5 my-5">
                     <span class="fw-bold">Video </span> presentación
                 </p>
 
-                <iframe class="rounded-2" width="560" height="315" src="https://www.youtube.com/embed/CyEMjlxbiik" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+               
+                <iframe class="rounded pb-0" width="360" height="215" src="https://www.youtube.com/embed/CyEMjlxbiik" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
             </div>
 
 
@@ -76,12 +85,12 @@
 
 
 
-    <div class="bg-blue-profile mt-5 py-5">
+    <div class="bg-blue-profile  py-5">
 
 
 
         <div class="container">
-            <p class="text-white h5 my-5 text-center">
+            <p class="text-white fs-5 my-5 text-center">
                 <span class="fw-bold">My </span> property
             </p>
 
@@ -92,7 +101,7 @@
            
            
             </div>
-<p class="text-center text-white fs-3 mt-5">Cargando...</p>
-<p class="text-center text-white fs-3"><i class="fa-solid fa-spinner"></i></p>
+<p class="text-center text-transparent fs-2 mt-5">Cargando...</p>
+<p class="text-center text-transparent fs-2 "><i class="fa-solid fa-spinner"></i></p>
         </div>
     </div>

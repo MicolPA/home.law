@@ -60,6 +60,11 @@
     background: #f6f6f6;
 }
 
+.text-transparent
+{
+     color: rgb(252 248 247 / 48%);
+
+}
 .btn-round {
     border-radius: 100px !important;
 }
@@ -75,7 +80,7 @@
     }
 .bg-blue-profile
 {
-background-color: rgb(50 110 250);
+background-color: #0071ba;
 }
 
 
@@ -133,6 +138,11 @@ background-color: rgb(50 110 250);
     
 }
 
+.photo-profile
+{
+    width: 20rem;
+    height: 15rem;
+}
 .container-sm{
     max-width: 1200px !important;
 }
