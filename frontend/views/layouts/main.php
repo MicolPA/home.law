@@ -77,7 +77,7 @@ AppAsset::register($this);
                     </a>
 
                     <ul class="nav nav-pills">
-                        <li class="nav-item"><a href="#" class="nav-link text-white font-14">EXPLIRAR MAPA</a></li>
+                        <li class="nav-item"><a href="#" class="nav-link text-white font-14">EXPLORAR MAPA</a></li>
                         <li class="nav-item"><a href="<?= Yii::getAlias("@web") ?>/tasas-hipotecarias" class="nav-link text-white font-14">TASAS HIPOTECARIAS</a></li>
                         <li class="nav-item"><a href="<?= Yii::getAlias("@web") ?>/iniciar-sesion" class="nav-link text-white font-14">INICIAR SESIÓN</a></li>
                         <li class="nav-item"><a href="#" class="nav-link text-white font-14">IDIOMAS</a></li>
