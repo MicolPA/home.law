@@ -7,26 +7,26 @@
                 <span class=" prop-title bg-primary text-white py-2 w-100"><?= $propiedad->titulo_publicacion ?></span>
                 <p class="small text-muted mb-2 mt-5"><?= $propiedad->ubicacion->nombre ?></p>
             </span>
-            <div class="row p-3 text-secondary small text-center">
-                <div class="col-3 border-3 border-bottom border-end p-1">
+            <div class="row p-3 text-secondary  text-center">
+                <div class="col-3 border-3 border-bottom border-end py-1 px-0">
                     <div>
                         <i class="fa-solid fa-car-side mr-1"></i>
                         <?= $propiedad->parqueos ?>
                     </div>
                 </div>
-                <div class="col-3 border-3 border-bottom border-end p-1">
+                <div class="col-3 border-3 border-bottom border-end py-1 px-0">
                     <div>
                         <i class="fa-solid fa-bath mr-1"></i>
                         <?= $propiedad->baños ?>
                     </div>
                 </div>
-                <div class="col-3 border-3 border-bottom border-end p-1">
+                <div class="col-3 border-3 border-bottom border-end py-1 px-0">
                     <div>
                         <i class="fa-solid fa-bed mr-1"></i>
                         <?= $propiedad->habitaciones ?>
                     </div>
                 </div>
-                <div class="col-3 border-3 border-bottom p-1">
+                <div class="col-3 border-3 border-bottom py-1 px-0">
                     <div>
                         <i class="fa-solid fa-ruler-combined"></i>
                         <small style="font-size: 9px;"><?= $propiedad->metros ?>M<sup>2</sup></small>

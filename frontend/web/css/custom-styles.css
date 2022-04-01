@@ -5,6 +5,9 @@
 .text-danger{
 	color: #e92027;
 }
+.fw-bold-2{
+  font-weight: 500;
+}
 
 /*.text-secondary{
   color: #a8aab0 !important;
@@ -19,7 +22,7 @@
 }
 
 .bg-secondary{
-	background: #e2e3e4 !important;
+	background: #eeeff0 !important;
 }
 
 .nav-pills .nav-link{

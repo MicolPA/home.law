@@ -26,13 +26,13 @@ $this->title = $model->titulo_publicacion;
                       <div class="carousel-inner">
                          
                         <div class="carousel-item rounded active" data-slide-number="0">
-                          <img src="/frontend/web/<?= $model->portada ?>" class="d-block w-100 rounded" data-remote="/frontend/web/<?= $model->portada ?>" data-type="image" data-toggle="lightbox" data-gallery="example-gallery">
+                          <img src="/frontend/web/<?= $model->portada ?>" class="d-block w-100 prop-gallery-img" data-remote="/frontend/web/<?= $model->portada ?>" data-type="image" data-toggle="lightbox" data-gallery="example-gallery">
                         </div>
                         <?php $count = 0; ?>
                         <?php foreach ($fotos as $foto): ?>
                             <?php $count++ ?>
                             <div class="carousel-item rounded" data-slide-number="<?= $count ?>">
-                              <img src="/frontend/web/<?= $foto ?>" class="d-block w-100 rounded" data-remote="/frontend/web/<?= $foto ?>" data-type="image" data-toggle="lightbox" data-gallery="example-gallery">
+                              <img src="/frontend/web/<?= $foto ?>" class="d-block w-100 prop-gallery-img" data-remote="/frontend/web/<?= $foto ?>" data-type="image" data-toggle="lightbox" data-gallery="example-gallery">
                             </div>
                         <?php endforeach ?>
                         <!-- Button trigger modal -->
@@ -158,13 +158,13 @@ $this->title = $model->titulo_publicacion;
                        </div>
                        <div class="mt-3">
                            <a href="#" class="text-decoration-none fw-bold text-primary">
-                               <span class="btn btn-icon btn-sm btn-round text-white bg-gray mr-2"><i class="fa-solid fa-chart-line"></i></span> 
+                               <span class="btn btn-icon btn-sm btn-round text-white icons-gray mr-2"><i class="fa-solid fa-chart-line"></i></span> 
                                TASAS HIPOTECARIAS
                            </a>
                        </div>
                        <div class="mt-3">
                            <a href="#" class="text-decoration-none fw-bold text-primary">
-                               <span class="btn btn-icon btn-sm btn-round text-white bg-gray mr-2"><i class="fa-solid fa-arrow-down-long px-1"></i></span> 
+                               <span class="btn btn-icon btn-sm btn-round text-white icons-gray mr-2"><i class="fa-solid fa-arrow-down-long px-1"></i></span> 
                                DESCARGAR DICTAMEN
                            </a>
                        </div>

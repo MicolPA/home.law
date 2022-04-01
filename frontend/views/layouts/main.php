@@ -93,8 +93,8 @@ AppAsset::register($this);
         <?= $content ?>
     </main>
 
-    <footer class="footer mt-5 ">
-        <div class="container my-5 ">
+    <footer class="footer mt-5">
+        <div class="container my-5 py-5">
             <div class="row">
                 <div class="col-md-7">
                     <div class="pr-4">
@@ -103,14 +103,14 @@ AppAsset::register($this);
                             Lorem ipsum, dolor sit amet consectetur, adipisicing elit. Aliquam, veniam deleniti dolor quis et provident doloribus ut eveniet, sed tenetur labore quaerat ab! Magnam ea repudiandae alias fugiat tenetur, nam obcaecati recusandae dignissimos inventore eos in, totam reprehenderit impedit, quaerat magni ipsam quasi cupiditate libero. Assumenda cupiditate perspiciatis aperiam ipsum.
                         </p>
                         <div >
-                            <a href="#" class="btn btn-xs btn-danger rounded-3 pl-4 pr-4 mb-5 mr-2 font-14">EXPLORAR MAPA</a>
-                            <a href="#" class="btn btn-xs btn-secondary rounded-3 pl-4 pr-4 mb-5 mr-2 font-14">CONVIERTETE EN ASOCIADO</a>
-                            <a href="#" class="btn btn-xs btn-primary bg-primary rounded-3 pl-4 pr-4 mb-5 font-14">REGISTRATE</a>
+                            <a href="#" class="btn btn-xs btn-danger rounded-3 px-4 mb-5 mr-2 font-12">EXPLORAR MAPA</a>
+                            <a href="#" class="btn btn-xs btn-secondary rounded-3 px-4 mb-5 mr-2 font-12">CONVIERTETE EN ASOCIADO</a>
+                            <a href="#" class="btn btn-xs btn-primary bg-primary rounded-3 px-4 mb-5 font-12">REGISTRATE</a>
                         </div>
                     </div>
                 </div>
                 <div class="col-md-5">
-                    <div class="row   p-4">
+                    <div class="row p-4">
                         <div class="col-md-6 d-flex justify-content-center">
                             <ul class="list-unstyled text-dark">
                                 <li class="text-primary mb-2 fw-bold">Lugares <br> más buscados</li>
@@ -149,38 +149,32 @@ AppAsset::register($this);
                                                                                     ?></p> -->
         </div>
 
-        <div class="bg-secondary mt-0">
-            <div class="container-fluid ">
-                <div class="row ">
+        <div class="bg-gray mt-0">
+            <div class="container-fluid">
+                <div class="row">
                     <div class="col-md-7 py-5 mt-5 text-center ">
-                        <a href=""><i class=" text-secondary mx-2 fa-brands fa-facebook-f"></i></a>
-                        <a href=""><i class=" text-secondary mx-2 fa-brands fa-whatsapp"></i></a>
-                        <a href=""><i class=" text-secondary mx-2 fa-brands fa-twitter"></i></a>
-                        <a href=""><i class=" text-secondary mx-2 fa-brands fa-instagram"></i></a>
+                        <a href=""><i class=" text-gray mx-2 fa-brands h5 fa-facebook-f"></i></a>
+                        <a href=""><i class=" text-gray mx-2 fa-brands h5 fa-whatsapp"></i></a>
+                        <a href=""><i class=" text-gray mx-2 fa-brands h5 fa-twitter"></i></a>
+                        <a href=""><i class=" text-gray mx-2 fa-brands h5 fa-instagram"></i></a>
 
 
-                        <p class=" text-center text-dark pt-4 "> Copyright Todos los derechos reservados 2022, BEST LISTING</p>
-
-
+                        <p class=" text-center pt-4 fw-bold-2 text-gray"> Copyright <i class="fa-regular fa-copyright"></i> Todos los derechos reservados 2022, BEST LISTING</p>
                     </div>
 
                     <div class="col-md-5 py-5 mt-5">
                         <div class="row pb-0 mb-n2 ">
-                            <div class="col-md-7   mb-1"><a class="text-decoration-none" href="#"> <input type="text" class=" rounded-3 form-control small px-2" placeholder="Email" aria-label="Email" aria-describedby="basic-addon1"> </a></div>
+                            <div class="col-md-7 mb-1"><a class="text-decoration-none" href="#"> <input type="text" class=" rounded-3 form-control small px-2" placeholder="Email" aria-label="Email" aria-describedby="basic-addon1"> </a></div>
 
-                            <div class="col-md-5">
+                            <div class="col-md-5 mb-0">
                                 <div class="d-grid gap-1 col-md-5 ">
-                                    <button class="btn btn-danger rounded-3 pl-4 pr-4 mb-5 mr-2 font-14" type="button">SUSCRIBIR</button>
-
+                                    <button class="btn btn-danger rounded-3 pl-4 pr-4 mb-5 mr-2 font-12" type="button">SUSCRIBIR</button>
                                 </div>
                             </div>
 
                             <!-- <div class="col-md-5"> <a href="#" class="btn btn-xs btn-danger rounded-3 pl-4 pr-4 mb-5 mr-2 font-14">SUSCRIBIR</a></div> -->
 
-
-
-
-                            <p class="small text-muted " style="width: 39rem;">Lorem ipsum dolor sit amet amdirfbf asjgfhjasd consectetur adipisicing elit. Perspiciatis, dignissimos corrupti vero aliquid libero consequuntur odio quasi.</p>
+                            <p class="small text-muted fw-bold-2">Lorem, ipsum dolor sit amet consectetur, adipisicing elit. Distinctio totam non ut, ex commodi harum quia, quod veniam quo illum?</p>
                         </div>
                     </div>
 
