@@ -1,17 +1,13 @@
+<div class="bg-blue-profile">
+    <div class="container">
 
 
-
-
-<div class="bg-blue-profile"   >
-<div class="container">
-
-
-    <div class="mt-5 mb-n5 py-5 px-5 mx-5" > 
-        <img  class="rounded-circle mt-n4 mx-5 px-5 photo-profile " src="../../web/images/avatar.jpg" alt="">
+        <div>
+            <img class="rounded-circle mt-n4 mx-5 px-5 photo-profile pb-n3 " src="../../web/images/avatar.jpg" alt="">
+        </div>
     </div>
-      </div>
 
-      </div>
+</div>
 
 
 <div class="bg-white">
@@ -74,7 +70,7 @@
                     <span class="fw-bold">Video </span> presentación
                 </p>
 
-               
+
                 <iframe class="rounded pb-0" width="360" height="215" src="https://www.youtube.com/embed/CyEMjlxbiik" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
             </div>
 
@@ -98,10 +94,10 @@
                 <?php foreach ($propiedades as $propiedad) : ?>
                     <?= $this->render('/propiedades/_grid_propiedades', ['propiedad' => $propiedad, 'count' => 1]) ?>
                 <?php endforeach ?>
-           
-           
+
+
             </div>
-<p class="text-center text-transparent fs-2 mt-5">Cargando...</p>
-<p class="text-center text-transparent fs-2 "><i class="fa-solid fa-spinner"></i></p>
+            <p class="text-center text-transparent fs-2 mt-5">Cargando...</p>
+            <p class="text-center text-transparent fs-2 "><i class="fa-solid fa-spinner"></i></p>
         </div>
     </div>
