@@ -92,7 +92,7 @@ $this->title = $model->titulo_publicacion;
                                 </div>
                                 <div class="col-3 border-3 p-1 text-center">
                                     <div>
-                                        <img class="mr-1" src="/frontend/web/images/icons/Terreno.svg" width="25px">
+                                        <img class="mr-1" src="/frontend/web/images/icons/Terreno.svg" width="30px">
                                         <small class="small"><?= $model->metros ?>M<sup>2</sup></small>
                                     </div>
                                 </div>
