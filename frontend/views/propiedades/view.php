@@ -17,6 +17,13 @@ $this->title = $model->titulo_publicacion;
 <style>
     .carousel-item{
         max-height: 600px;
+
+        
+    }
+
+    .carousel-inner{
+       border-bottom-right-radius: 0.6rem !important;
+        border-bottom-left-radius: 0.6rem !important; 
     }
 </style>
 <div class="bg-white">
@@ -28,7 +35,7 @@ $this->title = $model->titulo_publicacion;
                   
                     <div id="myCarousel" class="carousel slide first-part w-100" data-ride="carousel">
 
-                      <div class="carousel-inner">
+                      <div class="carousel-inner ">
                          
                         <div class="carousel-item rounded active" data-slide-number="0">
                           <img src="/frontend/web/<?= $model->portada ?>" class="d-block w-100 prop-gallery-img" data-remote="/frontend/web/<?= $model->portada ?>" data-type="image" data-toggle="lightbox" data-gallery="example-gallery">
@@ -48,8 +55,8 @@ $this->title = $model->titulo_publicacion;
 
                     <div class="row my-3">
                         <div class="col-md-6">
-                            <h1 class="fs-4 text-primary"><?= $this->title ?></h1>
-                            <span class="text-muted fs-5"><?= $model->ubicacion->nombre ?></span>
+                            <h1 class="fs-4 text-primary mb-0"><?= $this->title ?></h1>
+                            <span class="text-light-gray fs-5"><?= $model->ubicacion->nombre ?></span>
                         </div>
                         <div class="col-md-6">
                             <div class="row p-3 text-secondary h5 text-end">
