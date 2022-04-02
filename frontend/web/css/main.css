@@ -173,6 +173,10 @@ background-color: #0071ba;
     .second-menu, .mobile-hidden{
         display: none
     }
+
+    .home-card{
+        width: 100% !important;
+    }
 }
 
 #carousel-thumbs img{
