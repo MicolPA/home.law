@@ -14,6 +14,11 @@ for ($i = 2; $i < 13; $i++) {
 $this->title = $model->titulo_publicacion;
 \yii\web\YiiAsset::register($this);
 ?>
+<style>
+    .carousel-item{
+        max-height: 600px;
+    }
+</style>
 <div class="bg-white">
     <div class="container-sm py-0">
 
@@ -200,16 +205,33 @@ $this->title = $model->titulo_publicacion;
 
 <div class="bg-lightgray p-4">
     <div class="container">
-        <div class="row pt-5 mb-5 pb-5">
+        <div class="row align-items-center pt-5 mb-5 pb-5">
             <div class="col-md-12 mb-4">
                 <h2 class="text-primary fw-lighter h4 text-center">
                    <span class="fw-bold">Recorrido 360</span> en la propiedad
                 </h2>
             </div>
-
-            <div class="col-md-10 m-auto">
+            <div class="col-md-1"></div>
+            <div class="col-md-10">
                 <div class="p-3">
                     <img src="/frontend/web/images/ejemplo-360.jpg" width="100%" class="rounded">
+                </div>
+            </div>
+            <div class="col-md-1">
+                <div class="mb-2">
+                    <a href="#" class="text-decoration-none fw-bold text-primary ">
+                       <span class="btn btn-icon btn-sm btn-round text-white bg-primary mr-2"><i class="fa-solid fa-arrow-up"></i></span> 
+                    </a>
+                </div>
+                <div class="mb-2">
+                    <a href="#" class="text-decoration-none fw-bold text-primary mb-2">
+                       <span class="btn btn-icon btn-sm btn-round text-white icons-gray mr-2"><i class="fa-solid fa-maximize"></i></span> 
+                    </a>
+                </div>
+                <div class="mb-2">
+                    <a href="#" class="text-decoration-none fw-bold text-primary">
+                       <span class="btn btn-icon btn-sm btn-round text-white bg-primary mr-2"><i class="fa-solid fa-arrow-down"></i></span> 
+                    </a>
                 </div>
             </div>
         </div>
