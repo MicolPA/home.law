@@ -24,6 +24,7 @@ AppAsset::register($this);
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Hind+Siliguri:wght@300&display=swap" rel="stylesheet">
+    <link href="/frontend/web/wefonts/Gotham/Gotham-Medium.otf" rel="stylesheet">
     <?php $this->head() ?>
 </head>
 
@@ -34,6 +35,7 @@ AppAsset::register($this);
         .nav-item {
             float: right !important;
         }
+        
     </style>
 
     <div class="border-bottom">

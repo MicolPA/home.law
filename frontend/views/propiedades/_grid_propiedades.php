@@ -10,25 +10,25 @@
             <div class="row p-3 text-secondary  text-center">
                 <div class="col-3 border-3 border-bottom border-end py-1 px-0">
                     <div>
-                        <i class="fa-solid fa-car-side mr-1"></i>
+                        <img src="/frontend/web/images/icons/parqueo.svg" width="20px">
                         <?= $propiedad->parqueos ?>
                     </div>
                 </div>
                 <div class="col-3 border-3 border-bottom border-end py-1 px-0">
                     <div>
-                        <i class="fa-solid fa-bath mr-1"></i>
+                        <img src="/frontend/web/images/icons/bath.svg" width="20px">
                         <?= $propiedad->baños ?>
                     </div>
                 </div>
                 <div class="col-3 border-3 border-bottom border-end py-1 px-0">
                     <div>
-                        <i class="fa-solid fa-bed mr-1"></i>
+                        <img src="/frontend/web/images/icons/habitacion.svg" width="20px">
                         <?= $propiedad->habitaciones ?>
                     </div>
                 </div>
                 <div class="col-3 border-3 border-bottom py-1 px-0">
                     <div>
-                        <i class="fa-solid fa-ruler-combined"></i>
+                        <img src="/frontend/web/images/icons/Terreno.svg" width="20px">
                         <small style="font-size: 9px;"><?= $propiedad->metros ?>M<sup>2</sup></small>
                     </div>
                 </div>

@@ -71,33 +71,32 @@ $this->title = $model->titulo_publicacion;
                             <span class="text-light-gray fs-5"><?= $model->ubicacion->nombre ?></span>
                         </div>
                         <div class="col-md-6">
-                            <div class="row p-3 text-secondary h5 text-end">
-                                <div class="col-1"></div>
+                            <div class="row align-items-center p-3 text-secondary h5 text-end">
                                 <div class="col-2 text-center border-3 p-1">
                                     <div>
-                                        <i class="fa-solid fa-car-side mr-1"></i>
+                                        <img class="mr-1" src="/frontend/web/images/icons/parqueo.svg" width="30px">
                                         <?= $model->parqueos ?>
                                     </div>
                                 </div>
                                 <div class="col-2 text-center border-3 p-1">
                                     <div>
-                                        <i class="fa-solid fa-bath mr-1"></i>
+                                        <img class="mr-1" src="/frontend/web/images/icons/bath.svg" width="30px">
                                         <?= $model->baños ?>
                                     </div>
                                 </div>
                                 <div class="col-2 text-center border-3 p-1">
                                     <div>
-                                        <i class="fa-solid fa-bed mr-1"></i>
+                                        <img class="mr-1" src="/frontend/web/images/icons/habitacion.svg" width="30px">
                                         <?= $model->habitaciones ?>
                                     </div>
                                 </div>
-                                <div class="col-2 border-3 p-1">
+                                <div class="col-3 border-3 p-1 text-center">
                                     <div>
-                                        <i class="fa-solid fa-ruler-combined"></i>
+                                        <img class="mr-1" src="/frontend/web/images/icons/Terreno.svg" width="25px">
                                         <small class="small"><?= $model->metros ?>M<sup>2</sup></small>
                                     </div>
                                 </div>
-                                <div class="col-3 border-3 p-1 text-end">
+                                <div class="col-3 border-3 p-1 text-center">
                                     <div>
                                         <small class="text-danger fw-bold">NO.<?= $model->codigo ?></small>
                                     </div>
