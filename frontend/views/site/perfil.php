@@ -1,9 +1,11 @@
 <div class="bg-blue-profile">
-    <div class="container">
+    <div class="container position-relative position-relative-example">
 
 
-        <div>
-            <img class="rounded-circle mt-n4 mx-5 px-5 photo-profile pb-n3 " src="../../web/images/avatar.jpg" alt="">
+        <div class="h-100">
+        
+    <img class="rounded-circle position-absolute top-100 start-0 translate-middle photo-profile  " src="../../web/images/avatar.jpg" alt="">
+    
         </div>
     </div>
 
@@ -13,9 +15,10 @@
 <div class="bg-white">
     <div class="container">
 
+  
         <div class="row px-5 mx-5">
-            <div class="col-lg-5 ">
-                <div class="mt-5 py-3 px-5 mx-5">
+            <div class="col-lg-5 mt-4 ">
+                <div class="mt-5 py-5 px-5 mx-4 fs-4">
                     <a href=""><i class="text-warning  fa-solid fa-star"></i></a>
                     <a href=""><i class="text-warning fa-solid fa-star"></i></a>
                     <a href=""><i class="text-warning fa-solid fa-star"></i></a>
@@ -24,8 +27,8 @@
                 </div>
 
 
-                <p class="fw-bold fs-3 text-primary pt-3 mb-0"> Carlos Andres Avila</p>
-                <p class="small text-muted mb-2 ">Agente Inmobilario</p>
+                <p class="fw-bold fs-3 text-primary pt-1 mb-0"> Carlos Andres Avila</p>
+                <p class="small text-light-gray mb-2 ">Agente Inmobilario</p>
 
                 <div class="px-5 py-3 fs-3">
 
@@ -35,12 +38,12 @@
                     <a href=""><i class=" text-primary mx-2 fa-brands fa-instagram"></i></a>
                 </div>
 
-                <p class="small text-muted mt-5 mb-0 p-0 ">Contactos</p>
+                <p class="small text-light-gray mt-5 mb-0 p-0 ">Contactos</p>
                 <p class="fw-bold fs-5 text-primary mb-"> (829) 571-0277</p>
 
 
 
-                <p class="small text-muted mt-4 mb-0 p-0 ">Correo Electronico:</p>
+                <p class="small text-light-gray mt-4 mb-0 p-0 ">Correo Electrónico:</p>
                 <p class="fw-bold fs-5 text-primary mb-"> jconfidente@bestlisting.com</p>
 
                 <div class="my-5 pb-5">
@@ -57,12 +60,12 @@
                     <span class="fw-bold">Reseña </span> Personal
                 </p>
 
-                <p class="small text-muted mb-2">Excelente apartamentos ubicado en el sector más exclusivo de Distrito, justo en en el centro
+                <p class="small text-light-gray mb-2">Excelente apartamentos ubicado en el sector más exclusivo de Distrito, justo en en el centro
                     de la ciudad; cerca de restaurantes, supermercados, facil acceso a las principales avenidas. </p>
-                <p class="small text-muted mb-2">Ubicado en el 4to nivel, el apartamento consta de 2 habitaciones cada una con su baño y
+                <p class="small text-light-gray mb-2">Ubicado en el 4to nivel, el apartamento consta de 2 habitaciones cada una con su baño y
                     principal con walking closet, 2 parqueos techados, baño de visita, persianas anti ruido, pisos
                     en marmol.</p>
-                <p class="small text-muted mb-2">Área social con piscina y salon de eventos, gym y juegos para niños.
+                <p class="small text-light-gray mb-2">Área social con piscina y salon de eventos, gym y juegos para niños.
                 </p>
 
 

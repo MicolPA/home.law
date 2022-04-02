@@ -23,6 +23,11 @@
     background: #a7aeb6;
 }   
 
+.text-light-gray
+{
+   color: #a7aeb6;
+}
+
 
 
 .font-family-2{
@@ -83,7 +88,11 @@
 background-color: #0071ba;
 
 }
-
+.position-relative-example {
+    width: 48rem;
+    height: 15rem;
+ 
+  }
 
 
 .prop-venta p{
@@ -133,15 +142,11 @@ background-color: #0071ba;
 }
 
 
-.profile-picture
-{
-    position:absolute
-    
-}
+
 
 .photo-profile
 {
-    width: 20rem;
+    width: 15rem;
     height: 15rem;
     
 }
