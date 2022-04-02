@@ -54,7 +54,8 @@ AppAsset::register($this);
                     <li class="nav-item"><a href="#" class="nav-link text-primary font-14">VENTAS</a></li>
                     <li class="nav-item"><a href="#" class="nav-link text-primary font-14">AGENTES</a></li>
                     <li class="nav-item"><a href="#" class="nav-link text-primary font-14">CONTACTOS</a></li>
-                    <li class="nav-item"><a href="#" class="nav-link text-primary font-14">REP DOM</a></li>
+                    <li class="nav-item"><a href="#" class="nav-link text-primary font-14">REP DOM </a></li>
+                    <li class="nav-item"><a href="#" class="nav-link text-primary font-14 pt-1"><img src="<?= Yii::getAlias("@web") ?>/images/bandera-rd.png" width="30px" ></a></li>
                 </ul>
                 <!--  <div class="text-end">
                   <button type="button" class="btn btn-outline-dark me-2">Login</button>
@@ -80,7 +81,7 @@ AppAsset::register($this);
                         <li class="nav-item"><a href="#" class="nav-link text-white font-14">EXPLORAR MAPA</a></li>
                         <li class="nav-item"><a href="<?= Yii::getAlias("@web") ?>/tasas-hipotecarias" class="nav-link text-white font-14">TASAS HIPOTECARIAS</a></li>
                         <li class="nav-item"><a href="<?= Yii::getAlias("@web") ?>/iniciar-sesion" class="nav-link text-white font-14">INICIAR SESIÓN</a></li>
-                        <li class="nav-item"><a href="#" class="nav-link text-white font-14">IDIOMAS</a></li>
+                        <li class="nav-item"><a href="#" class="nav-link text-white font-14">IDIOMA</a></li>
                         <!-- <li class="nav-item"><a href="#" class="nav-link text-white font-14">CONTACTOS</a></li> -->
                     </ul>
                 </div>
