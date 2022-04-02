@@ -17,13 +17,19 @@ $this->title = $model->titulo_publicacion;
 <style>
     .carousel-item{
         max-height: 600px;
-
-        
     }
 
     .carousel-inner{
        border-bottom-right-radius: 0.6rem !important;
         border-bottom-left-radius: 0.6rem !important; 
+    }
+
+    .container-sm, .container{
+        max-width: 1100px !important;
+    }
+
+    .my-svg{
+        display: none
     }
 </style>
 <div class="bg-white">
@@ -35,7 +41,7 @@ $this->title = $model->titulo_publicacion;
                   
                     <div id="myCarousel" class="carousel slide first-part w-100" data-ride="carousel">
 
-                      <div class="carousel-inner ">
+                      <div class="carousel-inner position-relative">
                          
                         <div class="carousel-item rounded active" data-slide-number="0">
                           <img src="/frontend/web/<?= $model->portada ?>" class="d-block w-100 prop-gallery-img" data-remote="/frontend/web/<?= $model->portada ?>" data-type="image" data-toggle="lightbox" data-gallery="example-gallery">
@@ -48,7 +54,13 @@ $this->title = $model->titulo_publicacion;
                             </div>
                         <?php endforeach ?>
                         <!-- Button trigger modal -->
-                        
+
+                        <div class="position-absolute bottom-0 end-0 gallery-icons px-3 py-3 text-center">
+                            <img src="/frontend/web/images/icons/compartir.svg" width="28px" class="mr-4 ml-2">
+                            <img src="/frontend/web/images/icons/descargar.svg" width="28px" class="mr-4">
+                            <img src="/frontend/web/images/icons/ampliar.svg" width="28px" class="mr-4">
+
+                        </div>
                       </div>
                       
                     </div>
@@ -82,7 +94,7 @@ $this->title = $model->titulo_publicacion;
                                 <div class="col-2 border-3 p-1">
                                     <div>
                                         <i class="fa-solid fa-ruler-combined"></i>
-                                        <small><?= $model->metros ?>M<sup>2</sup></small>
+                                        <small class="small"><?= $model->metros ?>M<sup>2</sup></small>
                                     </div>
                                 </div>
                                 <div class="col-3 border-3 p-1 text-end">
@@ -227,17 +239,17 @@ $this->title = $model->titulo_publicacion;
             <div class="col-md-1">
                 <div class="mb-2">
                     <a href="#" class="text-decoration-none fw-bold text-primary ">
-                       <span class="btn btn-icon btn-sm btn-round text-white bg-primary mr-2"><i class="fa-solid fa-arrow-up"></i></span> 
+                       <span class="btn btn-icon btn-sm btn-round text-white bg-primary"><i class="fa-solid fa-arrow-up"></i></span> 
                     </a>
                 </div>
                 <div class="mb-2">
                     <a href="#" class="text-decoration-none fw-bold text-primary mb-2">
-                       <span class="btn btn-icon btn-sm btn-round text-white icons-gray mr-2"><i class="fa-solid fa-maximize"></i></span> 
+                       <span class="btn btn-icon btn-sm btn-round text-white icons-gray"><img src="/frontend/web/images/icons/ampliar.svg" width="12px"></span> 
                     </a>
                 </div>
                 <div class="mb-2">
                     <a href="#" class="text-decoration-none fw-bold text-primary">
-                       <span class="btn btn-icon btn-sm btn-round text-white bg-primary mr-2"><i class="fa-solid fa-arrow-down"></i></span> 
+                       <span class="btn btn-icon btn-sm btn-round text-white bg-primary"><i class="fa-solid fa-arrow-down"></i></span> 
                     </a>
                 </div>
             </div>
