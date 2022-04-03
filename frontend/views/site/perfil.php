@@ -71,7 +71,7 @@
             <div class="col-lg-7 py-0 my-0 py-sm-5 my-sm-5    ">
 
 
-                <p class="text-primary fs-5 mt-0 mb-0 mt-md-5 mt-sm-5 mb-sm-4 mb-md-4 ">
+                <p class="text-primary fs-5  mt-0 mb-5 mt-md-5 mt-sm-5  ">
                     <span class="fw-bold">Reseña </span> Personal
                 </p>
 
