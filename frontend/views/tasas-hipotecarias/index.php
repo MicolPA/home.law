@@ -34,10 +34,10 @@
                                             <p class="m-0 pt-2 fw-bold font-14 mt-1">TASA FIJA</p>
                                         </div>
                                         <div class="col-md-3">
-                                            <p class="m-0 pt-2 fw-bold font-14 mt-1"><?= $m->duracion ?></p>
+                                            <p class="m-0 pt-2 fw-bold font-14 mt-1"><?= $m->duracion_1 ?></p>
                                         </div>
                                         <div class="col-md-3">
-                                            <p class="m-0 pt-2 fw-bold font-14 mt-1"><?= $m->tasa ?></p>
+                                            <p class="m-0 pt-2 fw-bold font-14 mt-1"><?= $m->tasa_1 ?></p>
                                         </div>
                                     </div>
                                     <?php if ($m->tasa_2): ?>
