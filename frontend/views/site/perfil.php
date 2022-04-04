@@ -1,24 +1,39 @@
-<div class="bg-blue-profile">
-    <div class="container position-relative position-relative-example">
+<div class="bg-blue-profile w-100  ">
+    <div class="container-fluid  banner-profile">
 
-
-        <div class="h-100">
-        
-    <img class="rounded-circle position-absolute top-100 start-0 translate-middle photo-profile  " src="../../web/images/avatar.jpg" alt="">
-    
-        </div>
     </div>
+    <!-- <div class="container position-relative position-relative-example  mx-sm-0"> 
+
+        <div class="row">
+            <div class="h-100 col-md-12">
+
+                <img class="rounded-circle position-absolute top-100 start-0 translate-middle photo-profile  " src="../../web/images/avatar.jpg" alt="">
+
+            </div>
+        </div>
+    </div> -->
 
 </div>
 
 
-<div class="bg-white">
+<div class="bg-white w-100">
     <div class="container">
+        <div class="row px-0 mx-0  mx-md-5 mx-sm-5  ">
+            <div class="col-lg-5 col-sm-12  ">
+                <div class="margin-negative  px-5 mx-4 fs-4">
 
-  
-        <div class="row px-5 mx-5">
-            <div class="col-lg-5 mt-4 ">
-                <div class="mt-5 py-5 px-5 mx-4 fs-4">
+                    <img class="rounded-circle    " src="../../web/images/avatar.jpg" alt="">
+
+                </div>
+
+            </div>
+            <div class="col-lg-7"> </div>
+
+        </div>
+
+        <div class="row px-0 mx-0 px-md-5 px-sm-5 mx-md-5 mx-sm-5  ">
+            <div class="col-lg-5 col-sm-12   ">
+                <div class=" pb-5 px-5   mx-2  mx-md-5 fs-4">
                     <a href=""><i class="text-warning  fa-solid fa-star"></i></a>
                     <a href=""><i class="text-warning fa-solid fa-star"></i></a>
                     <a href=""><i class="text-warning fa-solid fa-star"></i></a>
@@ -53,10 +68,10 @@
                 </div>
             </div>
 
-            <div class="col-lg-7 py-5 my-5 ">
+            <div class="col-lg-7 py-0 my-0 py-sm-5 my-sm-5    ">
 
 
-                <p class="text-primary fs-5 mt-5 mb-4">
+                <p class="text-primary fs-5  mt-0 mb-5 mt-md-5 mt-sm-5  ">
                     <span class="fw-bold">Reseña </span> Personal
                 </p>
 
@@ -73,8 +88,12 @@
                     <span class="fw-bold">Video </span> presentación
                 </p>
 
+                <div class="mb-3 ">
+                    <iframe class="rounded pb-0 youtube-video" width="360" height="215"  src="https://www.youtube.com/embed/CyEMjlxbiik" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
-                <iframe class="rounded pb-0" width="360" height="215" src="https://www.youtube.com/embed/CyEMjlxbiik" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                </div>
+
+
             </div>
 
 
