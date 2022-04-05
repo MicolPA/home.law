@@ -95,12 +95,12 @@ AppAsset::register($this);
         </div>
     </section>
 
-    <main role="main" class="flex-shrink-0 bg-secondary pb-5">
+    <main role="main" class="flex-shrink-0 bg-secondary">
         <?= Alert::widget() ?>
         <?= $content ?>
     </main>
 
-    <footer class="footer mt-5">
+    <footer class="footer mt-4">
         <div class="container my-5 py-5">
             <div class="row">
                 <div class="col-md-7">
