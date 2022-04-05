@@ -1,5 +1,5 @@
 
-<div class="col-lg-3 text-center mb-4 col-md-12 <?= in_array($count, array(1,5,9)) ? '' : 'mobile-hidden'  ?>">
+<div class="col-lg-3 text-center my-3 col-md-12 <?= in_array($count, array(1,5,9)) ? '' : 'mobile-hidden'  ?>">
     <a class="text-decoration-none" href="/frontend/web/propiedades/ver/<?= $propiedad->id ?>">
         <div class="card pb-3">
             <div class=" prop-card-img" style="background-image: url('/frontend/web/<?= $propiedad->portada ?>');"></div>
