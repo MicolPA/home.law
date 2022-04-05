@@ -106,7 +106,7 @@ AppAsset::register($this);
                 <div class="col-md-7">
                     <div class="pr-4">
                         <img src="/frontend/web/images/logo.png" width="120px">
-                        <p class="mt-5 text-muted mb-5">
+                        <p class="mt-5 text-muted mb-5 font-14">
                             Lorem ipsum, dolor sit amet consectetur, adipisicing elit. Aliquam, veniam deleniti dolor quis et provident doloribus ut eveniet, sed tenetur labore quaerat ab! Magnam ea repudiandae alias fugiat tenetur, nam obcaecati recusandae dignissimos inventore eos in, totam reprehenderit impedit, quaerat magni ipsam quasi cupiditate libero. Assumenda cupiditate perspiciatis aperiam ipsum.
                         </p>
                         <div >
@@ -119,7 +119,7 @@ AppAsset::register($this);
                 <div class="col-md-5">
                     <div class="row p-4">
                         <div class="col-md-6 d-flex justify-content-center">
-                            <ul class="list-unstyled text-dark">
+                            <ul class="list-unstyled text-dark font-14">
                                 <li class="text-primary mb-2 fw-bold">Lugares <br> más buscados</li>
                                 <li>La Romana</li>
                                 <li>Bayahibe</li>
@@ -132,7 +132,7 @@ AppAsset::register($this);
                             </ul>
                         </div>
                         <div class="col-md-6 d-flex justify-content-center">
-                            <ul class="list-unstyled text-dark">
+                            <ul class="list-unstyled text-dark font-14">
                                 <li class="text-primary mb-2 fw-bold">Categorías <br> más buscadas</li>
                                 <li>La Romana</li>
                                 <li>Bayahibe</li>
