@@ -70,7 +70,7 @@ AppAsset::register($this);
     <section class="w-100" style="z-index: 1;position: absolute;">
         <div class="bg-danger w-50 float-end second-menu p-0">
             <div class="container">
-                <div class="d-flex flex-wrap justify-content-center">
+                <div class="flex-wrap justify-content-center">
                     <!-- <a href="/" class="d-flex align-items-center mb-md-0 me-md-auto text-dark text-decoration-none">
                         <svg class="bi me-2" width="40" height="32">
                             <use xlink:href="#bootstrap" />
@@ -80,10 +80,10 @@ AppAsset::register($this);
                     </a> -->
 
                     <ul class="nav nav-pills">
-                        <li class="nav-item"><a href="#" class="nav-link text-white font-14">EXPLORAR MAPA</a></li>
-                        <li class="nav-item"><a href="<?= Yii::getAlias("@web") ?>/tasas-hipotecarias" class="nav-link text-white font-14">TASAS HIPOTECARIAS</a></li>
-                        <li class="nav-item"><a href="<?= Yii::getAlias("@web") ?>/iniciar-sesion" class="nav-link text-white font-14">INICIAR SESIÓN</a></li>
-                        <li class="nav-item"><a href="#" class="nav-link text-white font-14">IDIOMA</a></li>
+                        <li class="nav-item"><a href="#" class="nav-link text-white font-12">EXPLORAR MAPA</a></li>
+                        <li class="nav-item"><a href="<?= Yii::getAlias("@web") ?>/tasas-hipotecarias" class="nav-link text-white font-12">TASAS HIPOTECARIAS</a></li>
+                        <li class="nav-item"><a href="<?= Yii::getAlias("@web") ?>/iniciar-sesion" class="nav-link text-white font-12">INICIAR SESIÓN</a></li>
+                        <li class="nav-item"><a href="#" class="nav-link text-white font-12">IDIOMA</a></li>
                         <!-- <li class="nav-item"><a href="#" class="nav-link text-white font-14">CONTACTOS</a></li> -->
                     </ul>
                 </div>
