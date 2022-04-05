@@ -19,12 +19,17 @@
   color: #a8aab0 !important;
 }*/
 
-.bg-primary{
+.bg-primary, .btn-primary{
 	background: #004b70 !important;
 }
 
+.btn-primary, .btn-danger{
+  border: 0;
+} 
+
 .bg-danger, .btn-danger{
 	background: #e92027 !important;
+
 }
 
 .bg-secondary{

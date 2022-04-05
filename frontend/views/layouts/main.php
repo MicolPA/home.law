@@ -95,7 +95,7 @@ AppAsset::register($this);
         </div>
     </section>
 
-    <main role="main" class="flex-shrink-0 bg-secondary">
+    <main role="main" class="flex-shrink-0 bg-secondary pb-5">
         <?= Alert::widget() ?>
         <?= $content ?>
     </main>

@@ -1,4 +1,8 @@
+<?php 
 
+$this->title = "Tasas Hipotecarias";
+
+ ?>
 <div class="container">
     <div class="container pt-5">
         <div class="row pt-5 m-auto" style="max-width: 800px">
