@@ -185,3 +185,9 @@ background-color: #0071ba;
 {
     max-width: 100%;
 }
+
+.tasas .accordion-button:not(.collapsed) {
+    color: #004b70;
+    background-color: #f7f7f7;
+    box-shadow: inset 0 -1px 0 rgb(0 0 0 / 13%);
+}

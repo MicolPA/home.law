@@ -10,7 +10,7 @@
                 <div class="accordion" id="accordionExample">
                     <?php foreach ($dataProvider->query->all() as $m): ?>
                       <div class="accordion-item">
-                        <h2 class="accordion-header" id="headingTwo<?= $m->id ?>">
+                        <h2 class="accordion-header tasas" id="headingTwo<?= $m->id ?>">
                           <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo<?= $m->id ?>" aria-expanded="false" aria-controls="collapseTwo<?= $m->id ?>">
                             <div class="row w-100 align-items-center">
                                 <div class="col-md-6">
