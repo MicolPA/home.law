@@ -42,6 +42,8 @@ return [
             'showScriptName' => false,
             'rules' => [
                 'tasas-hipotecarias' => 'tasas-hipotecarias/index',
+                'iniciar-sesion' => 'site/login',
+                'admin' => 'admin/index',
                 '<controller:\w+>/<action:\w+>/<id:\d+>' => '<controller>/<action>',
             ],
         ],

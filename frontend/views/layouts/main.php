@@ -80,10 +80,14 @@ AppAsset::register($this);
                     </a> -->
 
                     <ul class="nav nav-pills">
-                        <li class="nav-item"><a href="#" class="nav-link text-white font-12">EXPLORAR MAPA</a></li>
-                        <li class="nav-item"><a href="<?= Yii::getAlias("@web") ?>/tasas-hipotecarias" class="nav-link text-white font-12">TASAS HIPOTECARIAS</a></li>
-                        <li class="nav-item"><a href="<?= Yii::getAlias("@web") ?>/iniciar-sesion" class="nav-link text-white font-12">INICIAR SESIÓN</a></li>
-                        <li class="nav-item"><a href="#" class="nav-link text-white font-12">IDIOMA</a></li>
+                        <li class="nav-item"><a href="#" class="nav-link text-white font-12 px-4">EXPLORAR MAPA</a></li>
+                        <li class="nav-item"><a href="<?= Yii::getAlias("@web") ?>/tasas-hipotecarias" class="nav-link text-white font-12 px-4">TASAS HIPOTECARIAS</a></li>
+                        <?php if (Yii::$app->user->isGuest): ?>
+                            <li class="nav-item"><a href="<?= Yii::getAlias("@web") ?>/iniciar-sesion" class="nav-link text-white font-12 px-4">INICIAR SESIÓN</a></li>
+                        <?php else: ?>
+                            <li class="nav-item"><a href="<?= Yii::getAlias("@web") ?>/admin" class="nav-link text-white font-12 px-4">ADMINISTRADOR</a></li>
+                        <?php endif ?>
+                        <li class="nav-item"><a href="#" class="nav-link text-white font-12 px-4">IDIOMA</a></li>
                         <!-- <li class="nav-item"><a href="#" class="nav-link text-white font-14">CONTACTOS</a></li> -->
                     </ul>
                 </div>
