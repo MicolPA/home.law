@@ -15,7 +15,7 @@ $this->title = "Tasas Hipotecarias";
                     <?php foreach ($dataProvider->query->all() as $m): ?>
                       <div class="accordion-item">
                         <h2 class="accordion-header tasas" id="headingTwo<?= $m->id ?>">
-                          <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo<?= $m->id ?>" aria-expanded="false" aria-controls="collapseTwo<?= $m->id ?>">
+                          <button class="accordion-button collapsed bg-white" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo<?= $m->id ?>" aria-expanded="false" aria-controls="collapseTwo<?= $m->id ?>">
                             <div class="row w-100 align-items-center">
                                 <div class="col-md-6">
                                     <p class="m-0"><img src="/frontend/web/<?= $m->photo_url ?>" width="150px"></p>
@@ -29,7 +29,7 @@ $this->title = "Tasas Hipotecarias";
                           </button>
                         </h2>
                         <div id="collapseTwo<?= $m->id ?>" class="accordion-collapse collapse" aria-labelledby="headingTwo<?= $m->id ?>" data-bs-parent="#accordionExample">
-                          <div class="accordion-body">
+                          <div class="accordion-body bg-light">
                             <div class="row">
                                 <div class="col-md-1"></div>
                                 <div class="col-md-8">
