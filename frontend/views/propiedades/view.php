@@ -16,16 +16,18 @@ $this->title = $model->titulo_publicacion;
 ?>
 <style>
     .carousel-item{
-        max-height: 600px;
+        max-height: 420px;
     }
 
     .carousel-inner{
        border-bottom-right-radius: 0.6rem !important;
         border-bottom-left-radius: 0.6rem !important; 
     }
-
-    .container-sm, .container{
+    .container{
         max-width: 1100px !important;
+    }
+    .container-sm{
+        max-width: 970px !important;
     }
 
     .my-svg{
@@ -59,44 +61,44 @@ $this->title = $model->titulo_publicacion;
                             <img src="/frontend/web/images/icons/compartir.svg" width="28px" class="mr-4 ml-2">
                             <img src="/frontend/web/images/icons/descargar.svg" width="28px" class="mr-4">
                             <img src="/frontend/web/images/icons/ampliar.svg" width="28px" class="mr-4">
-
                         </div>
                       </div>
                       
                     </div>
 
-                    <div class="row my-3">
-                        <div class="col-md-6">
-                            <h1 class="fs-4 text-primary mb-0"><?= $this->title ?></h1>
-                            <span class="text-light-gray fs-5"><?= $model->ubicacion->nombre ?></span>
+                    <div class="row my-3 px-4">
+                        <div class="col-md-5">
+                            <h1 class="h5 text-primary mb-0 fw-bold"><?= $this->title ?></h1>
+                            <span class="text-light-gray h5 fw-normal"><?= $model->ubicacion->nombre ?></span>
                         </div>
-                        <div class="col-md-6">
-                            <div class="row align-items-center p-3 text-secondary h5 text-end">
-                                <div class="col-2 text-center border-3 p-1">
+                        <div class="col-md-7">
+                            <div class="row align-items-center py-3 text-secondary h5 text-end">
+                                <div class="col-1"></div>
+                                <div class="col-2 text-center border-3 p-0">
                                     <div>
-                                        <img class="mr-1" src="/frontend/web/images/icons/parqueo.svg" width="30px">
+                                        <img class="mr-1" src="/frontend/web/images/icons/parqueo.svg" width="28px">
                                         <?= $model->parqueos ?>
                                     </div>
                                 </div>
-                                <div class="col-2 text-center border-3 p-1">
+                                <div class="col-2 text-center border-3 p-0">
                                     <div>
-                                        <img class="mr-1" src="/frontend/web/images/icons/bath.svg" width="30px">
+                                        <img class="mr-1" src="/frontend/web/images/icons/bath.svg" width="28px">
                                         <?= $model->baños ?>
                                     </div>
                                 </div>
-                                <div class="col-2 text-center border-3 p-1">
+                                <div class="col-2 text-center border-3 p-0">
                                     <div>
-                                        <img class="mr-1" src="/frontend/web/images/icons/habitacion.svg" width="30px">
+                                        <img class="mr-1" src="/frontend/web/images/icons/habitacion.svg" width="28px">
                                         <?= $model->habitaciones ?>
                                     </div>
                                 </div>
-                                <div class="col-3 border-3 p-1 text-center">
+                                <div class="col-3 border-3 p-0 text-center">
                                     <div>
                                         <img class="mr-1" src="/frontend/web/images/icons/Terreno.svg" width="30px">
                                         <small class="small"><?= $model->metros ?>M<sup>2</sup></small>
                                     </div>
                                 </div>
-                                <div class="col-3 border-3 p-1 text-center">
+                                <div class="col-2 border-3 p-0 text-center">
                                     <div>
                                         <small class="text-danger fw-bold">NO.<?= $model->codigo ?></small>
                                     </div>
@@ -107,7 +109,7 @@ $this->title = $model->titulo_publicacion;
                     </div>
 
                     <!-- Carousel Navigation -->
-                    <div id="carousel-thumbs" class="carousel slide bg-white rounded-bottom" data-ride="carousel">
+                    <div id="carousel-thumbs" class="carousel slide bg-white rounded-bottom px-4" data-ride="carousel">
                       <div class="carousel-inner">
                         <div class="carousel-item active">
                           <div class="row mx-0">
