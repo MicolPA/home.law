@@ -232,12 +232,12 @@ $this->title = $model->titulo_publicacion;
                 </h2>
             </div>
             <div class="col-md-1"></div>
-            <div class="col-md-10">
+            <div class="col-md-10 col-10">
                 <div class="p-3">
                     <img src="/frontend/web/images/ejemplo-360.jpg" width="100%" class="rounded">
                 </div>
             </div>
-            <div class="col-md-1">
+            <div class="col-md-1 col-1">
                 <div class="mb-2">
                     <a href="#" class="text-decoration-none fw-bold text-primary ">
                        <span class="btn btn-icon btn-sm btn-round text-white bg-primary"><i class="fa-solid fa-arrow-up"></i></span> 
