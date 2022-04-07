@@ -149,11 +149,13 @@ $this->title = $model->titulo_publicacion;
                             <span class="carousel-control-prev-icon" aria-hidden="true"></span>
                             <span class="sr-only">Previous</span>
                         </a> -->
-                        <a class="carousel-control-next opacity-100" href="#" role="button" data-slide="next">
-                            <!-- <i class="fas fa-chevron-right text-primary fa-2x font-weight-bold"></i>
-                            <span class="sr-only">Next</span> -->
-                            <img src="/frontend/web/images/icons/boton.svg" width="80%">
-                        </a>
+                        <?php if (count($fotos) > 4): ?>
+                           <a class="carousel-control-next opacity-100" href="#" role="button" data-slide="next">
+                                <!-- <i class="fas fa-chevron-right text-primary fa-2x font-weight-bold"></i>
+                                <span class="sr-only">Next</span> -->
+                                <img src="/frontend/web/images/icons/boton.svg" width="80%">
+                            </a> 
+                        <?php endif ?>
                         <input type="hidden" id='item' value="0">
                     </div>
 
