@@ -10,7 +10,6 @@ for ($i = 2; $i < 13; $i++) {
         $fotos[] = $galeria["foto_$i"];
     }
 }
-
 $this->title = $model->titulo_publicacion;
 \yii\web\YiiAsset::register($this);
 ?>
@@ -119,7 +118,7 @@ $this->title = $model->titulo_publicacion;
                             <?php $count = 0; ?>
                             <?php foreach ($fotos as $foto): ?>
                                 <?php $count++ ?>
-                                <?php if ($count <= 5): ?>
+                                <?php if ($count <= 4): ?>
                                     <div id="carousel-selector-<?= $count ?>" class="thumb col-4 col-sm-2 px-1 py-2" data-target="#myCarousel" data-slide-to="<?= $count ?>">
                                       <img src="/frontend/web/<?= $foto ?>" class="img-fluid">
                                     </div>
@@ -133,7 +132,7 @@ $this->title = $model->titulo_publicacion;
                             <?php $count = 0; ?>
                             <?php foreach ($fotos as $foto): ?>
                                 <?php $count++ ?>
-                                <?php if ($count > 5): ?>
+                                <?php if ($count > 4 and $count < 10): ?>
                                     <div id="carousel-selector-<?= $count ?>" class="thumb col-4 col-sm-2 px-1 py-2" data-target="#myCarousel" data-slide-to="<?= $count ?>">
                                       <img src="/frontend/web/<?= $foto ?>" class="img-fluid">
                                     </div>
@@ -144,18 +143,18 @@ $this->title = $model->titulo_publicacion;
                           </div>
                         </div>
                       </div>
-                      <?php if (count($fotos) > 5): ?>
-                          <a class="carousel-control-prev" href="#carousel-thumbs" role="button" data-slide="<?= count($fotos) > 5 ? "prev" : "" ?>">
+                        <!-- <a class="carousel-control-prev" href="#carousel-thumbs" role="button" data-slide="prev">
 
-                            <i class="fas fa-chevron-left text-blue fa-2x font-weight-bold float-left"></i>
-                            <!-- <span class="carousel-control-prev-icon" aria-hidden="true"></span> -->
+                            <i class="fas fa-chevron-left text-primary fa-2x font-weight-bold float-left"></i>
+                            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
                             <span class="sr-only">Previous</span>
-                          </a>
-                          <a class="carousel-control-next" href="#carousel-thumbs" role="button" data-slide="<?= count($fotos) > 5 ? "next" : "" ?>">
-                            <i class="fas fa-chevron-right text-blue fa-2x font-weight-bold"></i>
-                            <span class="sr-only">Next</span>
-                          </a>
-                      <?php endif ?>
+                        </a> -->
+                        <a class="carousel-control-next opacity-100" href="#" role="button" data-slide="next">
+                            <!-- <i class="fas fa-chevron-right text-primary fa-2x font-weight-bold"></i>
+                            <span class="sr-only">Next</span> -->
+                            <img src="/frontend/web/images/icons/boton.svg" width="80%">
+                        </a>
+                        <input type="hidden" id='item' value="0">
                     </div>
 
                 </div> <!-- /carousel-row -->

@@ -22,7 +22,7 @@ class AppAsset extends AssetBundle
     ];
     public $js = [
         'js/bootstrap.min.js',
-        'js/carousel.js',
+        'js/carousel.js?v=1',
         'js/fontawesome.min.js',
         // 'https://use.fontawesome.com/releases/v5.15.4/js/all.js',
         // 'assets-atlantis/js/atlantis.min.js',
