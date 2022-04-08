@@ -19,14 +19,14 @@
                 </p>
                 <div class="row">
                     <div class="col-10">
-                        <form class="card home-card w-75 float-md-end rounded-2 p-5">
+                        <form class="card home-card w-75 float-md-end rounded-2 p-5" action="/frontend/web/propiedades">
                             <div class="mb-3 mt-5">
                                 <label for="tagInput" class="form-label">¿Qué buscas?</label>
-                                <input type="text" class="form-control" id="tagInput" placeholder="Apartamento, casa. terreno...">
+                                <input type="text" class="form-control" name="keyword" id="tagInput" placeholder="Apartamento, casa. terreno...">
                             </div>
                             <div class="mb-3">
                                 <label for="locationInput" class="form-label">¿Donde?</label>
-                                <input type="text" class="form-control" id="locationInput" placeholder="Apartamento, casa. terreno...">
+                                <input type="text" class="form-control" name="keyplace" id="locationInput" placeholder="Apartamento, casa. terreno...">
                             </div>
                             <div class="mt-3 mb-5 text-center">
                                 <button type="submit" class="btn btn-lg btn-danger rounded-3 pl-4 pr-4">Buscar <i class='fa-solid fa-magnifying-glass ml-2'></i> </button>

@@ -42,6 +42,8 @@ class PropiedadesSearch extends Propiedades
     public function search($params)
     {
         $query = Propiedades::find();
+        $keyword = isset($params['keyword']) ? $params['keyword'] : '';
+        $keyplace = isset($params['keyplace']) ? $params['keyplace'] : '';
 
         // add conditions that should always apply here
 
@@ -73,6 +75,18 @@ class PropiedadesSearch extends Propiedades
             'pies' => $this->pies,
             'date' => $this->date,
         ]);
+
+        $query->orFilterWhere(['like', 'titulo_publicacion', $keyword])
+            ->orFilterWhere(['like', 'titulo_publicacion', $keyword])
+            ->orFilterWhere(['like', 'detalles', $keyword])
+            ->orFilterWhere(['like', 'extra_text', $keyword])
+            ->orFilterWhere(['like', 'tags', $keyword]);
+
+        if ($keyplace) {
+            $query->joinWith(['ubicacion']);
+            $query->andFilterWhere(['like', 'ubicaciones.nombre', $keyplace]);
+        }
+
 
         $query->andFilterWhere(['like', 'codigo', $this->codigo])
             ->andFilterWhere(['like', 'titulo_publicacion', $this->titulo_publicacion])
