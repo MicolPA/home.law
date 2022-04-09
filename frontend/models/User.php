@@ -11,6 +11,7 @@ use Yii;
  * @property string $username
  * @property string|null $first_name
  * @property string|null $last_name
+ * @property string|null $photo_url
  * @property string $auth_key
  * @property int $role_id
  * @property string $password_hash
@@ -20,8 +21,16 @@ use Yii;
  * @property int $created_at
  * @property int $updated_at
  * @property string|null $verification_token
+ * @property int|null $template_id
+ * @property string|null $video_url
+ * @property string|null $video_platform
+ * @property string|null $instagram
+ * @property string|null $facebook
+ * @property string|null $twitter
+ * @property string|null $whatsapp
  *
  * @property Roles $role
+ * @property ProfileTemplates $template
  */
 class User extends \yii\db\ActiveRecord
 {
@@ -40,13 +49,14 @@ class User extends \yii\db\ActiveRecord
     {
         return [
             [['username', 'auth_key', 'password_hash', 'email', 'created_at', 'updated_at'], 'required'],
-            [['role_id', 'status', 'created_at', 'updated_at'], 'integer'],
-            [['username', 'first_name', 'last_name', 'password_hash', 'password_reset_token', 'email', 'verification_token'], 'string', 'max' => 255],
+            [['role_id', 'status', 'created_at', 'updated_at', 'template_id'], 'integer'],
+            [['username', 'first_name', 'last_name', 'photo_url', 'password_hash', 'password_reset_token', 'email', 'verification_token', 'video_url', 'video_platform', 'instagram', 'facebook', 'twitter', 'whatsapp'], 'string', 'max' => 255],
             [['auth_key'], 'string', 'max' => 32],
             [['username'], 'unique'],
             [['email'], 'unique'],
             [['password_reset_token'], 'unique'],
             [['role_id'], 'exist', 'skipOnError' => true, 'targetClass' => Roles::className(), 'targetAttribute' => ['role_id' => 'id']],
+            [['template_id'], 'exist', 'skipOnError' => true, 'targetClass' => ProfileTemplates::className(), 'targetAttribute' => ['template_id' => 'id']],
         ];
     }
 
@@ -60,6 +70,7 @@ class User extends \yii\db\ActiveRecord
             'username' => 'Username',
             'first_name' => 'First Name',
             'last_name' => 'Last Name',
+            'photo_url' => 'Photo Url',
             'auth_key' => 'Auth Key',
             'role_id' => 'Role ID',
             'password_hash' => 'Password Hash',
@@ -69,6 +80,13 @@ class User extends \yii\db\ActiveRecord
             'created_at' => 'Created At',
             'updated_at' => 'Updated At',
             'verification_token' => 'Verification Token',
+            'template_id' => 'Template ID',
+            'video_url' => 'Video Url',
+            'video_platform' => 'Video Platform',
+            'instagram' => 'Instagram',
+            'facebook' => 'Facebook',
+            'twitter' => 'Twitter',
+            'whatsapp' => 'Whatsapp',
         ];
     }
 
@@ -80,5 +98,15 @@ class User extends \yii\db\ActiveRecord
     public function getRole()
     {
         return $this->hasOne(Roles::className(), ['id' => 'role_id']);
+    }
+
+    /**
+     * Gets query for [[Template]].
+     *
+     * @return \yii\db\ActiveQuery
+     */
+    public function getTemplate()
+    {
+        return $this->hasOne(ProfileTemplates::className(), ['id' => 'template_id']);
     }
 }
