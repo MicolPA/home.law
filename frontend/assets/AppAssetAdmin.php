@@ -26,7 +26,7 @@ class AppAssetAdmin extends AssetBundle
     public $js = [
 
         //Core JS Files
-        // 'assets-atlantis/js/core/jquery.3.2.1.min.js',
+        'assets-atlantis/js/core/jquery.3.2.1.min.js',
         'assets-atlantis/js/core/popper.min.js',
         'assets-atlantis/js/core/bootstrap.min.js',
 
@@ -40,14 +40,17 @@ class AppAssetAdmin extends AssetBundle
         // 'assets-atlantis/js/plugin/datatables/datatables.min.js',
 
 
-        // 'assets-atlantis/js/plugin/datepicker/bootstrap-datetimepicker.min.js',
+        'assets-atlantis/js/plugin/moment/moment.min.js',
+        'assets-atlantis/js/plugin/datepicker/bootstrap-datetimepicker.min.js',
         'assets-atlantis/js/plugin/bootstrap-tagsinput/bootstrap-tagsinput.min.js',
+        'assets-atlantis/js/plugin/jquery.validate/jquery.validate.min.js',
         'assets-atlantis/js/atlantis.min.js',
         'js/sweetalert.min.js',
+        'js/bootstrapwizard.js',
         // 'js/fontawesome.min.js',
 
 
-        // 'https://gitcdn.github.io/bootstrap-toggle/2.2.2/js/bootstrap-toggle.min.js?v=6.0',
+        'https://gitcdn.github.io/bootstrap-toggle/2.2.2/js/bootstrap-toggle.min.js?v=6.0',
         // 'https://use.fontawesome.com/releases/v5.0.7/js/all.js?v=6.0',
 
 

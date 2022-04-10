@@ -30,7 +30,6 @@ use Yii;
  * @property string|null $whatsapp
  *
  * @property Roles $role
- * @property ProfileTemplates $template
  */
 class User extends \yii\db\ActiveRecord
 {
@@ -56,7 +55,6 @@ class User extends \yii\db\ActiveRecord
             [['email'], 'unique'],
             [['password_reset_token'], 'unique'],
             [['role_id'], 'exist', 'skipOnError' => true, 'targetClass' => Roles::className(), 'targetAttribute' => ['role_id' => 'id']],
-            [['template_id'], 'exist', 'skipOnError' => true, 'targetClass' => ProfileTemplates::className(), 'targetAttribute' => ['template_id' => 'id']],
         ];
     }
 
@@ -68,8 +66,8 @@ class User extends \yii\db\ActiveRecord
         return [
             'id' => 'ID',
             'username' => 'Username',
-            'first_name' => 'First Name',
-            'last_name' => 'Last Name',
+            'first_name' => 'Nombre',
+            'last_name' => 'Apellido',
             'photo_url' => 'Photo Url',
             'auth_key' => 'Auth Key',
             'role_id' => 'Role ID',
@@ -98,15 +96,5 @@ class User extends \yii\db\ActiveRecord
     public function getRole()
     {
         return $this->hasOne(Roles::className(), ['id' => 'role_id']);
-    }
-
-    /**
-     * Gets query for [[Template]].
-     *
-     * @return \yii\db\ActiveQuery
-     */
-    public function getTemplate()
-    {
-        return $this->hasOne(ProfileTemplates::className(), ['id' => 'template_id']);
     }
 }

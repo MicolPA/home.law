@@ -34,6 +34,7 @@ class m220409_040642_createTableTemplates extends Migration
             'nombre' => $this->string(),
         ], $tableOptions);
 
+        $this->addColumn('{{%user}}', 'descripcion', $this->text()->defaultValue(null));
         $this->addColumn('{{%user}}', 'template_id', $this->integer()->defaultValue(null));
         $this->addColumn('{{%user}}', 'video_url', $this->string()->defaultValue(null));
         $this->addColumn('{{%user}}', 'video_platform', $this->string()->defaultValue(null));

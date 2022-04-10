@@ -81,8 +81,13 @@ $foto = '';
                         <div class="collapse in" id="collapseExample">
                             <ul class="nav">
                                 <li>
-                                    <a href="<?= Yii::getAlias("@web") ?>/user/<?= $user->id ?>">
+                                    <a href="<?= Yii::getAlias("@web") ?>/user/perfil/<?= $user->id ?>">
                                         <span class="link-collapse">Mi perfil</span>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="<?= Yii::getAlias("@web") ?>/user/editar/<?= $user->id ?>">
+                                        <span class="link-collapse">Editar perfil</span>
                                     </a>
                                 </li>
                                 <li>
@@ -246,7 +251,7 @@ $foto = '';
     <!-- End Sidebar -->
 
     <!-- Navbar Header -->
-    <nav class="navbar navbar-header navbar-header-transparent navbar-expand-lg border-bottom">
+    <nav class="navbar navbar-header navbar-header-transparent navbar-expand-lg border-bottom d-none">
 
         <div class="container-fluid">
             <nav class="navbar navbar-line navbar-header-left navbar-expand-lg p-0  d-none d-lg-flex">
@@ -296,7 +301,9 @@ $foto = '';
             <div class="page-inner">
                 <div class="d-flex align-items-left align-items-md-center flex-column flex-md-row pt-3 pb-4">
                     <div>
-                        <h2 class="pb-2 fw-bold"><?= $this->title ?></h2>
+                        <?php if ($this->title): ?>
+                            <h2 class="pb-2 fw-bold"><?= $this->title ?></h2>
+                        <?php endif ?>
                         <h5 class="op-7 mb-2"><?= isset($this->params['subtitle']) ? $this->params['subtitle'] : '' ?></h5>
                     </div>
                     <!-- <div class="ml-md-auto py-2 py-md-0">
@@ -309,7 +316,7 @@ $foto = '';
             </div>
                 
         </div>
-        <footer class="footer">
+        <!-- <footer class="footer">
             <div class="container-fluid">
                 <nav class="pull-left">
                     <ul class="nav">
@@ -334,7 +341,7 @@ $foto = '';
                     Copyright <?= date('Y') ?>
                 </div>              
             </div>
-        </footer>
+        </footer> -->
     </div>
 </div>
         

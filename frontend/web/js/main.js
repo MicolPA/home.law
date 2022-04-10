@@ -4,4 +4,6 @@ $(document).ready(function(){
         $('.tagsinput').tagsinput({
                 tagClass: 'badge-info'
         });
+
+        
 });
