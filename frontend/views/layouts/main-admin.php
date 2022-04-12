@@ -14,6 +14,10 @@ $user = Yii::$app->user->identity;
 if (Yii::$app->user->isGuest) {
     return Yii::$app->response->redirect(['/site/login']);
 }else{
+
+    if (!Yii::$app->user->identity->first_name and !strpos(Yii::$app->request->url, '/user/configurar')) {
+        return Yii::$app->response->redirect(['/user/configurar', 'id' => Yii::$app->user->identity->id]);
+    }
 }
 
 $foto = '';
@@ -32,9 +36,9 @@ $foto = '';
 <body class="">
 <?php $this->beginBody() ?>
 
-
-<div class="wrapper">
-    <div class="wrapper fullheight-side no-box-shadow-style">
+ 
+<div class="wrapper <?= strpos(Yii::$app->request->url, '/user/configurar') ? 'sidebar_minimize' : '' ?>">
+    <div class="wrapper fullheight-side no-box-shadow-style <?= strpos(Yii::$app->request->url, '/user/configurar') ? 'sidebar_minimize' : '' ?>">
     <!-- Logo Header -->
     <div class="logo-header position-fixed" data-background-color="dark">
 

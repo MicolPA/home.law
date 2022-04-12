@@ -7,6 +7,7 @@ use frontend\models\UserSearch;
 use yii\web\Controller;
 use yii\web\NotFoundHttpException;
 use yii\filters\VerbFilter;
+use yii\web\UploadedFile;
 
 /**
  * UserController implements the CRUD actions for User model.
@@ -80,6 +81,33 @@ class UserController extends Controller
 
         return $this->render('create', [
             'model' => $model,
+            'view' => '_form',
+        ]);
+    }
+
+    public function actionConfigurar($id)
+    {
+        // $this->layout = "main-no-menu";
+        $model = $this->findModel($id);
+        $post = $this->request->post();
+        if ($this->request->isPost && $model->load($post)) {
+
+            $servicios = new \common\models\Servicios();
+            $model->photo_url = $servicios->savePhoto($model, $model->first_name, 'photo_url', 'perfil');
+
+
+            $user = \common\models\User::findOne($id);
+            $user->setPassword($post['password']);
+            $user->generateAuthKey();
+            $user->save();
+
+            $model->save();
+            return $this->redirect(['seleccionar-plantillar', 'id' => $model->id]);
+        }
+
+        return $this->render('update', [
+            'model' => $model,
+            'view' => '_form_first_time',
         ]);
     }
 
