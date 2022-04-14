@@ -197,3 +197,42 @@ main{
     background-color: #f7f7f7;
     box-shadow: inset 0 -1px 0 rgb(0 0 0 / 13%);
 }
+
+.template-labels:hover{
+    background: #F0FEFF;
+}
+
+.float{
+    /*position:fixed;*/
+    width:60px;
+    /*bottom:40px;*/
+    /*right:0px;*/
+    background-color:#004b70;
+    color:#FFF;
+    text-align:center;
+    box-shadow: 2px 2px 3px #999;
+    /*bottom: 50vh;*/
+    font-size: 24px;
+        border-top-left-radius: 5px;
+    border-bottom-left-radius: 5px;
+}
+
+.custom-toggle svg{
+    -webkit-animation:spin 3s linear infinite;
+    -moz-animation:spin 3s linear infinite;
+    animation:spin 3s linear infinite;
+}
+
+.card-setting{
+    width: 500px;
+    z-index: 3;
+    right: 0px;
+}
+
+.card-setting .badge{
+    border: 1px solid #ccc;
+}
+
+@-moz-keyframes spin { 100% { -moz-transform: rotate(360deg); } }
+@-webkit-keyframes spin { 100% { -webkit-transform: rotate(360deg); } }
+@keyframes spin { 100% { -webkit-transform: rotate(360deg); transform:rotate(360deg); } }

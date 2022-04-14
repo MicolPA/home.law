@@ -3,6 +3,10 @@
 use yii\helpers\Html;
 use yii\widgets\ActiveForm;
 
+$this->title = "Editando usuario";
+
+$this->params['btn']['text'] = 'Ver Perfil';
+$this->params['btn']['url'] = "agente/$model->id";
 /* @var $this yii\web\View */
 /* @var $model frontend\models\User */
 /* @var $form yii\widgets\ActiveForm */
@@ -18,7 +22,7 @@ use yii\widgets\ActiveForm;
             </div>
         </div>
         <div class="col-md-6">
-            <?= $form->field($model, 'username')->textInput(['maxlength' => true]) ?>
+            <?= $form->field($model, 'username')->textInput(['maxlength' => true])->label('Usuario') ?>
         </div>
         <div class="col-md-6">
             <?= $form->field($model, 'email')->textInput(['maxlength' => true]) ?>
@@ -31,25 +35,28 @@ use yii\widgets\ActiveForm;
         <div class="col-md-6">
             <?= $form->field($model, 'last_name')->textInput(['maxlength' => true]) ?>
         </div>
+        <div class="col-md-6">
+            <div class="form-group">
+                <label>Clave</label>
+                <input type="password" name="password" class="form-control" placeholder="Contraseña" value="000000000">
+            </div>
+        </div>
 
-        <div class="col-md-2 inputFile">
+        <?php if (Yii::$app->user->identity->role_id == 1): ?>
+        <div class="col-md-3 ">
+            <?= $form->field($model, 'status')->dropdownList(array('10'=>'Activo', '9' => 'Desactivar'), []); ?>
+        </div>
+        <?php endif ?>
+
+        <div class="col-md-3 inputFile pt-3">
             <?= $form->field($model, 'photo_url')->fileInput([!$model ? "required" : "" => !$model ? "required" : ""])->label('<i class="fa-solid fa-cloud-arrow-up mr-2"></i> Foto de perfil') ?>
         </div>
 
 
-        <?php if (Yii::$app->user->identity->role_id == 1): ?>
-            <?= $form->field($model, 'status')->textInput() ?>
-        <?php endif ?>
+        
 
-        <?= $form->field($model, 'template_id')->textInput() ?>
 
-        <div class="col-md-6">
-            <?= $form->field($model, 'video_url')->textInput(['maxlength' => true]) ?>
-        </div>
-
-        <div class="col-md-6">
-            <?= $form->field($model, 'video_platform')->textInput(['maxlength' => true]) ?>
-        </div>
+        
 
         <div class="col-md-12">
             <div class="form-group">
@@ -74,8 +81,14 @@ use yii\widgets\ActiveForm;
             <?= $form->field($model, 'whatsapp')->textInput(['maxlength' => true]) ?>
         </div>
 
-        <div class="form-group">
-            <?= Html::submitButton('Save', ['class' => 'btn btn-success']) ?>
+        <div class="col-md-6">
+            <?= $form->field($model, 'video_url')->textInput(['maxlength' => true]) ?>
+        </div>
+
+        <div class="col-md-12">
+            <div class="form-group text-right">
+                <?= Html::submitButton('Guardar', ['class' => 'btn btn-success']) ?>
+            </div>
         </div>
 
 

@@ -45,6 +45,7 @@ return [
                 'iniciar-sesion' => 'site/login',
                 'admin' => 'admin/index',
                 '<controller:\w+>/<action:\w+>/<id:\d+>' => '<controller>/<action>',
+                'agente/<id:\d+>' => 'user/perfil',
             ],
         ],
         

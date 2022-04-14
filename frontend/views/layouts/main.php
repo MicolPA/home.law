@@ -192,6 +192,24 @@ AppAsset::register($this);
 
     </footer>
 
+    <?php if(Yii::$app->session->hasFlash('success')):?>
+        <?php
+        $msj = Yii::$app->session->getFlash('success');
+        echo '<script type="text/javascript">';
+        echo "setTimeout(function () { displayNotification('success','Correcto','$msj','fas fa-check-circle');";
+        echo '}, 1000);</script>';
+        ?>
+    <?php endif; ?>  
+
+    <?php if(Yii::$app->session->hasFlash('fail')):?>
+        <?php
+        $msj = Yii::$app->session->getFlash('fail');
+        echo '<script type="text/javascript">';
+        echo "setTimeout(function () { displayNotification('danger','Alerta','$msj','fas fa-times');";
+        echo '}, 1000);</script>';
+        ?>
+    <?php endif; ?>  
+
     <?php $this->endBody() ?>
 </body>
 
