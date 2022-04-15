@@ -9,6 +9,13 @@ $plantilla = \frontend\models\ProfileTemplates::findOne($model['template_id']);
     main{
         padding-bottom: 0px !important;
     }
+
+    @media (min-width: 1400px){
+        .container-xxl, .container-xl, .container-lg, .container-md, .container-sm, .container {
+            max-width: 1100px !important;
+        }
+    }
+        
 </style>
 <div class="main-banner-profile w-100" style="background: <?= $plantilla ? $plantilla['banner_background'] : '#0071ba' ?>;">
     <div class="container-fluid  banner-profile">
