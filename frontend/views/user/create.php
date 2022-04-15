@@ -5,13 +5,13 @@ use yii\helpers\Html;
 /* @var $this yii\web\View */
 /* @var $model frontend\models\User */
 
-$this->title = 'Create User';
+$this->title = 'Registrar Usuario';
 $this->params['breadcrumbs'][] = ['label' => 'Users', 'url' => ['index']];
 $this->params['breadcrumbs'][] = $this->title;
 ?>
 <div class="user-create">
 
-    <?= $this->render('_form', [
+    <?= $this->render($view, [
         'model' => $model,
     ]) ?>
 

@@ -43,5 +43,6 @@ phpunit.phar
 /backend/web/robots.txt
 /frontend/web/images/propiedades
 /frontend/web/images/ubicaciones
+/frontend/web/images/perfil
 /frontend/web/images/tasas-hipotecarias
 /frontend/web/webfonts/Gotham

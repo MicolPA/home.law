@@ -12,7 +12,7 @@ use yii\widgets\ActiveForm;
     <?= $form->field($model, 'nombre')->textInput(['maxlength' => true]) ?>
 
     <div class="w-25 inputFile">
-        <?= $form->field($model, 'portada')->fileInput([!$model ? "required" : "" => !$model ? "required" : ""])->label('<i class="fa-solid fa-cloud-arrow-up mr-2"></i> Portada') ?>
+        <?= $form->field($model, 'portada')->fileInput([!$model ? "required" : "" => !$model ? "required" : "", 'accept' => 'image/*'])->label('<i class="fa-solid fa-cloud-arrow-up mr-2"></i> Portada') ?>
     </div>
 
     <div class="form-group text-right">

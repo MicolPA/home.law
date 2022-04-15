@@ -5,8 +5,10 @@ use yii\widgets\ActiveForm;
 
 $this->title = "Editando usuario";
 
-$this->params['btn']['text'] = 'Ver Perfil';
-$this->params['btn']['url'] = "agente/$model->id";
+if ($model->role_id == 2) {
+    $this->params['btn']['text'] = 'Ver Perfil';
+    $this->params['btn']['url'] = "agente/$model->id";
+}
 /* @var $this yii\web\View */
 /* @var $model frontend\models\User */
 /* @var $form yii\widgets\ActiveForm */

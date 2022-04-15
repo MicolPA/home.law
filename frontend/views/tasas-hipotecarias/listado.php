@@ -9,6 +9,10 @@ use yii\grid\GridView;
 /* @var $searchModel frontend\models\TasasHipotecariasSearch */
 /* @var $dataProvider yii\data\ActiveDataProvider */
 
+
+$this->params['btn']['url'] = 'tasas-hipotecarias/create';
+$this->params['btn']['text'] = 'Registrar Nueva';
+
 $this->title = 'Tasas Hipotecarias';
 $this->params['breadcrumbs'][] = $this->title;
 ?>

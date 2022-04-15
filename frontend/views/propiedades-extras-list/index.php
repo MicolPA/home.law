@@ -5,9 +5,8 @@ use yii\helpers\Url;
 use yii\grid\ActionColumn;
 use yii\grid\GridView;
 
-/* @var $this yii\web\View */
-/* @var $searchModel frontend\models\PropiedadesExtrasListSearch */
-/* @var $dataProvider yii\data\ActiveDataProvider */
+$this->params['btn']['url'] = 'propiedades-extras-list/create';
+$this->params['btn']['text'] = 'Registrar Nuevo';
 
 $this->title = 'Propiedades Extras Lists';
 $this->params['breadcrumbs'][] = $this->title;
@@ -22,7 +21,7 @@ $this->params['breadcrumbs'][] = $this->title;
 
             // 'id',
             'nombre',
-            'icon',
+            // 'icon',
             [
                 'class' => ActionColumn::className(),
                 'urlCreator' => function ($action, \frontend\models\PropiedadesExtrasList $model, $key, $index, $column) {

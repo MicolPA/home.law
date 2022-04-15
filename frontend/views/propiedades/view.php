@@ -32,6 +32,10 @@ $this->title = $model->titulo_publicacion;
     .my-svg{
         display: none
     }
+
+    main{
+        padding-bottom: 0px !important;
+    }
 </style>
 <div class="bg-white">
     <div class="container-sm py-0">
@@ -175,7 +179,7 @@ $this->title = $model->titulo_publicacion;
                             <?= $model->detalles ?>
                         </p>
                    </div>
-                   <div class="col-md-4 font-family-2">
+                   <div class="col-md-3 font-family-2">
                        <div class="mt-2">
                            <a href="#" class="text-decoration-none fw-bold text-primary">
                                <span class="btn btn-icon btn-sm btn-round text-white bg-primary mr-2"><i class="fa-solid fa-comment-dots"></i></span> 
@@ -193,6 +197,11 @@ $this->title = $model->titulo_publicacion;
                                <span class="btn btn-icon btn-sm btn-round text-white icons-gray mr-2"><i class="fa-solid fa-arrow-down-long px-1"></i></span> 
                                DESCARGAR DICTAMEN
                            </a>
+                       </div>
+                       <div class="mt-3 border-top border-bottom border-2 py-2">
+                            <button type="button" class="btn btn-primary btn-block w-100" data-bs-toggle="modal" data-bs-target="#staticBackdrop">
+                              HACER UNA OFERTA
+                            </button>
                        </div>
                    </div>
                </div>
@@ -258,3 +267,5 @@ $this->title = $model->titulo_publicacion;
         </div>
     </div>
 </div>
+
+<?= $this->render('_modal_contactat_agente', ['precio' => $model->precio]) ?>

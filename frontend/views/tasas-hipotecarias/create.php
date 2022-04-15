@@ -5,7 +5,7 @@ use yii\helpers\Html;
 /* @var $this yii\web\View */
 /* @var $model frontend\models\TasasHipotecarias */
 
-$this->title = 'Create Tasas Hipotecarias';
+$this->title = 'Registrar Tasa Hipotecaria';
 $this->params['breadcrumbs'][] = ['label' => 'Tasas Hipotecarias', 'url' => ['index']];
 $this->params['breadcrumbs'][] = $this->title;
 ?>

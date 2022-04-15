@@ -44,16 +44,13 @@ use yii\widgets\ActiveForm;
 							<div class="col-md-6">
                 				<?= $form->field($model, 'descripcion')->textarea(['rows' => 6, 'required' => 'required']) ?>
                 			</div>
+                			<div class="col-md-6">
+								<?= $form->field($model, 'phone')->textInput(['maxlength' => true, 'required' => 'required']) ?>
 
-							<div class="col-md-6">
-								<div class="form-group">
-									<label>Foto de perfil :</label>
-									<div class="input-file input-file-image">
-										<img class="img-upload-preview img-circle" width="100" height="100" src="/frontend/web/images/profile.png" alt="preview">
-										<?= Html::activeTextInput($model, 'photo_url', ['class' => 'form-control form-control-file', 'type' => 'file', 'id' => 'uploadImg', 'accept' => 'image/*', 'required' => 'required']); ?>
-										<label for="uploadImg" class=" label-input-file btn btn-primary">Subir foto</label>
-									</div>
-								</div>
+
+								<div class="w-25 inputFile">
+							        <?= $form->field($model, 'photo_url')->fileInput(['required' => 'required'])->label('<i class="fa-solid fa-cloud-arrow-up mr-2"></i> Foto de perfil') ?>
+							    </div>
 							</div>
 						</div>
 					</div>
@@ -62,8 +59,12 @@ use yii\widgets\ActiveForm;
 						<div class="row">
 							<div class="col-md-8 ml-auto mr-auto">
 								<div class="form-group">
+									<label>Usuario</label>
+									<?= Html::activeTextInput($model, 'username', ['placeholder' => '', 'class' => 'form-control form-control-file', 'required' => 'required']); ?>
+								</div>
+								<div class="form-group">
 									<label>Email</label>
-									<?= Html::activeTextInput($model, 'email', ['placeholder' => 'Ihre E-Mail Adresse', 'class' => 'form-control form-control-file', 'type' => 'email', 'required' => 'required']); ?>
+									<?= Html::activeTextInput($model, 'email', ['placeholder' => '', 'class' => 'form-control form-control-file', 'type' => 'email', 'required' => 'required']); ?>
 								</div>
 								<div class="form-group">
 									<label>Contraseña</label>
@@ -79,6 +80,7 @@ use yii\widgets\ActiveForm;
 					<div class="tab-pane" id="address">
 						<div class="row">
 							<div class="col-md-8 ml-auto mr-auto">
+								
 								<div class="form-group">
 									<div class="input-group mb-3">
 										<div class="input-group-prepend">

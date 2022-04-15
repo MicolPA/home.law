@@ -36,7 +36,7 @@ class PropiedadesGaleria extends \yii\db\ActiveRecord
     public function rules()
     {
         return [
-            [['foto_2', 'foto_3', 'foto_4', 'foto_5', 'foto_6', 'foto_7', 'foto_8', 'foto_9', 'foto_10', 'foto_11', 'foto_12'], 'string', 'max' => 255],
+            // [['foto_2', 'foto_3', 'foto_4', 'foto_5', 'foto_6', 'foto_7', 'foto_8', 'foto_9', 'foto_10', 'foto_11', 'foto_12'], 'string', 'max' => 255],
         ];
     }
 

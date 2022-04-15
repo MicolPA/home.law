@@ -45,8 +45,18 @@ $this->params['subtitle'] = $model->id ? "Editar Propiedad" : "Registrar Propied
             <div class="col-md-2">
                 <?= $form->field($model, 'baños')->textInput(['type' => 'number']) ?>
             </div>
+            <?php $users = \common\models\User::find()->all(); ?>
             <div class="col-md-6">
-                <?php echo $form->field($model, 'assigned_to_user_id')->dropDownList(ArrayHelper::map(\common\models\User::find()->all(), 'id', 'first_name'),['prompt'=>'Seleccionar...', 'required' => 'required']) ?>
+                <div class="form-group">
+                    <label>Agente</label>
+
+                    <select class="form-control select_2" name="Propiedades[assigned_to_user_id]">
+                        <option value="">Seleccionar...</option>
+                        <?php foreach ($users as $u): ?>
+                            <option value="<?= $u->id ?>" <?= $model->assigned_to_user_id == $u->id ? 'selected' : '' ?>><?= $u->first_name ? "$u->first_name $u->last_name" : "$u->username" ?></option>
+                        <?php endforeach ?>
+                    </select>
+                </div>
             </div>
             
             <div class="col-md-6">
@@ -60,7 +70,7 @@ $this->params['subtitle'] = $model->id ? "Editar Propiedad" : "Registrar Propied
                 <?= $form->field($model, 'pies')->textInput() ?>
             </div>
             <div class="col-md-12">
-                <?= $form->field($model, 'tags')->textInput(['class' => 'form-control tagsinput']) ?>
+                <?= $form->field($model, 'tags')->textInput(['required' => 'required', 'class' => 'form-control tagsinput', 'placeholder' => 'Piscina, Aire libre, etc']) ?>
             </div>
             <div class="col-md-12">
                 <div class="form-group">
@@ -87,27 +97,39 @@ $this->params['subtitle'] = $model->id ? "Editar Propiedad" : "Registrar Propied
 
             <div class="col-md-2 inputFile">
                 <div class="form-group">
-                    <label for="inputfile2" class="bg-primary">
-                        <i class="fa-solid fa-cloud-arrow-up mr-2"></i> Portada
+                    <label for="inputfile1" class="<?= $model->portada ? 'bg-success' : 'bg-primary' ?>">
+                        <i class="fa-solid fa-cloud-arrow-up mr-2"></i> <?= $model->portada ? 'Cargada' : 'Portada' ?>
                     </label>
-                    <?= $form->field($model, 'portada')->fileInput([!$model ? "required" : "" => !$model ? "required" : "", 'id' => 'inputfile2', 'class' => 'bg-primary'])->label(false) ?>
+                    <?= $form->field($model, 'portada')->fileInput([!$model ? "required" : "" => !$model ? "required" : "", 'id' => 'inputfile1', 'class' => 'bg-primary'])->label(false) ?>
                 </div>
+            </div>
+            <div class="col-md-2 inputFile">
+                <?= $form->field($galeria, 'foto_2')->fileInput(['id' => 'inputfile2', 'accept' => 'image/*'])->label($galeria->foto_2 ? "CARGADA" : '<i class="fa-solid fa-cloud-arrow-up mr-2"></i> Foto 2') ?>
             </div>
 
             <div class="col-md-2 inputFile">
-                <?= $form->field($galeria, 'foto_2')->fileInput([!$model ? "required" : "" => !$model ? "required" : ""])->label('<i class="fa-solid fa-cloud-arrow-up mr-2"></i> Foto 2') ?>
+                <?= $form->field($galeria, 'foto_3')->fileInput(['id' => 'inputfile3', 'accept' => 'image/*'])->label($galeria->foto_3 ? "CARGADA" : '<i class="fa-solid fa-cloud-arrow-up mr-2"></i> Foto 3') ?>
             </div>
             <div class="col-md-2 inputFile">
-                <?= $form->field($galeria, 'foto_3')->fileInput([!$model ? "required" : "" => !$model ? "required" : "", 'id' => 'inputfile3'])->label('<i class="fa-solid fa-cloud-arrow-up mr-2"></i> Foto 3') ?>
+                <?= $form->field($galeria, 'foto_4')->fileInput(['id' => 'inputfile4', 'accept' => 'image/*'])->label($galeria->foto_4 ? "CARGADA" : '<i class="fa-solid fa-cloud-arrow-up mr-2"></i> Foto 4') ?>
             </div>
             <div class="col-md-2 inputFile">
-                <?= $form->field($galeria, 'foto_4')->fileInput([!$model ? "required" : "" => !$model ? "required" : "", 'id' => 'inputfile4'])->label('<i class="fa-solid fa-cloud-arrow-up mr-2"></i> Foto 4') ?>
+                <?= $form->field($galeria, 'foto_5')->fileInput(['accept' => 'image/*'])->label($galeria->foto_5 ? "CARGADA" : '<i class="fa-solid fa-cloud-arrow-up mr-2"></i> Foto 5') ?>
             </div>
             <div class="col-md-2 inputFile">
-                <?= $form->field($galeria, 'foto_5')->fileInput([])->label($galeria->foto_5 ? "CARGADA" : '<i class="fa-solid fa-cloud-arrow-up mr-2"></i> Foto 5') ?>
+                <?= $form->field($galeria, 'foto_6')->fileInput(['accept' => 'image/*'])->label($galeria->foto_6 ? "CARGADA" : '<i class="fa-solid fa-cloud-arrow-up mr-2"></i> Foto 6') ?>
             </div>
             <div class="col-md-2 inputFile">
-                <?= $form->field($galeria, 'foto_6')->fileInput([])->label($galeria->foto_6 ? "CARGADA" : '<i class="fa-solid fa-cloud-arrow-up mr-2"></i> Foto 6') ?>
+                <?= $form->field($galeria, 'foto_7')->fileInput(['accept' => 'image/*'])->label($galeria->foto_7 ? "CARGADA" : '<i class="fa-solid fa-cloud-arrow-up mr-2"></i> Foto 6') ?>
+            </div>
+            <div class="col-md-2 inputFile">
+                <?= $form->field($galeria, 'foto_8')->fileInput(['accept' => 'image/*'])->label($galeria->foto_8 ? "CARGADA" : '<i class="fa-solid fa-cloud-arrow-up mr-2"></i> Foto 6') ?>
+            </div>
+            <div class="col-md-2 inputFile">
+                <?= $form->field($galeria, 'foto_9')->fileInput(['accept' => 'image/*'])->label($galeria->foto_9 ? "CARGADA" : '<i class="fa-solid fa-cloud-arrow-up mr-2"></i> Foto 6') ?>
+            </div>
+            <div class="col-md-2 inputFile">
+                <?= $form->field($galeria, 'foto_10')->fileInput(['accept' => 'image/*'])->label($galeria->foto_9 ? "CARGADA" : '<i class="fa-solid fa-cloud-arrow-up mr-2"></i> Foto 6') ?>
             </div>
 
 

@@ -3,6 +3,15 @@
     /*font-family: sans-serif;*/
 
 }
+
+.label-primary, .label-primary label{
+    color: #004b70;
+}
+
+.text-gotham{
+    font-family: 'Gotham', sans-serif;
+}
+
 .bg-gray{
     background: #e8e8e8;
 }
@@ -13,7 +22,7 @@
     font-size: 14px;  
 }
 .font-12{
-    font-size: 12px;  
+    font-size: 12px !important;  
 }
 .text-gray{
     color: #606060;

@@ -44,10 +44,60 @@ class PropiedadesController extends Controller
      * @return string
      */
 
+
+    function actionContactarAgente($id, $type=1, $user_id, $propiedad=1){
+
+        if ($propiedad == 1) {
+            $propiedad_m = $this->findModel($id);
+            $listado_propiedades = Propiedades::find()->where(['<=', 'precio', $propiedad_m['precio'] + 50000])->andWhere(['>=', 'precio', $propiedad_m['precio'] - 50000])->andWhere(['user_id' => $propiedad_m['user_id']])->andWhere(['<>', 'id', $propiedad_m['id']])->orderBy(['rand()' => SORT_DESC])->limit(4)->all();
+        }else{
+            $propiedad_m = \frontend\models\PreConstrucciones::findOne($id);
+        }
+        $model = new ContactForm();
+        $agente = User::findOne($user_id);
+        if ($model->load(Yii::$app->request->post())) {
+
+            $this->layout = false;
+            $this->render('email-user', ['nombre' =>  $model->name, 'correo' => $model->email, 'telefono' => $model->subject, 'cantidad' => $model->body, 'propiedad' => $propiedad_m, 'type' => $type, 'forma_pago' => $model->forma_pago, 'monto_reserva' => $model->monto_reserva, 'fecha_cierre' => $model->fecha_cierre, 'correo_agente' => $agente['email'], 'propiedad_check' => $propiedad]);
+
+            if ($type == 1) {
+                Yii::$app->session->setFlash('success1', 'Propuesta enviada correctamente');
+            }else{
+                Yii::$app->session->setFlash('success1', 'Mensaje enviado correctamente');
+            }
+
+            if ($propiedad) {
+                return $this->redirect(['index']);
+            }else{
+                return $this->redirect(['/pre-construcciones/index']);
+            }
+
+        }
+
+        return $this->render('contactar-agente', [
+            'type' => $type,
+            'agente' => $agente,
+            'model' => $model,
+            'propiedad' => $propiedad_m,
+            'listado_propiedades' => isset($listado_propiedades) ? $listado_propiedades : array(),
+        ]);
+    }
+
+    public function actionCambiarStatus($id){
+        $model = $this->findModel($id);
+
+        $model->status = $model->status == 1 ? 0 : 1;
+        $model->save();
+
+
+        Yii::$app->session->setFlash('confirmacion_msg','Status modificado correctamente');
+        return $this->redirect(['listado']);
+    }
+
     public function actionIndex()
     {
         $searchModel = new PropiedadesSearch();
-        $dataProvider = $searchModel->search($this->request->queryParams);
+        $dataProvider = $searchModel->search($this->request->queryParams, false);
 
         return $this->render('index', [
             'searchModel' => $searchModel,
@@ -58,7 +108,7 @@ class PropiedadesController extends Controller
     {
         $this->layout = "main-admin";
         $searchModel = new PropiedadesSearch();
-        $dataProvider = $searchModel->search($this->request->queryParams);
+        $dataProvider = $searchModel->search($this->request->queryParams, true);
 
         return $this->render('listado', [
             'searchModel' => $searchModel,
@@ -104,11 +154,13 @@ class PropiedadesController extends Controller
         // if ($model->load($post) and $extras->load(Yii::$app->request->post())) {
             $this->savePhotos($model, $galeria);
             $galeria->save();
-            // print_r($post);
+            print_r($post);
             // exit;
             $model->galeria_id = $galeria->id;
             // $model->user_id = Yii::$app->user->identity->id;
             $model->fecha_publicacion = date("Y-m-d H:i:s");
+
+            $model->status = Yii::$app->user->identity->role_id != 1 ? 0 : 1;
 
             if ($model->save()) {
                 $this->getCaracteristicas($extras, $post, $model);
@@ -166,8 +218,10 @@ class PropiedadesController extends Controller
         $model->portada = $this->get_photo_url($model, $model->tipoPropiedad->nombre, $model->titulo_publicacion, 0);
 
         for ($i=2;$i<10;$i++) {
-
-            $galeria["foto_$i"] = $this->get_photo_url($galeria, $model->tipoPropiedad->nombre, $model->titulo_publicacion, $i);
+            echo $i;
+            if (isset($galeria["foto_$i"])) {
+                $galeria["foto_$i"] = $this->get_photo_url($galeria, $model->tipoPropiedad->nombre, $model->titulo_publicacion, $i);
+            }
 
             // if (isset($galeria["foto_$i"]) and $_FILES["foto_$i"]) {
             //     $filename = $_FILES["foto_$i"]["name"];
@@ -201,6 +255,7 @@ class PropiedadesController extends Controller
             mkdir($path, 0777, true);
         }
         if (UploadedFile::getInstance($model, "$field")) {
+            echo "imagen";
             $model[$field] = UploadedFile::getInstance($model, "$field");
             $imagen = $path . "foto-$i-" . date('Y-m-d H-i-s') . ".". $model[$field]->extension;
             $model[$field]->saveAs($imagen);
@@ -226,11 +281,15 @@ class PropiedadesController extends Controller
         $galeria = PropiedadesGaleria::findOne($model['galeria_id']);
         $extras = PropiedadesExtrasList::find()->all();
 
-        if ($this->request->isPost && $model->load($this->request->post())) {
+        if ($this->request->isPost && $model->load($this->request->post()) && $galeria->load($this->request->post())) {
+
+            // print_r($this->request->post());
+            // print_r(UploadedFile::getInstance($galeria, "foto_2"));
+            // exit;
             // print_r($this->request->post());
             // print_r(UploadedFile::getInstance($model, "portada"));
             $this->savePhotos($model, $galeria);
-            // exit;
+            $galeria->save();
             $this->getCaracteristicas($extras, $this->request->post(), $model);
             if ($model->save()) {
                 Yii::$app->session->setFlash('confirmacion_msg','Propiedad modificada correctamente');

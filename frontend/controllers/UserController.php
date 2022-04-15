@@ -2,6 +2,7 @@
 
 namespace frontend\controllers;
 
+use Yii;
 use frontend\models\User;
 use frontend\models\UserSearch;
 use yii\web\Controller;
@@ -85,6 +86,18 @@ class UserController extends Controller
         ]);
     }
 
+    public function actionRegistrar(){
+        $model = new \frontend\models\SignupForm();
+        if ($model->load(Yii::$app->request->post()) && $model->signup()) {
+            return $this->redirect(['index']);
+        }
+
+        return $this->render('create', [
+            'model' => $model,
+            'view' => '_form_admin',
+        ]);
+    }
+
     public function actionConfigurar($id)
     {
         // $this->layout = "main-no-menu";
@@ -95,19 +108,31 @@ class UserController extends Controller
             $servicios = new \common\models\Servicios();
             $model->photo_url = $servicios->savePhoto($model, $model->first_name, 'photo_url', 'perfil');
 
-
             $user = \common\models\User::findOne($id);
             $user->setPassword($post['password']);
             $user->generateAuthKey();
             $user->save();
 
             $model->save();
-            return $this->redirect(['seleccionar-plantillar', 'id' => $model->id]);
+
+            Yii::$app->user->login($user);
+            return $this->redirect(['perfil', 'id' => $model->id]);
         }
 
         return $this->render('update', [
             'model' => $model,
             'view' => '_form_first_time',
+        ]);
+    }
+
+    function actionSeleccionarPlantilla(){
+
+        $plantillas = \frontend\models\ProfileTemplates::find()->all();
+        $propiedades = \frontend\models\Propiedades::find()->all();
+
+        return $this->render('plantillas', [
+            'plantillas' => $plantillas,
+            'propiedades' => $propiedades,
         ]);
     }
 
@@ -118,17 +143,55 @@ class UserController extends Controller
      * @return string|\yii\web\Response
      * @throws NotFoundHttpException if the model cannot be found
      */
-    public function actionEditar($id)
-    {
-        // $this->layout = "main-no-menu";
-        $model = $this->findModel($id);
 
+    public function actionPerfil($id)
+    {
+        $this->layout = "main";
+        $model = $this->findModel($id);
+        $plantillas = \frontend\models\ProfileTemplates::find()->all();
+        $propiedades = \frontend\models\Propiedades::find()->where(['assigned_to_user_id' => $id])->all();
         if ($this->request->isPost && $model->load($this->request->post()) && $model->save()) {
             return $this->redirect(['view', 'id' => $model->id]);
         }
 
+        return $this->render('perfil', [
+            'model' => $model,
+            'propiedades' => $propiedades,
+            'plantillas' => $plantillas,
+            'view' => 'perfil',
+        ]);
+    }
+
+    public function actionEditar($id)
+    {
+        // $this->layout = "main-no-menu";
+        $model = $this->findModel($id);
+        $post = Yii::$app->request->post();
+        if ($model->load($post)) {
+
+            $servicios = new \common\models\Servicios();
+            $model->photo_url = $servicios->savePhoto($model, $model->username, 'photo_url', 'perfil');
+
+            $password = $post['password'];
+            if ($post['password'] != '000000000') {
+                $user = \common\models\User::findOne($id);
+                $user->setPassword($post['password']);
+                $user->generateAuthKey();
+                $user->save();
+                Yii::$app->user->login($user);
+            }
+            if ($model->save()) {
+                Yii::$app->session->setFlash('success', "Cambios realizados correctamente");
+            }else{
+                Yii::$app->session->setFlash('fail', "Ha ocurrido un error, intente más tarde nuevamente.");
+            }
+            
+            return $this->redirect(['editar', 'id' => $id]);
+        }
+
         return $this->render('update', [
             'model' => $model,
+            'view' => '_form',
         ]);
     }
 

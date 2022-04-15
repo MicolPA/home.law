@@ -84,11 +84,13 @@ $foto = '';
 
                         <div class="collapse in" id="collapseExample">
                             <ul class="nav">
+                                <?php if (Yii::$app->user->identity->role_id == 2): ?>
                                 <li>
                                     <a href="<?= Yii::getAlias("@web") ?>/user/perfil/<?= $user->id ?>">
                                         <span class="link-collapse">Mi perfil</span>
                                     </a>
                                 </li>
+                                <?php endif ?>
                                 <li>
                                     <a href="<?= Yii::getAlias("@web") ?>/user/editar/<?= $user->id ?>">
                                         <span class="link-collapse">Editar perfil</span>
@@ -120,21 +122,9 @@ $foto = '';
                                         <span class="sub-item">Listado</span>
                                     </a>
                                 </li>
-                                <li>
-                                    <a href="<?= Yii::getAlias("@web") ?>/propiedades-tipo">
-                                        <span class="sub-item">Tipos</span>
-                                    </a>
-                                </li>
-                                <li>
-                                    <a href="<?= Yii::getAlias("@web") ?>/ubicaciones">
-                                        <span class="sub-item">Ubicaciones</span>
-                                    </a>
-                                </li>
-                                <li>
-                                    <a href="<?= Yii::getAlias("@web") ?>/propiedades-extras-list">
-                                        <span class="sub-item">Extras</span>
-                                    </a>
-                                </li>
+                                <?php if (Yii::$app->user->identity->role_id == 1): ?>
+                                
+                                <?php endif ?>
                             </ul>
                         </div>
                     </li>
@@ -144,6 +134,25 @@ $foto = '';
                         </span>
                         <h4 class="text-section">Propiedades</h4>
                     </li>
+                    <?php if (Yii::$app->user->identity->role_id == 1): ?>
+                    <li class="nav-item">
+                        <a href="<?= Yii::getAlias("@web") ?>/propiedades-tipo">
+                        <i class="fas fa-landmark"></i>
+                            <p>Tipos</p>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="<?= Yii::getAlias("@web") ?>/ubicaciones">
+                        <i class="fas fa-map-marker-alt"></i>
+                            <p>Ubicaciones</p>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="<?= Yii::getAlias("@web") ?>/propiedades-extras-list">
+                        <i class="fas fa-star"></i>
+                            <p>Extras</p>
+                        </a>
+                    </li>
                     <li class="nav-item">
                         <a href="<?= Yii::getAlias("@web") ?>/tasas-hipotecarias/listado">
                             <i class="fa-solid fa-chart-line"></i>
@@ -151,103 +160,34 @@ $foto = '';
                         </a>
                     </li>
                     <li class="nav-item">
-                        <a href="#">
-                            <i class="fas fa-file-contract"></i>
-                            <p>Lorem Ipsum</p>
+                        <a href="<?= Yii::getAlias("@web") ?>/user">
+                            <i class="fas fa-users"></i>
+                            <p>Usuarios</p>
                         </a>
                     </li>
-                    <li class="nav-item">
-                        <a href="#">
-                            <i class="fas fa-chart-bar"></i>
-                            <p>Lorem Ipsum</p>
-                        </a>
-                    </li>
-                    <li class="nav-item">
-                        <a href="starter-template.html">
-                            <i class="icon-briefcase"></i>
-                            <p>Revenue Report</p>
-                        </a>
-                    </li>
-                    <li class="nav-item">
-                        <a href="starter-template.html">
-                            <i class="fas fa-print"></i>
-                            <p>IPO Report</p>
-                        </a>
-                    </li>
+                    <?php endif ?>
+                    
+                    <?php if (Yii::$app->user->identity->role_id == 1): ?>
                     <li class="nav-section">
                         <span class="sidebar-mini-icon">
                             <i class="fa fa-ellipsis-h"></i>
                         </span>
-                        <h4 class="text-section">Snippets</h4>
+                        <h4 class="text-section">Extras</h4>
                     </li>
-                    <!-- <li class="nav-item">
-                        <a data-toggle="collapse" href="#email-nav">
-                            <i class="far fa-envelope"></i>
-                            <p>Email</p>
-                            <span class="caret"></span>
-                        </a>
-                        <div class="collapse" id="email-nav">
-                            <ul class="nav nav-collapse">
-                                <li>
-                                    <a href="email-inbox.html">
-                                        <span class="sub-item">Inbox</span>
-                                    </a>
-                                </li>
-                                <li>
-                                    <a href="email-compose.html">
-                                        <span class="sub-item">Email Compose</span>
-                                    </a>
-                                </li>
-                                <li>
-                                    <a href="email-detail.html">
-                                        <span class="sub-item">Email Detail</span>
-                                    </a>
-                                </li>
-                            </ul>
-                        </div>
-                    </li>
+
                     <li class="nav-item">
-                        <a data-toggle="collapse" href="#messages-app-nav">
-                            <i class="far fa-paper-plane"></i>
-                            <p>Messages App</p>
-                            <span class="caret"></span>
-                        </a>
-                        <div class="collapse" id="messages-app-nav">
-                            <ul class="nav nav-collapse">
-                                <li>
-                                    <a href="messages.html">
-                                        <span class="sub-item">Messages</span>
-                                    </a>
-                                </li>
-                                <li>
-                                    <a href="conversations.html">
-                                        <span class="sub-item">Conversations</span>
-                                    </a>
-                                </li>
-                            </ul>
-                        </div>
-                    </li>
-                    <li class="nav-item">
-                        <a href="projects.html">
-                            <i class="fas fa-file-signature"></i>
-                            <p>Projects</p>
-                            <span class="badge badge-count">5</span>
-                        </a>
-                    </li> -->
-                    <li class="nav-item">
-                        <a href="boards.html">
-                            <i class="fas fa-th-list"></i>
-                            <p>Lorem Ipsum</p>
-                            <span class="badge badge-count">4</span>
+                        <a href="<?= Yii::getAlias("@web") ?>/tasas-hipotecarias/listado">
+                            <i class="fa-solid fa-chart-line"></i>
+                            <p>Tasas Hipotecarias</p>
                         </a>
                     </li>
                     <li class="nav-item">
-                        <a href="invoice.html">
-                            <i class="fas fa-file-invoice-dollar"></i>
-                            <p>Lorem Ipsum</p>
-                            <span class="badge badge-count">6</span>
+                        <a href="<?= Yii::getAlias("@web") ?>/user">
+                            <i class="fas fa-users"></i>
+                            <p>Usuarios</p>
                         </a>
                     </li>
+                    <?php endif ?>
                 </ul>
             </div>
         </div>

@@ -28,6 +28,26 @@ $this->params['breadcrumbs'][] = $this->title;
                 'label' => 'Ubicación',
                 'attribute' => 'ubicacion.nombre',
             ],
+
+            [
+                'format'=>'html',
+                'attribute' => 'status',
+                'label' => 'Status',
+                'class' => 'yii\grid\DataColumn', // can be omitted, as it is the default
+                'value' => function ($data) {
+
+                    $status = $data->status == 1 ? "<span class='fw-bold text-success'>Publicada</span>" : "<span class='fw-bold text-warning'>Pendiente Aprobación</span>";
+
+                    $btn = Html::a($status, ['cambiar-status', 'id' => $data->id], [
+                        'data' => [
+                            'confirm' => "¿Está seguro/a que desea cambiarle el status a esta propiedad?",
+                            'method' => 'post',
+                        ],
+                    ]);
+
+                    return $btn;
+                },
+            ],
             //'habitaciones',
             //'baños',
             //'detalles:ntext',

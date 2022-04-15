@@ -5,18 +5,13 @@ use yii\helpers\Url;
 use yii\grid\ActionColumn;
 use yii\grid\GridView;
 
-/* @var $this yii\web\View */
-/* @var $searchModel frontend\models\UbicacionesSearch */
-/* @var $dataProvider yii\data\ActiveDataProvider */
+$this->params['btn']['url'] = 'ubicaciones/create';
+$this->params['btn']['text'] = 'Registrar Ubicación';
 
 $this->title = 'Ubicaciones';
 $this->params['breadcrumbs'][] = $this->title;
 ?>
 <div class="ubicaciones-index">
-
-    <p>
-        <?= Html::a('Create Ubicaciones', ['create'], ['class' => 'btn btn-success']) ?>
-    </p>
 
     <?php // echo $this->render('_search', ['model' => $searchModel]); ?>
 

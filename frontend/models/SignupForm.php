@@ -17,6 +17,7 @@ class SignupForm extends Model
     public $first_name;
     public $last_name;
     public $photo_url;
+    public $role_id;
 
 
     /**
@@ -32,15 +33,16 @@ class SignupForm extends Model
 
 
             ['first_name', 'trim'],
-            ['first_name', 'required'],
             ['first_name', 'string', 'max' => 255],
 
             ['last_name', 'trim'],
-            ['last_name', 'required'],
             ['last_name', 'string', 'max' => 255],
 
             ['photo_url', 'trim'],
             ['photo_url', 'string', 'max' => 255],
+
+
+            ['role_id', 'required'],
 
 
             ['email', 'trim'],
@@ -70,7 +72,7 @@ class SignupForm extends Model
         $user->email = $this->email;
         $user->photo_url = $this->photo_url;
         $user->status = 10;
-        $user->role_id = 1;
+        $user->role_id = $this->role_id ? $this->role_id : 3;
         $user->setPassword($this->password);
         $user->generateAuthKey();
         $user->generateEmailVerificationToken();

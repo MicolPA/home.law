@@ -1,4 +1,16 @@
-<div class="bg-blue-profile w-100  ">
+<?php 
+
+$this->title = "$model->first_name $model->last_name";
+
+$plantilla = \frontend\models\ProfileTemplates::findOne($model['template_id']);
+
+ ?>
+<style>
+    main{
+        padding-bottom: 0px !important;
+    }
+</style>
+<div class="main-banner-profile w-100" style="background: <?= $plantilla ? $plantilla['banner_background'] : '#0071ba' ?>;">
     <div class="container-fluid  banner-profile">
 
     </div>
@@ -14,16 +26,47 @@
     </div> -->
 
 </div>
+<style>
 
+</style>
+<div class="custom-template">
+    <div class="title bg-primary text-center">Seleccionar Colores</div>
+    <div class="custom-content">
+        <div class="switcher">
+            <?php foreach ($plantillas as $p): ?>
+                <style>
+                    .btnSwitch button[data-color="white"] {
+                        background-color: <?= $p->banner_background ?>;
+                    }
+                </style>    
+                <div class="switch-block">
+                    <div class="form-check mb-4 template-labels btnSwitch py-2">
+                        <input class="form-check-input templateRadio" type="radio" name="templateRadio" id="template<?= $p->id ?>" value="<?=  $p->id ?>">
+                        <label class="form-check-label w-100" for="template<?= $p->id ?>">
+                            <h4 class="mb-2 pt-1">Plantilla <?= $p->nombre ?></h4>
+                            <button class="changeBackgroundColor" style="background:<?= $p->banner_background ?>;color:<?= $p->banner_background ?>"></button>
+                            <button class="changeBackgroundColor" style="background:<?= $p->body_background ?>;color:<?= $p->body_background ?>"></button>
+                            <button class="changeBackgroundColor" style="background:<?= $p->body_color ?>;color:<?= $p->body_color ?>"></button>
+                         </label>
+                    </div>
+                </div>
+                
+            <?php endforeach ?>
+        </div>
+    </div>
+    <?php if (Yii::$app->user->identity->id == $model->id): ?>
+    <div class="custom-toggle bg-primary">
+        <i class="fa-solid fa-gear"></i>
+    </div>
+    <?php endif ?>
+</div>
+<input type="hidden" value="<?= $model->id ?>">
 
 <div class="bg-white w-100">
     <div class="container">
         <div class="row px-0 mx-0  mx-md-5 mx-sm-5  ">
             <div class="col-lg-5 col-sm-12  ">
-                <div class="margin-negative  px-5 mx-4 fs-4">
-
-                    <img class="rounded-circle    " src="../../web/images/avatar.jpg" alt="">
-
+                <div class="margin-negative avatar-sm px-5 mx-4 fs-4 rounded-circle m-auto" style="width: 150px; height: 150px;background-image: url('<?= Yii::getAlias("@web") . "/". $model->photo_url ?>');background-position: center;background-size: cover;">
                 </div>
 
             </div>
@@ -31,9 +74,9 @@
 
         </div>
 
-        <div class="row px-0 mx-0 px-md-5 px-sm-5 mx-md-5 mx-sm-5  ">
-            <div class="col-lg-5 col-sm-12   ">
-                <div class=" pb-5 px-5   mx-2  mx-md-5 fs-4">
+        <div class="row px-0 mx-0 ">
+            <div class="col-lg-5 col-sm-12">
+                <div class="pl-2 mt-2 pb-5 mx-2 mx-md-5 fs-4">
                     <a href=""><i class="text-warning  fa-solid fa-star"></i></a>
                     <a href=""><i class="text-warning fa-solid fa-star"></i></a>
                     <a href=""><i class="text-warning fa-solid fa-star"></i></a>
@@ -42,24 +85,24 @@
                 </div>
 
 
-                <p class="fw-bold fs-3 text-primary pt-1 mb-0"> Carlos Andres Avila</p>
+                <p class="fw-bold fs-3 text-primary pt-1 mb-0"> <?= "$model->first_name $model->last_name" ?></p>
                 <p class="small text-light-gray mb-2 ">Agente Inmobilario</p>
 
                 <div class="px-5 py-3 fs-3">
 
-                    <a href=""><i class=" text-primary mx-2 fa-brands fa-facebook-f"></i></a>
-                    <a href=""><i class=" text-primary mx-2 fa-brands fa-whatsapp"></i></a>
-                    <a href=""><i class=" text-primary mx-2 fa-brands fa-twitter"></i></a>
-                    <a href=""><i class=" text-primary mx-2 fa-brands fa-instagram"></i></a>
+                    <a href="<?= $model->facebook ? $model->facebook : '#' ?>"><i class=" text-primary mx-2 fa-brands fa-facebook-f"></i></a>
+                    <a href="<?= $model->whatsapp ? $model->whatsapp : '#' ?>"><i class=" text-primary mx-2 fa-brands fa-whatsapp"></i></a>
+                    <a href="<?= $model->twitter ? $model->twitter : '#' ?>"><i class=" text-primary mx-2 fa-brands fa-twitter"></i></a>
+                    <a href="<?= $model->instagram ? $model->instagram : '#' ?>"><i class=" text-primary mx-2 fa-brands fa-instagram"></i></a>
                 </div>
 
                 <p class="small text-light-gray mt-5 mb-0 p-0 ">Contactos</p>
-                <p class="fw-bold fs-5 text-primary mb-"> (829) 571-0277</p>
+                <p class="fw-bold fs-5 text-primary mb-"> <?= $model->phone ?></p>
 
 
 
                 <p class="small text-light-gray mt-4 mb-0 p-0 ">Correo Electrónico:</p>
-                <p class="fw-bold fs-5 text-primary mb-"> jconfidente@bestlisting.com</p>
+                <p class="fw-bold fs-5 text-primary mb-"> <?= $model->email ?></p>
 
                 <div class="my-5 pb-5">
                     <a href=""><i class=" fs-3 text-danger fa-solid fa-comment-dots mx-2"></i></a>
@@ -75,23 +118,30 @@
                     <span class="fw-bold">Reseña </span> Personal
                 </p>
 
-                <p class="small text-light-gray mb-2">Excelente apartamentos ubicado en el sector más exclusivo de Distrito, justo en en el centro
-                    de la ciudad; cerca de restaurantes, supermercados, facil acceso a las principales avenidas. </p>
-                <p class="small text-light-gray mb-2">Ubicado en el 4to nivel, el apartamento consta de 2 habitaciones cada una con su baño y
-                    principal con walking closet, 2 parqueos techados, baño de visita, persianas anti ruido, pisos
-                    en marmol.</p>
-                <p class="small text-light-gray mb-2">Área social con piscina y salon de eventos, gym y juegos para niños.
+                <p class="small text-light-gray mb-2">
+                    <?= $model->descripcion ?>
                 </p>
 
+
+                
+                <?php 
+
+                    $url = $model->video_url;
+                    $components = parse_url($url, PHP_URL_QUERY);
+                    //$component parameter is PHP_URL_QUERY
+                    parse_str($components, $results);
+                    $yt_url = isset($results['v']) ? $results['v'] : null;
+
+                ?>
+                <?php if ($yt_url): ?>
 
                 <p class="text-primary fs-5 my-5">
                     <span class="fw-bold">Video </span> presentación
                 </p>
-
                 <div class="mb-3 ">
-                    <iframe class="rounded pb-0 youtube-video" width="360" height="215"  src="https://www.youtube.com/embed/CyEMjlxbiik" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-
+                    <iframe class="rounded pb-0 youtube-video" width="360" height="215" src="https://www.youtube.com/embed/<?= $yt_url ?>" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
                 </div>
+                <?php endif ?>
 
 
             </div>
@@ -103,23 +153,25 @@
 
 
 
-    <div class="bg-blue-profile  py-5">
+    <div class="py-5 properties-banner-profile"  style="background: <?= $plantilla ? $plantilla['banner_background'] : '#0071ba' ?>;">
 
-
-
-        <div class="container">
-            <p class="text-white fs-5 my-5 text-center">
+        <div class="container pb-5">
+            <p class="text-white banner-title fs-5 my-5 text-center">
                 <span class="fw-bold">My </span> property
             </p>
 
             <div class="row">
-                <?php foreach ($propiedades as $propiedad) : ?>
-                    <?= $this->render('/propiedades/_grid_propiedades', ['propiedad' => $propiedad, 'count' => 1]) ?>
-                <?php endforeach ?>
+                
+
+                <?php if (count($propiedades) > 0): ?>
+                    <?php foreach ($propiedades as $propiedad) : ?>
+                        <?= $this->render('/propiedades/_grid_propiedades', ['propiedad' => $propiedad, 'count' => 1]) ?>
+                    <?php endforeach ?>
+                <?php else: ?>
+                    <p class="text-white text-center">Aún no ha registrado propiedades.</p>
+                <?php endif ?>
 
 
             </div>
-            <p class="text-center text-transparent fs-2 mt-5">Cargando...</p>
-            <p class="text-center text-transparent fs-2 "><i class="fa-solid fa-spinner"></i></p>
         </div>
     </div>

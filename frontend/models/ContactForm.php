@@ -12,8 +12,10 @@ class ContactForm extends Model
 {
     public $name;
     public $email;
-    public $subject;
-    public $body;
+    public $monto;
+    public $phone;
+    public $cedula;
+    public $nacionalidad;
     public $verifyCode;
 
 
@@ -24,7 +26,7 @@ class ContactForm extends Model
     {
         return [
             // name, email, subject and body are required
-            [['name', 'email', 'subject', 'body'], 'required'],
+            [['name', 'email', 'phone', 'monto', 'cedula', 'nacionalidad'], 'safe'],
             // email has to be a valid email address
             ['email', 'email'],
             // verifyCode needs to be entered correctly

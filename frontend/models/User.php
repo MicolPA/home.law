@@ -49,11 +49,12 @@ class User extends \yii\db\ActiveRecord
         return [
             [['username', 'auth_key', 'password_hash', 'email', 'created_at', 'updated_at'], 'required'],
             [['role_id', 'status', 'created_at', 'updated_at', 'template_id'], 'integer'],
-            [['username', 'first_name', 'last_name', 'photo_url', 'password_hash', 'password_reset_token', 'email', 'verification_token', 'video_url', 'video_platform', 'instagram', 'facebook', 'twitter', 'whatsapp'], 'string', 'max' => 255],
-            [['auth_key'], 'string', 'max' => 32],
+            [['username', 'first_name', 'last_name', 'password_hash', 'password_reset_token', 'email', 'verification_token', 'video_url', 'video_platform', 'instagram', 'facebook', 'twitter', 'whatsapp'], 'string', 'max' => 255],
+            [['auth_key', 'phone'], 'string', 'max' => 32],
             [['username'], 'unique'],
             [['email'], 'unique'],
             [['password_reset_token'], 'unique'],
+            [['descripcion'], 'safe'],
             [['role_id'], 'exist', 'skipOnError' => true, 'targetClass' => Roles::className(), 'targetAttribute' => ['role_id' => 'id']],
         ];
     }
@@ -68,7 +69,7 @@ class User extends \yii\db\ActiveRecord
             'username' => 'Username',
             'first_name' => 'Nombre',
             'last_name' => 'Apellido',
-            'photo_url' => 'Photo Url',
+            // 'photo_url' => 'Photo Url',
             'auth_key' => 'Auth Key',
             'role_id' => 'Role ID',
             'password_hash' => 'Password Hash',
@@ -79,6 +80,7 @@ class User extends \yii\db\ActiveRecord
             'updated_at' => 'Updated At',
             'verification_token' => 'Verification Token',
             'template_id' => 'Template ID',
+            'descripcion' => 'Descripción',
             'video_url' => 'Video Url',
             'video_platform' => 'Video Platform',
             'instagram' => 'Instagram',

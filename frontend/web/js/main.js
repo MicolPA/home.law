@@ -6,6 +6,18 @@ $(document).ready(function(){
         });
 
 
+        jQuery('input[type=file]').change(function(){
+                console.log('aqui');
+                var filename = jQuery(this).val().split('\\').pop();
+                var idname = jQuery(this).attr('id');
+                console.log(jQuery(this));
+                console.log(filename);
+                console.log(idname);
+                jQuery('div.field-'+idname+' label').html("<span class='fw-bolder font-12'>CARGADA</span>");
+                jQuery('div.field-'+idname+' label').css("background-color", '#00ac5a');
+                // jQuery('div.field-'+idname+' label').attr("style", 'padding-left:1rem !important;padding-right: 1rem !important');
+        });
+
        
 
         
@@ -17,21 +29,14 @@ $(document).ready(function(){
                 type: 'post',
                 dataType: 'json',
                 data: {
-                    stateID: $(this).val(),
+                    plantilla_id: $(this).val(),
                     _csrf: '<?=Yii::$app->request->getCsrfToken()?>'
                 },
                 success: function (data) {
                     console.log(data);
                     
-                    $('#cand_circ').empty();
-                    $('#cand_circ').prepend('<option value="" selected>Seleccionar...</option>');
-                    $.each(data, function (key, value) {
-                        console.log(value.Descripcion);
-                        $('#cand_circ').append('<option value="' + value.Codigocircunscripcion + '">' + value.Descripcion + '</option>');
-                    });
-                    $('#cand_mun').empty();
-                    $('#cand_mun').prepend('<option value="" selected>Seleccionar...</option>');
-                    //$('#circ_id').append('<option value="">Todos</option>');
+                    $('.main-banner-profile').css("background-color", data.banner_background);
+                    $('.properties-banner-profile').css("background-color", data.body_background);
                 }
         });
 });

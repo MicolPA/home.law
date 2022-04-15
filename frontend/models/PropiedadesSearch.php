@@ -39,9 +39,15 @@ class PropiedadesSearch extends Propiedades
      *
      * @return ActiveDataProvider
      */
-    public function search($params)
+    public function search($params, $all=true)
     {
-        $query = Propiedades::find();
+
+        if ($all) {
+            $query = Propiedades::find();
+        }else{
+            $query = Propiedades::find()->where(['status' => 1]);
+        }
+        
         $keyword = isset($params['keyword']) ? $params['keyword'] : '';
         $keyplace = isset($params['keyplace']) ? $params['keyplace'] : '';
 
@@ -49,6 +55,7 @@ class PropiedadesSearch extends Propiedades
 
         $dataProvider = new ActiveDataProvider([
             'query' => $query,
+            'sort'=> ['defaultOrder' => ['id' => SORT_DESC]],
         ]);
 
         $this->load($params);

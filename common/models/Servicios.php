@@ -81,6 +81,7 @@ class Servicios extends Model {
     }
 
     function savePhoto($model, $nombre_archivo, $campo, $carpeta){
+        $imagen_old = $model[$campo];
 
         $nombre_archivo = str_replace(' ', '-', $nombre_archivo);
         $nombre_archivo = $this->clean_string($nombre_archivo);
@@ -95,8 +96,10 @@ class Servicios extends Model {
             $imagen = $path . $nombre_archivo .'-'. date('Y-m-d H-i-s') . ".". $model[$campo]->extension;
             $model["$campo"]->saveAs($imagen);
         }else{
-            $imagen = $model[$campo];
+            $imagen = $imagen_old;
         }
+
+        $imagen = $imagen ? $imagen : $imagen_old;
         return $imagen;
 
     }
