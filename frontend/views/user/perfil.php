@@ -112,8 +112,10 @@ $plantilla = \frontend\models\ProfileTemplates::findOne($model['template_id']);
                 <p class="fw-bold fs-5 text-primary mb-"> <?= $model->email ?></p>
 
                 <div class="my-5 pb-5">
-                    <a href=""><i class=" fs-3 text-danger fa-solid fa-comment-dots mx-2"></i></a>
-                    <a class="text-decoration-none text-primary   small text-center fw-bold-2" href=""> CONTACTAR AGENTE </a>
+                    <a href="#" class="text-decoration-none fw-bold text-primary">
+                       <span class="btn btn-icon btn-sm btn-round text-white bg-danger mr-2" style="font-size:17px !important"><i class="fa-solid fa-comment-dots"></i></span> 
+                       CONTACTAR AGENTE
+                   </a>
 
                 </div>
             </div>

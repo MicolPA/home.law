@@ -84,7 +84,7 @@ $foto = '';
 
                         <div class="collapse in" id="collapseExample">
                             <ul class="nav">
-                                <?php if (Yii::$app->user->identity->role_id == 2): ?>
+                                <?php if (Yii::$app->user->identity->role_id == 2 or Yii::$app->user->identity->id == 1): ?>
                                 <li>
                                     <a href="<?= Yii::getAlias("@web") ?>/user/perfil/<?= $user->id ?>">
                                         <span class="link-collapse">Mi perfil</span>
