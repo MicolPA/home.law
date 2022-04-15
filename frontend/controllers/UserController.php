@@ -149,7 +149,7 @@ class UserController extends Controller
         $this->layout = "main";
         $model = $this->findModel($id);
         $plantillas = \frontend\models\ProfileTemplates::find()->all();
-        $propiedades = \frontend\models\Propiedades::find()->where(['assigned_to_user_id' => $id])->all();
+        $propiedades = \frontend\models\Propiedades::find()->where(['assigned_to_user_id' => $id, 'status' => 1])->all();
         if ($this->request->isPost && $model->load($this->request->post()) && $model->save()) {
             return $this->redirect(['view', 'id' => $model->id]);
         }

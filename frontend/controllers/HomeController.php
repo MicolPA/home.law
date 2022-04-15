@@ -8,7 +8,7 @@ class HomeController extends \yii\web\Controller
 {
     public function actionIndex()
     {
-        $propiedades = \frontend\models\Propiedades::find()->orderby(['id' => SORT_DESC])->limit(12)->all();
+        $propiedades = \frontend\models\Propiedades::find()->where(['status' => 1])->orderby(['id' => SORT_DESC])->limit(12)->all();
         $ubicaciones = Ubicaciones::find()->limit(8)->all();
         
         return $this->render('index',[
