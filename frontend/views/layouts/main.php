@@ -85,7 +85,9 @@ AppAsset::register($this);
                         <?php if (Yii::$app->user->isGuest): ?>
                             <li class="nav-item"><a href="<?= Yii::getAlias("@web") ?>/iniciar-sesion" class="nav-link text-white font-12 px-4">INICIAR SESIÓN</a></li>
                         <?php else: ?>
-                            <li class="nav-item"><a href="<?= Yii::getAlias("@web") ?>/admin" class="nav-link text-white font-12 px-4">ADMINISTRADOR</a></li>
+                            <?php if (Yii::$app->user->identity->role_id != 3): ?>
+                                <li class="nav-item"><a href="<?= Yii::getAlias("@web") ?>/admin" class="nav-link text-white font-12 px-4">ADMINISTRADOR</a></li>
+                            <?php endif ?>
                         <?php endif ?>
                         <li class="nav-item"><a href="#" class="nav-link text-white font-12 px-4">IDIOMA</a></li>
                         <!-- <li class="nav-item"><a href="#" class="nav-link text-white font-14">CONTACTOS</a></li> -->
