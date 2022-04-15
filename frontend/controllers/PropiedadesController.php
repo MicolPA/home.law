@@ -290,7 +290,7 @@ class PropiedadesController extends Controller
             $this->savePhotos($model, $galeria);
             $galeria->save();
             $this->getCaracteristicas($extras, $this->request->post(), $model);
-            if ($model->save()) {
+            if ($model->save(false)) {
                 Yii::$app->session->setFlash('confirmacion_msg','Propiedad modificada correctamente');
                 return $this->redirect(['listado']);
 
