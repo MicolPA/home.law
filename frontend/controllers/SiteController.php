@@ -174,7 +174,7 @@ class SiteController extends Controller
             return $this->redirect(['login']);
         }
 
-        return $this->render('signup2', [
+        return $this->render('signup', [
             'model' => $model,
         ]);
     }
