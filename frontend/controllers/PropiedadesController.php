@@ -154,7 +154,7 @@ class PropiedadesController extends Controller
         // if ($model->load($post) and $extras->load(Yii::$app->request->post())) {
             $this->savePhotos($model, $galeria);
             $galeria->save();
-            print_r($post);
+            // print_r($post);
             // exit;
             $model->galeria_id = $galeria->id;
             // $model->user_id = Yii::$app->user->identity->id;
@@ -255,7 +255,6 @@ class PropiedadesController extends Controller
             mkdir($path, 0777, true);
         }
         if (UploadedFile::getInstance($model, "$field")) {
-            echo "imagen";
             $model[$field] = UploadedFile::getInstance($model, "$field");
             $imagen = $path . "foto-$i-" . date('Y-m-d H-i-s') . ".". $model[$field]->extension;
             $model[$field]->saveAs($imagen);
@@ -296,7 +295,8 @@ class PropiedadesController extends Controller
                 return $this->redirect(['listado']);
 
             }else{
-                print_r($model->errors);
+                echo "error";
+                // print_r($model->errors);
                 exit;
             }
         }
