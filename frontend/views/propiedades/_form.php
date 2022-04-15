@@ -117,19 +117,19 @@ $this->params['subtitle'] = $model->id ? "Editar Propiedad" : "Registrar Propied
                 <?= $form->field($galeria, 'foto_5')->fileInput(['accept' => 'image/*'])->label($galeria->foto_5 ? "CARGADA" : '<i class="fa-solid fa-cloud-arrow-up mr-2"></i> Foto 5') ?>
             </div>
             <div class="col-md-2 inputFile">
-                <?= $form->field($galeria, 'foto_6')->fileInput(['accept' => 'image/*'])->label($galeria->foto_6 ? "CARGADA" : '<i class="fa-solid fa-cloud-arrow-up mr-2"></i> Foto 6') ?>
+                <?= $form->field($galeria, 'foto_6')->fileInput(['accept' => 'image/*'])->label($galeria->foto_6 ? "CARGADA" : '<i class="fa-solid fa-cloud-arrow-up mr-2"></i> Foto 7') ?>
             </div>
             <div class="col-md-2 inputFile">
-                <?= $form->field($galeria, 'foto_7')->fileInput(['accept' => 'image/*'])->label($galeria->foto_7 ? "CARGADA" : '<i class="fa-solid fa-cloud-arrow-up mr-2"></i> Foto 6') ?>
+                <?= $form->field($galeria, 'foto_7')->fileInput(['accept' => 'image/*'])->label($galeria->foto_7 ? "CARGADA" : '<i class="fa-solid fa-cloud-arrow-up mr-2"></i> Foto 8') ?>
             </div>
             <div class="col-md-2 inputFile">
-                <?= $form->field($galeria, 'foto_8')->fileInput(['accept' => 'image/*'])->label($galeria->foto_8 ? "CARGADA" : '<i class="fa-solid fa-cloud-arrow-up mr-2"></i> Foto 6') ?>
+                <?= $form->field($galeria, 'foto_8')->fileInput(['accept' => 'image/*'])->label($galeria->foto_8 ? "CARGADA" : '<i class="fa-solid fa-cloud-arrow-up mr-2"></i> Foto 9') ?>
             </div>
             <div class="col-md-2 inputFile">
-                <?= $form->field($galeria, 'foto_9')->fileInput(['accept' => 'image/*'])->label($galeria->foto_9 ? "CARGADA" : '<i class="fa-solid fa-cloud-arrow-up mr-2"></i> Foto 6') ?>
+                <?= $form->field($galeria, 'foto_9')->fileInput(['accept' => 'image/*'])->label($galeria->foto_9 ? "CARGADA" : '<i class="fa-solid fa-cloud-arrow-up mr-2"></i> Foto 10') ?>
             </div>
             <div class="col-md-2 inputFile">
-                <?= $form->field($galeria, 'foto_10')->fileInput(['accept' => 'image/*'])->label($galeria->foto_9 ? "CARGADA" : '<i class="fa-solid fa-cloud-arrow-up mr-2"></i> Foto 6') ?>
+                <?= $form->field($galeria, 'foto_10')->fileInput(['accept' => 'image/*'])->label($galeria->foto_9 ? "CARGADA" : '<i class="fa-solid fa-cloud-arrow-up mr-2"></i> Foto 11') ?>
             </div>
 
 

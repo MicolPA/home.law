@@ -152,8 +152,11 @@ class PropiedadesController extends Controller
 
         if ($model->load($post)) {
         // if ($model->load($post) and $extras->load(Yii::$app->request->post())) {
+
+            // print_r(UploadedFile::getInstance($galeria, "foto_2"));
+            // exit;
             $this->savePhotos($model, $galeria);
-            $galeria->save();
+            
             // print_r($post);
             // exit;
             $model->galeria_id = $galeria->id;
@@ -216,11 +219,10 @@ class PropiedadesController extends Controller
     function savePhotos($model, $galeria){
 
         $model->portada = $this->get_photo_url($model, $model->tipoPropiedad->nombre, $model->titulo_publicacion, 0);
-
+        // print_r($galeria);
         for ($i=2;$i<10;$i++) {
-            if (isset($galeria["foto_$i"])) {
-                $galeria["foto_$i"] = $this->get_photo_url($galeria, $model->tipoPropiedad->nombre, $model->titulo_publicacion, $i);
-            }
+            
+            $galeria["foto_$i"] = $this->get_photo_url($galeria, $model->tipoPropiedad->nombre, $model->titulo_publicacion, $i);
 
             // if (isset($galeria["foto_$i"]) and $_FILES["foto_$i"]) {
             //     $filename = $_FILES["foto_$i"]["name"];
@@ -235,13 +237,13 @@ class PropiedadesController extends Controller
             // }
             
         }
-        
+        $galeria->save();
     }
 
     function get_photo_url($model, $tipo, $titulo, $i){
 
         $field = $i == 0 ? 'portada' : "foto_$i";
-        $imagen = $model[$field];
+        // $imagen = $model[$field];
         $path = "images/propiedades/".$tipo;
 
         if (!file_exists($path)) {
