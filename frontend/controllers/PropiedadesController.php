@@ -218,7 +218,6 @@ class PropiedadesController extends Controller
         $model->portada = $this->get_photo_url($model, $model->tipoPropiedad->nombre, $model->titulo_publicacion, 0);
 
         for ($i=2;$i<10;$i++) {
-            echo $i;
             if (isset($galeria["foto_$i"])) {
                 $galeria["foto_$i"] = $this->get_photo_url($galeria, $model->tipoPropiedad->nombre, $model->titulo_publicacion, $i);
             }
