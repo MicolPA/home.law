@@ -23,6 +23,7 @@ $this->params['breadcrumbs'][] = $this->title;
                 <?= $form->field($model, 'username')->textInput(['autofocus' => true])->label('Usuario') ?>
                 <?= $form->field($model, 'first_name')->textInput(['autofocus' => true])->label('Nombre') ?>
                 <?= $form->field($model, 'last_name')->textInput(['autofocus' => true])->label('Apellido') ?>
+                <?= $form->field($model, 'role_id')->textInput(['type' => 'hidden', 'value' => 3])->label(false) ?>
 
                 <?= $form->field($model, 'email') ?>
 
