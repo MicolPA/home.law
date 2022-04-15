@@ -76,7 +76,7 @@ $foto = '';
                         <a data-toggle="collapse" href="#collapseExample" aria-expanded="true">
                             <span>
                                 <?= "$user->first_name $user->last_name" ?>
-                                <span class="user-level"><?= $user->role->name ?></span>
+                                <span class="user-level">Administrador</span>
                                 <span class="caret"></span>
                             </span>
                         </a>
