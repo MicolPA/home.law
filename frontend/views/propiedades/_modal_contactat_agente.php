@@ -14,15 +14,15 @@ $model = new \frontend\models\ContactForm();
 </style>
 <!-- Modal -->
 <div class="modal fade" id="staticBackdrop" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
-  <div class="modal-dialog modal-lg">
-    <div class="modal-content">
+  <div class="modal-dialog modal-lg p-4">
+    <div class="modal-content modal-content-2 p-4">
       <div class="modal-header border-0 text-end pb-0">
         <a class="text-danger"></a>
         <button type="button" class="text-end text-danger fw-bold float-end bg-white border-0" data-bs-dismiss="modal">CERRAR</button>
       </div>
       <div class="modal-body px-4 py-0">
         <?php $form = ActiveForm::begin(['options' => ['autocomplete' => 'off'],], ['enctype' => 'multipart/form-data']); ?>
-        <div class="row bg-white px-5 pb-5 pt-0">
+        <div class="row bg-white px-5 pt-0">
             <div class="col-md-12 text-center mb-4">
                 <h3 class="text-primary h4 text-gotham mb-0">OFERTA DE COMPRA</h3>
                 <p class="h4 text-muted fw-light">VALOR USD<?= number_format($precio) ?></p> 

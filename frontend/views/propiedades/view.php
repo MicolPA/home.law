@@ -18,6 +18,10 @@ $this->title = $model->titulo_publicacion;
         max-height: 420px;
     }
 
+    .carousel-item img{
+        width: 100%;
+    }
+
     .carousel-inner{
        border-bottom-right-radius: 0.6rem !important;
         border-bottom-left-radius: 0.6rem !important; 
@@ -35,6 +39,12 @@ $this->title = $model->titulo_publicacion;
 
     main{
         padding-bottom: 0px !important;
+    }
+
+    .a2a_default_style a{
+        display: inline-flex !important;
+        position: unset !important;
+        float: unset !important;
     }
 </style>
 <div class="bg-white">
@@ -61,7 +71,8 @@ $this->title = $model->titulo_publicacion;
                         <!-- Button trigger modal -->
 
                         <div class="position-absolute bottom-0 end-0 gallery-icons px-3 py-3 text-center">
-                            <img src="/frontend/web/images/icons/compartir.svg" width="28px" class="mr-4 ml-2">
+                            <a data-bs-toggle="modal" data-bs-target="#shareModal"><img src="/frontend/web/images/icons/compartir.svg" width="28px" class="mr-4 ml-2"></a>
+                            
                             <img src="/frontend/web/images/icons/descargar.svg" width="28px" class="mr-4">
                             <img src="/frontend/web/images/icons/ampliar.svg" width="28px" class="mr-4">
                         </div>
@@ -76,7 +87,7 @@ $this->title = $model->titulo_publicacion;
                         </div>
                         <div class="col-md-7">
                             <div class="row align-items-center py-3 text-secondary h5 text-end">
-                                <div class="col-1"></div>
+                                <div class="col-1 mobile-hidden"></div>
                                 <div class="col-2 text-center border-3 p-0">
                                     <div>
                                         <img class="mr-1" src="/frontend/web/images/icons/parqueo.svg" width="28px">
@@ -166,7 +177,7 @@ $this->title = $model->titulo_publicacion;
                 </div> <!-- /carousel-row -->
             </div>
         </div>
-       
+
        <div class="row mt-5 pt-5">
            <div class="col-md-12">
                <h2 class="text-primary fw-lighter h4">
@@ -187,7 +198,7 @@ $this->title = $model->titulo_publicacion;
                            </a>
                        </div>
                        <div class="mt-3">
-                           <a href="#" class="text-decoration-none fw-bold text-primary">
+                           <a href="/frontend/web/tasas-hipotecarias" class="text-decoration-none fw-bold text-primary">
                                <span class="btn btn-icon btn-sm btn-round text-white icons-gray mr-2"><i class="fa-solid fa-chart-line"></i></span> 
                                TASAS HIPOTECARIAS
                            </a>
@@ -266,6 +277,31 @@ $this->title = $model->titulo_publicacion;
             </div>
         </div>
     </div>
+</div>
+
+<!-- Modal -->
+<div class="modal fade" id="shareModal" tabindex="-1" aria-labelledby="shareModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered">
+    <div class="modal-content py-3">
+      <div class="modal-body text-center">
+        <!-- AddToAny BEGIN -->
+        <div class="py-4">
+            <p class="h4 fw-bold text-primary">Compartir Propiedad</p>
+        </div>
+        <div class="a2a_kit a2a_kit_size_32 a2a_default_style">
+            <!-- <a class="a2a_dd" href="https://www.addtoany.com/share"></a> -->
+            <a class="a2a_button_facebook"></a>
+            <a class="a2a_button_twitter"></a>
+            <a class="a2a_button_email"></a>
+            <a class="a2a_button_whatsapp"></a>
+            <a class="a2a_button_facebook_messenger"></a>
+            <a class="a2a_button_telegram"></a>
+        </div>
+        <script async src="https://static.addtoany.com/menu/page.js"></script>
+        <!-- AddToAny END -->
+      </div>
+    </div>
+  </div>
 </div>
 
 <?= $this->render('_modal_contactat_agente', ['precio' => $model->precio]) ?>
