@@ -152,6 +152,10 @@
     .form-show-notify > .text-right, .form-show-validation > .text-right {
         text-align: left !important;
     }
+
+    .carousel-control-next{
+        right: 45px;
+    }
 }
 
 @media screen and (max-width: 400px) {

@@ -17,13 +17,13 @@ class AppAsset extends AssetBundle
         'css/main.css?v=9',
         'css/custom-styles.css?v=4',
         'css/fontawesome.min.css',
-        'css/custom.css?v=0',
+        'css/custom.css?v=1',
         // 'https://use.fontawesome.com/releases/v6.1.1/css/all.css',
         // 'https://use.fontawesome.com/releases/v6.1.1/css/fontawesome.css'
     ];
     public $js = [
         'js/bootstrap.min.js',
-        'js/carousel.js?v=1',
+        'js/carousel.js?v=2',
         'js/fontawesome.min.js',
         'js/main.js?v=2',
         // 'https://use.fontawesome.com/releases/v5.15.4/js/all.js',

@@ -16,7 +16,7 @@ $(document).ready(function(){
   });
   // Only display 3 items in nav on mobile.
   if ($(window).width() < 575) {
-    $('#carousel-thumbs .row div:nth-child(4)').each(function() {
+    $('#carousel-thumbs .row div:nth-child(3)').each(function() {
       var rowBoundary = $(this);
       $('<div class="row mx-0">').insertAfter(rowBoundary.parent()).append(rowBoundary.nextAll().addBack());
     });
