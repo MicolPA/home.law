@@ -22,7 +22,7 @@ $model = new \frontend\models\ContactForm();
         }
 
         .form-modal-container{
-            padding: 0px 2rem;
+            padding: 0px 2.5rem;
         }
 
     }
