@@ -14,7 +14,7 @@ class AppAsset extends AssetBundle
     public $css = [
 
         // 'assets-atlantis/css/atlantis.css',
-        'css/main.css?v=9',
+        'css/main.css?v=10',
         'css/custom-styles.css?v=4',
         'css/fontawesome.min.css',
         'css/custom.css?v=1',
