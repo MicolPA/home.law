@@ -41,21 +41,42 @@ class PropiedadesSearch extends Propiedades
      */
     public function search($params, $all=true)
     {
-
         if ($all) {
             $query = Propiedades::find();
         }else{
             $query = Propiedades::find()->where(['status' => 1]);
         }
+
+
+        $sort = isset($params['sort']) ? $params['sort'] : 'recientes';
+
+        switch ($sort) {
+            case 'recientes':
+                $query->orderBy(['id' => SORT_DESC]);
+                break;
+
+            case 'precio_bajo':
+                $query->orderBy(['precio' => SORT_ASC]);
+                break;
+
+            case 'precio_alto':
+                $query->orderBy(['precio' => SORT_DESC]);
+                break;
+            
+            default:
+                $query->orderBy(['id' => SORT_DESC]);
+                break;
+        }
         
         $keyword = isset($params['keyword']) ? $params['keyword'] : '';
         $keyplace = isset($params['keyplace']) ? $params['keyplace'] : '';
+        $extra = isset($params['extra']) ? $params['extra'] : '';
 
         // add conditions that should always apply here
 
         $dataProvider = new ActiveDataProvider([
             'query' => $query,
-            'sort'=> ['defaultOrder' => ['id' => SORT_DESC]],
+            // 'sort'=> ['defaultOrder' => ['id' => SORT_DESC]],
         ]);
 
         $this->load($params);
@@ -86,13 +107,21 @@ class PropiedadesSearch extends Propiedades
         $query->orFilterWhere(['like', 'titulo_publicacion', $keyword])
             ->orFilterWhere(['like', 'titulo_publicacion', $keyword])
             ->orFilterWhere(['like', 'detalles', $keyword])
-            ->orFilterWhere(['like', 'extra_text', $keyword])
             ->orFilterWhere(['like', 'tags', $keyword]);
 
         if ($keyplace) {
             $query->joinWith(['ubicacion']);
             $query->andFilterWhere(['like', 'ubicaciones.nombre', $keyplace]);
         }
+
+        if ($extra) {
+            $query->andFilterWhere(['like', 'extra_text', $extra]);
+        }
+
+        // if ($this->extra_text) {
+        //     $query->joinWith(['tipoPropiedad']);
+        //     $query->andFilterWhere(['propiedades_tipo.id' => intval($this->extra_text)]);
+        // }
 
         if (isset($params['desde']) or isset($params['hasta'])) {
             $query->andFilterWhere(['>=', 'precio', $params['desde']]);

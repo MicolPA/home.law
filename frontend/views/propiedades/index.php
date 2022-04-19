@@ -8,6 +8,10 @@ $keyplace = isset($get['keyplace']) ? $get['keyplace'] : '';
 
 $this->title = "Propiedades";
 
+$url = "http://" . $_SERVER['HTTP_HOST'] . $_SERVER['REQUEST_URI'];
+
+$url = strpos($url, '?') ? "$url&" : "$url?"
+
  ?>
 <style>
     .form-control{
@@ -34,9 +38,9 @@ $this->title = "Propiedades";
                     ORDENAR
                   </button>
                   <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
-                    <li><a class="dropdown-item" href="#">Más reciente</a></li>
-                    <li><a class="dropdown-item" href="#">Precio Más Bajo</a></li>
-                    <li><a class="dropdown-item" href="#">Precio Más Alto</a></li>
+                    <li><a class="dropdown-item" href="<?= $url ?>sort=recientes">Más reciente</a></li>
+                    <li><a class="dropdown-item" href="<?= $url ?>sort=precio_bajo">Precio Más Bajo</a></li>
+                    <li><a class="dropdown-item" href="<?= $url ?>sort=precio_alto">Precio Más Alto</a></li>
                   </ul>
                 <a data-bs-toggle="modal" data-bs-target="#filtroModal" class="btn btn-transparent px-4 border border-2 border-primary btn-round">FILTROS AVANZADOS <i class="fa-solid fa-gears font-16 ml-2"></i></a>
             </div>

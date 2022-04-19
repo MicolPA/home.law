@@ -51,7 +51,7 @@ AppAsset::register($this);
                 </a>
 
                 <ul class="nav nav-pills">
-                    <li class="nav-item"><a href="<?= Yii::getAlias("@web") ?>/propiedades" class="nav-link text-primary font-14">PROPIEDADES</a></li>
+                    <li class="nav-item"><a href="<?= Yii::getAlias("@web") ?>/propiedades/index" class="nav-link text-primary font-14">PROPIEDADES</a></li>
                     <li class="nav-item"><a href="#" class="nav-link text-primary font-14">RENTAS</a></li>
                     <li class="nav-item"><a href="#" class="nav-link text-primary font-14">VENTAS</a></li>
                     <li class="nav-item"><a href="#" class="nav-link text-primary font-14">AGENTES</a></li>

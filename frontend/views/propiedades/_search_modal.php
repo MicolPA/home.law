@@ -6,8 +6,8 @@ use yii\helpers\ArrayHelper;
 
 $get = Yii::$app->request->get();
 
-$desde = isset($get['desde']) ? $get['desde'] : $get['desde'];
-$hasta = isset($get['hasta']) ? $get['hasta'] : $get['hasta'];
+$desde = isset($get['desde']) ? $get['desde'] : '';
+$hasta = isset($get['hasta']) ? $get['hasta'] : '';
 
 ?>
 
@@ -87,7 +87,7 @@ $hasta = isset($get['hasta']) ? $get['hasta'] : $get['hasta'];
                     <div class="col-md-6 pt-3">
                         <?php foreach ($extras as $ex): ?>
                             <div class="form-check mb-3">
-                              <input class="form-check-input" type="radio" value="<?= $ex->id ?>" name="PropiedadesSearch(extra_text)" id="extra_<?= $ex->id ?>">
+                              <input class="form-check-input" type="radio" value="<?= $ex->nombre ?>" name="extra" id="extra_<?= $ex->id ?>" <?= $model->extra_text == $ex->id ? 'checked' : '' ?>>
                               <label class="form-check-label text-primary fw-bold" for="extra_<?= $ex->id ?>">
                                 <?= mb_strtoupper($ex->nombre) ?>
                               </label>
