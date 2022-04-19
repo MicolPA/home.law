@@ -94,6 +94,11 @@ class PropiedadesSearch extends Propiedades
             $query->andFilterWhere(['like', 'ubicaciones.nombre', $keyplace]);
         }
 
+        if (isset($params['desde']) or isset($params['hasta'])) {
+            $query->andFilterWhere(['>=', 'precio', $params['desde']]);
+            $query->andFilterWhere(['<=', 'precio', $params['hasta']]);
+        }
+
 
         $query->andFilterWhere(['like', 'codigo', $this->codigo])
             ->andFilterWhere(['like', 'titulo_publicacion', $this->titulo_publicacion])

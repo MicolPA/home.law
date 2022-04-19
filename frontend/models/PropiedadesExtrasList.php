@@ -30,6 +30,7 @@ class PropiedadesExtrasList extends \yii\db\ActiveRecord
     {
         return [
             [['nombre', 'icon'], 'string', 'max' => 255],
+            [['is_filtro'], 'safe']
         ];
     }
 
@@ -42,6 +43,7 @@ class PropiedadesExtrasList extends \yii\db\ActiveRecord
             'id' => 'ID',
             'nombre' => 'Nombre',
             'icon' => 'Icon',
+            'is_filtro' => 'Filtro',
         ];
     }
 

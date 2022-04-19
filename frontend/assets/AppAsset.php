@@ -14,14 +14,15 @@ class AppAsset extends AssetBundle
     public $css = [
 
         // 'assets-atlantis/css/atlantis.css',
-        'css/main.css?v=10',
-        'css/custom-styles.css?v=4',
+        'css/main.css?v=11',
+        'css/custom-styles.css?v=5',
         'css/fontawesome.min.css',
         'css/custom.css?v=1',
         // 'https://use.fontawesome.com/releases/v6.1.1/css/all.css',
         // 'https://use.fontawesome.com/releases/v6.1.1/css/fontawesome.css'
     ];
     public $js = [
+        'js/popper.min.js',
         'js/bootstrap.min.js',
         'js/carousel.js?v=2',
         'js/fontawesome.min.js',

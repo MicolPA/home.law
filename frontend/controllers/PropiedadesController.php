@@ -96,11 +96,16 @@ class PropiedadesController extends Controller
 
     public function actionIndex()
     {
+
+        $tipos = PropiedadesTipo::find()->all();
+        $extras = PropiedadesExtrasList::find()->where(['is_filtro' => 1])->all();
         $searchModel = new PropiedadesSearch();
         $dataProvider = $searchModel->search($this->request->queryParams, false);
 
         return $this->render('index', [
-            'searchModel' => $searchModel,
+            'tipos' => $tipos,
+            'extras' => $extras,
+            'model' => $searchModel,
             'dataProvider' => $dataProvider,
         ]);
     }

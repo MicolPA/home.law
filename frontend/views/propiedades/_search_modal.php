@@ -1,0 +1,108 @@
+<?php 
+
+use yii\helpers\Html;
+use yii\widgets\ActiveForm;
+use yii\helpers\ArrayHelper;
+
+$get = Yii::$app->request->get();
+
+$desde = isset($get['desde']) ? $get['desde'] : $get['desde'];
+$hasta = isset($get['hasta']) ? $get['hasta'] : $get['hasta'];
+
+?>
+
+<!-- Modal Filtros -->
+<div class="modal fade" id="filtroModal" tabindex="-1">
+  <div class="modal-dialog modal-dialog-centered modal-lg pb-5">
+    <div class="modal-content modal-content-2">
+      <div class="modal-header border-0 text-end pb-0">
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <?php $form = ActiveForm::begin([
+            'method' => 'get',
+            'action' => \yii\helpers\Url::to(['/propiedades/index'])
+        ]); ?>
+        <div class="row bg-white px-5">
+            <div class="col-md-12 text-center mb-5">
+                <h3 class="text-primary h6 text-gotham mb-0">RANGO DE PRECIO</h3>
+            </div>
+
+            <div class="col-md-10 m-auto">
+                <div class="row">
+                    <div class="col-md-6">
+                        <div class="form-group mb-4">
+                            <input class="form-control rounded-2 placeholder-blue" name="desde" placeholder="Desde" value="<?= $desde ?>">
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="form-group mb-4">
+                            <input class="form-control rounded-2 placeholder-blue" name="hasta" placeholder="Hasta" value="<?= $hasta ?>">
+                        </div>
+                    </div>
+                </div>
+
+                
+            </div>
+
+            <div class="col-md-12 text-center pt-5 pb-4 border-top mt-4">
+                <h3 class="text-primary h6 text-gotham mb-0">TIPO DE PROPIEDAD</h3>
+            </div>
+
+            <div class="col-md-12 border-bottom pb-4 mb-3">
+                <div class="m-auto selectgroup py-4" style="width: fit-content;">
+                    <?php foreach ($tipos as $tipo): ?>
+                        <label class="selectgroup-item">
+                            <input type="radio" name="PropiedadesSearch[tipo_propiedad]" value="<?= $tipo->id ?>" class="selectgroup-input" <?= $model->tipo_propiedad == $tipo->id ? 'checked' : '' ?>>
+                            <span class="selectgroup-button border-0 fw-bold">
+                                <!-- <img class="mb-2 text-muted" src="/frontend/web/images/icons/store.svg" width="90px"> <br> -->
+                                <p class="mb-2 text-muted display-1">
+                                    <i class="fa-solid fa-store"></i>
+                                </p>
+                                <?= mb_strtoupper($tipo->nombre) ?>
+                            </span>
+                        </label>
+                        <!-- <div class="text-muted text-center d-inline-block px-3">
+                             <img class="mb-2" src="/frontend/web/images/icons/habitacion.svg" width="90%"> <br>
+                             <span class="text-center fw-bold font-12">
+                                 <?//= mb_strtoupper($tipo->nombre) ?>
+                             </span>
+                        </div> -->
+                        
+                    <?php endforeach ?>
+                </div>
+            </div>
+
+
+            <div class="col-md-11 m-auto">
+                <div class="row">
+                    <div class="col-md-5">
+                        <?= $form->field($model, 'habitaciones')->textInput(['type' => 'number', 'class' => 'form-control rounded-2 my-3 placeholder-blue', 'placeholder' => 'Habitaciones'])->label(false) ?>
+                        <?= $form->field($model, 'baños')->textInput(['type' => 'number', 'class' => 'form-control rounded-2 my-3 placeholder-blue', 'placeholder' => 'Baños'])->label(false) ?>
+                        <?= $form->field($model, 'parqueos')->textInput(['type' => 'number', 'class' => 'form-control rounded-2 my-3 placeholder-blue', 'placeholder' => 'Parqueos'])->label(false) ?>
+
+                        <?php echo $form->field($model, 'ubicacion_id')->dropDownList(ArrayHelper::map(\frontend\models\Ubicaciones::find()->all(), 'id', 'nombre'),['prompt'=>'Ciudad', 'class' => 'form-control rounded-2 my-3 text-primary fw-bold'])->label(false) ?>
+                    </div>
+                    <div class="col-md-1"></div>
+                    <div class="col-md-6 pt-3">
+                        <?php foreach ($extras as $ex): ?>
+                            <div class="form-check mb-3">
+                              <input class="form-check-input" type="radio" value="<?= $ex->id ?>" name="PropiedadesSearch(extra_text)" id="extra_<?= $ex->id ?>">
+                              <label class="form-check-label text-primary fw-bold" for="extra_<?= $ex->id ?>">
+                                <?= mb_strtoupper($ex->nombre) ?>
+                              </label>
+                            </div>
+                        <?php endforeach ?>
+                    </div>
+                </div>
+            </div>
+
+            <div class="form-group m-auto pt-5 text-center mb-5">
+                <?= Html::submitButton('APLICAR', ['class' => 'text-gotham font-12 btn btn-primary btn-round px-5 py-2 small ']) ?>
+            </div>
+        </div>
+        <?php ActiveForm::end(); ?>
+      </div>
+    </div>
+  </div>
+</div>

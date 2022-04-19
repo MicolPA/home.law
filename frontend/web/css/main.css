@@ -21,6 +21,9 @@
 .font-14{
     font-size: 14px;  
 }
+.font-16{
+    font-size: 16px !important;  
+}
 .font-12{
     font-size: 12px !important;  
 }
@@ -37,6 +40,11 @@
    color: #a7aeb6;
 }
 
+.placeholder-blue::-webkit-input-placeholder {/* Chrome/Opera/Safari/Edge */
+    color: #004b70 !important;
+    font-weight: bold;
+    /*font-family: gotham;*/
+}
 
 
 .font-family-2{
@@ -64,6 +72,10 @@
 
 .rounded-50{
     border-radius: 50% !important;
+}
+
+.btn-round {
+    border-radius: 100px !important;
 }
 
 /*.text-secondary{
@@ -195,6 +207,8 @@ main{
     .home-card{
         width: 100% !important;
     }
+
+    
 }
 
 
@@ -295,3 +309,4 @@ main{
     padding: calc(1rem - 2px);
     font-size: 1.2rem;
 }
+
