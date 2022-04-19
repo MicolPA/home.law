@@ -271,7 +271,7 @@ main{
 .selectgroup-input:checked + .selectgroup-button {
     border-color: #1572E8;
     z-index: 1;
-    color: #1572E8;
+    color: #004b70;
     background: rgba(21, 114, 232, 0.15);
 }
 

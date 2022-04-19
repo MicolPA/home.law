@@ -16,12 +16,12 @@ $this->title = "Propiedades";
 </style>
 <div class="container pb-5">
     <div class="row w-100 pt-5 m-auto">
-        <div class="col-md-4 pt-lg-5 mb-5 mt-5">
+        <div class="col-md-4 pt-lg-5 mb-5 mt-md-5">
             <p class="text-muted h5 pt-2">
                 <?= $dataProvider->query->count() ?> Inmuebles encontrados
             </p>
         </div>
-        <div class="col-md-4 text-center pt-lg-5 mb-5 mt-5">
+        <div class="col-md-4 text-center pt-lg-5 mb-md-5 mt-md-5">
             <p class="text-center text-primary p-2 m-0 fw-bold h4">PROPIEDADES</p>
             <?php if ($keyword or $keyplace): ?>
                 <p class="mb-5 h6 fw-normal">Resultado de la búsqueda <span class="badge bg-primary"><?= $keyword ?></span> <span class="badge bg-primary"><?= $keyplace ?></span></p>
