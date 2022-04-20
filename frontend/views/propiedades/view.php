@@ -14,8 +14,12 @@ $this->title = $model->titulo_publicacion;
 \yii\web\YiiAsset::register($this);
 ?>
 <style>
-    .carousel-item{
+    #myCarousel .carousel-item{
         max-height: 420px;
+    }
+
+    #slideModal .carousel-item{
+        max-height: 600px;
     }
 
     .carousel-item img{
@@ -73,8 +77,8 @@ $this->title = $model->titulo_publicacion;
                         <div class="position-absolute bottom-0 end-0 gallery-icons px-3 py-3 text-center">
                             <a data-bs-toggle="modal" data-bs-target="#shareModal"><img src="/frontend/web/images/icons/compartir.svg" width="28px" class="mr-4 ml-2"></a>
                             
-                            <img src="/frontend/web/images/icons/descargar.svg" width="28px" class="mr-4">
-                            <img src="/frontend/web/images/icons/ampliar.svg" width="28px" class="mr-4">
+                            <a data-bs-toggle="modal" data-bs-target="#slideModal1"><img src="/frontend/web/images/icons/descargar.svg" width="28px" class="mr-4 ml-2"></a>
+                            <a data-bs-toggle="modal" data-bs-target="#slideModal"><img src="/frontend/web/images/icons/ampliar.svg" width="28px" class="mr-4 ml-2"></a>
                         </div>
                       </div>
                       
@@ -165,7 +169,7 @@ $this->title = $model->titulo_publicacion;
                             <span class="sr-only">Previous</span>
                         </a> -->
                         <?php if (count($fotos) > 4): ?>
-                           <a class="carousel-control-next opacity-100" href="#" role="button" data-slide="next">
+                           <a class="carousel-control-next controlNext opacity-100" href="#" role="button" data-slide="next">
                                 <!-- <i class="fas fa-chevron-right text-primary fa-2x font-weight-bold"></i>
                                 <span class="sr-only">Next</span> -->
                                 <img src="/frontend/web/images/icons/boton.svg" width="120px">
@@ -279,29 +283,7 @@ $this->title = $model->titulo_publicacion;
     </div>
 </div>
 
-<!-- Modal -->
-<div class="modal fade" id="shareModal" tabindex="-1" aria-labelledby="shareModalLabel" aria-hidden="true">
-  <div class="modal-dialog modal-dialog-centered">
-    <div class="modal-content py-3">
-      <div class="modal-body text-center">
-        <!-- AddToAny BEGIN -->
-        <div class="py-4">
-            <p class="h4 fw-bold text-primary">Compartir Propiedad</p>
-        </div>
-        <div class="a2a_kit a2a_kit_size_32 a2a_default_style">
-            <!-- <a class="a2a_dd" href="https://www.addtoany.com/share"></a> -->
-            <a class="a2a_button_facebook"></a>
-            <a class="a2a_button_twitter"></a>
-            <a class="a2a_button_email"></a>
-            <a class="a2a_button_whatsapp"></a>
-            <a class="a2a_button_facebook_messenger"></a>
-            <a class="a2a_button_telegram"></a>
-        </div>
-        <script async src="https://static.addtoany.com/menu/page.js"></script>
-        <!-- AddToAny END -->
-      </div>
-    </div>
-  </div>
-</div>
 
+
+<?= $this->render('_modal_prop', ['model' => $model, 'fotos' => $fotos]) ?>
 <?= $this->render('_modal_contactat_agente', ['precio' => $model->precio]) ?>

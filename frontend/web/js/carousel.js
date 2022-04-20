@@ -39,7 +39,7 @@ $(document).ready(function(){
   });
 
 
-  $(".carousel-control-next").on('click', function(){
+  $(".controlNext").on('click', function(){
     if ($("#item").val() == 0) {
       $("#item").val(1);
       $('#carousel-thumbs').carousel(1);

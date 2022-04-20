@@ -24,7 +24,7 @@ class AppAsset extends AssetBundle
     public $js = [
         'js/popper.min.js',
         'js/bootstrap.min.js',
-        'js/carousel.js?v=2',
+        'js/carousel.js?v=3',
         'js/fontawesome.min.js',
         'js/main.js?v=2',
         // 'https://use.fontawesome.com/releases/v5.15.4/js/all.js',
