@@ -22,7 +22,7 @@
             <?php endforeach ?>
           </div>
           <div class="carousel-inner">
-            <div class="position-absolute bottom-0 top-0 px-3 py-3 text-center" style="z-index:1;right: 0;">
+            <div class="position-absolute bottom-0 top-0 px-3 py-3 text-center" style="z-index:5;right: 0;">
                 <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
             </div>
             <div class="carousel-item active">
