@@ -18,13 +18,20 @@ $this->params['subtitle'] = $model->id ? "Editar Propiedad" : "Registrar Propied
 
         <div class="row">
             
-            <div class="col-md-6">
-                <?= $form->field($model, 'codigo')->textInput(['required' => 'required']) ?>
-            </div>
+            <?php if ($model->codigo): ?>
+                <div class="col-md-6">
+                    <?= $form->field($model, 'codigo')->textInput(['required' => 'required', 'readonly' => 'readonly']) ?>
+                </div>
 
-            <div class="col-md-6">
+                <div class="col-md-6">
+                    <?= $form->field($model, 'titulo_publicacion')->textInput(['required' => 'required']) ?>
+                </div>
+
+            <?php else: ?>
+            <div class="col-md-12">
                 <?= $form->field($model, 'titulo_publicacion')->textInput(['required' => 'required']) ?>
             </div>
+            <?php endif ?>
 
             <div class="col-md-6">
                 <?php echo $form->field($model, 'tipo_propiedad')->dropDownList(ArrayHelper::map(\frontend\models\PropiedadesTipo::find()->all(), 'id', 'nombre'),['prompt'=>'Seleccionar...', 'required' => 'required']) ?>

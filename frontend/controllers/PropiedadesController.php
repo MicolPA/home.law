@@ -156,6 +156,7 @@ class PropiedadesController extends Controller
         $model->date = date("Y-m-d H:i:s");
 
         if ($model->load($post)) {
+
         // if ($model->load($post) and $extras->load(Yii::$app->request->post())) {
 
             // print_r(UploadedFile::getInstance($galeria, "foto_2"));
@@ -171,6 +172,8 @@ class PropiedadesController extends Controller
             $model->status = Yii::$app->user->identity->role_id != 1 ? 0 : 1;
 
             if ($model->save()) {
+                $model->codigo = "000$model->id";
+                $model->save();
                 $this->getCaracteristicas($extras, $post, $model);
                 Yii::$app->session->setFlash('confirmacion_msg','Propiedad registrada correctamente');
                 return $this->redirect(['listado']);

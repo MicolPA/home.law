@@ -52,7 +52,7 @@ class Propiedades extends \yii\db\ActiveRecord
             [['precio', 'metros', 'pies', 'parqueos'], 'number'],
             // [['codigo'], 'unique'],
             [['codigo', 'titulo_publicacion'], 'string', 'max' => 255],
-            [['detalles', 'tags','codigo', 'titulo_publicacion'], 'required'],
+            [['detalles', 'tags', 'titulo_publicacion'], 'required'],
             [['tipo_propiedad'], 'exist', 'skipOnError' => true, 'targetClass' => PropiedadesTipo::className(), 'targetAttribute' => ['tipo_propiedad' => 'id']],
             [['ubicacion_id'], 'exist', 'skipOnError' => true, 'targetClass' => Ubicaciones::className(), 'targetAttribute' => ['ubicacion_id' => 'id']],
         ];
