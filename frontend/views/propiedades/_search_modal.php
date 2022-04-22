@@ -24,19 +24,19 @@ $hasta = isset($get['hasta']) ? $get['hasta'] : '';
             'action' => \yii\helpers\Url::to(['/propiedades/index'])
         ]); ?>
         <div class="row bg-white px-5">
-            <div class="col-md-12 text-center mb-5">
+            <div class="col-md-12 text-center mb-3">
                 <h3 class="text-primary h6 text-gotham mb-0">RANGO DE PRECIO</h3>
             </div>
 
             <div class="col-md-10 m-auto">
                 <div class="row">
                     <div class="col-md-6">
-                        <div class="form-group mb-4">
+                        <div class="form-group mb-3">
                             <input class="form-control rounded-2 placeholder-blue" name="desde" placeholder="Desde" value="<?= $desde ?>">
                         </div>
                     </div>
                     <div class="col-md-6">
-                        <div class="form-group mb-4">
+                        <div class="form-group mb-3">
                             <input class="form-control rounded-2 placeholder-blue" name="hasta" placeholder="Hasta" value="<?= $hasta ?>">
                         </div>
                     </div>
@@ -45,19 +45,19 @@ $hasta = isset($get['hasta']) ? $get['hasta'] : '';
                 
             </div>
 
-            <div class="col-md-12 text-center pt-5 pb-4 border-top mt-4">
+            <div class="col-md-12 text-center pt-5 pb-3 border-top mt-3">
                 <h3 class="text-primary h6 text-gotham mb-0">TIPO DE PROPIEDAD</h3>
             </div>
 
-            <div class="col-md-12 border-bottom pb-4 mb-3">
-                <div class="m-auto selectgroup py-4" style="width: fit-content;">
+            <div class="col-md-12 border-bottom pb-3 mb-3">
+                <div class="m-auto selectgroup py-1" style="width: fit-content;">
                     <?php foreach ($tipos as $tipo): ?>
                         <label class="selectgroup-item">
                             <input type="radio" name="PropiedadesSearch[tipo_propiedad]" value="<?= $tipo->id ?>" class="selectgroup-input" <?= $model->tipo_propiedad == $tipo->id ? 'checked' : '' ?>>
                             <span class="selectgroup-button border-0 fw-bold">
                                 <!-- <img class="mb-2 text-muted" src="/frontend/web/images/icons/store.svg" width="90px"> <br> -->
                                 <p class="mb-2 text-muted display-1">
-                                    <i class="fa-solid fa-store"></i>
+                                    <img src="/frontend/web/images/icons/<?= strtolower($tipo->nombre) ?>.svg" width="60px">
                                 </p>
                                 <?= mb_strtoupper($tipo->nombre) ?>
                             </span>
@@ -88,7 +88,7 @@ $hasta = isset($get['hasta']) ? $get['hasta'] : '';
                         <?php foreach ($extras as $ex): ?>
                             <div class="form-check mb-3">
                               <input class="form-check-input" type="radio" value="<?= $ex->nombre ?>" name="extra" id="extra_<?= $ex->id ?>" <?= $model->extra_text == $ex->id ? 'checked' : '' ?>>
-                              <label class="form-check-label text-primary fw-bold" for="extra_<?= $ex->id ?>">
+                              <label class="form-check-label text-primary fw-bold font-12" for="extra_<?= $ex->id ?>">
                                 <?= mb_strtoupper($ex->nombre) ?>
                               </label>
                             </div>

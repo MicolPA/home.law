@@ -310,3 +310,10 @@ main{
     font-size: 1.2rem;
 }
 
+.main-carousel{
+    z-index: 0;
+}
+
+.main-carousel img{
+    max-height: 650px;
+}

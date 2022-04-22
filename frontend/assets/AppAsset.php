@@ -14,7 +14,7 @@ class AppAsset extends AssetBundle
     public $css = [
 
         // 'assets-atlantis/css/atlantis.css',
-        'css/main.css?v=11',
+        'css/main.css?v=12',
         'css/custom-styles.css?v=5',
         'css/fontawesome.min.css',
         'css/custom.css?v=1',
@@ -24,6 +24,7 @@ class AppAsset extends AssetBundle
     public $js = [
         'js/popper.min.js',
         'js/bootstrap.min.js',
+        'assets-atlantis/js/plugin/jquery.validate/jquery.validate.min.js',
         'js/carousel.js?v=3',
         'js/fontawesome.min.js',
         'js/main.js?v=2',
