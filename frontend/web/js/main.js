@@ -90,3 +90,29 @@ if(!toggle_customSidebar) {
         );
         toggle_customSidebar = true;
 }
+
+
+function validateFirstPart(){
+
+        // fields = ['contactform-name', 'contactform-monto', 'contactform-cedula', 'contactform-nacionalidad', 'contactform-email', 'contactform-name', 'contactform-phone'];
+        // classes = ['selectgroup-input']
+        state = true;
+        for (var i = $(".form-part1").length - 1; i >= 0; i--) {
+                if (!$(".form-part1")[i].checkValidity()) {
+                        state = false;
+                }
+        }
+        if (state && validateEmail($("#contactform-email").val())) {
+                $(".step-2").show();
+                $(".step-1").hide();
+                console.log('valido');
+        }else{
+                console.log('No valido');
+                swal('Alerta', 'Debe completar todos los campos de manera correcta', 'warning');
+        }
+}
+
+function validateEmail(email) {
+  var regex = /^([a-zA-Z0-9_.+-])+\@(([a-zA-Z0-9-])+\.)+([a-zA-Z0-9]{2,4})+$/;
+  return regex.test(email);
+}

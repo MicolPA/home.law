@@ -32,12 +32,12 @@ $hasta = isset($get['hasta']) ? $get['hasta'] : '';
                 <div class="row">
                     <div class="col-md-6">
                         <div class="form-group mb-3">
-                            <input class="form-control rounded-2 placeholder-blue" name="desde" placeholder="Desde" value="<?= $desde ?>">
+                            <input class="form-control rounded-2 placeholder-blue font-12" name="desde" placeholder="Desde" value="<?= $desde ?>">
                         </div>
                     </div>
                     <div class="col-md-6">
                         <div class="form-group mb-3">
-                            <input class="form-control rounded-2 placeholder-blue" name="hasta" placeholder="Hasta" value="<?= $hasta ?>">
+                            <input class="form-control rounded-2 placeholder-blue font-12" name="hasta" placeholder="Hasta" value="<?= $hasta ?>">
                         </div>
                     </div>
                 </div>
@@ -77,11 +77,11 @@ $hasta = isset($get['hasta']) ? $get['hasta'] : '';
             <div class="col-md-11 m-auto">
                 <div class="row">
                     <div class="col-md-5">
-                        <?= $form->field($model, 'habitaciones')->textInput(['type' => 'number', 'class' => 'form-control rounded-2 my-3 placeholder-blue', 'placeholder' => 'Habitaciones'])->label(false) ?>
-                        <?= $form->field($model, 'baños')->textInput(['type' => 'number', 'class' => 'form-control rounded-2 my-3 placeholder-blue', 'placeholder' => 'Baños'])->label(false) ?>
-                        <?= $form->field($model, 'parqueos')->textInput(['type' => 'number', 'class' => 'form-control rounded-2 my-3 placeholder-blue', 'placeholder' => 'Parqueos'])->label(false) ?>
+                        <?= $form->field($model, 'habitaciones')->textInput(['type' => 'number', 'class' => 'form-control rounded-2 my-3 placeholder-blue font-12', 'placeholder' => 'Habitaciones'])->label(false) ?>
+                        <?= $form->field($model, 'baños')->textInput(['type' => 'number', 'class' => 'form-control rounded-2 my-3 placeholder-blue font-12', 'placeholder' => 'Baños'])->label(false) ?>
+                        <?= $form->field($model, 'parqueos')->textInput(['type' => 'number', 'class' => 'form-control rounded-2 my-3 placeholder-blue font-12', 'placeholder' => 'Parqueos'])->label(false) ?>
 
-                        <?php echo $form->field($model, 'ubicacion_id')->dropDownList(ArrayHelper::map(\frontend\models\Ubicaciones::find()->all(), 'id', 'nombre'),['prompt'=>'Ciudad', 'class' => 'form-control rounded-2 my-3 text-primary fw-bold'])->label(false) ?>
+                        <?php echo $form->field($model, 'ubicacion_id')->dropDownList(ArrayHelper::map(\frontend\models\Ubicaciones::find()->all(), 'id', 'nombre'),['prompt'=>'Ciudad', 'class' => 'form-control rounded-2 my-3 text-primary fw-bold font-12'])->label(false) ?>
                     </div>
                     <div class="col-md-1"></div>
                     <div class="col-md-6 pt-3">

@@ -44,40 +44,40 @@ $model = new \frontend\models\ContactForm();
       </div>
       <div class="modal-body">
         <?php $form = ActiveForm::begin(['options' => ['autocomplete' => 'off'],], ['enctype' => 'multipart/form-data']); ?>
-        <div class="row bg-white form-modal-container">
+        <div class="row bg-white step-1 form-modal-container">
             <div class="col-md-12 text-center mb-4">
                 <h3 class="text-primary h4 text-gotham mb-0">OFERTA DE COMPRA</h3>
                 <p class="h4 text-muted fw-light">VALOR USD<?= number_format($precio) ?></p> 
             </div>
 
             <div class="col-md-6 label-primary fw-bold mb-4">
-                <?= $form->field($model, 'monto')->textInput(['class' => 'form-control rounded-2', 'required' => 'required', 'type' => 'number'])->label('Monto en dolares') ?>
+                <?= $form->field($model, 'monto')->textInput(['class' => 'form-control rounded-2 form-part1', 'required' => 'required', 'type' => 'number'])->label('Monto en dolares') ?>
             </div>
             <div class="col-md-6 label-primary fw-bold mb-4">
-                <?= $form->field($model, 'cedula')->textInput(['class' => 'form-control rounded-2', 'required' => 'required'])->label('Cédula / Pasaporte') ?>
+                <?= $form->field($model, 'cedula')->textInput(['class' => 'form-control rounded-2 form-part1', 'required' => 'required'])->label('Cédula / Pasaporte') ?>
             </div>
             <div class="col-md-6 label-primary fw-bold mb-4">
-                <?= $form->field($model, 'name')->textInput(['class' => 'form-control rounded-2', 'required' => 'required'])->label('Nombre') ?>
+                <?= $form->field($model, 'name')->textInput(['class' => 'form-control rounded-2 form-part1', 'required' => 'required'])->label('Nombre') ?>
             </div>
             <div class="col-md-6 label-primary fw-bold mb-4">
-                <?= $form->field($model, 'nacionalidad')->textInput(['class' => 'form-control rounded-2', 'required' => 'required'])->label('Nacionalidad') ?>
+                <?= $form->field($model, 'nacionalidad')->textInput(['class' => 'form-control rounded-2 form-part1', 'required' => 'required'])->label('Nacionalidad') ?>
             </div>
             <div class="col-md-6 label-primary fw-bold mb-4">
-                <?= $form->field($model, 'email')->textInput(['class' => 'form-control rounded-2', 'required' => 'required'])->label('Correo') ?>
+                <?= $form->field($model, 'email')->textInput(['class' => 'form-control rounded-2 form-part1', 'required' => 'required'])->label('Correo') ?>
             </div>
             <div class="col-md-6 label-primary fw-bold mb-4">
-                <?= $form->field($model, 'name')->textInput(['class' => 'form-control rounded-2', 'required' => 'required'])->label('Telefono') ?>
+                <?= $form->field($model, 'phone')->textInput(['class' => 'form-control rounded-2 form-part1', 'required' => 'required'])->label('Telefono') ?>
             </div>
 
             <div class="col-md-6">
                 <label class="label-primary fw-bold mb-2">Reservation Deposit</label>
                 <div class="selectgroup selectgroup-secondary selectgroup-pills mb-2">
                     <label class="selectgroup-item">
-                        <input type="radio" name="reservation_amount" value="5" class="selectgroup-input" required>
+                        <input type="radio" name="reservation_amount" value="5" class="selectgroup-input form-part1" required>
                         <span class="selectgroup-button selectgroup-button-icon">5%</span>
                     </label>
                     <label class="selectgroup-item">
-                        <input type="radio" name="reservation_amount" value="10" class="selectgroup-input" required>
+                        <input type="radio" name="reservation_amount" value="10" class="selectgroup-input form-part1" required>
                         <span class="selectgroup-button selectgroup-button-icon">10%</span>
                     </label>
                 </div>
@@ -93,7 +93,7 @@ $model = new \frontend\models\ContactForm();
             <div class="col-md-6">
                 <div class="form-group mb-4">
                     <label class="label-primary fw-bold">Clousing Date</label>
-                    <input type="date" class="form-control rounded-2" required>
+                    <input type="date" class="form-control rounded-2 form-part1" required>
                 </div>
 
                 <p class="text-muted">
@@ -102,18 +102,20 @@ $model = new \frontend\models\ContactForm();
 
                 <div class="form-group mt-5">
                     <label class="label-primary fw-bold">Amueblado segun listing de fecha</label>
-                    <select name="amueblado" class="form-control rounded-2">
+                    <select name="amueblado" class="form-control rounded-2 form-part1" required>
                         <option value="">Seleccionar...</option>
                         <option value="1">Si</option>
                         <option value="0">No</option>
                     </select>
                 </div>
             </div>
+
+            <div class="form-group m-auto pt-4 text-center">
+                <a href="javascript:validateFirstPart()" class="btn btn-primary px-4 py-2 small font-12">SIGUIENTE</a>
+            </div>
         </div>
 
-        <div class="row bg-white form-modal-container mt-3">
-
-            
+        <div class="row bg-white step-2 form-modal-container mt-3" style="display:none">
 
             <div class="col-md-8">
                 <label class="text-primary fw-bold">Contingencia</label>

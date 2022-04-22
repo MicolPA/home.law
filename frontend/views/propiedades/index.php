@@ -21,12 +21,12 @@ $url = strpos($url, '?') ? "$url&" : "$url?"
 <div class="container pb-5">
     <div class="row w-100 pt-5 m-auto">
         <div class="col-md-4 pt-lg-5 mb-5 mt-md-5">
-            <p class="text-muted h5 pt-2">
+            <p class="text-muted h5 pt-2 fw-normal">
                 <?= $dataProvider->query->count() ?> Inmuebles encontrados
             </p>
         </div>
         <div class="col-md-4 text-center pt-lg-5 mb-md-5 mt-md-5">
-            <p class="text-center text-primary p-2 m-0 fw-bold h4">PROPIEDADES</p>
+            <p class="text-center text-primary p-2 m-0 fw-normal h4">PROPIEDADES</p>
             <?php if ($keyword or $keyplace): ?>
                 <p class="mb-5 h6 fw-normal">Resultado de la búsqueda <span class="badge bg-primary"><?= $keyword ?></span> <span class="badge bg-primary"><?= $keyplace ?></span></p>
             <?php endif ?>
@@ -42,7 +42,7 @@ $url = strpos($url, '?') ? "$url&" : "$url?"
                     <li><a class="dropdown-item" href="<?= $url ?>sort=precio_bajo">Precio Más Bajo</a></li>
                     <li><a class="dropdown-item" href="<?= $url ?>sort=precio_alto">Precio Más Alto</a></li>
                   </ul>
-                <a data-bs-toggle="modal" data-bs-target="#filtroModal" class="btn btn-transparent px-4 border border-2 border-primary btn-round">FILTROS AVANZADOS <i class="fa-solid fa-gears font-16 ml-2"></i></a>
+                <a data-bs-toggle="modal" data-bs-target="#filtroModal" class="btn btn-transparent px-4 border border-2 border-primary btn-round">FILTROS AVANZADOS <i class="fa-solid fa-gears font-16 ml-2 text-primary"></i></a>
             </div>
         </div>
 
