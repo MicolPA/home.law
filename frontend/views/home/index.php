@@ -46,10 +46,10 @@
             <div id="carouselExampleControls" class="carousel slide carousel-fade main-carousel" tabindex="0" data-bs-ride="carousel">
               <div class="carousel-inner">
                 <div class="carousel-item active">
-                  <img src="/frontend/web/images/banner-4.png" class="d-block w-100">
+                  <img src="/frontend/web/images/banner.png" class="d-block w-100">
                 </div>
                 <div class="carousel-item">
-                  <img src="/frontend/web/images/banner.png" class="d-block w-100">
+                  <img src="/frontend/web/images/banner-4.png" class="d-block w-100">
                 </div>
                 <div class="carousel-item">
                   <img src="/frontend/web/images/banner-3.png" class="d-block w-100">
