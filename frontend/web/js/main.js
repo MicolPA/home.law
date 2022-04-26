@@ -125,7 +125,7 @@ function validateEmail(email) {
         $('#calcular').click(function(){
             var monto=parseInt($('#monto').val());
             var meses=parseInt($('#meses').val());
-            var tasa=parseInt($('#tasa').val());
+            var tasa=parseFloat($('#tasa').val());
             var tasafinal = tasa / 100;
             var resultado = monto * tasafinal / meses;
       
