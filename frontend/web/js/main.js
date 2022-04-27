@@ -116,3 +116,26 @@ function validateEmail(email) {
   var regex = /^([a-zA-Z0-9_.+-])+\@(([a-zA-Z0-9-])+\.)+([a-zA-Z0-9]{2,4})+$/;
   return regex.test(email);
 }
+
+
+
+
+
+    $(function(){
+        $('#calcular').click(function(){
+            var monto=parseInt($('#monto').val());
+            var meses=parseInt($('#meses').val());
+            var tasa=parseFloat($('#tasa').val());
+            var tasafinal = tasa / 100;
+            var resultado = monto * tasafinal / meses;
+      
+        $('#resultado').val(resultado);
+     
+        })
+
+        $('#reset').click(function(){
+            
+                $('#calculadora').trigger("reset");
+            })
+      
+    })
