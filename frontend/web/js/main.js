@@ -124,12 +124,24 @@ function validateEmail(email) {
     $(function(){
         $('#calcular').click(function(){
             var monto=parseInt($('#monto').val());
-            var meses=parseInt($('#meses').val());
+            var años=parseInt($('#años').val());
             var tasa=parseFloat($('#tasa').val());
-            var tasafinal = tasa / 100;
-            var resultado = monto * tasafinal / meses;
+
+            var meses = años * 12;
+            var tasafinal = tasa / 1200;
+
+          
+       
+
+            var factor = Math.pow(tasafinal+1,meses);
+            var cuota= monto*tasafinal*factor/(factor-1);
+
+            var TotalInterest = cuota * meses - monto;
+            var Totalpay = monto + TotalInterest;
       
-        $('#resultado').val(resultado);
+        $('#monthlypay').val(cuota);
+        $('#totalinterest').val(TotalInterest); 
+         $('#totalpay').val(Totalpay);
      
         })
 

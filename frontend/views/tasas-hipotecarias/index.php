@@ -83,7 +83,7 @@ $this->title = "Tasas Hipotecarias";
             </div>
 
 
-           
+
 
 
             <div class="col-dm-12 mt-2">
@@ -101,22 +101,41 @@ $this->title = "Tasas Hipotecarias";
                     </div>
                     <div class="div fotrm-row">
                         <div class="col">
-                            <input type="text" class="form-control rounded-2 my-3 placeholder-blue font-12 " id="meses" placeholder="Meses">
+                            <input type="text" class="form-control rounded-2 my-3 placeholder-blue font-12 " id="años" placeholder="Años">
                         </div>
                     </div>
                     <div class="div fotrm-row">
                         <div class="col">
-                            <input type="text" class="form-control rounded-2 my-3 placeholder-blue font-12" id="tasa" placeholder="Tasa (%):">
+                            <input type="text" class="form-control rounded-2 my-3 placeholder-blue font-12" id="tasa" placeholder="Tasa e interes (%):">
                         </div>
                     </div>
-                    <div class="div fotrm-row">
-                        <div class="col">
-                            <input type="text" class="form-control rounded-2 my-3 placeholder-blue font-12 " id="resultado" placeholder="Resultado:">
+               
+
+
+                    <div class="form-group row">
+                        <label for="colFormLabelSm" class="col-sm-2 col-form-label col-form-label-sm text-primary fw-bold">Pago Mensual</label>
+                        <div class="col-sm-10">
+                        <!-- <span class="text-dark" id="monthlypay"></span> -->
+                            <input type="text" class="form-control rounded-2  form-control-sm" id="monthlypay" placeholder="Pago Mensual">
                         </div>
                     </div>
+
+                    <div class="form-group row">
+                        <label for="colFormLabelSm" class="col-sm-2 col-form-label col-form-label-sm text-primary fw-bold">Pago Total</label>
+                        <div class="col-sm-10">
+                            <input type="text" class="form-control rounded-2  form-control-sm" id="totalpay" placeholder="Pago Total">
+                        </div>
+                    </div>
+                    <div class="form-group row">
+                        <label for="colFormLabelSm" class="col-sm-2 col-form-label col-form-label-sm text-primary fw-bold">Interes Total</label>
+                        <div class="col-sm-10">
+                            <input type="text" class="form-control rounded-2  form-control-sm" id="totalinterest" placeholder="Interes Total">
+                        </div>
+                    </div>
+
                     <div class="text-center m-3">
-                    <button type="button" id="calcular" class="btn btn-primary">Calcular</button>
-                    <button type="reset" id="reset" class="btn btn-secondary">Limpiar</button>
+                        <button type="button" id="calcular" class="btn btn-primary rounded-2">Calcular</button>
+                        <button type="reset" id="reset" class="btn btn-secondary rounded-2">Limpiar</button>
 
                     </div>
                 </div>
