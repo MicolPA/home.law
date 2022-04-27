@@ -18,7 +18,7 @@ class PropiedadesSearch extends Propiedades
     {
         return [
             [['id', 'tipo_propiedad', 'ubicacion_id', 'habitaciones', 'baños', 'created_by_user_id', 'assigned_to_user_id', 'galeria_id'], 'integer'],
-            [['codigo', 'titulo_publicacion', 'detalles', 'fecha_publicacion', 'portada', 'extra_text', 'tags', 'date'], 'safe'],
+            [['codigo', 'titulo_publicacion', 'detalles', 'fecha_publicacion', 'portada', 'extra_text', 'tags', 'date', 'tipo_contrato_id'], 'safe'],
             [['precio', 'metros', 'pies'], 'number'],
         ];
     }
@@ -41,6 +41,7 @@ class PropiedadesSearch extends Propiedades
      */
     public function search($params, $all=true)
     {
+
         if ($all) {
             $query = Propiedades::find();
         }else{
@@ -87,6 +88,9 @@ class PropiedadesSearch extends Propiedades
             return $dataProvider;
         }
 
+        // echo $this->tipo_contrato_id;
+        // exit;
+
         // grid filtering conditions
         $query->andFilterWhere([
             'id' => $this->id,
@@ -96,7 +100,7 @@ class PropiedadesSearch extends Propiedades
             'baños' => $this->baños,
             'created_by_user_id' => $this->created_by_user_id,
             'assigned_to_user_id' => $this->assigned_to_user_id,
-            'galeria_id' => $this->galeria_id,
+            'tipo_contrato_id' => $this->tipo_contrato_id,
             'fecha_publicacion' => $this->fecha_publicacion,
             'precio' => $this->precio,
             'metros' => $this->metros,

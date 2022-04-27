@@ -36,11 +36,6 @@ $this->params['subtitle'] = $model->id ? "Editar Propiedad" : "Registrar Propied
             <div class="col-md-6">
                 <?php echo $form->field($model, 'tipo_propiedad')->dropDownList(ArrayHelper::map(\frontend\models\PropiedadesTipo::find()->all(), 'id', 'nombre'),['prompt'=>'Seleccionar...', 'required' => 'required']) ?>
             </div>
-
-            <div class="col-md-6">
-                <?php echo $form->field($model, 'ubicacion_id')->dropDownList(ArrayHelper::map(\frontend\models\Ubicaciones::find()->all(), 'id', 'nombre'),['prompt'=>'Seleccionar...', 'required' => 'required']) ?>
-            </div>
-
             <div class="col-md-2">
                 <?= $form->field($model, 'parqueos')->textInput(['type' => 'number']) ?>
             </div>
@@ -52,6 +47,12 @@ $this->params['subtitle'] = $model->id ? "Editar Propiedad" : "Registrar Propied
             <div class="col-md-2">
                 <?= $form->field($model, 'baños')->textInput(['type' => 'number']) ?>
             </div>
+
+            <div class="col-md-6">
+                <?php echo $form->field($model, 'ubicacion_id')->dropDownList(ArrayHelper::map(\frontend\models\Ubicaciones::find()->all(), 'id', 'nombre'),['prompt'=>'Seleccionar...', 'required' => 'required']) ?>
+            </div>
+
+            
             <?php $users = \common\models\User::find()->all(); ?>
             <div class="col-md-6">
                 <div class="form-group">
@@ -66,8 +67,11 @@ $this->params['subtitle'] = $model->id ? "Editar Propiedad" : "Registrar Propied
                 </div>
             </div>
             
-            <div class="col-md-6">
+            <div class="col-md-3">
                 <?= $form->field($model, 'precio')->textInput() ?>
+            </div>
+            <div class="col-md-3">
+                <?php echo $form->field($model, 'tipo_contrato_id')->dropDownList(ArrayHelper::map(\frontend\models\PropiedadesTipoContrato::find()->all(), 'id', 'nombre'),['prompt'=>'Seleccionar...', 'required' => 'required'])->label('Tipo Contrato') ?>
             </div>
 
             <div class="col-md-3">

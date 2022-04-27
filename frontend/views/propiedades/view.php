@@ -213,8 +213,8 @@ $this->title = $model->titulo_publicacion;
                                DESCARGAR DICTAMEN
                            </a>
                        </div>
-                       <div class="mt-3 border-top border-bottom border-2 py-2">
-                            <button type="button" class="btn btn-primary btn-block w-100" data-bs-toggle="modal" data-bs-target="#staticBackdrop">
+                       <div class="mt-3 border-top border-bottom border-1 py-2">
+                            <button type="button" class="btn btn-primary btn-block w-100 btn-round" data-bs-toggle="modal" data-bs-target="#staticBackdrop">
                               HACER UNA OFERTA
                             </button>
                        </div>
