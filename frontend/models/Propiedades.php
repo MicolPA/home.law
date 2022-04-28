@@ -48,7 +48,7 @@ class Propiedades extends \yii\db\ActiveRecord
         return [
             [['tipo_propiedad', 'ubicacion_id', 'habitaciones', 'baños', 'created_by_user_id', 'assigned_to_user_id', 'galeria_id'], 'integer'],
             [['detalles', 'extra_text', 'tags'], 'string'],
-            [['fecha_publicacion', 'date'], 'safe'],
+            [['fecha_publicacion', 'date', 'tipo_contrato_id'], 'safe'],
             [['precio', 'metros', 'pies', 'parqueos'], 'number'],
             // [['codigo'], 'unique'],
             [['codigo', 'titulo_publicacion'], 'string', 'max' => 255],
@@ -94,6 +94,11 @@ class Propiedades extends \yii\db\ActiveRecord
     public function getTipoPropiedad()
     {
         return $this->hasOne(PropiedadesTipo::className(), ['id' => 'tipo_propiedad']);
+    }
+
+    public function getTipoContrato()
+    {
+        return $this->hasOne(PropiedadesTipoContrato::className(), ['id' => 'tipo_propiedad']);
     }
 
     /**

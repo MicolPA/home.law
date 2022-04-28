@@ -8,7 +8,7 @@
 
 </style>
 <!-- Modal -->
-<div class="modal fade" id="slideModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true" style="background: rgb(255,255,255, 0.5);">
+<div class="modal fade" id="slideModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true" style="background: rgb(0,0,0, 0.5);">
   <div class="modal-dialog modal-dialog-centered modal-xl">
     <div class="modal-content bg-transparent border-0">
       <div class="modal-body">

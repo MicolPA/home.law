@@ -24,32 +24,11 @@ $hasta = isset($get['hasta']) ? $get['hasta'] : '';
             'action' => \yii\helpers\Url::to(['/propiedades/index'])
         ]); ?>
         <div class="row bg-white px-5">
-            <div class="col-md-12 text-center mb-3">
-                <h3 class="text-primary h6 text-gotham mb-0">RANGO DE PRECIO</h3>
-            </div>
-
-            <div class="col-md-10 m-auto">
-                <div class="row">
-                    <div class="col-md-6">
-                        <div class="form-group mb-3">
-                            <input class="form-control rounded-2 placeholder-blue font-12" name="desde" placeholder="Desde" value="<?= $desde ?>">
-                        </div>
-                    </div>
-                    <div class="col-md-6">
-                        <div class="form-group mb-3">
-                            <input class="form-control rounded-2 placeholder-blue font-12" name="hasta" placeholder="Hasta" value="<?= $hasta ?>">
-                        </div>
-                    </div>
-                </div>
-
-                
-            </div>
-
-            <div class="col-md-12 text-center pt-5 pb-3 border-top mt-3">
+            <div class="col-md-12 text-center pb-3 mt-3">
                 <h3 class="text-primary h6 text-gotham mb-0">TIPO DE PROPIEDAD</h3>
             </div>
 
-            <div class="col-md-12 border-bottom pb-3 mb-3">
+            <div class="col-md-12  pb-3 mb-3">
                 <div class="m-auto selectgroup py-1" style="width: fit-content;">
                     <?php foreach ($tipos as $tipo): ?>
                         <label class="selectgroup-item">
@@ -72,9 +51,31 @@ $hasta = isset($get['hasta']) ? $get['hasta'] : '';
                     <?php endforeach ?>
                 </div>
             </div>
+            <div class="col-md-12 text-center pb-4 mt-2">
+                <h3 class="text-primary h6 text-gotham mb-0">RANGO DE PRECIO</h3>
+            </div>
+
+            <div class="col-md-11 m-auto mb-3">
+                <div class="row">
+                    <div class="col-md-6">
+                        <div class="form-group mb-3">
+                            <input class="form-control rounded-2 placeholder-blue font-12" name="desde" placeholder="Desde" value="<?= $desde ?>">
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="form-group mb-3">
+                            <input class="form-control rounded-2 placeholder-blue font-12" name="hasta" placeholder="Hasta" value="<?= $hasta ?>">
+                        </div>
+                    </div>
+                </div>
+
+                
+            </div>
+
+            
 
 
-            <div class="col-md-11 m-auto">
+            <div class="col-md-11 m-auto border-top pt-3">
                 <div class="row">
                     <div class="col-md-5">
                         <?= $form->field($model, 'habitaciones')->textInput(['type' => 'number', 'class' => 'form-control rounded-2 my-3 placeholder-blue font-12', 'placeholder' => 'Habitaciones'])->label(false) ?>
