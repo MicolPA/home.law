@@ -124,13 +124,11 @@ function validateEmail(email) {
     $(function(){
         $('#calcular').click(function(){
             var monto=parseInt($('#monto').val());
-            var años=parseInt($('#años').val());
+            var meses=parseInt($('#años').val());
             var tasa=parseFloat($('#tasa').val());
 
-            var meses = años * 12;
+           
             var tasafinal = tasa / 1200;
-
-          
        
 
             var factor = Math.pow(tasafinal+1,meses);
@@ -138,16 +136,17 @@ function validateEmail(email) {
 
             var TotalInterest = cuota * meses - monto;
             var Totalpay = monto + TotalInterest;
-      
-        $('#monthlypay').val(cuota);
-        $('#totalinterest').val(TotalInterest); 
-         $('#totalpay').val(Totalpay);
+          
+        $('#monthlypay').html(cuota.toFixed(2) );
+        $('#totalinterest').html(TotalInterest.toFixed(2)); 
+        $('#totalpay').html(Totalpay.toFixed(2));
      
         })
 
         $('#reset').click(function(){
-            
-                $('#calculadora').trigger("reset");
+         $('#calculadora' ).trigger("reset");
             })
-      
+
+
+
     })
