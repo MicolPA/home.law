@@ -124,7 +124,7 @@ function validateEmail(email) {
     $(function(){
         $('#calcular').click(function(){
             var monto=parseInt($('#monto').val());
-            var meses=parseInt($('#años').val());
+            var meses=parseInt($('#meses').val());
             var tasa=parseFloat($('#tasa').val());
 
            
@@ -137,7 +137,7 @@ function validateEmail(email) {
             var TotalInterest = cuota * meses - monto;
             var Totalpay = monto + TotalInterest;
           
-        $('#monthlypay').html(cuota.toFixed(2) );
+        $('#monthlypay').html(cuota.toFixed(2));
         $('#totalinterest').html(TotalInterest.toFixed(2)); 
         $('#totalpay').html(Totalpay.toFixed(2));
      
