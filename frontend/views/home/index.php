@@ -189,6 +189,7 @@
                 <i class="fa-solid fa-angle-left"></i>
             </button>
         </div>
+        <!-- /frontend/web/propiedades/index?PropiedadesSearch%5Bubicacion_id%5D=1 -->
         <div class="col-10">
             <div id="carouselExampleIndicators" class="carousel slide" data-bs-ride="carousel">
               <?php $count = 0; ?>
@@ -200,8 +201,10 @@
                             <?php $count++ ?>
                             <?php if ($count <= 4): ?>
                                 <div class="col-md-3 p-0">
-                                    <div class="prop-card-img" style="background-image: url('/frontend/web/<?= $u->portada ?>');"></div>
-                                    <p class="text-center text-secondary font-14 mt-2"><?= mb_strtoupper($u->nombre) ?></p>
+                                    <a class="text-decoration-none" href="/frontend/web/propiedades/index?PropiedadesSearch%5Bubicacion_id%5D=<?= $u->id ?>">
+                                        <div class="prop-card-img" style="background-image: url('/frontend/web/<?= $u->portada ?>');"></div>
+                                        <p class="text-center text-secondary font-14 mt-2"><?= mb_strtoupper($u->nombre) ?></p>
+                                    </a>
                                 </div>
                             <?php endif ?>
                         <?php endforeach ?>
@@ -215,8 +218,10 @@
                             <?php $count++ ?>
                             <?php if ($count > 4): ?>
                                 <div class="col-md-3 p-0">
-                                    <div class="prop-card-img" style="background-image: url('/frontend/web/<?= $u->portada ?>');"></div>
-                                    <p class="text-center text-secondary font-14 mt-2"><?= mb_strtoupper($u->nombre) ?></p>
+                                    <a class="text-decoration-none" href="/frontend/web/propiedades/index?PropiedadesSearch%5Bubicacion_id%5D=<?= $u->id ?>">
+                                        <div class="prop-card-img" style="background-image: url('/frontend/web/<?= $u->portada ?>');"></div>
+                                        <p class="text-center text-secondary font-14 mt-2"><?= mb_strtoupper($u->nombre) ?></p>
+                                    </a>
                                 </div>
                             <?php endif ?>
                         <?php endforeach ?>
