@@ -160,8 +160,8 @@ $(function(){
         })
 
         $('#reset').click(function(){
-                ('#calculadora' ).trigger("reset");
                 $(".resultados").hide();
+                ('#calculadora').trigger("reset");
         })
 
 })
