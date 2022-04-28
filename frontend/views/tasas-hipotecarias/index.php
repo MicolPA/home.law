@@ -92,49 +92,49 @@ $this->title = "Tasas Hipotecarias";
                 </p>
             </div>
 
-            <div class="w-100 mb-5">
-                <p class="text-center text-primary p-2 m-0 fw-bold h4 mb-1 mt-5">TASA DE AMORTIZACION</p>
+            <div class="w-100 mb-5" id="calculadora">
+                <p class="text-center text-primary p-2 m-0 fw-bold h4 mb-1 mt-5">TABLA AMORTIZACIÓN</p>
             </div>
             <form>
-                <div id="calculadora" class="row">
+                <div class="row">
                     <div class="col-lg-12">
-                        <input type="text" class="form-control rounded-2 my-3 placeholder-blue font-12 " id="monto" placeholder="Monto solicitado">
+                        <input type="number" class="form-control rounded-2 my-3 placeholder-blue" id="monto" placeholder="Monto solicitado">
                     </div>
-                    <div class="row ">
-                        <div class="col-lg-6">
-                            <input type="text" class="form-control rounded-2 my-3 placeholder-blue font-12 " id="meses" placeholder="Meses">
-                        </div>
-
-                        <div class="col-lg-6">
-                            <input type="text" class="form-control rounded-2 my-3 placeholder-blue font-12" id="tasa" placeholder="Tasa (%):">
-                        </div>
-                    </div>
-                
-
-                    <div class="form-group row">
-                        <label for="colFormLabelSm" class="col-sm-2 col-form-label col-form-label-sm text-primary fw-bold">Pago Mensual</label>
-                        <div class="col-sm-10">        
-                      <p  class="text-dark" id="monthlypay"></p>
-                        </div>
+                    <div class="col-lg-6">
+                        <input type="number" class="form-control rounded-2 my-3 placeholder-blue" id="meses" placeholder="Meses">
                     </div>
 
-                    <div class="form-group row">
-                        <label for="colFormLabelSm" class="col-sm-2 col-form-label col-form-label-sm text-primary fw-bold">Pago Total</label>
-                        <div class="col-sm-10">
-                        <p  class="text-dark" id="totalpay"></p>
-                        </div>
+                    <div class="col-lg-6">
+                        <input type="text" class="form-control rounded-2 my-3 placeholder-blue" id="tasa" placeholder="Tasa (%):">
                     </div>
-                    <div class="form-group row">
-                        <label for="colFormLabelSm" class="col-sm-2 col-form-label col-form-label-sm text-primary fw-bold">Interes Total</label>
-                        <div class="col-sm-10">
-                        <p  class="text-dark" id="totalinterest"></p>
+                </div>
+
+                <div class="row resultados" style="display:none">
+                    <div class="form-group row border-bottom py-3 my-3">
+                        <label for="monthlypay" class="col-sm-6 col-form-label col-form-label-sm text-primary fw-bold font-16">PAGO MENSUAL:</label>
+                        <div class="col-sm-6">        
+                            <p  class="text-dark h4 fw-light" id="monthlypay"></p>
                         </div>
                     </div>
 
+                    <div class="form-group row border-bottom py-3 mb-2">
+                        <label for="totalpay" class="col-sm-6 col-form-label col-form-label-sm text-primary fw-bold font-16">PAGO TOTAL:</label>
+                        <div class="col-sm-6">        
+                            <p  class="text-dark h4 fw-light" id="totalpay"></p>
+                        </div>
+                    </div>
+                    <div class="form-group row border-bottom py-3 mb-2">
+                        <label for="totalinterest" class="col-sm-6 col-form-label col-form-label-sm text-primary fw-bold font-16">INTERÉS TOTAL:</label>
+                        <div class="col-sm-6">
+                            <p  class="text-dark h4 fw-light" id="totalinterest"></p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="row mt-3">
                     <div class="text-center m-3">
-                        <button type="button" id="calcular" class="btn btn-primary rounded-2">Calcular</button>
-                        <button type="reset" id="reset" class="btn btn-secondary rounded-2">Limpiar</button>
-
+                        <button type="button" id="calcular" class="btn btn-primary rounded-2 px-5 mr-3">Calcular</button>
+                        <button type="reset" id="reset" class="btn btn-secondary rounded-2 px-5">Limpiar</button>
                     </div>
                 </div>
             </form>

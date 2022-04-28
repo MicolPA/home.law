@@ -118,35 +118,50 @@ function validateEmail(email) {
 }
 
 
+function formatNumber(number){
+
+        // number = number.toFixed(2);
+        console.log(number);
+        var value = (number).toLocaleString(
+          'en-US', // leave undefined to use the visitor's browser 
+                     // locale or a string like 'en-US' to override it.
+          { minimumFractionDigits: 0 }
+        );
+        console.log(value);
+        return value;
+}
 
 
-
-    $(function(){
+$(function(){
         $('#calcular').click(function(){
-            var monto=parseInt($('#monto').val());
-            var meses=parseInt($('#meses').val());
-            var tasa=parseFloat($('#tasa').val());
+
+            var monto = parseInt($('#monto').val());
+            var meses = parseInt($('#meses').val());
+            var tasa = parseFloat($('#tasa').val());
 
            
             var tasafinal = tasa / 1200;
-       
-
             var factor = Math.pow(tasafinal+1,meses);
             var cuota= monto*tasafinal*factor/(factor-1);
 
-            var TotalInterest = cuota * meses - monto;
-            var Totalpay = monto + TotalInterest;
-          
-        $('#monthlypay').html(cuota.toFixed(2));
-        $('#totalinterest').html(TotalInterest.toFixed(2)); 
-        $('#totalpay').html(Totalpay.toFixed(2));
-     
+            var totalInterest = cuota * meses - monto;
+            var totalPay = monto + totalInterest;
+
+            cuota = formatNumber(cuota);
+            totalInterest = formatNumber(totalInterest);
+            totalPay = formatNumber(totalPay);
+                $(".resultados").show();
+
+
+        $('#monthlypay').html("$"+cuota);
+        $('#totalinterest').html("$"+totalInterest); 
+        $('#totalpay').html("$"+totalPay);
+
         })
 
         $('#reset').click(function(){
-         $('#calculadora' ).trigger("reset");
-            })
+                ('#calculadora' ).trigger("reset");
+                $(".resultados").hide();
+        })
 
-
-
-    })
+})
