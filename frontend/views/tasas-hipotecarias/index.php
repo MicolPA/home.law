@@ -97,15 +97,18 @@ $this->title = "Tasas Hipotecarias";
             </div>
             <form>
                 <div class="row">
-                    <div class="col-lg-12">
-                        <input type="number" class="form-control rounded-2 my-3 placeholder-blue" id="monto" placeholder="Monto solicitado">
+                    <div class="col-lg-12 my-3">
+                        <label class="text-primary fw-bold mb-1">Monto solicitado</label>
+                        <input type="number" class="form-control rounded-2 placeholder-blue" id="monto" placeholder="">
                     </div>
-                    <div class="col-lg-6">
-                        <input type="number" class="form-control rounded-2 my-3 placeholder-blue" id="meses" placeholder="Meses">
+                    <div class="col-lg-6 my-3">
+                        <label class="text-primary fw-bold mb-1">Meses</label>
+                        <input type="number" class="form-control rounded-2 placeholder-blue" id="meses" placeholder="">
                     </div>
 
-                    <div class="col-lg-6">
-                        <input type="text" class="form-control rounded-2 my-3 placeholder-blue" id="tasa" placeholder="Tasa (%):">
+                    <div class="col-lg-6 my-3">
+                        <label class="text-primary fw-bold mb-1">Tasa (%)</label>
+                        <input type="text" class="form-control rounded-2 placeholder-blue" id="tasa" placeholder="">
                     </div>
                 </div>
 

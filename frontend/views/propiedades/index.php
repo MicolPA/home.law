@@ -34,7 +34,7 @@ $url = strpos($url, '?') ? "$url&" : "$url?"
 
         <div class="col-md-4 pt-lg-5 mb-5 mt-5">
             <div>
-                  <button class="btn btn-transparent px-4 border border-2 border-primary btn-round dropdown-toggle input-r" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
+                  <button class="text-primary btn btn-transparent px-4 border border-1 border-primary btn-round dropdown-toggle input-r" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
                     ORDENAR
                   </button>
                   <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
@@ -42,7 +42,7 @@ $url = strpos($url, '?') ? "$url&" : "$url?"
                     <li><a class="dropdown-item" href="<?= $url ?>sort=precio_bajo">Precio Más Bajo</a></li>
                     <li><a class="dropdown-item" href="<?= $url ?>sort=precio_alto">Precio Más Alto</a></li>
                   </ul>
-                <a data-bs-toggle="modal" data-bs-target="#filtroModal" class="btn btn-transparent px-4 border border-2 border-primary btn-round">FILTROS AVANZADOS <i class="fa-solid fa-gears font-16 ml-2 text-primary"></i></a>
+                <a data-bs-toggle="modal" data-bs-target="#filtroModal" class="align-items-center btn btn-transparent px-4 border border-1 text-primary border-primary btn-round">FILTROS AVANZADOS <img src="/frontend/web/images/icons/filtro.svg" class="text-primary" width="20px" style="margin-top:-3px"></a>
             </div>
         </div>
 
