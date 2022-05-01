@@ -192,7 +192,8 @@ function getTablaAmortizacion(monto, meses, tasa){
                 if (i == 1) {
                         saldo = monto;
                         datos = calcularCuota(saldo, meses, tasa);
-                        cuota = formatNumber(datos.cuota);
+                        // cuota = formatNumber(datos.cuota);
+                        cuota =  datos.cuota;
                         montoc = monto - cuota;
 
                         console.log(datos);
