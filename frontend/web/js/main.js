@@ -121,47 +121,118 @@ function validateEmail(email) {
 function formatNumber(number){
 
         // number = number.toFixed(2);
-        console.log(number);
+        // console.log(number);
         var value = (number).toLocaleString(
           'en-US', // leave undefined to use the visitor's browser 
                      // locale or a string like 'en-US' to override it.
-          { minimumFractionDigits: 0 }
+          { minimumFractionDigits: 2, maximumFractionDigits:3 }
         );
-        console.log(value);
+        // console.log(value);
         return value;
 }
 
 
-$(function(){
-        $('#calcular').click(function(){
+$('#calcular').click(function(){
 
-            var monto = parseInt($('#monto').val());
-            var meses = parseInt($('#meses').val());
-            var tasa = parseFloat($('#tasa').val());
+        limpiarCaluladoraResultados();
+        var monto = parseInt($('#monto').val());
+        var meses = parseInt($('#meses').val());
+        var tasa = parseFloat($('#tasa').val());
 
            
-            var tasafinal = tasa / 1200;
-            var factor = Math.pow(tasafinal+1,meses);
-            var cuota= monto*tasafinal*factor/(factor-1);
+        // var tasafinal = tasa / 1200;
+        // var factor = Math.pow(tasafinal+1,meses);
+        // var cuota= monto*tasafinal*factor/(factor-1);
 
-            var totalInterest = cuota * meses - monto;
-            var totalPay = monto + totalInterest;
+        // var totalInterest = cuota * meses - monto;
+        // var totalPay = monto + totalInterest;
 
-            cuota = formatNumber(cuota);
-            totalInterest = formatNumber(totalInterest);
-            totalPay = formatNumber(totalPay);
-                $(".resultados").show();
+        getTablaAmortizacion(monto, meses, tasa);
 
+        datos = calcularCuota(monto, meses, tasa);
 
+        cuota = formatNumber(datos.cuota);
+        totalInterest = formatNumber(datos.totalInterest);
+        totalPay = formatNumber(datos.totalPay);
+        
+        $(".resultados").show();
+
+        
         $('#monthlypay').html("$"+cuota);
         $('#totalinterest').html("$"+totalInterest); 
         $('#totalpay').html("$"+totalPay);
 
-        })
-
-        $('#reset').click(function(){
-                $(".resultados").hide();
-                ('#calculadora').trigger("reset");
-        })
-
 })
+
+function calcularCuota(monto, meses, tasa){
+
+        datos = [];
+        tasafinal = tasa / 1200;
+        factor = Math.pow(tasafinal+1,meses);
+        datos.cuota = monto * tasafinal * factor / (factor - 1);
+
+        datos.totalInterest = datos.cuota * meses - monto;
+        datos.totalPay = monto + datos.totalInterest;
+
+        return datos;
+
+}
+
+function getTablaAmortizacion(monto, meses, tasa){
+        montoc = 0;
+        cuota = 0;
+        for (var i = 1; i < meses + 1; i++) {
+                // console.log(i);
+                var date = new Date();
+                var newDate = new Date(date.setMonth(date.getMonth() + i));
+
+                // saldo = montoc == 0 ? monto : montoc;
+                // datos = calcularCuota(saldo, mesesCount, tasa);
+
+                if (i == 1) {
+                        saldo = monto;
+                        datos = calcularCuota(saldo, meses, tasa);
+                        cuota = formatNumber(datos.cuota);
+                        montoc = monto - cuota;
+
+                        console.log(datos);
+
+                }else{
+                        saldo = balance;
+                        montoc = montoc - cuota + datosMes.totalInterest;
+
+                }
+                datosMes = calcularCuota(saldo, 1, tasa);
+                console.log(datosMes);
+                
+                totalInterest = datosMes.totalInterest;
+                totalPay = datosMes.totalPay;
+
+                balance = montoc + totalInterest;
+
+                
+                $('tbody').append($('thead').html());
+                $("tbody tr:last-child .cuota").html(i);
+                $("tbody tr:last-child .fecha").html(newDate.toLocaleDateString());
+                $("tbody tr:last-child .pago").html("$"+formatNumber(cuota));
+                $("tbody tr:last-child .interes").html("$"+formatNumber(totalInterest));
+                
+                if (i < meses) {
+                        $("tbody tr:last-child .balance").html("$"+formatNumber(balance));
+                }else{
+                        $("tbody tr:last-child .balance").html('-');
+                }
+                // $('.tBody').show();
+        }
+}
+
+function limpiarCaluladoraResultados(){
+        $("tbody").html('');
+        $(".resultados").hide();
+        $('#calculadora').trigger("reset");
+}
+$('#reset').click(function(){
+        
+        limpiarCaluladoraResultados();
+})
+
