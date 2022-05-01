@@ -28,7 +28,7 @@ class AppAsset extends AssetBundle
         'js/carousel.js?v=3',
         'js/fontawesome.min.js',
         'js/sweetalert.min.js',
-        'js/main.js?v=4',
+        'js/main.js?v=5',
         // 'https://use.fontawesome.com/releases/v5.15.4/js/all.js',
         // 'assets-atlantis/js/atlantis.min.js',
         // 'assets-atlantis/js/plugin/owl-carousel/owl.carousel.min.js',
