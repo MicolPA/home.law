@@ -31,6 +31,10 @@ AppAsset::register($this);
 <body class="">
     <?php $this->beginBody() ?>
 
+    <div id="preloader">
+        <div data-loader="circle-side"></div>
+    </div><!-- /Preload -->
+
     <style>
         .nav-item {
             float: right !important;

@@ -35,7 +35,9 @@ $foto = '';
 </head>
 <body class="">
 <?php $this->beginBody() ?>
-
+<div id="preloader">
+    <div data-loader="circle-side"></div>
+</div><!-- /Preload -->
  
 <div class="wrapper <?= strpos(Yii::$app->request->url, '/user/configurar') ? 'sidebar_minimize' : '' ?>">
     <div class="wrapper fullheight-side no-box-shadow-style <?= strpos(Yii::$app->request->url, '/user/configurar') ? 'sidebar_minimize' : '' ?>">

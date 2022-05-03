@@ -16,10 +16,8 @@ class AppAssetAdmin extends AssetBundle
         'assets-atlantis/css/bootstrap.min.css',
         'assets-atlantis/css/atlantis.css',
         'assets-atlantis/css/custom-styles.css',
-        'css/admin.css',
+        'css/admin.css?v=1',
         'css/fontawesome.min.css',
-        
-
     ];
 
 
@@ -60,7 +58,7 @@ class AppAssetAdmin extends AssetBundle
         
         // 'https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.8/js/select2.min.js',
 
-        'js/main.js',
+        'js/main.js?v=1',
     ];
 
     public $depends = [

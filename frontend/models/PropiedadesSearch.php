@@ -41,7 +41,7 @@ class PropiedadesSearch extends Propiedades
      */
     public function search($params, $all=true)
     {
-
+        // print_r($params);
         if ($all) {
             $query = Propiedades::find();
         }else{
