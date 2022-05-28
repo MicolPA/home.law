@@ -210,7 +210,7 @@ $this->title = $model->titulo_publicacion;
                        <div class="mt-3">
                            <a href="#" class="text-decoration-none fw-bold text-primary">
                                <span class="btn btn-icon btn-sm btn-round text-white icons-gray mr-2"><i class="fa-solid fa-arrow-down-long px-1"></i></span> 
-                               DESCARGAR DICTAMEN
+                               DEBIDA DILIGENCIA
                            </a>
                        </div>
                        <div class="mt-3 border-top border-bottom border-1 py-2">

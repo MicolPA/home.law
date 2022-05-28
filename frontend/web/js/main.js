@@ -6,6 +6,8 @@ $(window).on('load', function () { // makes sure the whole site is loaded
                 'overflow': 'visible'
         });
     $('#ajax-loader').hide();
+    $(".number-mask").mask('000,000,000.00', {reverse: true});
+    // $(".number-mask").numeric({ decimal : ".",  negative : false, scale: 3 });
 
 })
 
@@ -142,40 +144,82 @@ function formatNumber(number){
         return value;
 }
 
+function validateCalculadora(){
+
+        if ($('#monto').val() == '') {
+                swal('Alerta', 'Debe ingresar el monto', 'warning');
+                return false;
+        }
+
+
+        if ($('#meses').val() == '') {
+                swal('Alerta', 'Debe ingresar la cantidad de meses', 'warning');
+                return false;
+        }
+
+        if ($('#tasa').val() == '') {
+                swal('Alerta', 'Debe ingresar la tasa', 'warning');
+                return false;
+        }
+
+        return true;
+}
+
 
 $('#calcular').click(function(){
 
-        limpiarCaluladoraResultados();
-        var monto = parseInt($('#monto').val());
-        var meses = parseInt($('#meses').val());
-        var tasa = parseFloat($('#tasa').val());
+        if (validateCalculadora()) {
+                limpiarCaluladoraResultados();
+                // var monto = parseInt($('#monto').val());
+                var monto = $('#monto').val();
+                var meses = parseInt($('#meses').val());
+                // var tasa = parseFloat($('#tasa').val());
+                var tasa = $('#tasa').val();
 
-           
-        // var tasafinal = tasa / 1200;
-        // var factor = Math.pow(tasafinal+1,meses);
-        // var cuota= monto*tasafinal*factor/(factor-1);
 
-        // var totalInterest = cuota * meses - monto;
-        // var totalPay = monto + totalInterest;
+                console.log(monto);
+                monto =  monto.toString().replace(",", ""); 
+                console.log(monto);
+                tasa =  tasa.toString().replace(",", ""); 
+                monto = parseFloat(monto);
+                tasa = parseFloat(tasa);
+                console.log(monto);
+                   
+                // var tasafinal = tasa / 1200;
+                // var factor = Math.pow(tasafinal+1,meses);
+                // var cuota= monto*tasafinal*factor/(factor-1);
 
-        getTablaAmortizacion(monto, meses, tasa);
+                // var totalInterest = cuota * meses - monto;
+                // var totalPay = monto + totalInterest;
 
-        datos = calcularCuota(monto, meses, tasa);
+                getTablaAmortizacion(monto, meses, tasa);
 
-        cuota = formatNumber(datos.cuota);
-        totalInterest = formatNumber(datos.totalInterest);
-        totalPay = formatNumber(datos.totalPay);
+                datos = calcularCuota(monto, meses, tasa);
+
+                cuota = formatNumber(datos.cuota);
+                totalInterest = formatNumber(datos.totalInterest);
+                totalPay = formatNumber(datos.totalPay);
+                
+                $(".resultados").show();
+
+                
+                $('#monthlypay').html("$"+cuota);
+                $('#totalinterest').html("$"+totalInterest); 
+                $('#totalpay').html("$"+totalPay);
+        }
+
         
-        $(".resultados").show();
-
-        
-        $('#monthlypay').html("$"+cuota);
-        $('#totalinterest').html("$"+totalInterest); 
-        $('#totalpay').html("$"+totalPay);
 
 })
 
 function calcularCuota(monto, meses, tasa){
+
+        // monto =  monto.toString().replace(",", ""); 
+        // tasa =  tasa.toString().replace(",", ""); 
+
+
+        // monto = parseFloat(monto);
+        // tasa = parseFloat(tasa);
 
         datos = [];
         tasafinal = tasa / 1200;
@@ -190,6 +234,17 @@ function calcularCuota(monto, meses, tasa){
 }
 
 function getTablaAmortizacion(monto, meses, tasa){
+
+        // monto =  monto.toString().replace(",", ""); 
+        // tasa =  tasa.toString().replace(",", ""); 
+
+
+        // monto = parseFloat(monto);
+        // tasa = parseFloat(tasa);
+
+        console.log(monto);
+        console.log(tasa);
+
         montoc = 0;
         cuota = 0;
         for (var i = 1; i < meses + 1; i++) {
@@ -207,7 +262,7 @@ function getTablaAmortizacion(monto, meses, tasa){
                         cuota =  datos.cuota;
                         montoc = monto - cuota;
 
-                        console.log(datos);
+                        // console.log(datos);
 
                 }else{
                         saldo = balance;
@@ -215,7 +270,7 @@ function getTablaAmortizacion(monto, meses, tasa){
 
                 }
                 datosMes = calcularCuota(saldo, 1, tasa);
-                console.log(datosMes);
+                // console.log(datosMes);
                 
                 totalInterest = datosMes.totalInterest;
                 totalPay = datosMes.totalPay;

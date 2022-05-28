@@ -164,7 +164,7 @@ $foto = '';
                     <li class="nav-item">
                         <a href="<?= Yii::getAlias("@web") ?>/user">
                             <i class="fas fa-users"></i>
-                            <p>Usuarios</p>
+                            <p>Agentes</p>
                         </a>
                     </li>
                     <?php endif ?>
@@ -186,7 +186,7 @@ $foto = '';
                     <li class="nav-item">
                         <a href="<?= Yii::getAlias("@web") ?>/user">
                             <i class="fas fa-users"></i>
-                            <p>Usuarios</p>
+                            <p>Agentes</p>
                         </a>
                     </li>
                     <?php endif ?>

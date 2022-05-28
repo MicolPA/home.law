@@ -7,7 +7,7 @@
     <div class="row">
         <div class="col-lg-12 my-3">
             <label class="text-primary fw-bold mb-1">Monto solicitado</label>
-            <input type="number" class="form-control rounded-2 placeholder-blue" id="monto">
+            <input type="text" class="form-control rounded-2 placeholder-blue number-mask" id="monto">
         </div>
         <div class="col-lg-6 my-3">
             <label class="text-primary fw-bold mb-1">Meses</label>
@@ -16,7 +16,7 @@
 
         <div class="col-lg-6 my-3">
             <label class="text-primary fw-bold mb-1">Tasa (%)</label>
-            <input type="text" class="form-control rounded-2 placeholder-blue" id="tasa">
+            <input type="text" class="form-control rounded-2 placeholder-blue number-mask" id="tasa">
         </div>
     </div>
 
