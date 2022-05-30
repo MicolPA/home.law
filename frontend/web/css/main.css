@@ -334,7 +334,7 @@ main{
 .c-view-left{
     border-top-right-radius: 200px;
     padding-top: 7rem !important;
-    padding-bottom: 7rem !important;
+    padding-bottom: 3rem !important;
 }
 
 .c-view-right div:first-child{
