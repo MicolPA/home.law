@@ -1,0 +1,1 @@
+Vista simple: <?= Yii::$app->user->identity->username ?>

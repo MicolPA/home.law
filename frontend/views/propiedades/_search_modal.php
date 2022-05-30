@@ -21,7 +21,7 @@ $hasta = isset($get['hasta']) ? $get['hasta'] : '';
       <div class="modal-body">
         <?php $form = ActiveForm::begin([
             'method' => 'get',
-            'action' => \yii\helpers\Url::to(['/propiedades/index'])
+            // 'action' => \yii\helpers\Url::to(['/propiedades/index'])
         ]); ?>
         <div class="row bg-white px-5">
             <div class="col-md-12 text-center pb-3 mt-3">

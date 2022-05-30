@@ -39,7 +39,7 @@ class PropiedadesSearch extends Propiedades
      *
      * @return ActiveDataProvider
      */
-    public function search($params, $all=true)
+    public function search($params, $all=true, $user_id=null)
     {
         // print_r($params);
         if ($all) {
@@ -90,6 +90,8 @@ class PropiedadesSearch extends Propiedades
 
         // echo $this->tipo_contrato_id;
         // exit;
+
+        $this->assigned_to_user_id = $user_id;
 
         // grid filtering conditions
         $query->andFilterWhere([

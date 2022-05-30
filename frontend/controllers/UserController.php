@@ -144,9 +144,9 @@ class UserController extends Controller
      * @throws NotFoundHttpException if the model cannot be found
      */
 
-    public function actionPerfil($id)
+    public function actionCambio($id)
     {
-        $this->layout = "main";
+        $this->layout = false;
         $model = $this->findModel($id);
         $plantillas = \frontend\models\ProfileTemplates::find()->all();
         $propiedades = \frontend\models\Propiedades::find()->where(['assigned_to_user_id' => $id, 'status' => 1])->all();
@@ -158,8 +158,45 @@ class UserController extends Controller
             'model' => $model,
             'propiedades' => $propiedades,
             'plantillas' => $plantillas,
-            'view' => 'perfil',
+            'view' => 'center-view',
         ]);
+    }
+
+    public function actionPerfil($id, $view='perfil')
+    {
+        $this->layout = "main";
+        $model = $this->findModel($id);
+        $post = Yii::$app->request->post();
+        $plantillas_list = \frontend\models\UserTemplateColor::find()->all();
+
+
+        $searchModel = new \frontend\models\PropiedadesSearch();
+        $dataProvider = $searchModel->search($this->request->queryParams, false);
+
+
+        if ($this->request->isPost && $model->load($this->request->post()) && $model->save()) {
+            return $this->redirect(['view', 'id' => $model->id]);
+        }
+
+        if ($post) {
+            $this->saveTemplate($post, $model); 
+        }
+
+        return $this->render('perfil', [
+            'model' => $model,
+            'dataProvider' => $dataProvider,
+            'plantillas_list' => $plantillas_list,
+            'view' => $view,
+        ]);
+    }
+
+    function saveTemplate($post, $model){
+
+        $model->template_id = (int)$post['template'];
+        $model->save();
+        return $this->redirect(['perfil', 'id' => $model->id]);
+
+
     }
 
     public function actionEditar($id)
