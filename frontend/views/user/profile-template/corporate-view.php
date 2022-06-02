@@ -1,15 +1,4 @@
-<style>
-	.bg-secondary{
-		background: <?= $plantilla['color_3'] ?> !important;
-	}
-	main{
-		padding-bottom: 0px !important;
-	}
 
-	.text-color{
-		color: <?= $plantilla['text_color'] ?>;
-	}
-</style>
 <div class="container-fluid p-0">
 	<div class="bg-img" style="background-image:url('/frontend/web/images/ejemplo-360.jpg');min-height:400px">
 	</div>	

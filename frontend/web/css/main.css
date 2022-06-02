@@ -78,6 +78,10 @@
     border-radius: 100px !important;
 }
 
+.w-fit-content{
+    width: fit-content;
+}
+
 /*.text-secondary{
     color: #ccc !important;
 }*/

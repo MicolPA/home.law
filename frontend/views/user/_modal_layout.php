@@ -23,7 +23,7 @@ use yii\widgets\ActiveForm;
             		<p class="text-center text-primary fw-bold font-12 mb-2 mt-4">LAYOUT GROUP</p>
 	                <div class="m-auto selectgroup py-1" style="width: fit-content;">
                     <label class="selectgroup-item">
-                        <input type="radio" name="layout" value="corporate-view" class="selectgroup-input" checked>
+                        <input type="radio" name="layout" value="corporate-view" class="selectgroup-input" <?= $user->layout == 'corporate-view' ? 'checked' : '' ?>>
                         <span class="selectgroup-button border-0 font-12 text-muted fw-bold-2">
                             <p class="mb-2 text-muted display-1">
                                 <img src="/frontend/web/images/icons/corporate-view.svg" width="60px">
@@ -32,7 +32,7 @@ use yii\widgets\ActiveForm;
                         </span>
                     </label>
                     <label class="selectgroup-item">
-                        <input type="radio" name="layout" value="center-view" class="selectgroup-input">
+                        <input type="radio" name="layout" value="center-view" class="selectgroup-input" <?= $user->layout == 'center-view' ? 'checked' : '' ?>>
                         <span class="selectgroup-button border-0 font-12 text-muted fw-bold-2">
                             <p class="mb-2 text-muted display-1">
                                 <img src="/frontend/web/images/icons/center-view.svg" width="60px">
@@ -41,7 +41,7 @@ use yii\widgets\ActiveForm;
                         </span>
                     </label>
                     <label class="selectgroup-item">
-                        <input type="radio" name="layout" value="simple-view" class="selectgroup-input">
+                        <input type="radio" name="layout" value="simple-view" class="selectgroup-input" <?= $user->layout == 'simple-view' ? 'checked' : '' ?>>
                         <span class="selectgroup-button border-0 font-12 text-muted fw-bold-2">
                             <p class="mb-2 text-muted display-1">
                                 <img src="/frontend/web/images/icons/simple-view.svg" width="60px">

@@ -178,9 +178,7 @@ class UserController extends Controller
             return $this->redirect(['view', 'id' => $model->id]);
         }
 
-        if ($post) {
-            $this->saveTemplate($post, $model); 
-        }
+        if ($post) {$this->saveTemplate($post, $model); }
 
         return $this->render('perfil', [
             'model' => $model,
@@ -193,6 +191,7 @@ class UserController extends Controller
     function saveTemplate($post, $model){
 
         $model->template_id = (int)$post['template'];
+        $model->layout = $post['layout'];
         $model->save();
         return $this->redirect(['perfil', 'id' => $model->id]);
 

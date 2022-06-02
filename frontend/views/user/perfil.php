@@ -19,7 +19,17 @@ $propiedad = new \frontend\models\PropiedadesSearch();
 		    margin: 1.75rem auto;
 		}
  	}
- </style>
+	.bg-secondary{
+		background: <?= $plantilla['color_3'] ?> !important;
+	}
+	main{
+		padding-bottom: 0px !important;
+	}
+
+	.text-color{
+		color: <?= $plantilla['text_color'] ?>;
+	}
+</style>
 <div class="custom-template">
     <?php if (Yii::$app->user->identity->id == $model->id): ?>
     <div class="custom-toggle bg-primary">
@@ -65,5 +75,5 @@ $propiedad = new \frontend\models\PropiedadesSearch();
         </div>
     </div>
 </div>
-<?= $this->render('_modal_layout', ['plantilla_selected' => $plantilla, 'plantillas_list' => $plantillas_list]) ?>
+<?= $this->render('_modal_layout', ['plantilla_selected' => $plantilla, 'plantillas_list' => $plantillas_list, 'user' => $model]) ?>
 <?= $this->render('/propiedades/_search_modal', ['model' => $propiedad, 'extras' => $extras, 'tipos' => $tipos]) ?>
