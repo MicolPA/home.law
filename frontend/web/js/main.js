@@ -303,3 +303,16 @@ $('#reset').click(function(){
         limpiarCaluladoraResultados();
 })
 
+$(".read-more").click(function() {
+        // $(".cardbody").delay(350).attr('class', 'col-md-6 cardbody p-0');
+        $(".card-primary").attr('class', 'col-md-6');
+        $('.card-secondary').delay(350).show();
+        // $('#preloader').delay(350).fadeOut('slow');
+        $(".cardbody").animate({
+            // opacity: 0.25,
+            right: "+=50",
+            // width: "toggle"
+        }, 5000, function() {
+            $(".cardbody").attr('class', 'col-md-6 cardbody p-0')
+        });
+});
