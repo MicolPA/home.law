@@ -56,7 +56,7 @@
 					</div>
 					<div class="col-md-6 card-secondary" style="display:none">
 						<div class="">
-		                	<p class="small text-color mt-5 mb-0 p-0">Contactos</p>
+		                	<p class="small text-color mb-0 p-0">Contactos</p>
 		                	<p class="fw-bold h6 text-color"> <?= $user->phone ?></p>
 
 		                	<p class="small text-color mt-4 mb-0 p-0 ">Correo Electrónico:</p>
@@ -69,6 +69,16 @@
 				                   </a>
 
 			                </div>
+			                <div class="mt-5 pr-2">
+								<p class="text-primary fs-5 ">
+					                <span class="fw-bold">Reseña </span> Personal
+					            </p>
+
+					            <p class="small text-light-gray">
+					                <?= $user->descripcion ?>
+					            </p>
+
+							</div>
 		                </div>
 					</div>
 				</div>

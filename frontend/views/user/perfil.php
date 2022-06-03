@@ -11,6 +11,10 @@ $url = strpos($url, '?') ? "$url&" : "$url?";
 $extras = \frontend\models\PropiedadesExtrasList::find()->where(['is_filtro' => 1])->all();
 $tipos = \frontend\models\PropiedadesTipo::find()->all();
 $propiedad = new \frontend\models\PropiedadesSearch();
+
+if ($model->layout == 'corporate-view' and $plantilla['text_color'] == '#004b70') {
+	$plantilla['text_color'] = 'white';
+}
  ?>
  <style>
  	@media (min-width: 576px){
