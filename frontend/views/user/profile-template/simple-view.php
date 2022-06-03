@@ -65,14 +65,19 @@
 		</div>
 		<div class="col-md-6 py-5" style="background: <?= $plantilla['color_2'] ?>">
 			<div class="row">
+				<?php if ($user->video_url): ?>
 				<div class="col-md-6">
-					<p class="text-center mb-1">
-						<img src="/frontend/web/images/icons/youtube.png" width="60px">
-					</p>
-					<p class="text-white text-center fw-light">
-						<span class="fw-bold">Video</span> Presentación
-					</p>
-				</div>
+					<a href="#" class="text-decoration-none" data-bs-toggle="modal" data-bs-target="#youtubeModal">
+						<p class="text-center mb-1">
+							<img src="/frontend/web/images/icons/youtube-2.svg" width="60px">
+						</p>
+						<p class="text-white text-center fw-light">
+							<span class="fw-bold">Video</span> Presentación
+						</p>
+					</a>
+					
+				</div>	
+				<?php endif ?>
 			</div>
 		</div>
 	</div>

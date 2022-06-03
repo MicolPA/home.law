@@ -50,9 +50,14 @@
 
 		                </div>
 
-		                <p class="text-primary text-center fw-light mt-5 mb-5">
-							<span class="fw-bold">Video</span> Presentación
-						</p>
+		                <?php if ($user->video_url): ?>
+		                	<p class="text-primary text-center fw-light mt-5 mb-3">
+												<span class="fw-bold">Video</span> Presentación
+											</p>
+											<p class="text-center mb-1">
+												<img src="/frontend/web/images/icons/youtube-blue.png" width="70px">
+											</p>
+		                <?php endif ?>
 					</div>
 					<div class="col-md-6 card-secondary" style="display:none">
 						<div class="">
@@ -70,16 +75,16 @@
 
 			                </div>
 			                <div class="mt-5 pr-2">
-								<p class="text-primary fs-5 ">
-					                <span class="fw-bold">Reseña </span> Personal
-					            </p>
+													<p class="text-primary fs-5 ">
+						                <span class="fw-bold">Reseña </span> Personal
+						            	</p>
 
-					            <p class="small text-light-gray">
-					                <?= $user->descripcion ?>
-					            </p>
+							            <p class="small text-light-gray">
+							                <?= $user->descripcion ?>
+							            </p>
 
-							</div>
-		                </div>
+											</div>
+		          </div>
 					</div>
 				</div>
 			</div>

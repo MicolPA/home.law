@@ -81,3 +81,26 @@ if ($model->layout == 'corporate-view' and $plantilla['text_color'] == '#004b70'
 </div>
 <?= $this->render('_modal_layout', ['plantilla_selected' => $plantilla, 'plantillas_list' => $plantillas_list, 'user' => $model]) ?>
 <?= $this->render('/propiedades/_search_modal', ['model' => $propiedad, 'extras' => $extras, 'tipos' => $tipos]) ?>
+<?php 
+
+    $url = $model->video_url;
+    $components = parse_url($url, PHP_URL_QUERY);
+    //$component parameter is PHP_URL_QUERY
+    parse_str($components, $results);
+    $yt_url = isset($results['v']) ? $results['v'] : null;
+
+?>
+<!-- Modal -->
+<div class="modal fade" id="youtubeModal" data-bs-keyboard="false" tabindex="-1" aria-labelledby="youtubeModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header border-0 text-end pb-0">
+        <a class="text-danger"></a>
+        <button type="button" class="text-end text-danger fw-bold float-end bg-white border-0" data-bs-dismiss="modal">CERRAR</button>
+      </div>
+      <div class="modal-body">
+        <iframe class="pb-0 youtube-video" width="100%" height="315" src="https://www.youtube.com/embed/<?= $yt_url ?>" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+      </div>
+    </div>
+  </div>
+</div>

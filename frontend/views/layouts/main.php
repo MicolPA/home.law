@@ -50,7 +50,7 @@ AppAsset::register($this);
                         <use xlink:href="#bootstrap" />
                     </svg>
                     <span class="fs-4">
-                        <img src="<?= Yii::getAlias("@web") ?>/images/logo.png" width="150px">
+                        <img src="<?= Yii::getAlias("@web") ?>/images/logo-bestlinting.png" width="150px">
                     </span>
                 </a>
 
@@ -111,7 +111,7 @@ AppAsset::register($this);
             <div class="row">
                 <div class="col-md-7">
                     <div class="pr-4">
-                        <img src="/frontend/web/images/logo.png" width="120px">
+                        <img src="/frontend/web/images/logo-bestlinting.png" width="120px">
                         <p class="mt-5 text-muted mb-5 font-14">
                             Lorem ipsum, dolor sit amet consectetur, adipisicing elit. Aliquam, veniam deleniti dolor quis et provident doloribus ut eveniet, sed tenetur labore quaerat ab! Magnam ea repudiandae alias fugiat tenetur, nam obcaecati recusandae dignissimos inventore eos in, totam reprehenderit impedit, quaerat magni ipsam quasi cupiditate libero. Assumenda cupiditate perspiciatis aperiam ipsum.
                         </p>

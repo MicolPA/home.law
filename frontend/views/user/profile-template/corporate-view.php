@@ -58,9 +58,19 @@
 	                <?= $user->descripcion ?>
 	            </p>
 
-	            <p class="text-primary fs-5 mt-5 mb-5 mt-md-5 mt-sm-5">
-	                <span class="fw-bold">Video </span> presentación
-	            </p>
+	            
+	            <?php if ($user->video_url): ?>
+	            <div class="w-fit-content">
+	            	<a href="#" class="text-decoration-none" data-bs-toggle="modal" data-bs-target="#youtubeModal">
+		            	<p class="text-primary fs-5 mt-5 mb-5 mt-md-5 mt-sm-5">
+			                <span class="fw-bold">Video </span> presentación
+			            </p>
+						<p class="text-center mb-1">
+							<img src="/frontend/web/images/icons/youtube-blue.png" width="70px">
+						</p>
+					</a>
+	            </div>
+	            <?php endif ?>
 
 	            <!-- <i class="fa-brands fa-youtube"></i> -->
 			</div>
