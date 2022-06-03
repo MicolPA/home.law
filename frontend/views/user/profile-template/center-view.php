@@ -86,8 +86,8 @@
 		</div>
 		<div class="col-md-1 p-0">
 			<div class="p-0 w-fit-content bg-primary text-white rounded-end" style="width: 40px;">
-				<div id="parent">
-  					<div id="child-1" class="text-nowrap fw-bold read-more">
+				<div id="parent" class=" rounded-end">
+  					<div id="child-1" class="text-nowrap fw-bold read-more rounded-end">
   						VER MÁS
   					</div>
   				</div>
