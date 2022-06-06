@@ -253,9 +253,9 @@ $foto = '';
                         <h5 class="op-7 mb-2"><?= isset($this->params['subtitle']) ? $this->params['subtitle'] : '' ?></h5>
                     </div>
                     <div class="ml-md-auto py-2 py-md-0">
-                        <a href="<?= Yii::$app->request->referrer ?>" class="btn btn-info btn-border btn-round mr-2">Atrás</a>
+                        <a href="<?= Yii::$app->request->referrer ?>" class="btn btn-danger btn-border btn-round mr-2">Atrás</a>
                         <?php if (isset($this->params['btn'])): ?>
-                            <a href="/frontend/web/<?= $this->params['btn']['url'] ?>" class="btn btn-primary btn-round"><?= $this->params['btn']['text'] ?></a>
+                            <a href="/frontend/web/<?= $this->params['btn']['url'] ?>" class="btn btn-danger btn-round"><?= $this->params['btn']['text'] ?></a>
                         <?php endif ?>
                     </div>
                 </div>
