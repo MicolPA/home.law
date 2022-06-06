@@ -43,3 +43,14 @@ label{font-weight: normal !important}
 ::-webkit-scrollbar-thumb:hover {
   background: #555; 
 }
+.sidebar[data-background-color="light"]{
+  background: #ecedf1 !important;
+}
+
+.logo-header[data-background-color="red"], .sidebar .nav.nav-danger > .nav-item.active a:before, .sidebar[data-background-color="white"] .nav.nav-danger > .nav-item.active a:before{
+    background: #e50102 !important;
+}
+
+td a{
+    color:  #707070 !important;
+}

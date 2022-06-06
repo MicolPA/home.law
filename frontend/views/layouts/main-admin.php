@@ -42,7 +42,7 @@ $foto = '';
 <div class="wrapper <?= strpos(Yii::$app->request->url, '/user/configurar') ? 'sidebar_minimize' : '' ?>">
     <div class="wrapper fullheight-side no-box-shadow-style <?= strpos(Yii::$app->request->url, '/user/configurar') ? 'sidebar_minimize' : '' ?>">
     <!-- Logo Header -->
-    <div class="logo-header position-fixed" data-background-color="dark">
+    <div class="logo-header position-fixed" data-background-color="red">
 
         <a href="<?= Yii::getAlias("@web") ?>/admin" class="logo">
             <img src="<?= Yii::getAlias("@web") ?>/images/logo-blanco.png" alt="navbar brand" class="navbar-brand" width="120px">
@@ -61,7 +61,7 @@ $foto = '';
     </div>
     <!-- End Logo Header -->    
     <!-- Sidebar -->
-    <div class="sidebar" data-background-color="dark">  
+    <div class="sidebar" data-background-color="light">  
         <div class="sidebar-wrapper scrollbar scrollbar-inner">
             <div class="sidebar-content">
                 <div class="user">
@@ -105,11 +105,11 @@ $foto = '';
                         </div>
                     </div>
                 </div>
-                <ul class="nav nav-warning">
+                <ul class="nav nav-danger">
                     <li class="nav-item active">
                         <a data-toggle="collapse" href="#dashboard" class="collapsed" aria-expanded="false">
                             <i class="fas fa-home"></i>
-                            <p>Propiedades</p>
+                            <p class="fw-bold">Propiedades</p>
                             <span class="caret"></span>
                         </a>
                         <div class="collapse" id="dashboard">
@@ -140,31 +140,31 @@ $foto = '';
                     <li class="nav-item">
                         <a href="<?= Yii::getAlias("@web") ?>/propiedades-tipo">
                         <i class="fas fa-landmark"></i>
-                            <p>Tipos</p>
+                            <p class="fw-bold">Tipos</p>
                         </a>
                     </li>
                     <li class="nav-item">
                         <a href="<?= Yii::getAlias("@web") ?>/ubicaciones">
                         <i class="fas fa-map-marker-alt"></i>
-                            <p>Ubicaciones</p>
+                            <p class="fw-bold">Ubicaciones</p>
                         </a>
                     </li>
                     <li class="nav-item">
                         <a href="<?= Yii::getAlias("@web") ?>/propiedades-extras-list">
                         <i class="fas fa-star"></i>
-                            <p>Extras</p>
+                            <p class="fw-bold">Extras</p>
                         </a>
                     </li>
                     <li class="nav-item">
                         <a href="<?= Yii::getAlias("@web") ?>/tasas-hipotecarias/listado">
                             <i class="fa-solid fa-chart-line"></i>
-                            <p>Tasas Hipotecarias</p>
+                            <p class="fw-bold">Tasas Hipotecarias</p>
                         </a>
                     </li>
                     <li class="nav-item">
                         <a href="<?= Yii::getAlias("@web") ?>/user">
                             <i class="fas fa-users"></i>
-                            <p>Agentes</p>
+                            <p class="fw-bold">Agentes</p>
                         </a>
                     </li>
                     <?php endif ?>
@@ -180,13 +180,13 @@ $foto = '';
                     <li class="nav-item">
                         <a href="<?= Yii::getAlias("@web") ?>/tasas-hipotecarias/listado">
                             <i class="fa-solid fa-chart-line"></i>
-                            <p>Tasas Hipotecarias</p>
+                            <p class="fw-bold">Tasas Hipotecarias</p>
                         </a>
                     </li>
                     <li class="nav-item">
                         <a href="<?= Yii::getAlias("@web") ?>/user">
                             <i class="fas fa-users"></i>
-                            <p>Agentes</p>
+                            <p class="fw-bold">Agentes</p>
                         </a>
                     </li>
                     <?php endif ?>
