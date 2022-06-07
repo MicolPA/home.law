@@ -18,7 +18,7 @@ if ($model->layout == 'corporate-view' and $plantilla['text_color'] == '#004b70'
  ?>
  <style>
  	@media (min-width: 576px){
- 		.modal-dialog {
+ 		.modal-md {
 		    max-width: 600px;
 		    margin: 1.75rem auto;
 		}
@@ -91,15 +91,15 @@ if ($model->layout == 'corporate-view' and $plantilla['text_color'] == '#004b70'
 
 ?>
 <!-- Modal -->
-<div class="modal fade" id="youtubeModal" data-bs-keyboard="false" tabindex="-1" aria-labelledby="youtubeModalLabel" aria-hidden="true">
-  <div class="modal-dialog">
+<div class="modal fade" id="youtubeModal" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered modal-xl">
     <div class="modal-content">
       <div class="modal-header border-0 text-end pb-0">
         <a class="text-danger"></a>
-        <button type="button" class="text-end text-danger fw-bold float-end bg-white border-0" data-bs-dismiss="modal">CERRAR</button>
+        <button type="button" class="text-end text-danger fw-bold float-end bg-white border-0" onclick="closeYoutubeModal()">CERRAR</button>
       </div>
       <div class="modal-body">
-        <iframe class="pb-0 youtube-video" width="100%" height="315" src="https://www.youtube.com/embed/<?= $yt_url ?>" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+        <iframe class="pb-0 youtube-video" id="playerid" width="100%" height="500" src="https://www.youtube.com/embed/<?= $yt_url ?>" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
       </div>
     </div>
   </div>

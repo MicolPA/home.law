@@ -316,3 +316,11 @@ $(".read-more").click(function() {
             // $(".cardbody").attr('class', 'col-md-6 cardbody p-0')
         // });
 });
+
+function closeYoutubeModal(){
+        console.log('aqi');
+        var video = $("#playerid").attr("src");
+        $("#playerid").attr("src","");
+        $("#playerid").attr("src",video);
+        $('#youtubeModal').modal('hide');
+}
