@@ -51,12 +51,14 @@
 		                </div>
 
 		                <?php if ($user->video_url): ?>
-		                	<p class="text-primary text-center fw-light mt-5 mb-3">
-												<span class="fw-bold">Video</span> Presentación
-											</p>
-											<p class="text-center mb-1">
-												<img src="/frontend/web/images/icons/youtube-blue.png" width="70px">
-											</p>
+		                	<a href="#" class="text-decoration-none" data-bs-toggle="modal" data-bs-target="#youtubeModal">
+			                	<p class="text-primary text-center fw-light mt-5 mb-3">
+													<span class="fw-bold">Video</span> Presentación
+												</p>
+												<p class="text-center mb-1">
+													<img src="/frontend/web/images/icons/youtube-blue.png" width="70px">
+												</p>
+											</a>
 		                <?php endif ?>
 					</div>
 					<div class="col-md-6 card-secondary" style="display:none">
