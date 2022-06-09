@@ -2,6 +2,10 @@
 
 use yii\helpers\Html;
 use yii\widgets\DetailView;
+use frontend\models\DebidaDiligencia;
+
+
+$dictamen = DebidaDiligencia::find()->where(['propiedad_id' => $model->id])->one();
 
 $fotos = array();
 for ($i = 2; $i < 13; $i++) {
@@ -207,12 +211,14 @@ $this->title = $model->titulo_publicacion;
                                TASAS HIPOTECARIAS
                            </a>
                        </div>
-                       <div class="mt-3">
-                           <a href="#" class="text-decoration-none fw-bold text-primary">
-                               <span class="btn btn-icon btn-sm btn-round text-white icons-gray mr-2"><i class="fa-solid fa-arrow-down-long px-1"></i></span> 
-                               DEBIDA DILIGENCIA
-                           </a>
-                       </div>
+                       <?php if ($dictamen): ?>
+                           <div class="mt-3">
+                               <a href="/frontend/web/propiedades/debida-diligencia/?id=<?= $model->id ?>" class="text-decoration-none fw-bold text-primary" target="_blank">
+                                   <span class="btn btn-icon btn-sm btn-round text-white icons-gray mr-2"><i class="fa-solid fa-arrow-down-long px-1"></i></span> 
+                                   DEBIDA DILIGENCIA
+                               </a>
+                           </div>
+                       <?php endif ?>
                        <div class="mt-3 border-top border-bottom border-1 py-2">
                             <button type="button" class="btn btn-primary btn-block w-100 btn-round" data-bs-toggle="modal" data-bs-target="#staticBackdrop">
                               HACER UNA OFERTA

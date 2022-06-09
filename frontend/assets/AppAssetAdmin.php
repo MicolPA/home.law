@@ -15,7 +15,7 @@ class AppAssetAdmin extends AssetBundle
     public $css = [
         'assets-atlantis/css/bootstrap.min.css',
         'assets-atlantis/css/atlantis.css',
-        'assets-atlantis/css/custom-styles.css',
+        'assets-atlantis/css/custom-styles.css?v=1',
         'css/admin.css?v=1',
         'css/fontawesome.min.css',
     ];

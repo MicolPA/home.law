@@ -2,6 +2,7 @@
 
 namespace frontend\assets;
 
+use Yii;
 use yii\web\AssetBundle;
 
 /**
@@ -9,6 +10,10 @@ use yii\web\AssetBundle;
  */
 class AppAsset extends AssetBundle
 {
+
+    public function init(){
+        # Yii::setAlias('@bower', dirname(__DIR__) . '/vendor2/bower/');
+    }
     public $basePath = '@webroot';
     public $baseUrl = '@web';
     public $css = [

@@ -155,18 +155,13 @@ $foto = '';
                             <p class="fw-bold">Extras</p>
                         </a>
                     </li>
-                    <li class="nav-item">
-                        <a href="<?= Yii::getAlias("@web") ?>/tasas-hipotecarias/listado">
-                            <i class="fa-solid fa-chart-line"></i>
-                            <p class="fw-bold">Tasas Hipotecarias</p>
-                        </a>
-                    </li>
-                    <li class="nav-item">
-                        <a href="<?= Yii::getAlias("@web") ?>/user">
+                    
+                    <!-- <li class="nav-item">
+                        <a href="<?//= Yii::getAlias("@web") ?>/debida-diligencia">
                             <i class="fas fa-users"></i>
-                            <p class="fw-bold">Agentes</p>
+                            <p class="fw-bold">Debida Diligencia</p>
                         </a>
-                    </li>
+                    </li> -->
                     <?php endif ?>
                     
                     <?php if (Yii::$app->user->identity->role_id == 1): ?>
@@ -183,10 +178,16 @@ $foto = '';
                             <p class="fw-bold">Tasas Hipotecarias</p>
                         </a>
                     </li>
+                    <!-- <li class="nav-item">
+                        <a href="<?//= Yii::getAlias("@web") ?>/debida-diligencia">
+                            <i class="fas fa-users"></i>
+                            <p class="fw-bold">Debida Diligencia</p>
+                        </a>
+                    </li> -->
                     <li class="nav-item">
                         <a href="<?= Yii::getAlias("@web") ?>/user">
                             <i class="fas fa-users"></i>
-                            <p class="fw-bold">Agentes</p>
+                            <p class="fw-bold">Usuarios</p>
                         </a>
                     </li>
                     <?php endif ?>

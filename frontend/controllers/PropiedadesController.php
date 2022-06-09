@@ -14,6 +14,7 @@ use yii\web\Controller;
 use yii\web\NotFoundHttpException;
 use yii\filters\VerbFilter;
 use yii\web\UploadedFile;
+use kartik\mpdf\Pdf;
 
 /**
  * PropiedadesController implements the CRUD actions for Propiedades model.
@@ -315,6 +316,55 @@ class PropiedadesController extends Controller
             'extras' => $extras,
             'galeria' => $galeria,
         ]);
+    }
+
+
+    public function actionDebidaDiligencia($id=null){
+
+        // Yii::setAlias('@bower', dirname(__DIR__) . '/vendor3/bower/');
+        // echo Yii::setAlias('@vendorPath', dirname(dirname(__DIR__)) . '/vendor2');
+        // exit;
+
+        $this->layout = '@app/views/layouts/main';
+            $propiedad = $this->findModel($id);
+        $dictamen = \frontend\models\Constantes::find()->where(['nombre' => 'dictamen'])->one();
+
+        $content = $this->renderPartial('dictamen',['dictamen' => $dictamen,'propiedad' => $propiedad]);
+
+        // setup kartik\mpdf\Pdf component
+        $pdf = new \kartik\mpdf\Pdf([
+            // set to use core fonts only
+            'mode' => Pdf::MODE_CORE,
+            // A4 paper format
+            'format' => [200.8, 220.8],
+            'marginTop' => 0,
+            'marginBottom' => 0,
+            'marginLeft' => 0,
+            'marginRight' => 0,
+            // 'BackgroundColor' => 'red',
+            // portrait orientation
+            'orientation' => Pdf::ORIENT_PORTRAIT,
+            // stream to browser inline
+            'destination' => Pdf::DEST_BROWSER,
+            // your html content input
+            'content' => $content,
+            // format content from your own css file if needed or use the
+            // enhanced bootstrap css built by Krajee for mPDF formatting
+            'cssFile' => '@vendor/kartik-v/yii2-mpdf/src/assets/kv-mpdf-bootstrap.min.css',
+            // any css to be embedded if required
+            'cssInline' => '.kv-heading-1{font-size:18px}',
+            // set mPDF properties on the fly
+            'options' => ['title' => ''],
+            // call mPDF methods on the fly
+            'methods' => [
+                'SetHeader'=>false,
+                'SetFooter'=>false,
+                // 'SetFooter'=>['{PAGENO}'],
+            ]
+        ]);
+
+        return $pdf->render();
+
     }
 
     /**

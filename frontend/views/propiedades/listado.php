@@ -48,6 +48,17 @@ $this->params['breadcrumbs'][] = $this->title;
                     return $btn;
                 },
             ],
+            [
+                'format'=>'html',
+                'label' => '',
+                'class' => 'yii\grid\DataColumn', // can be omitted, as it is the default
+                'value' => function ($data) {
+
+                    $btn = Html::a('Debida Diligencia', ['debida-diligencia/create', 'propiedad_id' => $data->id], ['class' => 'btn btn-info btn-xs text-white']);
+
+                    return $btn;
+                },
+            ],
             //'habitaciones',
             //'baños',
             //'detalles:ntext',
