@@ -200,20 +200,20 @@ $this->title = $model->titulo_publicacion;
                    </div>
                    <div class="col-md-3 font-family-2">
                        <div class="mt-2">
-                           <a href="#" class="text-decoration-none fw-bold text-primary">
+                           <a href="#" class="text-decoration-none fw-normal text-primary">
                                <span class="btn btn-icon btn-sm btn-round text-white bg-primary mr-2"><i class="fa-solid fa-comment-dots"></i></span> 
                                CONTACTAR AGENTE
                            </a>
                        </div>
                        <div class="mt-3">
-                           <a href="/frontend/web/tasas-hipotecarias" class="text-decoration-none fw-bold text-primary">
+                           <a href="/frontend/web/tasas-hipotecarias" class="text-decoration-none fw-normal text-primary">
                                <span class="btn btn-icon btn-sm btn-round text-white icons-gray mr-2"><i class="fa-solid fa-chart-line"></i></span> 
                                TASAS HIPOTECARIAS
                            </a>
                        </div>
                        <?php if ($dictamen): ?>
                            <div class="mt-3">
-                               <a href="/frontend/web/propiedades/debida-diligencia/?id=<?= $model->id ?>" class="text-decoration-none fw-bold text-primary" target="_blank">
+                               <a href="/frontend/web/propiedades/debida-diligencia/?id=<?= $model->id ?>" class="text-decoration-none fw-normal text-primary" target="_blank">
                                    <span class="btn btn-icon btn-sm btn-round text-white icons-gray mr-2"><i class="fa-solid fa-arrow-down-long px-1"></i></span> 
                                    DEBIDA DILIGENCIA
                                </a>

@@ -336,7 +336,7 @@ class PropiedadesController extends Controller
             // set to use core fonts only
             'mode' => Pdf::MODE_CORE,
             // A4 paper format
-            'format' => [200.8, 220.8],
+            'format' => [200.8, 280.8],
             'marginTop' => 0,
             'marginBottom' => 0,
             'marginLeft' => 0,
