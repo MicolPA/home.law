@@ -45,7 +45,7 @@ $foto = '';
     <div class="logo-header position-fixed" data-background-color="red">
 
         <a href="<?= Yii::getAlias("@web") ?>/admin" class="logo">
-            <img src="<?= Yii::getAlias("@web") ?>/images/logo-blanco.png" alt="navbar brand" class="navbar-brand" width="120px">
+            <img src="<?= Yii::getAlias("@web") ?>/images/logo-dashboard.png" alt="navbar brand" class="navbar-brand" width="120px">
         </a>
         <button class="navbar-toggler sidenav-toggler ml-auto" type="button" data-toggle="collapse" data-target="collapse" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon">
