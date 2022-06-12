@@ -104,6 +104,59 @@ class Servicios extends Model {
 
     }
 
+    function calcularCuota($monto, $meses, $tasa){
+
+        $datos = [];
+        $tasafinal = $tasa / 1200;
+        // $factor = Math.pow($tasafinal+1,$meses);
+        $factor = pow($tasafinal+1,$meses);
+        $datos['cuota'] = $monto * $tasafinal * $factor / ($factor - 1);
+
+        $datos['totalInterest'] = $datos['cuota'] * $meses - $monto;
+        $datos['totalPay'] = $monto + $datos['totalInterest'];
+
+        return $datos;
+
+    }
+
+    function getTablaAmortizacion($monto, $meses, $tasa){
+
+            $montoc = 0;
+            $cuota = 0;
+            for ($i = 1; $i < $meses + 1; $i++) {
+                    $date = date('Y-m-d');
+                    $newDate = date('m', strtotime('+1 month', strtotime($date)));
+                    // $newDate = date('m',strtotime('first day of +1 month'));
+
+
+                    if ($i == 1) {
+                            $saldo = $monto;
+                            $datos = $this->calcularCuota($saldo, $meses, $tasa);
+                            // cuota = formatNumber(datos.cuota);
+                            $cuota =  $datos['cuota'];
+                            $montoc = $monto - $cuota;
+
+                            // console.log(datos);
+
+                    }else{
+                            $saldo = $balance;
+                            $montoc = $montoc - $cuota + $datosMes['totalInterest'];
+
+                    }
+                    $datosMes = $this->calcularCuota($saldo, 1, $tasa);
+                    // console.log(datosMes);
+                    
+                    $totalInterest = $datosMes['totalInterest'];
+                    $totalPay = $datosMes['totalPay'];
+
+                    $balance = $montoc + $totalInterest;
+
+                    
+                   
+                    // $('.tBody').show();
+            }
+    }
+
 
 
 }

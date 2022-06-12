@@ -42,6 +42,13 @@
             </div>
         </div>
 
+        <div class="form-group row py-3 mb-2">
+            <label for="totalpay" class="col-sm-6 col-form-label col-form-label-sm text-primary fw-bold font-16">EXPORTAR PDF:</label>
+            <div class="col-sm-6">        
+                <a href="#" class="btn btn-xs btn-primary bg-primary rounded-3 px-4 mb-5 font-12 calculadoraPDF" target="_blank">EXPORTAR PDF <i class="fa-solid fa-arrow-up-right-from-square ml-2"></i></a>
+            </div>
+        </div>
+
         <table class="table table-striped table-hover" id="tablaAmortizacion">
           <thead class="bg-primary text-white">
             <tr>

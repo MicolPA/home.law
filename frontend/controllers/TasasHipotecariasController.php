@@ -2,12 +2,15 @@
 
 namespace frontend\controllers;
 
+use Yii;
 use frontend\models\TasasHipotecarias;
 use frontend\models\TasasHipotecariasSearch;
+use common\models\Servicios;
 use yii\web\Controller;
 use yii\web\NotFoundHttpException;
 use yii\filters\VerbFilter;
 use yii\web\UploadedFile;
+use kartik\mpdf\Pdf;
 
 /**
  * TasasHipotecariasController implements the CRUD actions for TasasHipotecarias model.
@@ -58,6 +61,72 @@ class TasasHipotecariasController extends Controller
             'searchModel' => $searchModel,
             'dataProvider' => $dataProvider,
         ]);
+    }
+
+    
+
+
+
+    function actionTablaAmortizacion($monto, $meses, $tasa){
+
+        $servicios = new Servicios();
+
+        $monto =  str_replace(',', '', $monto);
+        $tasa =  str_replace(',', '', $tasa);
+        $servicios->getTablaAmortizacion($monto, $meses, $tasa);
+        $initialData['monto'] = $monto;
+        $initialData['tasa'] = $tasa;
+        $datos = $servicios->calcularCuota($monto, $meses, $tasa);
+
+        $cuota = number_format($datos['cuota'], 2);
+        $totalInterest = number_format($datos['totalInterest'], 2);
+        $totalPay = number_format($datos['totalPay'], 2);
+        
+        // $(".resultados").show();
+
+        //echo "$".$cuota . '<br>';
+       // echo "$".$totalInterest . '<br>';
+        //echo "$".$totalPay . '<br>';
+        
+        // $('#monthlypay').html("$"+$cuota);
+        // $('#totalinterest').html("$"+$totalInterest); 
+        // $('#totalpay').html("$"+$totalPay);
+
+        $content = $this->renderPartial('tabla-amortizacion-pdf',['datos' => $datos, 'get' => Yii::$app->request->get(), 'servicios' => $servicios, 'initialData' => $initialData]);
+
+        // setup kartik\mpdf\Pdf component
+        $pdf = new \kartik\mpdf\Pdf([
+            // set to use core fonts only
+            'mode' => Pdf::MODE_CORE,
+            // A4 paper format
+            // 'format' => [200.8, 280.8],
+            'marginTop' => 5,
+            'marginBottom' => 5,
+            'marginLeft' => 5,
+            'marginRight' => 5,
+            // 'BackgroundColor' => 'red',
+            // portrait orientation
+            'orientation' => Pdf::ORIENT_PORTRAIT,
+            // stream to browser inline
+            'destination' => Pdf::DEST_BROWSER,
+            // your html content input
+            'content' => $content,
+            // format content from your own css file if needed or use the
+            // enhanced bootstrap css built by Krajee for mPDF formatting
+            'cssFile' => '@vendor/kartik-v/yii2-mpdf/src/assets/kv-mpdf-bootstrap.min.css',
+            // any css to be embedded if required
+            'cssInline' => '.kv-heading-1{font-size:18px}',
+            // set mPDF properties on the fly
+            'options' => ['title' => ''],
+            // call mPDF methods on the fly
+            'methods' => [
+                'SetHeader'=>false,
+                'SetFooter'=>false,
+                // 'SetFooter'=>['{PAGENO}'],
+            ]
+        ]);
+
+        return $pdf->render();
     }
 
     /**

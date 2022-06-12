@@ -175,6 +175,8 @@ $('#calcular').click(function(){
                 var meses = parseInt($('#meses').val());
                 // var tasa = parseFloat($('#tasa').val());
                 var tasa = $('#tasa').val();
+                $(".calculadoraPDF").attr('href', '/frontend/web/tasas-hipotecarias/tabla-amortizacion?monto='+monto+'&meses='+meses+'&tasa='+tasa);
+
 
 
                 console.log(monto);
