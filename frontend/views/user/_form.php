@@ -2,6 +2,7 @@
 
 use yii\helpers\Html;
 use yii\widgets\ActiveForm;
+use yii\helpers\ArrayHelper;
 
 $this->title = "Editando usuario";
 
@@ -37,6 +38,13 @@ if ($model->role_id == 2) {
         <div class="col-md-6">
             <?= $form->field($model, 'last_name')->textInput(['maxlength' => true]) ?>
         </div>
+
+        <?php if (Yii::$app->user->identity->role_id == 1): ?>
+        <div class="col-md-6">
+            <?php echo $form->field($model, 'role_id')->dropDownList(ArrayHelper::map(\frontend\models\Roles::find()->all(), 'id', 'name'),['prompt'=>'Seleccionar...', 'required' => 'required'])->label('Rol') ?>
+        </div>
+
+        <div class="col-md-6"></div>
         <div class="col-md-6">
             <div class="form-group">
                 <label>Clave</label>
@@ -44,7 +52,6 @@ if ($model->role_id == 2) {
             </div>
         </div>
 
-        <?php if (Yii::$app->user->identity->role_id == 1): ?>
         <div class="col-md-3 ">
             <?= $form->field($model, 'status')->dropdownList(array('10'=>'Activo', '9' => 'Desactivar'), []); ?>
         </div>
