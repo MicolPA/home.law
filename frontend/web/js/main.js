@@ -10,7 +10,7 @@ $(window).on('load', function () { // makes sure the whole site is loaded
                                 'overflow': 'visible'
                         });  
                         $('#ajax-loader').hide();
-                }, 3000)
+                }, 1000)
                 
         }else{
                 $('#preloader').delay(350).fadeOut('slow'); // will fade out the white DIV that covers the website.

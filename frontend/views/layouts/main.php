@@ -102,7 +102,7 @@ AppAsset::register($this);
     </section>
 
     <main role="main" class="flex-shrink-0 bg-secondary">
-        <?= Alert::widget() ?>
+        <!-- <?//= Alert::widget() ?> -->
         <?= $content ?>
     </main>
 
