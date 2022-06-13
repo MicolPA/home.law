@@ -19,7 +19,7 @@ class AppAsset extends AssetBundle
     public $css = [
 
         // 'assets-atlantis/css/atlantis.css',
-        'css/main.css?v=16',
+        'css/main.css?v=17',
         'css/custom-styles.css?v=5',
         'css/fontawesome.min.css',
         'css/custom.css?v=1',
@@ -35,7 +35,7 @@ class AppAsset extends AssetBundle
         'js/fontawesome.min.js',
         'js/sweetalert.min.js',
         'js/jquery.mask.js',
-        'js/main.js?v=9',
+        'js/main.js?v=10',
         // 'https://use.fontawesome.com/releases/v5.15.4/js/all.js',
         // 'assets-atlantis/js/atlantis.min.js',
         // 'assets-atlantis/js/plugin/owl-carousel/owl.carousel.min.js',

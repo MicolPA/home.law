@@ -162,8 +162,8 @@ main{
     padding-bottom: 11rem;
 }
 .home-banner-container{
-    max-height: 650px;
-    /*margin-bottom: 2rem;*/
+    max-height: 950px;
+    margin-bottom: 18rem;
 }
 
 .home-banner{
@@ -203,7 +203,7 @@ main{
         text-align: right;
     }
     .home-banner-container{
-        margin-bottom: 6rem;
+        margin-bottom: 18rem;
     }
     .w-60{
         width: 60% !important;

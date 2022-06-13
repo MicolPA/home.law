@@ -1,11 +1,25 @@
 /* Preload*/
 $(window).on('load', function () { // makes sure the whole site is loaded
         $('[data-loader="circle-side"]').fadeOut(); // will first fade out the loading animation
-        $('#preloader').delay(350).fadeOut('slow'); // will fade out the white DIV that covers the website.
-        $('body').delay(350).css({
-                'overflow': 'visible'
-        });
-    $('#ajax-loader').hide();
+
+        if (location.pathname == '/frontend/web/') {
+
+                setTimeout(function(){
+                        $('#preloader').delay(350).fadeOut('slow'); // will fade out the white DIV that covers the website.
+                        $('body').delay(350).css({
+                                'overflow': 'visible'
+                        });  
+                        $('#ajax-loader').hide();
+                }, 3000)
+                
+        }else{
+                $('#preloader').delay(350).fadeOut('slow'); // will fade out the white DIV that covers the website.
+                $('body').delay(350).css({
+                        'overflow': 'visible'
+                });  
+                $('#ajax-loader').hide();
+        }
+        
     $(".number-mask").mask('000,000,000.00', {reverse: true});
     // $(".number-mask").numeric({ decimal : ".",  negative : false, scale: 3 });
 

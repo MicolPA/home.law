@@ -36,6 +36,9 @@
         .video-foreground{
           pointer-events:none;
         }
+        .html5-video-player{
+  background-color: #fff;
+}
 
 
         /*.html5-video-player a {display: none !important; }*/
@@ -47,14 +50,15 @@
      },500)
  </script>
 
-<div class="container-fluid home-banner-container bg-gray-2 p-0 outer">
+<div class="container-fluid home-banner-container bg-gray-2 p-0 mt-0 outer">
 
-    <div class="row w-100 bot" style="width:100vw !important;background: #000;margin-top: -1rem;overflow-x: hidden;">
-        <div class="col-md-12 video-foreground">
-            <iframe width="100%" height="615" src="https://www.youtube.com/embed/G6KBwzjbs7w?controls=0&showinfo=0&rel=0&autoplay=1&loop=1&playlist=G6KBwzjbs7w&mute=1" frameBorder="0" allowFullScreen></iframe>
+    <div class="row w-100 bot mobile-hidden" style="width:100vw !important;background: #000;margin-top: -2rem">
+        <div class="col-md-12 video-foreground" style="background:#e5e5e5">
+            <!-- <iframe width="100%" height="850" src="https://www.youtube.com/embed/G6KBwzjbs7w?controls=0&showinfo=0&rel=0&autoplay=1&loop=1&playlist=G6KBwzjbs7w&mute=1" frameBorder="0" allowFullScreen allow="fullscreen;" allowfullscreen="allowfullscreen" allowfullscreen="allowfullscreen" allowfullscreen="true"></iframe> -->
+            <iframe type="text/html" src="https://www.youtube-nocookie.com/embed/G6KBwzjbs7w?version=3&enablejsapi=1&html5=1&hd=1&wmode=opaque&showinfo=0&rel=0&mute=1&controls=0&playsinline=1&playlist=G6KBwzjbs7w&autoplay=1&loop=1" frameborder="0" width="100%" height="828" style="background:white !important"></iframe>
         </div>
     </div>
-    <div class="row w-100 m-0 bg-dark">
+    <div class="row w-100 m-0" style="background:#eeeff0">
         <div class="col-lg-6 col-md-8 col-xs-12 pt-md-4">
             <div class="container">
                 <p class="text-center mb-0 lh-1">

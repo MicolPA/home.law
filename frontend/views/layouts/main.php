@@ -42,7 +42,7 @@ AppAsset::register($this);
         
     </style>
 
-    <div class="border-bottom main-menu">
+    <div class="border-bottom main-menu" style="position: relative;background: white;z-index: 1;">
         <div class="container px-4">
             <header class="d-flex flex-wrap justify-content-center py-2 align-items-center">
                 <a href="/" class="d-flex align-items-center mb-3 mb-md-0 me-md-auto text-dark text-decoration-none">
