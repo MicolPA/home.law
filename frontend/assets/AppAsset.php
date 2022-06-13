@@ -30,6 +30,7 @@ class AppAsset extends AssetBundle
         'js/popper.min.js',
         'js/bootstrap.min.js',
         'assets-atlantis/js/plugin/jquery.validate/jquery.validate.min.js',
+        'assets-atlantis/js/plugin/list.js/list.min.js',
         'js/carousel.js?v=3',
         'js/fontawesome.min.js',
         'js/sweetalert.min.js',

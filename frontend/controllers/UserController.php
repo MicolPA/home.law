@@ -50,6 +50,19 @@ class UserController extends Controller
         ]);
     }
 
+
+    public function actionList()
+    {
+        $this->layout = "main";
+        $searchModel = new UserSearch();
+        $dataProvider = $searchModel->search($this->request->queryParams, 2);
+
+        return $this->render('list', [
+            'searchModel' => $searchModel,
+            'dataProvider' => $dataProvider,
+        ]);
+    }
+
     /**
      * Displays a single User model.
      * @param int $id ID

@@ -46,6 +46,7 @@ return [
                 'admin' => 'admin/index',
                 '<controller:\w+>/<action:\w+>/<id:\d+>' => '<controller>/<action>',
                 'agente/<id:\d+>' => 'user/perfil',
+                'agentes' => 'user/list',
                 // 'propiedades/debida-diligencia/<id:\d+>' => 'propiedades/debida-',
             ],
         ],

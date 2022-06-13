@@ -30,36 +30,36 @@
 				<div class="row">
 					<div class="col-md-12 card-primary">
 						<div class=" avatar-sm fs-4 rounded-circle m-auto" style="width: 150px; height: 150px;background-image: url('<?= Yii::getAlias("@web") . "/". $user->photo_url ?>');background-position: center;background-size: cover;">
-		        		</div>
+		        </div>
 
-		        		<div class="pl-2 mt-2 pb-5 mx-2 mx-md-5 h6 text-center">
-		                    <a href=""><i class="text-warning  fa-solid fa-star"></i></a>
-		                    <a href=""><i class="text-warning fa-solid fa-star"></i></a>
-		                    <a href=""><i class="text-warning fa-solid fa-star"></i></a>
-		                    <a href=""><i class="text-secondary fa-solid fa-star"></i></a>
-		                    <a href=""><i class="text-secondary fa-solid fa-star"></i></a>
-		                </div>
-		                <div class="h5 w-fit-content m-auto text-center">
+        		<div class="pl-2 mt-2 pb-5 mx-2 mx-md-5 h6 text-center">
+              <a href=""><i class="text-warning  fa-solid fa-star"></i></a>
+              <a href=""><i class="text-warning fa-solid fa-star"></i></a>
+              <a href=""><i class="text-warning fa-solid fa-star"></i></a>
+              <a href=""><i class="text-secondary fa-solid fa-star"></i></a>
+              <a href=""><i class="text-secondary fa-solid fa-star"></i></a>
+          	</div>
+            <div class="h5 w-fit-content m-auto text-center">
 
-		                	<p class="fw-bold text-color mb-0"><?= "$user->first_name $user->last_name" ?></p>
-		                	<p class="text-muted small mb-4">Agente Inmobiliario</p>
-		                    <a href="<?= $user->facebook ? $user->facebook : '#' ?>"><i class="text-color mx-2 fa-brands fa-facebook-f"></i></a>
-		                    <a href="<?= $user->whatsapp ? $user->whatsapp : '#' ?>"><i class="text-color mx-2 fa-brands fa-whatsapp"></i></a>
-		                    <a href="<?= $user->twitter ? $user->twitter : '#' ?>"><i class="text-color mx-2 fa-brands fa-twitter"></i></a>
-		                    <a href="<?= $user->instagram ? $user->instagram : '#' ?>"><i class="text-color mx-2 fa-brands fa-instagram"></i></a>
+            	<p class="fw-bold text-color mb-0"><?= "$user->first_name $user->last_name" ?></p>
+            	<p class="text-muted small mb-4">Agente Inmobiliario</p>
+                <a href="<?= $user->facebook ? $user->facebook : '#' ?>"><i class="text-color mx-2 fa-brands fa-facebook-f"></i></a>
+                <a href="<?= $user->whatsapp ? $user->whatsapp : '#' ?>"><i class="text-color mx-2 fa-brands fa-whatsapp"></i></a>
+                <a href="<?= $user->twitter ? $user->twitter : '#' ?>"><i class="text-color mx-2 fa-brands fa-twitter"></i></a>
+                <a href="<?= $user->instagram ? $user->instagram : '#' ?>"><i class="text-color mx-2 fa-brands fa-instagram"></i></a>
 
-		                </div>
+            </div>
 
-		                <?php if ($user->video_url): ?>
-		                	<a href="#" class="text-decoration-none" data-bs-toggle="modal" data-bs-target="#youtubeModal">
-			                	<p class="text-primary text-center fw-light mt-5 mb-3">
-													<span class="fw-bold">Video</span> Presentación
-												</p>
-												<p class="text-center mb-1">
-													<img src="/frontend/web/images/icons/youtube-blue.png" width="70px">
-												</p>
-											</a>
-		                <?php endif ?>
+            <?php if ($user->video_url): ?>
+            	<a href="#" class="text-decoration-none" data-bs-toggle="modal" data-bs-target="#youtubeModal">
+              	<p class="text-primary text-center fw-light mt-5 mb-3">
+									<span class="fw-bold">Video</span> Presentación
+								</p>
+								<p class="text-center mb-1">
+									<img src="/frontend/web/images/icons/youtube-blue.png" width="70px">
+								</p>
+							</a>
+            <?php endif ?>
 					</div>
 					<div class="col-md-6 card-secondary" style="display:none">
 						<div class="">

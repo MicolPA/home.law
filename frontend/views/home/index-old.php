@@ -7,54 +7,10 @@
      .carousel-control-prev, .carousel-control-next{
         position: relative;
      }
-
-     .outer {
-          position: relative;
-          margin-top: 20px;
-        }
-
-        .top {
-          position: absolute;
-          margin-top: -10px;
-        }
-
-        .bot {
-          position: absolute;
-        }
-        
-        
-        .video-container iframe, {
-          pointer-events: none;
-        }
-        .video-container iframe{
-          position: absolute;
-          top: -60px;
-          left: 0;
-          width: 100%;
-          height: calc(100% + 120px);
-        }
-        .video-foreground{
-          pointer-events:none;
-        }
-
-
-        /*.html5-video-player a {display: none !important; }*/
  </style>
- <script>
-     setTimeout(function(){
-       
-         // {pointer-events: none !important; }
-     },500)
- </script>
 
-<div class="container-fluid home-banner-container bg-gray-2 p-0 outer">
-
-    <div class="row w-100 bot" style="width:100vw !important;background: #000;margin-top: -1rem;overflow-x: hidden;">
-        <div class="col-md-12 video-foreground">
-            <iframe width="100%" height="615" src="https://www.youtube.com/embed/G6KBwzjbs7w?controls=0&showinfo=0&rel=0&autoplay=1&loop=1&playlist=G6KBwzjbs7w&mute=1" frameBorder="0" allowFullScreen></iframe>
-        </div>
-    </div>
-    <div class="row w-100 m-0 bg-dark">
+<div class="container-fluid home-banner-container bg-gray-2 px-0 py-4">
+    <div class="row w-100 m-0">
         <div class="col-lg-6 col-md-8 col-xs-12 pt-md-4">
             <div class="container">
                 <p class="text-center mb-0 lh-1">
@@ -85,7 +41,7 @@
                      
             </div>
         </div>
-        <!-- <div class="col-md-6 p-0 mobile-hidden pl-4">
+        <div class="col-md-6 p-0 mobile-hidden pl-4">
 
             <div id="carouselExampleControls" class="carousel slide carousel-fade main-carousel" tabindex="0" data-bs-ride="carousel">
               <div class="carousel-inner">
@@ -108,7 +64,10 @@
                 <span class="visually-hidden">Next</span>
               </button>
             </div>
-        </div> -->
+            <!-- <div class="home-banner">
+                
+            </div> -->
+        </div>
         
     </div>
 </div>
@@ -120,10 +79,59 @@
                 <span class="fw-bold">Best </span> <span class="fw-lighter">Property</span>
             </p>
         </div>
-        <?php foreach ($propiedades as $propiedad): ?>
-                <?= $this->render('/propiedades/_grid_propiedades', ['propiedad' => $propiedad, 'count' => 1]) ?>
-        <?php endforeach ?>
+        <div id="carouselProp" class="carousel slide" data-bs-ride="carousel">
+            
+          <div class="carousel-inner mb-2">
+            <div class="carousel-item active">
+                <div class="row">
+                    <?php $count = 0; ?>
+                    <?php foreach ($propiedades as $propiedad): ?>
+                        <?php $count++ ?>
+                        <?php if ($count <= 4): ?>
+                            <?= $this->render('/propiedades/_grid_propiedades', ['propiedad' => $propiedad, 'count' => $count]) ?>
+                        <?php endif ?>
+                    <?php endforeach ?>
+                </div>
+            </div>
+            <?php if (count($propiedades) > 4): ?>
+            <div class="carousel-item">
+                <div class="row">
+                    <?php $count = 0; ?>
+                    <?php foreach ($propiedades as $propiedad): ?>
+                        <?php $count++ ?>
+                        <?php if ($count > 4 and $count < 9): ?>
+                            <?= $this->render('/propiedades/_grid_propiedades', ['propiedad' => $propiedad, 'count' => $count]) ?>
+                        <?php endif ?>
+                    <?php endforeach ?>
+                </div>
+            </div>
+            <?php endif ?>
+            <?php if (count($propiedades) > 8): ?>
+            <div class="carousel-item">
+                <div class="row">
+                    <?php $count = 0; ?>
+                    <?php foreach ($propiedades as $propiedad): ?>
+                        <?php $count++ ?>
+                        <?php if ($count > 8): ?>
+                            <?= $this->render('/propiedades/_grid_propiedades', ['propiedad' => $propiedad, 'count' => $count]) ?>
+                        <?php endif ?>
+                    <?php endforeach ?>
+                </div>
+            </div>
+            <?php endif ?>
+          </div>
+        </div>
         
+    </div>
+
+    <div class="row">
+        <div class="col-md-12 text-center">
+            <button class='btn btn-outline-light border-0' type="button" data-bs-target="#carouselProp" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"><i class="fa-regular fa-circle text-primary"></i></button>
+            <button class='btn btn-outline-light border-0' type="button" data-bs-target="#carouselProp" data-bs-slide-to="1" aria-label="Slide 2"><i class="fa-regular fa-circle text-primary"></i></button>
+            <?php if (count($propiedades) > 8): ?>
+                <button class='btn btn-outline-light border-0' type="button" data-bs-target="#carouselProp" data-bs-slide-to="2" aria-label="Slide 3"><i class="fa-regular fa-circle text-primary"></i></button>
+            <?php endif ?>
+        </div>
     </div>
 
 </div>

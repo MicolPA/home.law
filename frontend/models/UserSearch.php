@@ -38,7 +38,7 @@ class UserSearch extends User
      *
      * @return ActiveDataProvider
      */
-    public function search($params)
+    public function search($params, $role=null)
     {
         $query = User::find();
 
@@ -55,6 +55,9 @@ class UserSearch extends User
             // $query->where('0=1');
             return $dataProvider;
         }
+
+
+        $this->role_id = $role;
 
         // grid filtering conditions
         $query->andFilterWhere([
