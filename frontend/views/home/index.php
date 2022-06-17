@@ -1,6 +1,12 @@
 <?php 
     
     $this->title = "Inicio";
+    $url = \frontend\models\Constantes::find()->where(['nombre' => 'home_video'])->one();;
+
+    $components = parse_url($url['contenido'], PHP_URL_QUERY);
+    //$component parameter is PHP_URL_QUERY
+    parse_str($components, $results);
+    $yt_url = isset($results['v']) ? $results['v'] : null;
  ?>
 
  <style>
@@ -55,7 +61,7 @@
     <div class="row w-100 bot mobile-hidden" style="width:100vw !important;background: #000;margin-top: -2rem">
         <div class="col-md-12 video-foreground" style="background:#e5e5e5">
             <!-- <iframe width="100%" height="850" src="https://www.youtube.com/embed/G6KBwzjbs7w?controls=0&showinfo=0&rel=0&autoplay=1&loop=1&playlist=G6KBwzjbs7w&mute=1" frameBorder="0" allowFullScreen allow="fullscreen;" allowfullscreen="allowfullscreen" allowfullscreen="allowfullscreen" allowfullscreen="true"></iframe> -->
-            <iframe type="text/html" src="https://www.youtube-nocookie.com/embed/G6KBwzjbs7w?version=3&enablejsapi=1&html5=1&hd=1&wmode=opaque&showinfo=0&rel=0&mute=1&controls=0&playsinline=1&playlist=G6KBwzjbs7w&autoplay=1&loop=1" frameborder="0" width="100%" height="828" style="background:white !important"></iframe>
+            <iframe type="text/html" src="https://www.youtube-nocookie.com/embed/<?= $yt_url ?>?version=3&enablejsapi=1&html5=1&hd=1&wmode=opaque&showinfo=0&rel=0&mute=1&controls=0&playsinline=1&playlist=<?= $yt_url ?>&autoplay=1&loop=1" frameborder="0" width="100%" height="828" style="background:white !important"></iframe>
         </div>
     </div>
     <div class="row w-100 m-0" style="background:#eeeff0">
