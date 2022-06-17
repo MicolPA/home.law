@@ -12,9 +12,9 @@ $agente = \frontend\models\User::findOne($propiedad->assigned_to_user_id);
        <div style="width:54%;display: inline-block;float: right;padding-top:1.5rem;padding-bottom: 1rem;height: 50px;text-align: right;">
               <h4 style="padding-left:1rem;color: #064c70;font-weight: bold;margin-bottom: -5px;">OFERTA DE COMPRA</h4>
               <br>
-              <div style="text-align: center;color:#ffffff;background: #d51921;width: 220px;float: right;padding-top: 0.5rem;padding-bottom: 7px;padding-left: 10px;margin-bottom: 1.2rem;border-radius: 20px;">
-                    <div style="border-radius:20px;;font-weight:bold;width: 200px;padding:5px 14px 0px 15px;">
-                           <h4 style="color:white;font-weight:bold;margin-top: -4px;margin-bottom: 0px;">VALOR USD$<?= number_format($propiedad->precio, 2) ?></h4>
+              <div style="text-align: center;color:#ffffff;background: #d51921;width: 250px;float: right;padding-top: 0.5rem;padding-bottom: 7px;padding-left: 5px;padding-right: 5px;margin-bottom: 1.2rem;border-radius: 20px;">
+                    <div style="border-radius:20px;;font-weight:bold;width: 280px;padding:5px 5px 0px 5px;text-align: center;margin:auto">
+                           <h4 style="color:white;font-weight:bold;margin-top: -4px;margin-bottom: 0px;text-align: center;">VALOR USD$<?= number_format((float)$data['ContactForm']['monto'], 2) ?></h4>
                     </div>
               </div>
               <br>
