@@ -43,7 +43,7 @@ $model = new \frontend\models\ContactForm();
         <button type="button" class="text-end text-danger fw-bold float-end bg-white border-0" data-bs-dismiss="modal">CERRAR</button>
       </div>
       <div class="modal-body">
-        <?php $form = ActiveForm::begin(['options' => ['autocomplete' => 'off'],], ['enctype' => 'multipart/form-data']); ?>
+        <?php $form = ActiveForm::begin(['action' => '/frontend/web/propiedades/enviar-oferta']); ?>
         <div class="row bg-white step-1 form-modal-container">
             <div class="col-md-12 text-center mb-4">
                 <h3 class="text-primary h4 text-gotham mb-0">OFERTA DE COMPRA</h3>
@@ -92,8 +92,8 @@ $model = new \frontend\models\ContactForm();
 
             <div class="col-md-6">
                 <div class="form-group mb-4">
-                    <label class="label-primary fw-bold">Clousing Date</label>
-                    <input type="date" class="form-control rounded-2 form-part1" required>
+                    <label class="label-primary fw-bold">Closing Date</label>
+                    <input type="date" class="form-control rounded-2 form-part1" name="closing_date" required>
                 </div>
 
                 <p class="text-muted">
@@ -128,37 +128,37 @@ $model = new \frontend\models\ContactForm();
 
             <div class="col-md-12 my-4">
                 <div class="form-check mb-3">
-                  <input class="form-check-input" type="radio" name="contingencia" id="contingenciaRadio1">
+                  <input class="form-check-input" value="1" type="radio" name="contingencia" id="contingenciaRadio1">
                   <label class="form-check-label text-primary fw-bold" for="contingenciaRadio1">
                     Inmueble se encuentre libre de cargas y gravamenes
                   </label>
                 </div>
                 <div class="form-check mb-3">
-                  <input class="form-check-input" type="radio" name="contingencia" id="contingenciaRadio2">
+                  <input class="form-check-input" value="2" type="radio" name="contingencia" id="contingenciaRadio2">
                   <label class="form-check-label text-primary fw-bold" for="contingenciaRadio2">
                     Inmueble se encuentre al día con el pago de impuesto a la propiedad
                   </label>
                 </div>
                 <div class="form-check mb-3">
-                  <input class="form-check-input" type="radio" name="contingencia" id="contingenciaRadio3">
+                  <input class="form-check-input" value="3" type="radio" name="contingencia" id="contingenciaRadio3">
                   <label class="form-check-label text-primary fw-bold" for="contingenciaRadio3">
                     Inmueble se encuentre al día con el pago de mantenimiento
                   </label>
                 </div>
                 <div class="form-check mb-3">
-                  <input class="form-check-input" type="radio" name="contingencia" id="contingenciaRadio4">
+                  <input class="form-check-input" value="4" type="radio" name="contingencia" id="contingenciaRadio4">
                   <label class="form-check-label text-primary fw-bold" for="contingenciaRadio4">
                     Inmueble se encuentre en el mismo estado según fotos y vídeos
                   </label>
                 </div>
                 <div class="form-check mb-3">
-                  <input class="form-check-input" type="radio" name="contingencia" id="contingenciaRadio5">
+                  <input class="form-check-input" value="5" type="radio" name="contingencia" id="contingenciaRadio5">
                   <label class="form-check-label text-primary fw-bold" for="contingenciaRadio5">
                     Que todos los equipos electrodomesticos se encuentren en buen estado y funcionamiento
                   </label>
                 </div>
                 <div class="form-check mb-3">
-                  <input class="form-check-input" type="radio" name="contingencia" id="contingenciaRadio6">
+                  <input class="form-check-input" value="6" type="radio" name="contingencia" id="contingenciaRadio6">
                   <label class="form-check-label text-primary fw-bold" for="contingenciaRadio6">
                     Inmueble se presente daños estructurales
                   </label>
@@ -180,7 +180,10 @@ $model = new \frontend\models\ContactForm();
                   </label>
                 </div>
                 <div class="form-group m-auto pt-4 text-center">
-                    <?= Html::submitButton('ENVIAR OFERTA', ['class' => 'btn btn-primary px-4 py-2 small font-12']) ?>
+                    <a href="javascript:back()" class="btn btn-secondary mr-2 px-4 py-2 small font-12">ATRAS</a>
+                    <?= Html::submitButton('ENVIAR OFERTA', ['class' => 'btn btn-primary px-4 py-2 mr-2 small font-12']) ?>
+                    <a href="javascript:openOfertTab()" class="btn btn-outline-primary px-4 py-2 small font-12">VISTA PREVIA <i class="fa-solid fa-up-right-from-square ml-2"></i></a>
+                    <!-- <a href="javascript:validateFirstPart()" class="btn btn-mut px-4 py-2 small font-12">VISTA PREVIA <i class="fa-solid fa-up-right-from-square"></i></a> -->
                 </div>
             </div>
         </div>
@@ -191,3 +194,4 @@ $model = new \frontend\models\ContactForm();
   </div>
 </div>
 
+<input type="hidden" class="propiedad_id" value="<?= $id ?>">

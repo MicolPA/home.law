@@ -118,6 +118,24 @@ function customCheckColor(){
 //         toggle_customSidebar = true;
 // }
 
+function back(){
+        $(".step-2").hide();
+        $(".step-1").show();
+        $(".back").hide(); 
+}
+
+function openOfertTab(){
+        url = '/frontend/web/propiedades/pdf-oferta?propiedad=' + $(".propiedad_id").val();
+        for (var i = $(".form-part1").length - 1; i >= 0; i--) {
+                field = $(".form-part1")[i];
+                url = url + '&' + field.name + '=' + field.value;
+        }
+
+        url = url + '&contingencia='+ $('input[name="contingencia"]:checked').val();;
+
+        window.open(url, '_blank');
+        // window.location.href = url;
+}
 
 function validateFirstPart(){
 
@@ -129,9 +147,11 @@ function validateFirstPart(){
                         state = false;
                 }
         }
+        // if (true) {
         if (state && validateEmail($("#contactform-email").val())) {
                 $(".step-2").show();
                 $(".step-1").hide();
+                $(".back").show();
                 console.log('valido');
         }else{
                 console.log('No valido');
@@ -194,9 +214,9 @@ $('#calcular').click(function(){
 
 
                 console.log(monto);
-                monto =  monto.toString().replace(",", ""); 
+                monto =  monto.toString().replaceAll(",", ""); 
                 console.log(monto);
-                tasa =  tasa.toString().replace(",", ""); 
+                tasa =  tasa.toString().replaceAll(",", ""); 
                 monto = parseFloat(monto);
                 tasa = parseFloat(tasa);
                 console.log(monto);
@@ -230,8 +250,8 @@ $('#calcular').click(function(){
 
 function calcularCuota(monto, meses, tasa){
 
-        // monto =  monto.toString().replace(",", ""); 
-        // tasa =  tasa.toString().replace(",", ""); 
+        // monto =  monto.toString().replaceAll(",", ""); 
+        // tasa =  tasa.toString().replaceAll(",", ""); 
 
 
         // monto = parseFloat(monto);
@@ -251,8 +271,8 @@ function calcularCuota(monto, meses, tasa){
 
 function getTablaAmortizacion(monto, meses, tasa){
 
-        // monto =  monto.toString().replace(",", ""); 
-        // tasa =  tasa.toString().replace(",", ""); 
+        // monto =  monto.toString().replaceAll(",", ""); 
+        // tasa =  tasa.toString().replaceAll(",", ""); 
 
 
         // monto = parseFloat(monto);

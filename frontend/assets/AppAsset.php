@@ -35,7 +35,7 @@ class AppAsset extends AssetBundle
         'js/fontawesome.min.js',
         'js/sweetalert.min.js',
         'js/jquery.mask.js',
-        'js/main.js?v=10',
+        'js/main.js?v=11',
         // 'https://use.fontawesome.com/releases/v5.15.4/js/all.js',
         // 'assets-atlantis/js/atlantis.min.js',
         // 'assets-atlantis/js/plugin/owl-carousel/owl.carousel.min.js',

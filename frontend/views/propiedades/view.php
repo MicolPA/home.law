@@ -292,4 +292,4 @@ $this->title = $model->titulo_publicacion;
 
 
 <?= $this->render('_modal_prop', ['model' => $model, 'fotos' => $fotos]) ?>
-<?= $this->render('_modal_contactat_agente', ['precio' => $model->precio]) ?>
+<?= $this->render('_modal_contactat_agente', ['precio' => $model->precio, 'id' => $model->id]) ?>
