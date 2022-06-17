@@ -43,7 +43,7 @@ $model = new \frontend\models\ContactForm();
         <button type="button" class="text-end text-danger fw-bold float-end bg-white border-0" data-bs-dismiss="modal">CERRAR</button>
       </div>
       <div class="modal-body">
-        <?php $form = ActiveForm::begin(['action' => '/frontend/web/propiedades/enviar-oferta']); ?>
+        <?php $form = ActiveForm::begin([]); ?>
         <div class="row bg-white step-1 form-modal-container">
             <div class="col-md-12 text-center mb-4">
                 <h3 class="text-primary h4 text-gotham mb-0">OFERTA DE COMPRA</h3>
