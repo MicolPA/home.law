@@ -2,6 +2,7 @@
 
 namespace frontend\controllers;
 
+use Yii;
 use frontend\models\Constantes;
 use frontend\models\ConstantesSearch;
 use yii\web\Controller;
@@ -18,6 +19,7 @@ class ConstantesController extends Controller
      */
     public function behaviors()
     {
+        $this->layout = "main-admin";
         return array_merge(
             parent::behaviors(),
             [
@@ -94,7 +96,9 @@ class ConstantesController extends Controller
         $model = $this->findModel($id);
 
         if ($this->request->isPost && $model->load($this->request->post()) && $model->save()) {
-            return $this->redirect(['view', 'id' => $model->id]);
+            Yii::$app->session->setFlash('confirmacion_msg','Modificado correctamente');
+                return $this->redirect(['index']);
+            // return $this->redirect(['view', 'id' => $model->id]);
         }
 
         return $this->render('update', [

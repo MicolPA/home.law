@@ -11,30 +11,33 @@ use yii\grid\GridView;
 
 $this->title = 'Constantes';
 $this->params['breadcrumbs'][] = $this->title;
+
+
 ?>
 <div class="constantes-index">
 
-    <h1><?= Html::encode($this->title) ?></h1>
+   <!--  <h1><?//= Html::encode($this->title) ?></h1>
 
     <p>
-        <?= Html::a('Create Constantes', ['create'], ['class' => 'btn btn-success']) ?>
+        <?//= Html::a('Create Constantes', ['create'], ['class' => 'btn btn-success']) ?>
     </p>
-
+ -->
     <?php // echo $this->render('_search', ['model' => $searchModel]); ?>
 
     <?= GridView::widget([
         'dataProvider' => $dataProvider,
-        'filterModel' => $searchModel,
+        // 'filterModel' => $searchModel,
         'columns' => [
             ['class' => 'yii\grid\SerialColumn'],
 
-            'id',
+            // 'id',
             'nombre',
             'contenido:ntext',
             [
                 'class' => ActionColumn::className(),
-                'urlCreator' => function ($action, Constantes $model, $key, $index, $column) {
-                    return Url::toRoute([$action, 'id' => $model->id]);
+                'template' => '{update}',
+                'urlCreator' => function ($action, \frontend\models\Constantes $model, $key, $index, $column) {
+                        return Url::toRoute([$action, 'id' => $model->id]);
                  }
             ],
         ],

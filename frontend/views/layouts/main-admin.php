@@ -190,6 +190,12 @@ $foto = '';
                             <p class="fw-bold">Usuarios</p>
                         </a>
                     </li>
+                    <li class="nav-item">
+                        <a href="<?= Yii::getAlias("@web") ?>/constantes">
+                            <i class="fa-solid fa-gear"></i>
+                            <p class="fw-bold">General</p>
+                        </a>
+                    </li>
                     <?php endif ?>
                 </ul>
             </div>
