@@ -16,7 +16,7 @@
 
         <div class="col-lg-6 my-3">
             <label class="text-primary fw-bold mb-1">Tasa (%)</label>
-            <input type="text" class="form-control rounded-2 placeholder-blue number-mask" id="tasa">
+            <input type="text" class="form-control rounded-2 placeholder-blue" id="tasa">
         </div>
     </div>
 
