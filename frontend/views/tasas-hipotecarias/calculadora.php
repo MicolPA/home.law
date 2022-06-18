@@ -45,7 +45,9 @@
         <div class="form-group row py-3 mb-2">
             <label for="totalpay" class="col-sm-6 col-form-label col-form-label-sm text-primary fw-bold font-16">EXPORTAR PDF:</label>
             <div class="col-sm-6">        
-                <a href="#" class="btn btn-xs btn-primary bg-primary rounded-3 px-4 mb-5 font-12 calculadoraPDF" target="_blank">EXPORTAR PDF <i class="fa-solid fa-arrow-up-right-from-square ml-2"></i></a>
+                <a href="#" class="btn btn-xs btn-danger bg-danger rounded-3 px-4 mb-5 font-12 mr-2 calculadoraPDF" target="_blank">EXPORTAR PDF <i class="fa-solid fa-arrow-up-right-from-square ml-2"></i></a>
+                <button type="button" id="calcular2" class="btn btn-xs btn-primary bg-primary rounded-3 mr-2 px-4 mb-5 font-12">Calcular</button>
+                <button type="reset" class="btn btn-xs btn-secondary rounded-3 px-4 mb-5 font-12 reset">Limpiar</button>
             </div>
         </div>
 
@@ -68,8 +70,9 @@
 
     <div class="row mt-3">
         <div class="text-center m-3">
+            <a href="#" class="btn btn-danger rounded-2 px-5 mr-3 calculadoraPDF" target="_blank" style="display:none">EXPORTAR PDF <i class="fa-solid fa-arrow-up-right-from-square ml-2"></i></a>
             <button type="button" id="calcular" class="btn btn-primary rounded-2 px-5 mr-3">Calcular</button>
-            <button type="reset" id="reset" class="btn btn-secondary rounded-2 px-5">Limpiar</button>
+            <button type="reset" class="btn btn-secondary rounded-2 px-5 reset">Limpiar</button>
         </div>
     </div>
 </form>

@@ -200,7 +200,8 @@ function validateCalculadora(){
 }
 
 
-$('#calcular').click(function(){
+
+$('#calcular, #calcular2').click(function(){
 
         if (validateCalculadora()) {
                 limpiarCaluladoraResultados();
@@ -210,6 +211,7 @@ $('#calcular').click(function(){
                 // var tasa = parseFloat($('#tasa').val());
                 var tasa = $('#tasa').val();
                 $(".calculadoraPDF").attr('href', '/frontend/web/tasas-hipotecarias/tabla-amortizacion?monto='+monto+'&meses='+meses+'&tasa='+tasa);
+                $(".calculadoraPDF").show();
 
 
 
@@ -332,9 +334,10 @@ function getTablaAmortizacion(monto, meses, tasa){
 function limpiarCaluladoraResultados(){
         $("tbody").html('');
         $(".resultados").hide();
+        $(".calculadoraPDF").hide();
         $('#calculadora').trigger("reset");
 }
-$('#reset').click(function(){
+$('.reset').click(function(){
         
         limpiarCaluladoraResultados();
 })
