@@ -136,7 +136,7 @@
 </div>
 
 <div class="container pb-5">
-    <div class="row">
+    <div class="row px-3">
         <div class="col-md-12 text-center">
             <p class="text-primary h3 mb-lg-5 mt-5">
                 <span class="fw-bold">Best </span> <span class="fw-lighter">Property</span>
