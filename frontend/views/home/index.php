@@ -66,31 +66,43 @@
     </div>
     <div class="row w-100 m-0" style="background:#eeeff0">
         <div class="col-lg-6 col-md-8 col-xs-12 pt-md-4">
-            <div class="container">
-                <p class="text-center mb-0 lh-1">
-                    <span class="fw-bold fs-3 text-primary -ml-3 mb-0">Find the best property</span>
-                    <p class="text-center fs-3 pl-5 lh-1 text-primary fw-light">for your investment </p>
-                </p>
+            <div class="container-fluid">
+                
                 <div class="row">
-                    <div class="col-10">
-                        <form class="card home-card w-75 float-md-end rounded-2 p-5" action="/frontend/web/propiedades">
-                            <div class="mb-3 mt-5">
-                                <label for="tagInput" class="form-label">¿Qué buscas?</label>
-                                <input type="text" class="form-control" name="keyword" id="tagInput" placeholder="Apartamento, casa. terreno...">
+                    <div class="col-lg-10 col-sm-12">
+                        <form class="card home-card w-75 float-md-end rounded-2 p-5 mt-3" action="/frontend/web/propiedades">
+                            <div class="row">
+                                <div class="col-md-11 col-sm-12">
+                                    <p class="text-center mb-0">
+                                        <span class="fw-bold fs-4 text-primary -ml-2 mb-0">Find the best property</span>
+                                        <p class="text-center fs-4 pl-5 lh-1 text-primary fw-light">for your investment </p>
+                                    </p>
+
+                                    <div class="mb-3 mt-5">
+                                        <label for="tagInput" class="form-label fw-bold text-primary">¿Qué buscas?</label>
+                                        <input type="text" class="form-control rounded" name="keyword" id="tagInput" placeholder="Apartamento, casa. terreno...">
+                                    </div>
+                                    <div class="mb-3">
+                                        <label for="locationInput" class="form-label fw-bold text-primary">¿Donde?</label>
+                                        <input type="text" class="form-control rounded" name="keyplace" id="locationInput" placeholder="Apartamento, casa. terreno...">
+                                    </div>
+                                    <div class="mt-3 mb-5 text-center">
+                                        <button type="submit" class="btn btn-lg btn-danger rounded-3 pl-4 pr-4">Buscar <i class='fa-solid fa-magnifying-glass ml-2'></i> </button>
+                                    </div>
+                                    <!-- <p class="text-secondary small text-center fw-bold-2">BÚSQUEDA AVANZADA</p> -->
+                                    </div>
+
+                               
+
+                                <div class="col-1 pt-5 mt-2 mobile-hidden">
+                                    <img src="/frontend/web/images/icons/arrow-home-2.svg" width="35px">
+                                </div>
                             </div>
-                            <div class="mb-3">
-                                <label for="locationInput" class="form-label">¿Donde?</label>
-                                <input type="text" class="form-control" name="keyplace" id="locationInput" placeholder="Apartamento, casa. terreno...">
-                            </div>
-                            <div class="mt-3 mb-5 text-center">
-                                <button type="submit" class="btn btn-lg btn-danger rounded-3 pl-4 pr-4">Buscar <i class='fa-solid fa-magnifying-glass ml-2'></i> </button>
-                            </div>
-                            <p class="text-secondary small text-center fw-bold-2">BÚSQUEDA AVANZADA</p>
+
+                            
                         </form> 
                     </div>
-                    <div class="col-1">
-                        <img src="/frontend/web/images/icons/arrow-home-2.svg" width="50px">
-                    </div>
+                    
                 </div>
                      
             </div>

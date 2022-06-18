@@ -199,28 +199,52 @@ $this->title = $model->titulo_publicacion;
                         </p>
                    </div>
                    <div class="col-md-3 font-family-2">
-                       <div class="mt-2">
+                        <div class="mt-3">
+                           <a href="#" class="text-decoration-none fw-normal text-primary">
+                               <img src="/frontend/web/images/icons/message.svg" width="35px" class="mr-2">
+                               CONTACTAR AGENTE
+                           </a>
+                       </div>
+                       <!-- <div class="mt-2">
                            <a href="#" class="text-decoration-none fw-normal text-primary">
                                <span class="btn btn-icon btn-sm btn-round text-white bg-primary mr-2"><i class="fa-solid fa-comment-dots"></i></span> 
                                CONTACTAR AGENTE
                            </a>
-                       </div>
+                       </div> -->
                        <div class="mt-3">
+                           <a href="/frontend/web/tasas-hipotecarias" class="text-decoration-none fw-normal text-primary" target="_blank">
+                               <img src="/frontend/web/images/icons/tasas.svg" width="35px" class="mr-2">
+                               TASAS HIPOTECARIAS
+                           </a>
+                       </div>
+                       <!-- <div class="mt-3">
                            <a href="/frontend/web/tasas-hipotecarias" class="text-decoration-none fw-normal text-primary">
                                <span class="btn btn-icon btn-sm btn-round text-white icons-gray mr-2"><i class="fa-solid fa-chart-line"></i></span> 
                                TASAS HIPOTECARIAS
                            </a>
-                       </div>
+                       </div> -->
                        <?php if ($dictamen): ?>
-                           <div class="mt-3">
-                               <a href="/frontend/web/propiedades/debida-diligencia/?id=<?= $model->id ?>" class="text-decoration-none fw-normal text-primary" target="_blank">
+                        <div class="mt-3">
+                           <a href="/frontend/web/propiedades/debida-diligencia/?id=<?= $model->id ?>" class="text-decoration-none fw-normal text-primary" target="_blank">
+                               <img src="/frontend/web/images/icons/arrow-down-2.svg" width="35px" class="mr-2">
+                                DEBIDA DILIGENCIA
+                           </a>
+                       </div>
+                           <!-- <div class="mt-3">
+                               <a href="/frontend/web/propiedades/debida-diligencia/?id=<?//= $model->id ?>" class="text-decoration-none fw-normal text-primary" target="_blank">
                                    <span class="btn btn-icon btn-sm btn-round text-white icons-gray mr-2"><i class="fa-solid fa-arrow-down-long px-1"></i></span> 
                                    DEBIDA DILIGENCIA
                                </a>
-                           </div>
+                           </div> -->
                        <?php endif ?>
-                       <div class="mt-3 border-top border-bottom border-1 py-2">
-                            <button type="button" class="btn btn-primary btn-block w-100 btn-round" data-bs-toggle="modal" data-bs-target="#staticBackdrop">
+                       <div class="mt-3">
+                           <a href="#" class="text-decoration-none fw-normal text-primary">
+                               <img src="/frontend/web/images/icons/cross.svg" width="35px" class="mr-2">
+                               OFERTAS RECHAZADAS
+                           </a>
+                       </div>
+                       <div class="mt-3 border-top border-bottom border-1 py-2 border-primary">
+                            <button type="button" class="btn btn-primary btn-block w-100" data-bs-toggle="modal" data-bs-target="#staticBackdrop">
                               HACER UNA OFERTA
                             </button>
                        </div>
