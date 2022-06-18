@@ -182,16 +182,27 @@ $this->title = $model->titulo_publicacion;
                         <input type="hidden" id='item' value="0">
                     </div>
 
+
                 </div> <!-- /carousel-row -->
             </div>
         </div>
 
-       <div class="row mt-5 pt-5">
+       <div class="row px-3 mt-5">
            <div class="col-md-12">
-               <h2 class="text-primary fw-lighter h4">
+                <div class="mb-5">
+                    <h5 class="text-primary fw-lighter h5">
+                       <span class="fw-normal">PRECIO</span>
+                       <h3 class="text-primary">USD$<?= number_format($model->precio, 2) ?></h3>
+                    </h5>
+                   
+                </div>
+            </div>
+        </div>
+        <div class="row px-3 mt-2">
+            <div class="col-md-12">
+                <h2 class="text-primary fw-lighter h4">
                    <span class="fw-bold">Detalles</span> de la propiedad
                </h2>
-
                <div class="row">
                    <div class="col-md-8">
                        <p class="mt-4 text-secondary">
@@ -253,7 +264,7 @@ $this->title = $model->titulo_publicacion;
            </div>
            
        </div>
-       <div class="row mt-5 pt-5  pb-5">
+       <div class="row mt-5 pt-5  pb-5 px-3">
            <div class="col-md-12">
                <h2 class="text-primary fw-lighter h4 mb-5">
                    <span class="fw-bold">Características</span> de la propiedad
