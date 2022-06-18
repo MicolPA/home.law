@@ -80,7 +80,10 @@ $this->params['subtitle'] = $model->id ? "Editar Propiedad" : "Registrar Propied
             <div class="col-md-3">
                 <?= $form->field($model, 'pies')->textInput() ?>
             </div>
-            <div class="col-md-12">
+            <div class="col-md-6">
+                <?= $form->field($model, 'video_url')->textInput() ?>
+            </div>
+            <div class="col-md-6">
                 <?= $form->field($model, 'tags')->textInput(['required' => 'required', 'class' => 'form-control tagsinput', 'placeholder' => 'Piscina, Aire libre, etc']) ?>
             </div>
             <div class="col-md-12">

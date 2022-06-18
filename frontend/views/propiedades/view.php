@@ -277,16 +277,30 @@ $this->title = $model->titulo_publicacion;
 
     </div>
 </div>
+<?php 
 
+$components = parse_url($model->video_url, PHP_URL_QUERY);
+//$component parameter is PHP_URL_QUERY
+parse_str($components, $results);
+$yt_url = isset($results['v']) ? $results['v'] : null;
+
+ ?>
+<?php if ($yt_url): ?>
 <div class="bg-lightgray p-4">
     <div class="container">
         <div class="row align-items-center pt-5 mb-5 pb-5">
             <div class="col-md-12 mb-4">
                 <h2 class="text-primary fw-lighter h4 text-center">
-                   <span class="fw-bold">Recorrido 360</span> en la propiedad
+                   <span class="fw-bold">Video</span> de la propiedad
                 </h2>
             </div>
-            <div class="col-md-1"></div>
+
+            <div class="col-md-10 m-auto">
+                <div>
+                    <iframe width="100%" height="465" src="https://www.youtube.com/embed/<?= $yt_url ?>" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen style="border-radius: 25px;"></iframe>
+                </div>
+            </div>
+            <!-- <div class="col-md-1"></div>
             <div class="col-md-10 col-10">
                 <div class="p-3">
                     <img src="/frontend/web/images/ejemplo-360.jpg" width="100%" class="rounded">
@@ -308,10 +322,11 @@ $this->title = $model->titulo_publicacion;
                        <span class="btn btn-icon btn-sm btn-round text-white bg-primary"><i class="fa-solid fa-arrow-down"></i></span> 
                     </a>
                 </div>
-            </div>
+            </div> -->
         </div>
     </div>
 </div>
+<?php endif ?>
 
 
 
