@@ -1,191 +1,96 @@
+
 <?php
 
 use yii\helpers\Html;
 use yii\widgets\ActiveForm;
 use yii\helpers\ArrayHelper;
 
+$user = \frontend\models\User::findOne($agente_id);
 
-$model = new \frontend\models\ContactForm();
 ?>
-<style>
-    label{
-        margin-bottom: 5px;
-    }
-    .form-control{
-        padding: 0.5rem 1rem !important;
-    }
 
-    @media (min-width: 992px){
-
-        .modal-lg, .modal-xl {
-            max-width: 900px;
-        }
-
-        .form-modal-container{
-            padding: 0px 2.5rem;
-        }
-
-    }
-
-    @media (max-width: 992px){
-
-       .modal-body, .form-modal-container{
-            padding: 0px !important;
-        }
-    }
-</style>
-<!-- Modal -->
-<div class="modal fade" id="staticBackdrop" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+<div class="modal fade" id="contactAgente" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
   <div class="modal-dialog modal-lg p-4">
-    <div class="modal-content modal-content-2 p-4">
+    <div class="modal-content modal-content-2 p-0">
       <div class="modal-header border-0 text-end pb-0">
         <a class="text-danger"></a>
         <button type="button" class="text-end text-danger fw-bold float-end bg-white border-0" data-bs-dismiss="modal">CERRAR</button>
       </div>
-      <div class="modal-body">
+      <div class="modal-body pt-0 pb-5">
         <?php $form = ActiveForm::begin([]); ?>
-        <div class="row bg-white step-1 form-modal-container">
-            <div class="col-md-12 text-center mb-4">
-                <h3 class="text-primary h4 text-gotham mb-0">OFERTA DE COMPRA</h3>
-                <p class="h4 text-muted fw-light">VALOR USD<?= number_format($precio) ?></p> 
-            </div>
+        <div class="row bg-white p-0">
+            <div class="col-md-6 card-primary">
+                <div class=" avatar-sm fs-4 rounded-circle m-auto" style="width: 100px; height: 100px;background-image: url('<?= Yii::getAlias("@web") . "/". $user->photo_url ?>');background-position: center;background-size: cover;">
+                </div>
 
-            <div class="col-md-6 label-primary fw-bold mb-4">
-                <?= $form->field($model, 'monto')->textInput(['class' => 'form-control rounded-2 form-part1', 'required' => 'required', 'type' => 'number'])->label('Monto en dolares') ?>
-            </div>
-            <div class="col-md-6 label-primary fw-bold mb-4">
-                <?= $form->field($model, 'cedula')->textInput(['class' => 'form-control rounded-2 form-part1', 'required' => 'required'])->label('Cédula / Pasaporte') ?>
-            </div>
-            <div class="col-md-6 label-primary fw-bold mb-4">
-                <?= $form->field($model, 'name')->textInput(['class' => 'form-control rounded-2 form-part1', 'required' => 'required'])->label('Nombre') ?>
-            </div>
-            <div class="col-md-6 label-primary fw-bold mb-4">
-                <?= $form->field($model, 'nacionalidad')->textInput(['class' => 'form-control rounded-2 form-part1', 'required' => 'required'])->label('Nacionalidad') ?>
-            </div>
-            <div class="col-md-6 label-primary fw-bold mb-4">
-                <?= $form->field($model, 'email')->textInput(['class' => 'form-control rounded-2 form-part1', 'required' => 'required'])->label('Correo') ?>
-            </div>
-            <div class="col-md-6 label-primary fw-bold mb-4">
-                <?= $form->field($model, 'phone')->textInput(['class' => 'form-control rounded-2 form-part1', 'required' => 'required'])->label('Telefono') ?>
+                <div class="pl-2 mt-2 pb-5 mx-2 mx-md-5 h6 text-center">
+                    <a href=""><i class="text-warning  fa-solid fa-star"></i></a>
+                    <a href=""><i class="text-warning fa-solid fa-star"></i></a>
+                    <a href=""><i class="text-warning fa-solid fa-star"></i></a>
+                    <a href=""><i class="text-secondary fa-solid fa-star"></i></a>
+                    <a href=""><i class="text-secondary fa-solid fa-star"></i></a>
+                </div>
+                <div class="h5 w-fit-content m-auto text-center">
+
+                    <p class="fw-bold text-primary mb-0"><?= "$user->first_name $user->last_name" ?></p>
+                    <p class="text-muted small mb-4">Agente Inmobiliario</p>
+                    <a href="<?= $user->facebook ? $user->facebook : '#' ?>"><i class="text-primary mx-2 fa-brands fa-facebook-f"></i></a>
+                    <a href="<?= $user->whatsapp ? $user->whatsapp : '#' ?>"><i class="text-primary mx-2 fa-brands fa-whatsapp"></i></a>
+                    <a href="<?= $user->twitter ? $user->twitter : '#' ?>"><i class="text-primary mx-2 fa-brands fa-twitter"></i></a>
+                    <a href="<?= $user->instagram ? $user->instagram : '#' ?>"><i class="text-primary mx-2 fa-brands fa-instagram"></i></a>
+
+                </div>
+
+                <?php if ($user->video_url): ?>
+                    <a href="#" class="text-decoration-none" data-bs-toggle="modal" data-bs-target="#youtubeModal">
+                    <p class="text-primary text-center fw-light mt-5 mb-3">
+                            <span class="fw-bold">Video</span> Presentación
+                        </p>
+                        <p class="text-center mb-1">
+                            <img src="/frontend/web/images/icons/youtube-blue.png" width="70px">
+                        </p>
+                    </a>
+                <?php endif ?>
             </div>
 
             <div class="col-md-6">
-                <label class="label-primary fw-bold mb-2">Reservation Deposit</label>
-                <div class="selectgroup selectgroup-secondary selectgroup-pills mb-2">
-                    <label class="selectgroup-item">
-                        <input type="radio" name="reservation_amount" value="5" class="selectgroup-input form-part1" required>
-                        <span class="selectgroup-button selectgroup-button-icon">5%</span>
-                    </label>
-                    <label class="selectgroup-item">
-                        <input type="radio" name="reservation_amount" value="10" class="selectgroup-input form-part1" required>
-                        <span class="selectgroup-button selectgroup-button-icon">10%</span>
-                    </label>
+                <div>
+                    <p class="small text-color mb-0 p-0">Contactos</p>
+                    <p class="fw-bold h6 text-color"> <?= $user->phone ?></p>
+
+                    <p class="small text-color mt-4 mb-0 p-0 ">Correo Electrónico:</p>
+                    <p class="fw-bold h6 text-color mb-"> <?= $user->email ?></p>
+
+                    <p class="small mt-4">
+                        <img src="/frontend/web/images/icons/message.svg" width="35px" class="mr-2">
+                        WHATSAPP
+                    </p>
                 </div>
 
-                <p class="text-muted">
-                    El deposito de reserva quedará en escrow en la cuenta de Best Listing <sup><i class="fa-regular fa-registered"></i></sup>, hasta tanto se complete la debida diligencia.
-                </p>
-                <p class="text-muted">
-                    El deposito de reserva solo será reembolsable en caso de alguna situación juridica o fiscal.
-                </p>
-            </div>
+                <div class="row mt-3">
+                    <div class="col-md-8 mt-2">
+                        <p class="text-primary fw-bold mb-1">Nombre</p>
+                        <input type="text" class="form-control rounded-2">
+                    </div>
+                    <div class="col-md-8 mt-2">
+                        <p class="text-primary fw-bold mb-1">Correo</p>
+                        <input type="text" class="form-control rounded-2">
+                    </div>
+                    <div class="col-md-8 mt-2">
+                        <p class="text-primary fw-bold mb-1">Telefono</p>
+                        <input type="text" class="form-control rounded-2">
+                    </div>
+                    <div class="col-md-10 mt-2">
+                        <p class="text-primary fw-bold mb-1">Telefono</p>
+                        <textarea name="" id="" cols="30" rows="5" class="form-control rounded"></textarea>
+                    </div>
 
-            <div class="col-md-6">
-                <div class="form-group mb-4">
-                    <label class="label-primary fw-bold">Closing Date</label>
-                    <input type="date" class="form-control rounded-2 form-part1" name="closing_date" required>
-                </div>
-
-                <p class="text-muted">
-                    La fecha de cierre propuesta queda sujeta a confirmación por parte del vendedor.
-                </p>
-
-                <div class="form-group mt-5">
-                    <label class="label-primary fw-bold">Amueblado segun listing de fecha</label>
-                    <select name="amueblado" class="form-control rounded-2 form-part1" required>
-                        <option value="">Seleccionar...</option>
-                        <option value="1">Si</option>
-                        <option value="0">No</option>
-                    </select>
+                    <div class="col-md-10 text-center mt-3">
+                        <a href="" class="btn btn-xs btn-primary bg-primary rounded-3 px-5 font-12">ENVIAR</a>
+                    </div>
                 </div>
             </div>
 
-            <div class="form-group m-auto pt-4 text-center">
-                <a href="javascript:validateFirstPart()" class="btn btn-primary px-4 py-2 small font-12">SIGUIENTE</a>
-            </div>
-        </div>
-
-        <div class="row bg-white step-2 form-modal-container mt-3" style="display:none">
-
-            <div class="col-md-8">
-                <label class="text-primary fw-bold">Contingencia</label>
-                <p class="text-muted">La presenta oferta queda condicionada a:</p>
-            </div>
-
-            <div class="col-md-4">
-                
-            </div>
-
-            <div class="col-md-12 my-4">
-                <div class="form-check mb-3">
-                  <input class="form-check-input" value="1" type="radio" name="contingencia" id="contingenciaRadio1">
-                  <label class="form-check-label text-primary fw-bold" for="contingenciaRadio1">
-                    Inmueble se encuentre libre de cargas y gravamenes
-                  </label>
-                </div>
-                <div class="form-check mb-3">
-                  <input class="form-check-input" value="2" type="radio" name="contingencia" id="contingenciaRadio2">
-                  <label class="form-check-label text-primary fw-bold" for="contingenciaRadio2">
-                    Inmueble se encuentre al día con el pago de impuesto a la propiedad
-                  </label>
-                </div>
-                <div class="form-check mb-3">
-                  <input class="form-check-input" value="3" type="radio" name="contingencia" id="contingenciaRadio3">
-                  <label class="form-check-label text-primary fw-bold" for="contingenciaRadio3">
-                    Inmueble se encuentre al día con el pago de mantenimiento
-                  </label>
-                </div>
-                <div class="form-check mb-3">
-                  <input class="form-check-input" value="4" type="radio" name="contingencia" id="contingenciaRadio4">
-                  <label class="form-check-label text-primary fw-bold" for="contingenciaRadio4">
-                    Inmueble se encuentre en el mismo estado según fotos y vídeos
-                  </label>
-                </div>
-                <div class="form-check mb-3">
-                  <input class="form-check-input" value="5" type="radio" name="contingencia" id="contingenciaRadio5">
-                  <label class="form-check-label text-primary fw-bold" for="contingenciaRadio5">
-                    Que todos los equipos electrodomesticos se encuentren en buen estado y funcionamiento
-                  </label>
-                </div>
-                <div class="form-check mb-3">
-                  <input class="form-check-input" value="6" type="radio" name="contingencia" id="contingenciaRadio6">
-                  <label class="form-check-label text-primary fw-bold" for="contingenciaRadio6">
-                    Inmueble se presente daños estructurales
-                  </label>
-                </div>
-            </div>
-
-            
-                
-            <div class="col-md-12 mt-3">
-                <p class="text-primary fw-bold text-center">Políticas y Condiciones</p>
-                <p class="text-muted justify-content-center">
-                    Lorem ipsum dolor sit, amet consectetur adipisicing, elit. In expedita amet provident incidunt neque illum blanditiis quisquam modi, unde quam perferendis tempore esse cumque illo, pariatur consectetur numquam deleniti quidem eaque facilis maxime odit molestiae voluptates? Quis, odit labore eius sapiente numquam pariatur ullam quidem quaerat natus repudiandae ea unde.
-                </p>
-
-                <div class="form-check m-auto my-4" style="width:fit-content;">
-                  <input class="form-check-input mr-2" type="radio" name="flexRadioDefault" id="flexRadioDefault1" required>
-                  <label class="form-check-label text-muted" for="flexRadioDefault1">
-                    Acepto Politicas y Condiciones
-                  </label>
-                </div>
-                <div class="form-group m-auto pt-4 text-center">
-                    <a href="javascript:back()" class="btn btn-secondary mr-2 px-4 py-2 small font-12">ATRAS</a>
-                    <?= Html::submitButton('ENVIAR OFERTA', ['class' => 'btn btn-primary px-4 py-2 mr-2 small font-12']) ?>
-                    <a href="javascript:openOfertTab()" class="btn btn-outline-primary px-4 py-2 small font-12">VISTA PREVIA <i class="fa-solid fa-up-right-from-square ml-2"></i></a>
-                    <!-- <a href="javascript:validateFirstPart()" class="btn btn-mut px-4 py-2 small font-12">VISTA PREVIA <i class="fa-solid fa-up-right-from-square"></i></a> -->
-                </div>
-            </div>
         </div>
         <?php ActiveForm::end(); ?>
       </div>
@@ -193,5 +98,3 @@ $model = new \frontend\models\ContactForm();
     </div>
   </div>
 </div>
-
-<input type="hidden" class="propiedad_id" value="<?= $id ?>">

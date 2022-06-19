@@ -63,29 +63,29 @@
 					</div>
 					<div class="col-md-6 card-secondary" style="display:none">
 						<div class="">
-		                	<p class="small text-color mb-0 p-0">Contactos</p>
-		                	<p class="fw-bold h6 text-color"> <?= $user->phone ?></p>
+              	<p class="small text-color mb-0 p-0">Contactos</p>
+              	<p class="fw-bold h6 text-color"> <?= $user->phone ?></p>
 
-		                	<p class="small text-color mt-4 mb-0 p-0 ">Correo Electrónico:</p>
-	                		<p class="fw-bold h6 text-color mb-"> <?= $user->email ?></p>
+              	<p class="small text-color mt-4 mb-0 p-0 ">Correo Electrónico:</p>
+            		<p class="fw-bold h6 text-color mb-"> <?= $user->email ?></p>
 
-	                		<div class="mt-5 mb-2">
-			                    <a href="#" class="text-decoration-none fw-bold text-color font-12">
-				                       <span class="btn btn-icon btn-sm btn-round text-white bg-danger mr-2" style="font-size:17px !important"><i class="fa-solid fa-comment-dots"></i></span> 
-				                       CONTACTAR AGENTE
-				                   </a>
+            		<div class="mt-5 mb-2">
+                    <a href="#" class="text-decoration-none fw-bold text-color font-12">
+	                       <span class="btn btn-icon btn-sm btn-round text-white bg-danger mr-2" style="font-size:17px !important"><i class="fa-solid fa-comment-dots"></i></span> 
+	                       CONTACTAR AGENTE
+	                   </a>
 
-			                </div>
-			                <div class="mt-5 pr-2">
-													<p class="text-primary fs-5 ">
-						                <span class="fw-bold">Reseña </span> Personal
-						            	</p>
+                </div>
+                <div class="mt-5 pr-2">
+										<p class="text-primary fs-5 ">
+			                <span class="fw-bold">Reseña </span> Personal
+			            	</p>
 
-							            <p class="small text-light-gray">
-							                <?= $user->descripcion ?>
-							            </p>
+				            <p class="small text-light-gray">
+				                <?= $user->descripcion ?>
+				            </p>
 
-											</div>
+								</div>
 		          </div>
 					</div>
 				</div>

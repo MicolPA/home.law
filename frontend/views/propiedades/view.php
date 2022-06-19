@@ -204,14 +204,14 @@ $this->title = $model->titulo_publicacion;
                    <span class="fw-bold">Detalles</span> de la propiedad
                </h2>
                <div class="row">
-                   <div class="col-md-8">
+                   <div class="col-md-9">
                        <p class="mt-4 text-secondary">
                             <?= $model->detalles ?>
                         </p>
                    </div>
                    <div class="col-md-3 font-family-2">
                         <div class="mt-3">
-                           <a href="#" class="text-decoration-none fw-normal text-primary">
+                           <a href="#" class="text-decoration-none fw-normal text-primary" data-bs-toggle="modal" data-bs-target="#contactAgente">
                                <img src="/frontend/web/images/icons/message.svg" width="35px" class="mr-2">
                                CONTACTAR AGENTE
                            </a>
@@ -271,7 +271,7 @@ $this->title = $model->titulo_publicacion;
                </h2>
 
                <div class="row text-secondary">
-                    <div class="col-md-8">
+                    <div class="col-md-9">
                         <div class="row">
                             <?php foreach (explode(',', $model->extra_text) as $extra): ?>
                                 <div class="col-md-6">
@@ -342,4 +342,5 @@ $yt_url = isset($results['v']) ? $results['v'] : null;
 
 
 <?= $this->render('_modal_prop', ['model' => $model, 'fotos' => $fotos]) ?>
-<?= $this->render('_modal_contactat_agente', ['precio' => $model->precio, 'id' => $model->id]) ?>
+<?= $this->render('_modal_oferta', ['precio' => $model->precio, 'id' => $model->id]) ?>
+<?= $this->render('_modal_contactat_agente', ['agente_id' => $model->assigned_to_user_id]) ?>
