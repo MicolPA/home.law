@@ -63,12 +63,12 @@
      },500)
  </script>
 
-<div class="container-fluid home-banner-container bg-gray-2 p-0 mt-0 outer" style="margin-bottom: 12rem !important;">
+<div class="container-fluid home-banner-container bg-gray-2 p-0 mt-0 outer">
 
-    <div class="row w-100 bot mobile-hidden" style="width:100vw !important;background: #000;margin-top: -2rem;max-height: 600px;overflow: hidden;">
+    <div class="row w-100 bot mobile-hidden" style="width:100vw !important;background: #000;margin-top: -2rem;max-height: 720px;overflow: hidden;">
         <div class="col-md-12 video-foreground" style="background:#e5e5e5;margin-top: -100px;">
             <!-- <iframe width="100%" height="850" src="https://www.youtube.com/embed/G6KBwzjbs7w?controls=0&showinfo=0&rel=0&autoplay=1&loop=1&playlist=G6KBwzjbs7w&mute=1" frameBorder="0" allowFullScreen allow="fullscreen;" allowfullscreen="allowfullscreen" allowfullscreen="allowfullscreen" allowfullscreen="true"></iframe> -->
-            <iframe type="text/html" src="https://www.youtube-nocookie.com/embed/<?= $yt_url ?>?version=3&enablejsapi=1&html5=1&hd=1&wmode=opaque&showinfo=0&rel=0&mute=1&controls=0&playsinline=1&playlist=<?= $yt_url ?>&autoplay=1&loop=1" frameborder="0" width="100%" height="828" style="background:white !important"></iframe>
+            <iframe type="text/html" src="https://www.youtube-nocookie.com/embed/<?= $yt_url ?>?version=3&enablejsapi=1&html5=1&hd=1&wmode=opaque&showinfo=0&rel=0&mute=1&controls=0&playsinline=1&playlist=<?= $yt_url ?>&autoplay=1&loop=1" frameborder="0" width="2100px" height="1200px" style="background:white !important"></iframe>
         </div>
     </div>
     <div class="row w-100 m-0" style="background:#eeeff0">
@@ -76,8 +76,8 @@
             <div class="container-fluid">
                 
                 <div class="row">
-                    <div class="col-lg-10 col-sm-12">
-                        <form class="card home-card w-75 float-md-end rounded-2 p-5 mt-3" action="/frontend/web/propiedades">
+                    <div class="col-lg-10 col-sm-12 mt-3">
+                        <form class="card home-card w-75 float-md-end rounded-2 p-5 mt-5" action="/frontend/web/propiedades">
                             <div class="row">
                                 <div class="col-md-11 col-sm-12">
                                     <p class="text-center mb-0">
