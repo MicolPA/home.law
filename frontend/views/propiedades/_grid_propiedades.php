@@ -1,7 +1,7 @@
 
 <div class="col-lg-3 text-center my-3 col-md-12 <?= in_array($count, array(1,5,9)) ? '' : 'mobile-hidden'  ?>">
     <a class="text-decoration-none" href="/frontend/web/propiedades/ver/<?= $propiedad->id ?>">
-        <div class="card pb-4 border-0">
+        <div class="card pb-4 border-0 mb-5">
             <div class=" prop-card-img" style="background-image: url('/frontend/web/<?= $propiedad->portada ?>');"></div>
             <span class="text-center mt-3 prop-title">
                 <span class="py-2 w-100"><?= $propiedad->titulo_publicacion ?></span>

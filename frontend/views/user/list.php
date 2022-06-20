@@ -38,9 +38,9 @@
 				<div class="form-group w-50 m-auto px-md-5">
 				<p class="text-center text-primary p-2 m-0 fw-normal h4 fw-bold mb-2">AGENTES</p>
 					<div class="input-group">
-						<input class="form-control search mb-2 rounded-2" type="search">
+						<input class="form-control search mb-2 rounded-2" type="search" placeholder="Ingresar nombre aquí">
 						<!-- <input type="text" class="form-control" aria-label="Text input with dropdown button"> -->
-						<div class="input-group-append pl-2">
+						<!-- <div class="input-group-append pl-2">
 							<button class="btn btn-lg bg-white text-primary rounded-3 fw-bold px-4 font-12" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">ORDERNAR <i class="fa-solid fa-angle-down ml-2"></i></button>
 							<div class="dropdown-menu">
 								<a class="dropdown-item" href="#">Action</a>
@@ -49,7 +49,7 @@
 								<div role="separator" class="dropdown-divider"></div>
 								<a class="dropdown-item" href="#">Separated link</a>
 							</div>
-						</div>
+						</div> -->
 					</div>
 				</div>
 				

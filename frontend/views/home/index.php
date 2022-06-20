@@ -15,36 +15,43 @@
      }
 
      .outer {
-          position: relative;
-          margin-top: 20px;
-        }
+      position: relative;
+      margin-top: 20px;
+    }
 
-        .top {
-          position: absolute;
-          margin-top: -10px;
-        }
+    .top {
+      position: absolute;
+      margin-top: -10px;
+    }
 
-        .bot {
-          position: absolute;
-        }
-        
-        
-        .video-container iframe, {
-          pointer-events: none;
-        }
-        .video-container iframe{
-          position: absolute;
-          top: -60px;
-          left: 0;
-          width: 100%;
-          height: calc(100% + 120px);
-        }
-        .video-foreground{
-          pointer-events:none;
-        }
-        .html5-video-player{
-  background-color: #fff;
-}
+    .bot {
+      position: absolute;
+    }
+    
+    
+    .video-container iframe, {
+      pointer-events: none;
+    }
+    .video-container iframe{
+      position: absolute;
+      top: -60px;
+      left: 0;
+      width: 100%;
+      height: calc(100% + 120px);
+    }
+    .video-foreground{
+      pointer-events:none;
+    }
+    .html5-video-player{
+      background-color: #fff;
+    }
+
+    @media (min-aspect-ratio: 16/9) {
+      .video-foreground { height: 300%; top: -100%; }
+    }
+    @media (max-aspect-ratio: 16/9) {
+      .video-foreground { width: 300%; left: -100%; }
+    }
 
 
         /*.html5-video-player a {display: none !important; }*/
@@ -56,10 +63,10 @@
      },500)
  </script>
 
-<div class="container-fluid home-banner-container bg-gray-2 p-0 mt-0 outer">
+<div class="container-fluid home-banner-container bg-gray-2 p-0 mt-0 outer" style="margin-bottom: 12rem !important;">
 
-    <div class="row w-100 bot mobile-hidden" style="width:100vw !important;background: #000;margin-top: -2rem">
-        <div class="col-md-12 video-foreground" style="background:#e5e5e5">
+    <div class="row w-100 bot mobile-hidden" style="width:100vw !important;background: #000;margin-top: -2rem;max-height: 600px;overflow: hidden;">
+        <div class="col-md-12 video-foreground" style="background:#e5e5e5;margin-top: -100px;">
             <!-- <iframe width="100%" height="850" src="https://www.youtube.com/embed/G6KBwzjbs7w?controls=0&showinfo=0&rel=0&autoplay=1&loop=1&playlist=G6KBwzjbs7w&mute=1" frameBorder="0" allowFullScreen allow="fullscreen;" allowfullscreen="allowfullscreen" allowfullscreen="allowfullscreen" allowfullscreen="true"></iframe> -->
             <iframe type="text/html" src="https://www.youtube-nocookie.com/embed/<?= $yt_url ?>?version=3&enablejsapi=1&html5=1&hd=1&wmode=opaque&showinfo=0&rel=0&mute=1&controls=0&playsinline=1&playlist=<?= $yt_url ?>&autoplay=1&loop=1" frameborder="0" width="100%" height="828" style="background:white !important"></iframe>
         </div>
@@ -136,7 +143,7 @@
 </div>
 
 <div class="container pb-5">
-    <div class="row px-3">
+    <div class="row px-5">
         <div class="col-md-12 text-center">
             <p class="text-primary h3 mb-lg-5 mt-5">
                 <span class="fw-bold">Best </span> <span class="fw-lighter">Property</span>

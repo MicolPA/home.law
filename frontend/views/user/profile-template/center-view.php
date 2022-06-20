@@ -70,7 +70,7 @@
             		<p class="fw-bold h6 text-color mb-"> <?= $user->email ?></p>
 
             		<div class="mt-5 mb-2">
-                    <a href="#" class="text-decoration-none fw-bold text-color font-12">
+                    <a href="#" class="text-decoration-none fw-bold text-color font-12" data-bs-toggle="modal" data-bs-target="#contactAgente">
 	                       <span class="btn btn-icon btn-sm btn-round text-white bg-danger mr-2" style="font-size:17px !important"><i class="fa-solid fa-comment-dots"></i></span> 
 	                       CONTACTAR AGENTE
 	                   </a>

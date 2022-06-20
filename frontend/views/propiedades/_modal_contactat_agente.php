@@ -55,11 +55,11 @@ $user = \frontend\models\User::findOne($agente_id);
 
             <div class="col-md-6">
                 <div>
-                    <p class="small text-color mb-0 p-0">Contactos</p>
-                    <p class="fw-bold h6 text-color"> <?= $user->phone ?></p>
+                    <p class="small text-primary mb-0 p-0">Contactos</p>
+                    <p class="fw-bold h6 text-primary"> <?= $user->phone ?></p>
 
-                    <p class="small text-color mt-4 mb-0 p-0 ">Correo Electrónico:</p>
-                    <p class="fw-bold h6 text-color mb-"> <?= $user->email ?></p>
+                    <p class="small text-primary mt-4 mb-0 p-0 ">Correo Electrónico:</p>
+                    <p class="fw-bold h6 text-primary mb-"> <?= $user->email ?></p>
 
                     <p class="small mt-4">
                         <img src="/frontend/web/images/icons/message.svg" width="35px" class="mr-2">

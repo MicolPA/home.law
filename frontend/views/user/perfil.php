@@ -104,3 +104,5 @@ if ($model->layout == 'corporate-view' and $plantilla['text_color'] == '#004b70'
     </div>
   </div>
 </div>
+
+<?= $this->render('/propiedades/_modal_contactat_agente', ['agente_id' => $model->id]) ?>

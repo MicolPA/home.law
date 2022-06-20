@@ -1,6 +1,6 @@
 
 <div class="container-fluid p-0">
-	<div class="bg-img" style="background-image:url('/frontend/web/images/ejemplo-360.jpg');min-height:400px">
+	<div class="bg-img" style="background-image:url('/frontend/web/images/ejemplo-360.jpg');min-height:600px">
 	</div>	
 	<div class="row c-view w-100 mx-0">
 		
@@ -33,7 +33,7 @@
 	                <p class="fw-bold h6 text-color mb-"> <?= $user->email ?></p>
 
 	                <div class="my-5 pb-5">
-	                    <a href="#" class="text-decoration-none fw-bold text-color font-12">
+	                    <a href="#" class="text-decoration-none fw-bold text-color font-12" data-bs-toggle="modal" data-bs-target="#contactAgente">
 	                       <span class="btn btn-icon btn-sm btn-round text-white bg-danger mr-2" style="font-size:17px !important"><i class="fa-solid fa-comment-dots"></i></span> 
 	                       CONTACTAR AGENTE
 	                   </a>
