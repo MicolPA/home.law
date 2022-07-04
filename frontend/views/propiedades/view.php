@@ -338,8 +338,7 @@ $yt_url = isset($results['v']) ? $results['v'] : null;
     </div>
 </div>
 
-<?= $this->render('_comments', ['propiedad_id' => $model->id]) ?>
-
+<!-- <?//= $this->render('_comments', ['propiedad_id' => $model->id]) ?> -->
 <?php endif ?>
 
 
