@@ -110,10 +110,16 @@ class PropiedadesSearch extends Propiedades
             'date' => $this->date,
         ]);
 
-        $query->orFilterWhere(['like', 'titulo_publicacion', $keyword])
-            ->orFilterWhere(['like', 'titulo_publicacion', $keyword])
-            ->orFilterWhere(['like', 'detalles', $keyword])
-            ->orFilterWhere(['like', 'tags', $keyword]);
+        if ($keyword) {
+            $query->joinWith(['tipoPropiedad']);
+            // $query->andFilterWhere(['like', 'propiedades_tipo.nombre', $keyword, '%', false]);
+            $query->andFilterWhere(['like', 'propiedades_tipo.nombre', $keyword . '%', false]);
+
+            // $query->andFilterWhere(['like', 'titulo_publicacion', $keyword])
+            //     ->andFilterWhere(['like', 'titulo_publicacion', $keyword])
+            //     ->andFilterWhere(['like', 'detalles', $keyword])
+            //     ->andFilterWhere(['like', 'tags', $keyword]);
+        }
 
         if ($keyplace) {
             $query->joinWith(['ubicacion']);

@@ -131,7 +131,10 @@ function openOfertTab(){
                 url = url + '&' + field.name + '=' + field.value;
         }
 
-        url = url + '&contingencia='+ $('input[name="contingencia"]:checked').val();;
+        $('.contingencia'). each(function () {
+                checked = this.checked ? 1 : 0;
+                url = url + '&' + this.name + '=' + checked;
+        });
 
         window.open(url, '_blank');
         // window.location.href = url;

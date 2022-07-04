@@ -158,35 +158,35 @@ $agente = \frontend\models\User::findOne($propiedad->assigned_to_user_id);
                             <h4 style="color:#064c70;font-weight:bold;margin-bottom:3rem">Contigencia: </h4>
 
 
-                            <?php $checkDot = $data['contingencia'] == 1 ? "dot-full.png" : 'dot.png' ?> 
+                            <?php $checkDot = $data['contingencia_1'] == 1 ? "dot-full.png" : 'dot.png' ?> 
                             <p style="color:#064c70;font-weight: bold !important;font-family: gotham;">
                                    <img src="/frontend/web/images/icons/<?= $checkDot ?>" alt="" width="17px" style="margin-right: 1rem;"> 
                                    <b>Inmueble se encuentre libre de cargas y gravamenes</b>
                             </p>
-                            <?php $checkDot = $data['contingencia'] == 2 ? "dot-full.png" : 'dot.png' ?> 
+                            <?php $checkDot = $data['contingencia_2'] == 1 ? "dot-full.png" : 'dot.png' ?> 
                             <p style="color:#064c70;font-weight: bold !important;font-family: gotham;">
                                    <img src="/frontend/web/images/icons/<?= $checkDot ?>" alt="" width="17px" style="margin-right: 1rem;"> 
                                    <b>Inmueble se encuentre al día con el pago de impuesto a la propiedad</b>
                             </p>
-                            <?php $checkDot = $data['contingencia'] == 3 ? "dot-full.png" : 'dot.png' ?> 
+                            <?php $checkDot = $data['contingencia_3'] == 1 ? "dot-full.png" : 'dot.png' ?> 
                             <p style="color:#064c70;font-weight: bold !important;font-family: gotham;">
                                    <img src="/frontend/web/images/icons/<?= $checkDot ?>" alt="" width="17px" style="margin-right: 1rem;"> 
                                    <b>Inmueble se encuentre al día con el pago de mantenimiento</b>
                             </p>
-                            <?php $checkDot = $data['contingencia'] == 4 ? "dot-full.png" : 'dot.png' ?> 
+                            <?php $checkDot = $data['contingencia_4'] == 1 ? "dot-full.png" : 'dot.png' ?> 
                             <p style="color:#064c70;font-weight: bold !important;font-family: gotham;">
                                    <img src="/frontend/web/images/icons/<?= $checkDot ?>" alt="" width="17px" style="margin-right: 1rem;"> 
                                    <b> Inmueble se encuentre en el mismo estado según fotos y vídeos</b>
                             </p>
-                            <?php $checkDot = $data['contingencia'] == 5 ? "dot-full.png" : 'dot.png' ?> 
-                            <p style="color:#064c70;font-weight: bold !important;font-family: gotham;">
-                                   <img src="/frontend/web/images/icons/<?= $checkDot ?>" alt="" width="17px" style="margin-right: 1rem;"> 
-                                   <b> Que todos los equipos electrodomesticos se encuentren en buen estado y funcionamiento</b>
-                            </p>
-                            <?php $checkDot = $data['contingencia'] == 6 ? "dot-full.png" : 'dot.png' ?> 
+                            <?php $checkDot = $data['contingencia_6'] == 1 ? "dot-full.png" : 'dot.png' ?> 
                             <p style="color:#064c70;font-weight: bold !important;font-family: gotham;">
                                    <img src="/frontend/web/images/icons/<?= $checkDot ?>" alt="" width="17px" style="margin-right: 1rem;"> 
                                    <b> Inmueble se presente daños estructurales</b>
+                            </p>
+                            <?php $checkDot = $data['contingencia_5'] == 1 ? "dot-full.png" : 'dot.png' ?> 
+                            <p style="color:#064c70;font-weight: bold !important;font-family: gotham;">
+                                   <img src="/frontend/web/images/icons/<?= $checkDot ?>" alt="" width="17px" style="margin-right: 1rem;"> 
+                                   <b> Que todos los equipos electrodomesticos se encuentren en buen estado y funcionamiento</b>
                             </p>
                      </div>
               </div>

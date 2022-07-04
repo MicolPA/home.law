@@ -223,7 +223,7 @@ $this->title = $model->titulo_publicacion;
                            </a>
                        </div> -->
                        <div class="mt-3">
-                           <a href="/frontend/web/tasas-hipotecarias" class="text-decoration-none fw-normal text-primary" target="_blank">
+                           <a href="/frontend/web/tasas-hipotecarias" class="text-decoration-none fw-normal text-primary" >
                                <img src="/frontend/web/images/icons/tasas.svg" width="35px" class="mr-2">
                                TASAS HIPOTECARIAS
                            </a>
@@ -337,6 +337,9 @@ $yt_url = isset($results['v']) ? $results['v'] : null;
         </div>
     </div>
 </div>
+
+<?= $this->render('_comments', ['propiedad_id' => $model->id]) ?>
+
 <?php endif ?>
 
 

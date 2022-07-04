@@ -35,22 +35,12 @@ $user = \frontend\models\User::findOne($agente_id);
                     <p class="fw-bold text-primary mb-0"><?= "$user->first_name $user->last_name" ?></p>
                     <p class="text-muted small mb-4">Agente Inmobiliario</p>
                     <a href="<?= $user->facebook ? $user->facebook : '#' ?>"><i class="text-primary mx-2 fa-brands fa-facebook-f"></i></a>
-                    <a href="<?= $user->whatsapp ? $user->whatsapp : '#' ?>"><i class="text-primary mx-2 fa-brands fa-whatsapp"></i></a>
+                    <a href="<?= $user->whatsapp ? "http://wa.me/".$user->whatsapp : '#' ?>"><i class="text-primary mx-2 fa-brands fa-whatsapp"></i></a>
                     <a href="<?= $user->twitter ? $user->twitter : '#' ?>"><i class="text-primary mx-2 fa-brands fa-twitter"></i></a>
                     <a href="<?= $user->instagram ? $user->instagram : '#' ?>"><i class="text-primary mx-2 fa-brands fa-instagram"></i></a>
 
                 </div>
 
-                <?php if ($user->video_url): ?>
-                    <a href="#" class="text-decoration-none" data-bs-toggle="modal" data-bs-target="#youtubeModal">
-                    <p class="text-primary text-center fw-light mt-5 mb-3">
-                            <span class="fw-bold">Video</span> Presentación
-                        </p>
-                        <p class="text-center mb-1">
-                            <img src="/frontend/web/images/icons/youtube-blue.png" width="70px">
-                        </p>
-                    </a>
-                <?php endif ?>
             </div>
 
             <div class="col-md-6">
@@ -61,32 +51,34 @@ $user = \frontend\models\User::findOne($agente_id);
                     <p class="small text-primary mt-4 mb-0 p-0 ">Correo Electrónico:</p>
                     <p class="fw-bold h6 text-primary mb-"> <?= $user->email ?></p>
 
-                    <p class="small mt-4">
+                    <?php if ($user->whatsapp): ?>
+                    <a class="small mt-4" href="<?php echo "http://wa.me/".$user->whatsapp ?>">
                         <img src="/frontend/web/images/icons/message.svg" width="35px" class="mr-2">
                         WHATSAPP
-                    </p>
+                    </a>
+                    <?php endif ?>
                 </div>
 
                 <div class="row mt-3">
                     <div class="col-md-8 mt-2">
                         <p class="text-primary fw-bold mb-1">Nombre</p>
-                        <input type="text" class="form-control rounded-2">
+                        <input type="text" class="form-control rounded-2" required>
                     </div>
                     <div class="col-md-8 mt-2">
                         <p class="text-primary fw-bold mb-1">Correo</p>
-                        <input type="text" class="form-control rounded-2">
+                        <input type="text" class="form-control rounded-2" required>
                     </div>
                     <div class="col-md-8 mt-2">
                         <p class="text-primary fw-bold mb-1">Telefono</p>
-                        <input type="text" class="form-control rounded-2">
+                        <input type="text" class="form-control rounded-2" required>
                     </div>
                     <div class="col-md-10 mt-2">
                         <p class="text-primary fw-bold mb-1">Telefono</p>
-                        <textarea name="" id="" cols="30" rows="5" class="form-control rounded"></textarea>
+                        <textarea name="" id="" cols="30" rows="5" class="form-control rounded" required></textarea>
                     </div>
 
                     <div class="col-md-10 text-center mt-3">
-                        <a href="" class="btn btn-xs btn-primary bg-primary rounded-3 px-5 font-12">ENVIAR</a>
+                        <button type="submit" class="btn btn-xs btn-primary bg-primary rounded-3 px-5 font-12">ENVIAR</button>
                     </div>
                 </div>
             </div>

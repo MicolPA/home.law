@@ -91,7 +91,7 @@
                                     </div>
                                     <div class="mb-3">
                                         <label for="locationInput" class="form-label fw-bold text-primary">¿Donde?</label>
-                                        <input type="text" class="form-control rounded" name="keyplace" id="locationInput" placeholder="Apartamento, casa. terreno...">
+                                        <input type="text" class="form-control rounded" name="keyplace" id="locationInput" placeholder="La Romana, Punta Cana...">
                                     </div>
                                     <div class="mt-3 mb-5 text-center">
                                         <button type="submit" class="btn btn-lg btn-danger rounded-3 pl-4 pr-4">Buscar <i class='fa-solid fa-magnifying-glass ml-2'></i> </button>

@@ -128,37 +128,37 @@ $model = new \frontend\models\ContactForm();
 
             <div class="col-md-12 my-4">
                 <div class="form-check mb-3">
-                  <input class="form-check-input" value="1" type="radio" name="contingencia" id="contingenciaRadio1">
+                  <input class="form-check-input contingencia" value="1" type="checkbox" name="contingencia_1" id="contingenciaRadio1">
                   <label class="form-check-label text-primary fw-bold" for="contingenciaRadio1">
                     Inmueble se encuentre libre de cargas y gravamenes
                   </label>
                 </div>
                 <div class="form-check mb-3">
-                  <input class="form-check-input" value="2" type="radio" name="contingencia" id="contingenciaRadio2">
+                  <input class="form-check-input contingencia" value="2" type="checkbox" name="contingencia_2" id="contingenciaRadio2">
                   <label class="form-check-label text-primary fw-bold" for="contingenciaRadio2">
                     Inmueble se encuentre al día con el pago de impuesto a la propiedad
                   </label>
                 </div>
                 <div class="form-check mb-3">
-                  <input class="form-check-input" value="3" type="radio" name="contingencia" id="contingenciaRadio3">
+                  <input class="form-check-input contingencia" value="3" type="checkbox" name="contingencia_3" id="contingenciaRadio3">
                   <label class="form-check-label text-primary fw-bold" for="contingenciaRadio3">
                     Inmueble se encuentre al día con el pago de mantenimiento
                   </label>
                 </div>
                 <div class="form-check mb-3">
-                  <input class="form-check-input" value="4" type="radio" name="contingencia" id="contingenciaRadio4">
+                  <input class="form-check-input contingencia" value="4" type="checkbox" name="contingencia_4" id="contingenciaRadio4">
                   <label class="form-check-label text-primary fw-bold" for="contingenciaRadio4">
                     Inmueble se encuentre en el mismo estado según fotos y vídeos
                   </label>
                 </div>
                 <div class="form-check mb-3">
-                  <input class="form-check-input" value="5" type="radio" name="contingencia" id="contingenciaRadio5">
+                  <input class="form-check-input contingencia" value="5" type="checkbox" name="contingencia_5" id="contingenciaRadio5">
                   <label class="form-check-label text-primary fw-bold" for="contingenciaRadio5">
                     Que todos los equipos electrodomesticos se encuentren en buen estado y funcionamiento
                   </label>
                 </div>
                 <div class="form-check mb-3">
-                  <input class="form-check-input" value="6" type="radio" name="contingencia" id="contingenciaRadio6">
+                  <input class="form-check-input contingencia" value="6" type="checkbox" name="contingencia_6" id="contingenciaRadio6">
                   <label class="form-check-label text-primary fw-bold" for="contingenciaRadio6">
                     Inmueble se presente daños estructurales
                   </label>

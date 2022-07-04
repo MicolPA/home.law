@@ -41,7 +41,6 @@ AppAsset::register($this);
         }
         
     </style>
-
     <div class="border-bottom main-menu" style="position: relative;background: white;z-index: 1;">
         <div class="container px-4">
             <header class="d-flex flex-wrap justify-content-center py-2 align-items-center">
@@ -54,14 +53,15 @@ AppAsset::register($this);
                     </span>
                 </a>
 
-                <ul class="nav nav-pills">
-                    <li class="nav-item"><a href="<?= Yii::getAlias("@web") ?>/propiedades/index" class="nav-link text-primary font-14">PROPIEDADES</a></li>
+                <ul class="nav nav-pills mobile-hidden">
+                    <!-- <li class="nav-item"><a href="<?//= Yii::getAlias("@web") ?>/propiedades/index" class="nav-link text-primary font-14">PROPIEDADES</a></li> -->
                     <li class="nav-item"><a href="/frontend/web/propiedades/index?PropiedadesSearch%5Btipo_contrato_id%5D=2" class="nav-link text-primary font-14">RENTAS</a></li>
                     <li class="nav-item"><a href="/frontend/web/propiedades/index?PropiedadesSearch%5Btipo_contrato_id%5D=1" class="nav-link text-primary font-14">VENTAS</a></li>
                     <li class="nav-item"><a href="/frontend/web/agentes" class="nav-link text-primary font-14">AGENTES</a></li>
                     <li class="nav-item"><a href="#" class="nav-link text-primary font-14">CONTACTOS</a></li>
                     <li class="nav-item"><a href="#" class="nav-link text-primary font-14">REP DOM </a></li>
-                    <li class="nav-item"><a href="#" class="nav-link text-primary font-14 pt-1"><img src="<?= Yii::getAlias("@web") ?>/images/bandera-rd.png" width="30px" ></a></li>
+                    <li class="nav-item"><a href="#" class="nav-link text-primary font-14 pt-1"><img src="<?= Yii::getAlias("@web") ?>/images/bandera-esp.png" width="30px" ></a></li>
+                    <li class="nav-item"><a href="#" class="nav-link text-primary font-14 pt-1"><img src="<?= Yii::getAlias("@web") ?>/images/bandera-usa.png" width="30px" ></a></li>
                 </ul>
                 <!--  <div class="text-end">
                   <button type="button" class="btn btn-outline-dark me-2">Login</button>
@@ -69,8 +69,42 @@ AppAsset::register($this);
                 </div> -->
             </header>
 
+
+
         </div>
     </div>
+    <nav class="navbar navbar-light bg-white d-md-none">
+        <div class="container-fluid">
+          <a class="navbar-brand" href="#"></a>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarsExample01" aria-controls="navbarsExample01" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+
+          <div class="collapse navbar-collapse" id="navbarsExample01">
+            <ul class="navbar-nav me-auto mb-2">
+                <li class="nav-item"><a href="/frontend/web/propiedades/index?PropiedadesSearch%5Btipo_contrato_id%5D=2" class="nav-link text-primary">RENTAS</a></li>
+                <li class="nav-item"><a href="/frontend/web/propiedades/index?PropiedadesSearch%5Btipo_contrato_id%5D=1" class="nav-link text-primary">VENTAS</a></li>
+                <li class="nav-item"><a href="/frontend/web/agentes" class="nav-link text-primary">AGENTES</a></li>
+                <li class="nav-item"><a href="#" class="nav-link text-primary">CONTACTOS</a></li>
+                <li class="nav-item"><a href="#" class="nav-link text-primary">REP DOM </a></li>
+                <li class="nav-item"><a href="<?= Yii::getAlias("@web") ?>/tasas-hipotecarias" class="nav-link text-primary">TASAS HIPOTECARIAS</a></li>
+                <li class="nav-item"><a href="<?= Yii::getAlias("@web") ?>/tasas-hipotecarias#calculadora" class="nav-link text-primary">TABLA AMORTIZACIÓN</a></li>
+                <?php if (Yii::$app->user->isGuest): ?>
+                    <li class="nav-item"><a href="<?= Yii::getAlias("@web") ?>/iniciar-sesion" class="nav-link text-primary">INICIAR SESIÓN</a></li>
+                <?php else: ?>
+                    <?php if (Yii::$app->user->identity->role_id != 3): ?>
+                        <li class="nav-item"><a href="<?= Yii::getAlias("@web") ?>/admin" class="nav-link text-primary">ADMINISTRADOR</a></li>
+                    <?php endif ?>
+                <?php endif ?>
+                <li class="nav-item"><a href="#" class="nav-link text-primary pt-1">
+                    <img src="<?= Yii::getAlias("@web") ?>/images/bandera-esp.png" width="30px" >
+                    <img src="<?= Yii::getAlias("@web") ?>/images/bandera-usa.png" width="30px" >
+                </a></li>
+
+            </ul>
+          </div>
+        </div>
+    </nav>
     <section class="w-100" style="z-index: 1;position: absolute;">
         <div class="bg-danger w-50 float-end second-menu p-0">
             <div class="container">
@@ -106,6 +140,10 @@ AppAsset::register($this);
         <?= $content ?>
     </main>
 
+    <?php 
+        $ubicaciones = \frontend\models\Ubicaciones::find()->all();
+        $cateogories = \frontend\models\PropiedadesTipo::find()->all();
+     ?>
     <footer class="footer mt-4">
         <div class="container my-5 py-5">
             <div class="row">
@@ -116,9 +154,9 @@ AppAsset::register($this);
                             Lorem ipsum, dolor sit amet consectetur, adipisicing elit. Aliquam, veniam deleniti dolor quis et provident doloribus ut eveniet, sed tenetur labore quaerat ab! Magnam ea repudiandae alias fugiat tenetur, nam obcaecati recusandae dignissimos inventore eos in, totam reprehenderit impedit, quaerat magni ipsam quasi cupiditate libero. Assumenda cupiditate perspiciatis aperiam ipsum.
                         </p>
                         <div >
-                            <a href="#" class="btn btn-xs btn-danger rounded-3 px-4 mb-5 mr-2 font-12">EXPLORAR MAPA</a>
+                            <a href="/frontend/web/propiedades" class="btn btn-xs btn-danger rounded-3 px-4 mb-5 mr-2 font-12">PROPIEDADES</a>
                             <a href="#" class="btn btn-xs btn-secondary rounded-3 px-4 mb-5 mr-2 font-12">CONVIERTETE EN ASOCIADO</a>
-                            <a href="#" class="btn btn-xs btn-primary bg-primary rounded-3 px-4 mb-5 font-12">REGISTRATE</a>
+                            <a href="/frontend/web/agentes" class="btn btn-xs btn-primary bg-primary rounded-3 px-4 mb-5 font-12">AGENTES</a>
                         </div>
                     </div>
                 </div>
@@ -127,27 +165,17 @@ AppAsset::register($this);
                         <div class="col-md-6 d-flex justify-content-center">
                             <ul class="list-unstyled text-dark font-14">
                                 <li class="text-primary mb-2 fw-bold">Lugares <br> más buscados</li>
-                                <li>La Romana</li>
-                                <li>Bayahibe</li>
-                                <li>Cap Cana</li>
-                                <li>Las Terrenas</li>
-                                <li>La Romana</li>
-                                <li>Bayahibe</li>
-                                <li>Cap Cana</li>
-                                <li>Las Terrenas</li>
+                                <?php foreach ($ubicaciones as $ub): ?>
+                                    <li><a href="/frontend/web/propiedades?<?= "PropiedadesSearch%5Bubicacion_id%5D=$ub->id" ?>" class="text-decoration-none text-dark"><?= $ub->nombre ?></a></li>
+                                <?php endforeach ?>
                             </ul>
                         </div>
                         <div class="col-md-6 d-flex justify-content-center">
                             <ul class="list-unstyled text-dark font-14">
                                 <li class="text-primary mb-2 fw-bold">Categorías <br> más buscadas</li>
-                                <li>La Romana</li>
-                                <li>Bayahibe</li>
-                                <li>Cap Cana</li>
-                                <li>Las Terrenas</li>
-                                <li>La Romana</li>
-                                <li>Bayahibe</li>
-                                <li>Cap Cana</li>
-                                <li>Las Terrenas</li>
+                                <?php foreach ($cateogories as $cat): ?>
+                                    <li><a href="/frontend/web/propiedades?<?= "PropiedadesSearch%5Btipo_propiedad%5D=$cat->id" ?>" class="text-decoration-none text-dark"><?= $cat->nombre ?></a></li>
+                                <?php endforeach ?>
                             </ul>
                         </div>
                     </div>
