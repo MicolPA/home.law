@@ -245,7 +245,6 @@ class PropiedadesController extends Controller
       $oferta->agent_id = $model['assigned_to_user_id'];
       $oferta->date = date("Y-m-d H:i:s");
       $oferta->save();
-      exit;
 
     }
 
