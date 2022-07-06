@@ -171,7 +171,12 @@ $foto = '';
                         </span>
                         <h4 class="text-section">Extras</h4>
                     </li>
-
+                    <li class="nav-item">
+                        <a href="<?= Yii::getAlias("@web") ?>/ofertas-propiedades">
+                            <i class="fas fa-comments-dollar"></i>
+                            <p class="fw-bold">Ofertas Propiedades</p>
+                        </a>
+                    </li>
                     <li class="nav-item">
                         <a href="<?= Yii::getAlias("@web") ?>/tasas-hipotecarias/listado">
                             <i class="fa-solid fa-chart-line"></i>

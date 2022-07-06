@@ -139,16 +139,11 @@ class PropiedadesController extends Controller
         ]);
     }
 
+    public function actionPropiedadPdf($id){
 
-    public function actionPdfOferta(){
-
-        $get = Yii::$app->request->get();
-        // print_r($get);
-        // exit;
-        $model = $this->findModel($get['propiedad']);
+        $model = $this->findModel($id);
         $galeria = PropiedadesGaleria::findOne($model['galeria_id']);
-        $content = $this->renderPartial('oferta-pdf',['data' => $get, 'propiedad' => $model, 'galeria' => $galeria]);
-
+        $content = $this->renderPartial('_propiedad_pdf',['model' => $model, 'galeria' => $galeria]);
         // setup kartik\mpdf\Pdf component
         $pdf = new \kartik\mpdf\Pdf([
             // set to use core fonts only
@@ -181,12 +176,126 @@ class PropiedadesController extends Controller
             ]
         ]);
         return $pdf->render();
+
+    }
+
+
+    public function actionPdfOferta(){
+
+        $get = Yii::$app->request->get();
+        // print_r($get);
+        // exit;
+        $model = $this->findModel($get['propiedad']);
+        $galeria = PropiedadesGaleria::findOne($model['galeria_id']);
+        $content = $this->renderPartial('oferta-pdf',['data' => $get, 'propiedad' => $model, 'galeria' => $galeria]);
+        // setup kartik\mpdf\Pdf component
+        $pdf = new \kartik\mpdf\Pdf([
+            // set to use core fonts only
+            'mode' => Pdf::MODE_CORE,
+            // A4 paper format
+            'format' => [210.8, 300.8],
+            'marginTop' => 0,
+            'marginBottom' => 0,
+            'marginLeft' => 0,
+            'marginRight' => 0,
+            // 'BackgroundColor' => 'red',
+            // portrait orientation
+            'orientation' => Pdf::ORIENT_PORTRAIT,
+            // stream to browser inline
+            'destination' => Pdf::DEST_BROWSER,
+            // your html content input
+            'content' => $content,
+            // format content from your own css file if needed or use the
+            // enhanced bootstrap css built by Krajee for mPDF formatting
+            'cssFile' => '@vendor/kartik-v/yii2-mpdf/src/assets/kv-mpdf-bootstrap.min.css',
+            // any css to be embedded if required
+            'cssInline' => '.kv-heading-1{font-size:18px}',
+            // set mPDF properties on the fly
+            'options' => ['title' => ''],
+            // call mPDF methods on the fly
+            'methods' => [
+                'SetHeader'=>false,
+                'SetFooter'=>false,
+                // 'SetFooter'=>['{PAGENO}'],
+            ]
+        ]);
+        return $pdf->render();
+
+    }
+
+
+
+
+    function actionHacerOferta(){
+      $get = Yii::$app->request->post();
+      // print_r($get);
+      // exit;
+      $model = $this->findModel($get['propiedad_id']);
+      $galeria = PropiedadesGaleria::findOne($model['galeria_id']);
+      $content = $this->renderPartial('oferta-pdf',['data' => $get, 'propiedad' => $model, 'galeria' => $galeria]);
+
+
+      $pdf_name = $this->saveOfertaPDF($content);
+
+
+      $oferta = new \frontend\models\OfertasPropiedades();
+      $oferta->propiedad_id = $get['propiedad_id'];
+      $oferta->monto = $get['reservation_amount'];
+      $oferta->pdf_url = "/frontend/ofertas/$pdf_name";
+      $oferta->agent_id = $model['assigned_to_user_id'];
+      $oferta->date = date("Y-m-d H:i:s");
+      $oferta->save();
+      exit;
+
+    }
+
+
+    function saveOfertaPDF($content){
+
+      $date = new \DateTime(date('Y-m-d H:i:s'));
+      $name = 'oferta-' . $date->getTimestamp() .'.pdf';
+      $url = Yii::getAlias("@frontend") . "/ofertas";
+
+      $pdf = new \kartik\mpdf\Pdf([
+          // set to use core fonts only
+          'mode' => Pdf::MODE_CORE,
+          // A4 paper format
+          'format' => [210.8, 300.8],
+          'marginTop' => 0,
+          'marginBottom' => 0,
+          'marginLeft' => 0,
+          'marginRight' => 0,
+          // portrait orientation
+          'orientation' => Pdf::ORIENT_PORTRAIT,
+          // stream to browser inline
+          'destination' => Pdf::DEST_FILE,
+          // your html content input
+          'content' => $content,
+          'filename' => "$url/$name",
+          'tempPath' => "/frontend/web/$name",
+          // format content from your own css file if needed or use the
+          // enhanced bootstrap css built by Krajee for mPDF formatting
+          'cssFile' => '@vendor/kartik-v/yii2-mpdf/src/assets/kv-mpdf-bootstrap.min.css',
+          // any css to be embedded if required
+          'cssInline' => '.kv-heading-1{font-size:18px}',
+          // set mPDF properties on the fly
+          'options' => ['title' => ''],
+          // call mPDF methods on the fly
+          'methods' => [
+              'SetHeader'=>false,
+              'SetFooter'=>false,
+              // 'SetFooter'=>['{PAGENO}'],
+          ]
+      ]);
+
+      $pdf->render();
+      return "$name";
     }
 
     public function actionComentar(){
 
         $comment = new \frontend\models\Comments();
-        
+
         if ($comment->load(Yii::$app->request->post())) {
 
           $comment->date = date("Y-m-d H:i:s");

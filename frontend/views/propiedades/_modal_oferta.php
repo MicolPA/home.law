@@ -43,11 +43,11 @@ $model = new \frontend\models\ContactForm();
         <button type="button" class="text-end text-danger fw-bold float-end bg-white border-0" data-bs-dismiss="modal">CERRAR</button>
       </div>
       <div class="modal-body">
-        <?php $form = ActiveForm::begin([]); ?>
+        <?php $form = ActiveForm::begin(['action' => '/frontend/web/propiedades/hacer-oferta']); ?>
         <div class="row bg-white step-1 form-modal-container">
             <div class="col-md-12 text-center mb-4">
                 <h3 class="text-primary h4 text-gotham mb-0">OFERTA DE COMPRA</h3>
-                <p class="h4 text-muted fw-light">VALOR USD<?= number_format($precio) ?></p> 
+                <p class="h4 text-muted fw-light">VALOR USD<?= number_format($precio) ?></p>
             </div>
 
             <div class="col-md-6 label-primary fw-bold mb-4">
@@ -123,7 +123,7 @@ $model = new \frontend\models\ContactForm();
             </div>
 
             <div class="col-md-4">
-                
+
             </div>
 
             <div class="col-md-12 my-4">
@@ -165,8 +165,8 @@ $model = new \frontend\models\ContactForm();
                 </div>
             </div>
 
-            
-                
+
+
             <div class="col-md-12 mt-3">
                 <p class="text-primary fw-bold text-center">Políticas y Condiciones</p>
                 <p class="text-muted justify-content-center">
@@ -187,11 +187,10 @@ $model = new \frontend\models\ContactForm();
                 </div>
             </div>
         </div>
+        <input type="hidden" name="propiedad_id" class="propiedad_id" value="<?= $id ?>">
         <?php ActiveForm::end(); ?>
       </div>
-      
+
     </div>
   </div>
 </div>
-
-<input type="hidden" class="propiedad_id" value="<?= $id ?>">

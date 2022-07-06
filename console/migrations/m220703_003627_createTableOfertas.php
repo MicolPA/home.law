@@ -23,7 +23,9 @@ class m220703_003627_createTableOfertas extends Migration
             'id' => $this->primaryKey(),
             'pdf_url' => $this->string(),
             'date' => $this->dateTime(),
+            'monto' => $this->integer(),
             'agent_id' => $this->integer(),
+            'propiedad_id' => $this->integer(),
             'status_id' => $this->integer()->defaultValue(1),
             'status_updated_date' => $this->dateTime(),
         ], $tableOptions);

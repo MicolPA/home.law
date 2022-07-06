@@ -18,6 +18,7 @@ use Yii;
  */
 class OfertasPropiedades extends \yii\db\ActiveRecord
 {
+
     /**
      * {@inheritdoc}
      */
@@ -47,7 +48,7 @@ class OfertasPropiedades extends \yii\db\ActiveRecord
         return [
             'id' => 'ID',
             'pdf_url' => 'Pdf Url',
-            'date' => 'Date',
+            'date' => 'Fecha',
             'agent_id' => 'Agent ID',
             'status_id' => 'Status ID',
             'status_updated_date' => 'Status Updated Date',

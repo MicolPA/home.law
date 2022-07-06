@@ -5,14 +5,12 @@ use yii\helpers\Html;
 /* @var $this yii\web\View */
 /* @var $model frontend\models\OfertasPropiedades */
 
-$this->title = 'Update Ofertas Propiedades: ' . $model->id;
+$this->title = 'Editar oferta';
 $this->params['breadcrumbs'][] = ['label' => 'Ofertas Propiedades', 'url' => ['index']];
 $this->params['breadcrumbs'][] = ['label' => $model->id, 'url' => ['view', 'id' => $model->id]];
 $this->params['breadcrumbs'][] = 'Update';
 ?>
 <div class="ofertas-propiedades-update">
-
-    <h1><?= Html::encode($this->title) ?></h1>
 
     <?= $this->render('_form', [
         'model' => $model,

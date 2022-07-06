@@ -1,4 +1,4 @@
- <?php 
+ <?php
 
 $agente = \frontend\models\User::findOne($propiedad->assigned_to_user_id);
   ?>
@@ -92,19 +92,19 @@ $agente = \frontend\models\User::findOne($propiedad->assigned_to_user_id);
        </div>
 
        <div style="width:100%;margin-top: 1rem;">
-              
+
               <div style="width:40%;display:inline-block;float: left;padding-right: 3rem;">
                      <div style="width:60%;display:inline-block;float: left;">
-                            
+
                             <div style="display:inline-block;width: 600px;float: left;">
                                    <h5 style="color:#064c70;font-weight: bold;">Reservation Deposit</h5>
                             </div>
 
-                            
+
 
                      </div>
                      <div style="width:40%;display:inline-block;float: left">
-                            
+
                             <div style="display:inline-block;width: 500px;float: left;background: transparent;">
                                    <h5 style="color:white;font-weight: bold;">&nbsp; </h5>
                             </div>
@@ -121,22 +121,22 @@ $agente = \frontend\models\User::findOne($propiedad->assigned_to_user_id);
               </div>
               <div style="width:45%;display:inline-block;float: right;padding-right: 3rem;">
                      <div style="width:50%;display:inline-block;float: left">
-                            
+
                             <div style="display:inline-block;width: 500px;float: left;background: transparent;">
                                    <h5 style="color:#064c70;font-weight: bold;">Closing Date</h5>
                             </div>
 
-                            
+
 
                      </div>
-                     <?php 
+                     <?php
 
                      $date = strtotime($data['closing_date']);
 
                      $newDate = date('d', $date) . '/' . date('M', $date) . '/' . date('Y', $date);
                       ?>
                      <div style="width:40%;display:inline-block;float: left">
-                            
+
                             <div style="display:inline-block;width: 300px;float: left;background: transparent;">
                                    <h5 style="color:white;font-weight: bold;">&nbsp; </h5>
                             </div>
@@ -158,34 +158,82 @@ $agente = \frontend\models\User::findOne($propiedad->assigned_to_user_id);
                             <h4 style="color:#064c70;font-weight:bold;margin-bottom:3rem">Contigencia: </h4>
 
 
-                            <?php $checkDot = $data['contingencia_1'] == 1 ? "dot-full.png" : 'dot.png' ?> 
+                            <?php
+
+                              if (isset($data['contingencia_1'])) {
+                                $checkDot = $data['contingencia_1'] == 1 ? "dot-full.png" : 'dot.png';
+                              }else{
+                                $checkDot = 'dot.png';
+                              }
+
+                             ?>
                             <p style="color:#064c70;font-weight: bold !important;font-family: gotham;">
-                                   <img src="/frontend/web/images/icons/<?= $checkDot ?>" alt="" width="17px" style="margin-right: 1rem;"> 
+                                   <img src="/frontend/web/images/icons/<?= $checkDot ?>" alt="" width="17px" style="margin-right: 1rem;">
                                    <b>Inmueble se encuentre libre de cargas y gravamenes</b>
                             </p>
-                            <?php $checkDot = $data['contingencia_2'] == 1 ? "dot-full.png" : 'dot.png' ?> 
+                            <?php
+
+                              if (isset($data['contingencia_2'])) {
+                                $checkDot = $data['contingencia_2'] == 1 ? "dot-full.png" : 'dot.png';
+                              }else{
+                                $checkDot = 'dot.png';
+                              }
+
+                             ?>
                             <p style="color:#064c70;font-weight: bold !important;font-family: gotham;">
-                                   <img src="/frontend/web/images/icons/<?= $checkDot ?>" alt="" width="17px" style="margin-right: 1rem;"> 
+                                   <img src="/frontend/web/images/icons/<?= $checkDot ?>" alt="" width="17px" style="margin-right: 1rem;">
                                    <b>Inmueble se encuentre al día con el pago de impuesto a la propiedad</b>
                             </p>
-                            <?php $checkDot = $data['contingencia_3'] == 1 ? "dot-full.png" : 'dot.png' ?> 
+                            <?php
+
+                              if (isset($data['contingencia_3'])) {
+                                $checkDot = $data['contingencia_3'] == 1 ? "dot-full.png" : 'dot.png';
+                              }else{
+                                $checkDot = 'dot.png';
+                              }
+
+                             ?>
                             <p style="color:#064c70;font-weight: bold !important;font-family: gotham;">
-                                   <img src="/frontend/web/images/icons/<?= $checkDot ?>" alt="" width="17px" style="margin-right: 1rem;"> 
+                                   <img src="/frontend/web/images/icons/<?= $checkDot ?>" alt="" width="17px" style="margin-right: 1rem;">
                                    <b>Inmueble se encuentre al día con el pago de mantenimiento</b>
                             </p>
-                            <?php $checkDot = $data['contingencia_4'] == 1 ? "dot-full.png" : 'dot.png' ?> 
+                            <?php
+
+                              if (isset($data['contingencia_4'])) {
+                                $checkDot = $data['contingencia_4'] == 1 ? "dot-full.png" : 'dot.png';
+                              }else{
+                                $checkDot = 'dot.png';
+                              }
+
+                             ?>
                             <p style="color:#064c70;font-weight: bold !important;font-family: gotham;">
-                                   <img src="/frontend/web/images/icons/<?= $checkDot ?>" alt="" width="17px" style="margin-right: 1rem;"> 
+                                   <img src="/frontend/web/images/icons/<?= $checkDot ?>" alt="" width="17px" style="margin-right: 1rem;">
                                    <b> Inmueble se encuentre en el mismo estado según fotos y vídeos</b>
                             </p>
-                            <?php $checkDot = $data['contingencia_6'] == 1 ? "dot-full.png" : 'dot.png' ?> 
+                            <?php
+
+                              if (isset($data['contingencia_6'])) {
+                                $checkDot = $data['contingencia_6'] == 1 ? "dot-full.png" : 'dot.png';
+                              }else{
+                                $checkDot = 'dot.png';
+                              }
+
+                             ?>
                             <p style="color:#064c70;font-weight: bold !important;font-family: gotham;">
-                                   <img src="/frontend/web/images/icons/<?= $checkDot ?>" alt="" width="17px" style="margin-right: 1rem;"> 
+                                   <img src="/frontend/web/images/icons/<?= $checkDot ?>" alt="" width="17px" style="margin-right: 1rem;">
                                    <b> Inmueble se presente daños estructurales</b>
                             </p>
-                            <?php $checkDot = $data['contingencia_5'] == 1 ? "dot-full.png" : 'dot.png' ?> 
+                            <?php
+
+                              if (isset($data['contingencia_5'])) {
+                                $checkDot = $data['contingencia_5'] == 1 ? "dot-full.png" : 'dot.png';
+                              }else{
+                                $checkDot = 'dot.png';
+                              }
+
+                             ?>
                             <p style="color:#064c70;font-weight: bold !important;font-family: gotham;">
-                                   <img src="/frontend/web/images/icons/<?= $checkDot ?>" alt="" width="17px" style="margin-right: 1rem;"> 
+                                   <img src="/frontend/web/images/icons/<?= $checkDot ?>" alt="" width="17px" style="margin-right: 1rem;">
                                    <b> Que todos los equipos electrodomesticos se encuentren en buen estado y funcionamiento</b>
                             </p>
                      </div>
@@ -226,6 +274,6 @@ $agente = \frontend\models\User::findOne($propiedad->assigned_to_user_id);
                             </div>
                      <?php endif ?>
               </div>
-              
+
        </div>
 </div>

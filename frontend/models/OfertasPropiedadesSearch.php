@@ -2,6 +2,7 @@
 
 namespace frontend\models;
 
+use Yii;
 use yii\base\Model;
 use yii\data\ActiveDataProvider;
 use frontend\models\OfertasPropiedades;
@@ -40,7 +41,11 @@ class OfertasPropiedadesSearch extends OfertasPropiedades
      */
     public function search($params)
     {
-        $query = OfertasPropiedades::find();
+        $query = OfertasPropiedades::find()->orderBy(['date' => SORT_DESC]);
+
+        if (Yii::$app->user->identity->role_id != 1) {
+            $agent_id = Yii::$app->user->identity->id;
+        }
 
         // add conditions that should always apply here
 

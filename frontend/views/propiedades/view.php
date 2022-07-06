@@ -3,9 +3,12 @@
 use yii\helpers\Html;
 use yii\widgets\DetailView;
 use frontend\models\DebidaDiligencia;
+use frontend\models\OfertasPropiedades;
 
 
 $dictamen = DebidaDiligencia::find()->where(['propiedad_id' => $model->id])->one();
+$ofertasRechazadas = OfertasPropiedades::find()
+->where(['propiedad_id' => $model->id, 'status_id' => 3])->orderby(['status_updated_date' => SORT_DESC])->all();
 
 $fotos = array();
 for ($i = 2; $i < 13; $i++) {
@@ -81,7 +84,7 @@ $this->title = $model->titulo_publicacion;
                         <div class="position-absolute bottom-0 end-0 gallery-icons px-3 py-3 text-center">
                             <a data-bs-toggle="modal" data-bs-target="#shareModal"><img src="/frontend/web/images/icons/compartir.svg" width="28px" class="mr-4 ml-2"></a>
 
-                            <a data-bs-toggle="modal" data-bs-target="#slideModal1"><img src="/frontend/web/images/icons/descargar.svg" width="28px" class="mr-4 ml-2"></a>
+                            <a href="/frontend/web/propiedades/propiedad-pdf?id=<?= $model->id ?>"><img src="/frontend/web/images/icons/descargar.svg" width="28px" class="mr-4 ml-2"></a>
                             <a data-bs-toggle="modal" data-bs-target="#slideModal"><img src="/frontend/web/images/icons/ampliar.svg" width="28px" class="mr-4 ml-2"></a>
                         </div>
                       </div>
@@ -248,12 +251,14 @@ $this->title = $model->titulo_publicacion;
                                </a>
                            </div> -->
                        <?php endif ?>
-                       <div class="mt-3">
-                           <a href="#" class="text-decoration-none fw-normal text-primary">
+                       <?php if (count($ofertasRechazadas) > 0): ?>
+                        <div class="mt-3">
+                           <a href="#" class="text-decoration-none fw-normal text-primary" data-bs-toggle="modal" data-bs-target="#ofertasRechazadas">
                                <img src="/frontend/web/images/icons/cross.svg" width="35px" class="mr-2">
                                OFERTAS RECHAZADAS
                            </a>
                        </div>
+                       <?php endif ?>
                        <div class="mt-3 border-top border-bottom border-1 py-2 border-primary">
                             <button type="button" class="btn btn-primary btn-block w-100" data-bs-toggle="modal" data-bs-target="#staticBackdrop">
                               HACER UNA OFERTA
@@ -346,3 +351,4 @@ $yt_url = isset($results['v']) ? $results['v'] : null;
 <?= $this->render('_modal_prop', ['model' => $model, 'fotos' => $fotos]) ?>
 <?= $this->render('_modal_oferta', ['precio' => $model->precio, 'id' => $model->id]) ?>
 <?= $this->render('_modal_contactat_agente', ['agente_id' => $model->assigned_to_user_id]) ?>
+<?= $this->render('_modal_oferta_rechazadas', ['ofertasRechazadas' => $ofertasRechazadas]) ?>
