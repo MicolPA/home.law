@@ -36,7 +36,7 @@ $agente = \frontend\models\User::findOne($propiedad->assigned_to_user_id);
                      <h4 style="color:#064c70;font-weight: bold;">Monto en dolares</h4>
                      <div style="text-align: left;color:#ffffff;background: #064c70;width: 100%;float: right;padding-top: 0.5rem;padding-bottom: 7px;padding-left: 10px;margin-bottom: 1.2rem;border-radius: 20px;">
                             <div style="border-radius:20px;;font-weight:bold;width: 200px;padding:5px 14px 0px 15px;">
-                                   <h5 style="color:white;font-weight:bold;margin-top: -4px;margin-bottom: 0px;">USD$ <?= number_format($data['reservation_amount']) ?></h5>
+                                   <h5 style="color:white;font-weight:bold;margin-top: -4px;margin-bottom: 0px;">USD$ <?= number_format($get['ContactForm']['monto']) ?></h5>
                             </div>
                     </div>
 

@@ -240,7 +240,7 @@ class PropiedadesController extends Controller
 
       $oferta = new \frontend\models\OfertasPropiedades();
       $oferta->propiedad_id = $get['propiedad_id'];
-      $oferta->monto = $get['reservation_amount'];
+      $oferta->monto = $get['ContactForm']['monto'];
       $oferta->pdf_url = "/frontend/ofertas/$pdf_name";
       $oferta->agent_id = $model['assigned_to_user_id'];
       $oferta->date = date("Y-m-d H:i:s");
