@@ -245,6 +245,7 @@ class PropiedadesController extends Controller
       $oferta->agent_id = $model['assigned_to_user_id'];
       $oferta->date = date("Y-m-d H:i:s");
       $oferta->save();
+      exit;
 
     }
 
@@ -271,7 +272,7 @@ class PropiedadesController extends Controller
           // your html content input
           'content' => $content,
           'filename' => "$url/$name",
-          'tempPath' => "/frontend/web/$name",
+          'tempPath' => "$name",
           // format content from your own css file if needed or use the
           // enhanced bootstrap css built by Krajee for mPDF formatting
           'cssFile' => '@vendor/kartik-v/yii2-mpdf/src/assets/kv-mpdf-bootstrap.min.css',
