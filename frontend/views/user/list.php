@@ -3,30 +3,6 @@
 		font-size: 10px;
 	}
 
-	.pagination li{
-		/*border-radius: 5px;*/
-
-	}
-
-
-
-	li .page{
-		border-radius: 100px!important;
-	    margin: 0 2px;
-	    color: #004b70;
-	    border-color: #ddd;
-	    text-decoration: none;
-	    padding: .5rem 1rem;
-	    border-radius: 100px!important;
-	    background: white;
-	    font-weight: bold;
-	}
-
-	.active .page{
-		background: #004b70 !important;
-		color: #fff;
-	}
-	
 
 </style>
 
@@ -52,7 +28,7 @@
 						</div> -->
 					</div>
 				</div>
-				
+
 				<div class="mt-4">
 					<div>
 

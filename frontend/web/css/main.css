@@ -19,13 +19,13 @@
     background: #e2e3e4;
 }
 .font-14{
-    font-size: 14px;  
+    font-size: 14px;
 }
 .font-16{
-    font-size: 16px !important;  
+    font-size: 16px !important;
 }
 .font-12{
-    font-size: 12px !important;  
+    font-size: 12px !important;
 }
 .text-gray{
     color: #606060;
@@ -33,7 +33,7 @@
 
 .icons-gray{
     background: #a7aeb6;
-}   
+}
 
 .text-light-gray
 {
@@ -104,7 +104,7 @@
 
 .prop-title span{
     font-size: 1.5rem;
-    margin-top: -1rem !important; 
+    margin-top: -1rem !important;
     display: inline-block;
     font-weight: 200;
     height:55px;
@@ -115,7 +115,7 @@
     font-weight: 500;
 }
 
-    
+
 .bg-blue-profile{
     background-color: #0071ba;
 }
@@ -123,7 +123,7 @@
 /* .position-relative-example {
     width: 48rem;
     height: 15rem;
- 
+
   } */
 
 
@@ -223,7 +223,7 @@ main{
         text-align: center;
     }
 
-    
+
 }
 
 
@@ -440,4 +440,30 @@ main{
     -o-transform: rotate(360deg);
     transform: rotate(360deg);
   }
+}
+
+
+.customp .pagination{
+  width: fit-content;
+  float: right
+}
+.pagination li{
+  list-style: none;
+  display: inline-block;
+}
+li .page{
+    border-radius: 100px!important;
+    margin: 0 2px;
+    color: #004b70;
+    border-color: #ddd;
+    text-decoration: none;
+    padding: .5rem 1rem;
+    border-radius: 100px!important;
+    background: white;
+    font-weight: bold;
+}
+
+.active .page{
+  background: #004b70 !important;
+  color: #fff;
 }

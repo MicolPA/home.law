@@ -54,6 +54,7 @@ class PropiedadesController extends Controller
         }else{
             $propiedad_m = \frontend\models\PreConstrucciones::findOne($id);
         }
+
         $model = new ContactForm();
         $agente = User::findOne($user_id);
         if ($model->load(Yii::$app->request->post())) {
@@ -182,6 +183,22 @@ class PropiedadesController extends Controller
         return $pdf->render();
     }
 
+    public function actionComentar(){
+
+        $comment = new \frontend\models\Comments();
+        
+        if ($comment->load(Yii::$app->request->post())) {
+
+          $comment->date = date("Y-m-d H:i:s");
+          $comment->save();
+          Yii::$app->session->setFlash('confirmacion_msg','Comentario generado correctamente');
+        }
+
+        return $this->redirect(Yii::$app->request->referrer);
+
+
+    }
+
     /**
      * Creates a new Propiedades model.
      * If creation is successful, the browser will be redirected to the 'view' page.
@@ -207,7 +224,7 @@ class PropiedadesController extends Controller
             // print_r(UploadedFile::getInstance($galeria, "foto_2"));
             // exit;
             $this->savePhotos($model, $galeria);
-            
+
             // print_r($post);
             // exit;
             $model->galeria_id = $galeria->id;
@@ -257,7 +274,7 @@ class PropiedadesController extends Controller
 
         $propiedad_extra = PropiedadesExtras::find()->where(['extra_id' => $extra_id ,'propiedad_id' => $propiedad_id])->one();
         if ($propiedad_extra) {
-            
+
             if (!$type) {
                 $propiedad_extra->delete();
             }
@@ -274,7 +291,7 @@ class PropiedadesController extends Controller
         $model->portada = $this->get_photo_url($model, $model->tipoPropiedad->nombre, $model->titulo_publicacion, 0);
         // print_r($galeria);
         for ($i=2;$i<10;$i++) {
-            
+
             $galeria["foto_$i"] = $this->get_photo_url($galeria, $model->tipoPropiedad->nombre, $model->titulo_publicacion, $i);
 
             // if (isset($galeria["foto_$i"]) and $_FILES["foto_$i"]) {
@@ -288,7 +305,7 @@ class PropiedadesController extends Controller
             //         echo "Failed to upload image";
             //     }
             // }
-            
+
         }
         $galeria->save();
     }

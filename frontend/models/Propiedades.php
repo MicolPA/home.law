@@ -3,6 +3,7 @@
 namespace frontend\models;
 
 use Yii;
+use yii\data\Pagination;
 
 /**
  * This is the model class for table "propiedades".
@@ -84,6 +85,18 @@ class Propiedades extends \yii\db\ActiveRecord
             'pies' => 'Pies',
             'date' => 'Date',
         ];
+    }
+
+    public function getComments(){
+
+      $query = \frontend\models\Comments::find()->where(['propiedad_id' => $this->id]);
+
+      $countQuery = clone $query;
+      $pages = new Pagination(['totalCount' => $countQuery->count()]);
+      $model = $query->offset($pages->offset)
+          ->limit(6)
+          ->all();
+      return array('model' => $model, 'pages' => $pages);
     }
 
     /**

@@ -9,7 +9,7 @@ $dictamen = DebidaDiligencia::find()->where(['propiedad_id' => $model->id])->one
 
 $fotos = array();
 for ($i = 2; $i < 13; $i++) {
-    
+
     if ($galeria["foto_$i"]) {
         $fotos[] = $galeria["foto_$i"];
     }
@@ -32,7 +32,7 @@ $this->title = $model->titulo_publicacion;
 
     .carousel-inner{
        border-bottom-right-radius: 0.6rem !important;
-        border-bottom-left-radius: 0.6rem !important; 
+        border-bottom-left-radius: 0.6rem !important;
     }
     .container{
         max-width: 1100px !important;
@@ -61,11 +61,11 @@ $this->title = $model->titulo_publicacion;
         <div class="row">
             <div class="col-md-12">
                 <div class="carousel-container position-relative row">
-                  
+
                     <div id="myCarousel" class="carousel slide first-part w-100" data-ride="carousel">
 
                       <div class="carousel-inner position-relative">
-                         
+
                         <div class="carousel-item rounded active" data-slide-number="0">
                           <img src="/frontend/web/<?= $model->portada ?>" class="d-block w-100 prop-gallery-img" data-remote="/frontend/web/<?= $model->portada ?>" data-type="image" data-toggle="lightbox" data-gallery="example-gallery">
                         </div>
@@ -80,12 +80,12 @@ $this->title = $model->titulo_publicacion;
 
                         <div class="position-absolute bottom-0 end-0 gallery-icons px-3 py-3 text-center">
                             <a data-bs-toggle="modal" data-bs-target="#shareModal"><img src="/frontend/web/images/icons/compartir.svg" width="28px" class="mr-4 ml-2"></a>
-                            
+
                             <a data-bs-toggle="modal" data-bs-target="#slideModal1"><img src="/frontend/web/images/icons/descargar.svg" width="28px" class="mr-4 ml-2"></a>
                             <a data-bs-toggle="modal" data-bs-target="#slideModal"><img src="/frontend/web/images/icons/ampliar.svg" width="28px" class="mr-4 ml-2"></a>
                         </div>
                       </div>
-                      
+
                     </div>
 
                     <div class="row my-3 px-4">
@@ -125,7 +125,7 @@ $this->title = $model->titulo_publicacion;
                                         <small class="text-danger fw-bold">NO.<?= $model->codigo ?></small>
                                     </div>
                                 </div>
-                                
+
                             </div>
                         </div>
                     </div>
@@ -147,7 +147,7 @@ $this->title = $model->titulo_publicacion;
                                     </div>
                                 <?php endif ?>
                             <?php endforeach ?>
-                            
+
                           </div>
                         </div>
                         <div class="carousel-item">
@@ -177,7 +177,7 @@ $this->title = $model->titulo_publicacion;
                                 <!-- <i class="fas fa-chevron-right text-primary fa-2x font-weight-bold"></i>
                                 <span class="sr-only">Next</span> -->
                                 <img src="/frontend/web/images/icons/boton.svg" width="120px">
-                            </a> 
+                            </a>
                         <?php endif ?>
                         <input type="hidden" id='item' value="0">
                     </div>
@@ -194,7 +194,7 @@ $this->title = $model->titulo_publicacion;
                        <span class="fw-normal">PRECIO</span>
                        <h3 class="text-primary">USD$<?= number_format($model->precio, 2) ?></h3>
                     </h5>
-                   
+
                 </div>
             </div>
         </div>
@@ -218,7 +218,7 @@ $this->title = $model->titulo_publicacion;
                        </div>
                        <!-- <div class="mt-2">
                            <a href="#" class="text-decoration-none fw-normal text-primary">
-                               <span class="btn btn-icon btn-sm btn-round text-white bg-primary mr-2"><i class="fa-solid fa-comment-dots"></i></span> 
+                               <span class="btn btn-icon btn-sm btn-round text-white bg-primary mr-2"><i class="fa-solid fa-comment-dots"></i></span>
                                CONTACTAR AGENTE
                            </a>
                        </div> -->
@@ -230,7 +230,7 @@ $this->title = $model->titulo_publicacion;
                        </div>
                        <!-- <div class="mt-3">
                            <a href="/frontend/web/tasas-hipotecarias" class="text-decoration-none fw-normal text-primary">
-                               <span class="btn btn-icon btn-sm btn-round text-white icons-gray mr-2"><i class="fa-solid fa-chart-line"></i></span> 
+                               <span class="btn btn-icon btn-sm btn-round text-white icons-gray mr-2"><i class="fa-solid fa-chart-line"></i></span>
                                TASAS HIPOTECARIAS
                            </a>
                        </div> -->
@@ -243,7 +243,7 @@ $this->title = $model->titulo_publicacion;
                        </div>
                            <!-- <div class="mt-3">
                                <a href="/frontend/web/propiedades/debida-diligencia/?id=<?//= $model->id ?>" class="text-decoration-none fw-normal text-primary" target="_blank">
-                                   <span class="btn btn-icon btn-sm btn-round text-white icons-gray mr-2"><i class="fa-solid fa-arrow-down-long px-1"></i></span> 
+                                   <span class="btn btn-icon btn-sm btn-round text-white icons-gray mr-2"><i class="fa-solid fa-arrow-down-long px-1"></i></span>
                                    DEBIDA DILIGENCIA
                                </a>
                            </div> -->
@@ -262,7 +262,7 @@ $this->title = $model->titulo_publicacion;
                    </div>
                </div>
            </div>
-           
+
        </div>
        <div class="row mt-5 pt-5  pb-5 px-3">
            <div class="col-md-12">
@@ -276,19 +276,19 @@ $this->title = $model->titulo_publicacion;
                             <?php foreach (explode(',', $model->extra_text) as $extra): ?>
                                 <div class="col-md-6">
                                     <p><?= $extra ?></p>
-                                </div>    
+                                </div>
                             <?php endforeach ?>
                         </div>
                     </div>
                </div>
            </div>
-           
+
        </div>
-        
+
 
     </div>
 </div>
-<?php 
+<?php
 
 $components = parse_url($model->video_url, PHP_URL_QUERY);
 //$component parameter is PHP_URL_QUERY
@@ -320,17 +320,17 @@ $yt_url = isset($results['v']) ? $results['v'] : null;
             <div class="col-md-1 col-1">
                 <div class="mb-2">
                     <a href="#" class="text-decoration-none fw-bold text-primary ">
-                       <span class="btn btn-icon btn-sm btn-round text-white bg-primary"><i class="fa-solid fa-arrow-up"></i></span> 
+                       <span class="btn btn-icon btn-sm btn-round text-white bg-primary"><i class="fa-solid fa-arrow-up"></i></span>
                     </a>
                 </div>
                 <div class="mb-2">
                     <a href="#" class="text-decoration-none fw-bold text-primary mb-2">
-                       <span class="btn btn-icon btn-sm btn-round text-white icons-gray"><img src="/frontend/web/images/icons/ampliar.svg" width="12px"></span> 
+                       <span class="btn btn-icon btn-sm btn-round text-white icons-gray"><img src="/frontend/web/images/icons/ampliar.svg" width="12px"></span>
                     </a>
                 </div>
                 <div class="mb-2">
                     <a href="#" class="text-decoration-none fw-bold text-primary">
-                       <span class="btn btn-icon btn-sm btn-round text-white bg-primary"><i class="fa-solid fa-arrow-down"></i></span> 
+                       <span class="btn btn-icon btn-sm btn-round text-white bg-primary"><i class="fa-solid fa-arrow-down"></i></span>
                     </a>
                 </div>
             </div> -->
@@ -338,7 +338,7 @@ $yt_url = isset($results['v']) ? $results['v'] : null;
     </div>
 </div>
 
-<!-- <?//= $this->render('_comments', ['propiedad_id' => $model->id]) ?> -->
+<?= $this->render('_comments', ['propiedad' => $model]) ?>
 <?php endif ?>
 
 
