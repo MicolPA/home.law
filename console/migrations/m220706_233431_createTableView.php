@@ -25,6 +25,7 @@ class m220706_233431_createTableView extends Migration
             'perfil_agente' => $this->integer(),
             'agente_id' => $this->integer(),
             'dispositivo_ip' => $this->string(),
+            'date' => $this->dateTime(),
         ], $tableOptions);
 
     }
