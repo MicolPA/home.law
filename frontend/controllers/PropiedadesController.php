@@ -10,6 +10,7 @@ use frontend\models\PropiedadesGaleria;
 use frontend\models\PropiedadesExtras;
 use frontend\models\PropiedadesExtrasList;
 use frontend\models\PropiedadesSearch;
+use common\models\Servicios;
 use yii\web\Controller;
 use yii\web\NotFoundHttpException;
 use yii\filters\VerbFilter;
@@ -44,6 +45,8 @@ class PropiedadesController extends Controller
      *
      * @return string
      */
+
+    
 
 
     function actionContactarAgente($id, $type=1, $user_id, $propiedad=1){
@@ -131,8 +134,14 @@ class PropiedadesController extends Controller
      */
     public function actionVer($id)
     {
+        
         $model = $this->findModel($id);
+
+        //saving LOG
+        $servicios = new Servicios();
+        $servicios->saveLog('propiedad', $id, $model['assigned_to_user_id']);
         $galeria = PropiedadesGaleria::findOne($model['galeria_id']);
+
         return $this->render('view', [
             'model' => $model,
             'galeria' => $galeria,

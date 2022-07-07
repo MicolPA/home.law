@@ -157,6 +157,34 @@ class Servicios extends Model {
             }
     }
 
+    function saveLog($type, $id, $agente_id){
+
+        $log = new \frontend\models\LogVisitas();
+        
+        if ($type == 'perfil') {
+            $log->perfil_agente = $id;
+        }else{
+            $log->propiedad_id = $id;
+        }
+        $log->agente_id = $agente_id;
+        $log->dispositivo_ip = $this->getIp();
+        $log->date = date('Y-m-d H:i:s');
+        $log->save();
+    }
+
+    function getIp(){
+
+        if (!empty($_SERVER['HTTP_CLIENT_IP'])) {
+            $ip = $_SERVER['HTTP_CLIENT_IP'];
+        } elseif (!empty($_SERVER['HTTP_X_FORWARDED_FOR'])) {
+            $ip = $_SERVER['HTTP_X_FORWARDED_FOR'];
+        } else {
+            $ip = $_SERVER['REMOTE_ADDR'];
+        }
+        
+        return $ip;
+    }
+
 
 
 }

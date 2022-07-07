@@ -5,6 +5,7 @@ namespace frontend\controllers;
 use Yii;
 use frontend\models\User;
 use frontend\models\UserSearch;
+use common\models\Servicios;
 use yii\web\Controller;
 use yii\web\NotFoundHttpException;
 use yii\filters\VerbFilter;
@@ -177,6 +178,10 @@ class UserController extends Controller
 
     public function actionPerfil($id, $view='perfil')
     {
+
+        $servicios = new Servicios();
+        $servicios->saveLog('perfil', $id, $id);
+
         $this->layout = "main";
         $model = $this->findModel($id);
         $post = Yii::$app->request->post();
