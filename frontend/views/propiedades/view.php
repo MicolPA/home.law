@@ -84,7 +84,7 @@ $this->title = $model->titulo_publicacion;
                         <div class="position-absolute bottom-0 end-0 gallery-icons px-3 py-3 text-center">
                             <a data-bs-toggle="modal" data-bs-target="#shareModal"><img src="/frontend/web/images/icons/compartir.svg" width="28px" class="mr-4 ml-2"></a>
 
-                            <a href="/frontend/web/propiedades/propiedad-pdf?id=<?= $model->id ?>"><img src="/frontend/web/images/icons/descargar.svg" width="28px" class="mr-4 ml-2"></a>
+                            <a href="/frontend/web/propiedades/propiedad-pdf?id=<?= $model->id ?>" target="_blank"><img src="/frontend/web/images/icons/descargar.svg" width="28px" class="mr-4 ml-2"></a>
                             <a data-bs-toggle="modal" data-bs-target="#slideModal"><img src="/frontend/web/images/icons/ampliar.svg" width="28px" class="mr-4 ml-2"></a>
                         </div>
                       </div>
