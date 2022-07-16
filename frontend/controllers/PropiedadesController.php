@@ -236,25 +236,28 @@ class PropiedadesController extends Controller
 
 
     function actionHacerOferta(){
-      $get = Yii::$app->request->post();
-      // print_r($get);
-      // exit;
-      $model = $this->findModel($get['propiedad_id']);
-      $galeria = PropiedadesGaleria::findOne($model['galeria_id']);
-      $content = $this->renderPartial('oferta-pdf',['data' => $get, 'propiedad' => $model, 'galeria' => $galeria]);
+        $get = Yii::$app->request->post();
+        // print_r($get);
+        // exit;
+        $model = Propiedades::findOne($get['propiedad_id']);
+        $galeria = PropiedadesGaleria::findOne($model['galeria_id']);
+        $content = $this->renderPartial('oferta-pdf',['data' => $get, 'propiedad' => $model, 'galeria' => $galeria, 'get' => $get]);
 
 
-      $pdf_name = $this->saveOfertaPDF($content);
+        $pdf_name = $this->saveOfertaPDF($content);
 
 
-      $oferta = new \frontend\models\OfertasPropiedades();
-      $oferta->propiedad_id = $get['propiedad_id'];
-      $oferta->monto = $get['ContactForm']['monto'];
-      $oferta->pdf_url = "/frontend/ofertas/$pdf_name";
-      $oferta->agent_id = $model['assigned_to_user_id'];
-      $oferta->date = date("Y-m-d H:i:s");
-      $oferta->save();
+        $oferta = new \frontend\models\OfertasPropiedades();
+        $oferta->propiedad_id = $get['propiedad_id'];
+        $oferta->monto = $get['ContactForm']['monto'];
+        $oferta->pdf_url = "/frontend/ofertas/$pdf_name";
+        $oferta->agent_id = $model['assigned_to_user_id'];
+        $oferta->date = date("Y-m-d H:i:s");
+        $oferta->save();
 
+        Yii::$app->session->setFlash('confirmacion_msg','Oferta enviada correctamente');
+        return $this->redirect(Yii::$app->request->referrer);
+        // return $this->redirect(['ver', 'id' => $get['propiedad_id']]);
     }
 
 
@@ -297,7 +300,6 @@ class PropiedadesController extends Controller
       ]);
 
       $pdf->render();
-      return "$name";
     }
 
     public function actionComentar(){
