@@ -25,7 +25,7 @@ $agente = \frontend\models\User::findOne($propiedad->assigned_to_user_id);
               <div style="margin-bottom: 20px;border-radius: 15px;height:350px;background-repeat: no-repeat;background-size: cover;background-image: url(/frontend/web/<?= $propiedad->portada ?>);">
                      </div>
 
-              <div style="margin-bottom:3rem;padding-left:15px;padding-right:15px">
+              <div style="margin-bottom:1rem;padding-left:15px;padding-right:15px">
                      <h4 style="color:#064c70;font-weight: bold;"><?= mb_strtoupper($propiedad->titulo_publicacion) ?></h4>
                      <h4 style="color:#a395ba;font-weight: 100;"><?= $propiedad->ubicacion->nombre ?></h4>
               </div>
