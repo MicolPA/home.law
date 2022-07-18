@@ -61,17 +61,17 @@ $options = \frontend\models\DebidaDiligenciaListado::find()->all();
 		<div style="padding: 4rem 1rem">
 
 			<div style="margin-bottom:4rem">
-				<h3 style="color:#064c70;font-weight: bold;"><?= mb_strtoupper($propiedad->titulo_publicacion) ?></h3>
+				<h4 style="color:#064c70;font-weight: bold;"><?= mb_strtoupper($propiedad->titulo_publicacion) ?></h4>
 				<h4 style="color:#a395ba;font-weight: 100;"><?= $propiedad->ubicacion->nombre ?></h4>
 			</div>
 
-			<div class="detalles" style="color:#585858;margin-top:1rem;font-family: 'Benton-book', Arial, sans-serif">
-	        		<?php foreach ($options as $op): ?>
+			<div class="detalles" style="color:#585858;margin-top:1rem">
+        		<?php foreach ($options as $op): ?>
 		            <?php $check = \frontend\models\DebidaDiligencia::find()->where(['propiedad_id' => $propiedad['id'], 'debida_diligencia_list_id' => $op->id])->one(); ?>
 		            <?php $checkDot = $check ? "dot-full.png" : 'dot.png' ?> 
 	                <p style="color:#064c70;font-weight: bold !important;font-family: gotham;">
-	                	<img src="/frontend/web/images/icons/<?= $checkDot ?>" alt="" width="17px" style="margin-right: 1rem;"> 
-	                	<?= $op->name ?> 
+	                	<img src="/frontend/web/images/icons/<?= $checkDot ?>" alt="" width="14px" style="margin-right: 1rem;"> 
+	                	<span style="font-size:12px !important"><?= $op->name ?> </span>
 	                </p>
 		        <?php endforeach ?>
 			</div>

@@ -196,7 +196,7 @@ class PropiedadesController extends Controller
         // exit;
         $model = $this->findModel($get['propiedad']);
         $galeria = PropiedadesGaleria::findOne($model['galeria_id']);
-        $content = $this->renderPartial('oferta-pdf',['data' => $get, 'propiedad' => $model, 'galeria' => $galeria]);
+        $content = $this->renderPartial('oferta-pdf',['data' => $get, 'propiedad' => $model, 'galeria' => $galeria, 'get' => $get]);
         // setup kartik\mpdf\Pdf component
         $pdf = new \kartik\mpdf\Pdf([
             // set to use core fonts only

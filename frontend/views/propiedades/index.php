@@ -20,7 +20,7 @@ $url = strpos($url, '?') ? "$url&" : "$url?"
 </style>
 <div class="container pb-5">
     <div class="row w-100 pt-5 m-auto">
-        <div class="col-md-4 pt-lg-5 mb-5 mt-md-5">
+        <div class="col-md-4 pt-lg-5 mb-5 mt-md-5 mobile-hidden">
             <p class="text-muted h5 pt-2 fw-normal">
                 <?= $dataProvider->query->count() ?> Inmuebles encontrados
             </p>

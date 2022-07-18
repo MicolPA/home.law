@@ -5,7 +5,7 @@ $this->title = "Tasas Hipotecarias";
 ?>
 <div class="container">
     <div class="container pt-5">
-        <div class="row pt-5 mt-5 m-auto" style="max-width: 800px">
+        <div class="row pt-md-5 mt-md-5 m-auto" style="max-width: 800px">
             <div class="w-100 mb-5">
                 <p class="text-center text-primary p-2 m-0 fw-bold h4 mb-3">TASAS HIPOTECARIAS</p>
             </div>

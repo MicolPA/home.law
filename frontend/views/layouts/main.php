@@ -55,8 +55,8 @@ AppAsset::register($this);
 
                 <ul class="nav nav-pills mobile-hidden">
                     <!-- <li class="nav-item"><a href="<?//= Yii::getAlias("@web") ?>/propiedades/index" class="nav-link text-primary font-14">PROPIEDADES</a></li> -->
-                    <li class="nav-item"><a href="/frontend/web/propiedades/index?PropiedadesSearch%5Btipo_contrato_id%5D=2" class="nav-link text-primary font-14">RENTAS</a></li>
                     <li class="nav-item"><a href="/frontend/web/propiedades/index?PropiedadesSearch%5Btipo_contrato_id%5D=1" class="nav-link text-primary font-14">VENTAS</a></li>
+                    <li class="nav-item"><a href="/frontend/web/propiedades/index?PropiedadesSearch%5Btipo_contrato_id%5D=2" class="nav-link text-primary font-14">RENTAS</a></li>
                     <li class="nav-item"><a href="/frontend/web/agentes" class="nav-link text-primary font-14">AGENTES</a></li>
                     <li class="nav-item"><a href="#" class="nav-link text-primary font-14">CONTACTOS</a></li>
                     <li class="nav-item"><a href="#" class="nav-link text-primary font-14">REP DOM </a></li>
@@ -162,7 +162,7 @@ AppAsset::register($this);
                 </div>
                 <div class="col-md-5">
                     <div class="row p-4">
-                        <div class="col-md-6 d-flex justify-content-center">
+                        <div class="col-md-6 d-flex">
                             <ul class="list-unstyled text-dark font-14">
                                 <li class="text-primary mb-2 fw-bold">Lugares <br> más buscados</li>
                                 <?php foreach ($ubicaciones as $ub): ?>
@@ -170,7 +170,7 @@ AppAsset::register($this);
                                 <?php endforeach ?>
                             </ul>
                         </div>
-                        <div class="col-md-6 d-flex justify-content-center">
+                        <div class="col-md-6 d-flex">
                             <ul class="list-unstyled text-dark font-14">
                                 <li class="text-primary mb-2 fw-bold">Categorías <br> más buscadas</li>
                                 <?php foreach ($cateogories as $cat): ?>
