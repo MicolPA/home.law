@@ -123,7 +123,7 @@ $agente = \frontend\models\User::findOne($propiedad->assigned_to_user_id);
               <div style="width:45%;display:inline-block;float: right;padding-right: 3rem;">
                      <div style="width:50%;display:inline-block;float: left">
 
-                            <div style="display:inline-block;width: 500px;float: left;background: transparent;">
+                            <div style="display:inline-block;width: 500px;float: left;background: transparent;text-align: center;">
                                    <h5 style="color:#064c70;font-weight: bold;">Closing Date</h5>
                             </div>
 
