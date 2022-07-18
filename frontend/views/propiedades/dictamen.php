@@ -17,7 +17,7 @@ $options = \frontend\models\DebidaDiligenciaListado::find()->all();
 		<br>
 		<div style="background:#f2f3f4;padding:0px;width: 100%">
 			<div style="width: 50%;display: inline-block;float:left;">
-				<div style="width: 100%;height: 200px;background-image: url('/frontend/web/<?= $propiedad->portada ?>');background-size:cover;background-position:center;background-repeat: no-repeat;"></div>
+				<div style="width: 100%;height: 200px;background-image: url('/frontend/web/<?= $propiedad->portada ?>');background-size:cover;background-position:center;background-repeat: no-repeat;margin-left: -10px;"></div>
 					
 			</div>
 			<div style="width:49%;display: inline-block;padding: 2.5rem 0rem 0rem 0.2rem;float: right;">
@@ -58,9 +58,9 @@ $options = \frontend\models\DebidaDiligenciaListado::find()->all();
 			</div>
 		</div>
 
-		<div style="padding: 4rem 1rem">
+		<div style="padding: 4rem 2rem">
 
-			<div style="margin-bottom:4rem">
+			<div style="margin-bottom:2rem">
 				<h4 style="color:#064c70;font-weight: bold;"><?= mb_strtoupper($propiedad->titulo_publicacion) ?></h4>
 				<h4 style="color:#a395ba;font-weight: 100;"><?= $propiedad->ubicacion->nombre ?></h4>
 			</div>
@@ -69,14 +69,17 @@ $options = \frontend\models\DebidaDiligenciaListado::find()->all();
         		<?php foreach ($options as $op): ?>
 		            <?php $check = \frontend\models\DebidaDiligencia::find()->where(['propiedad_id' => $propiedad['id'], 'debida_diligencia_list_id' => $op->id])->one(); ?>
 		            <?php $checkDot = $check ? "dot-full.png" : 'dot.png' ?> 
-	                <p style="color:#064c70;font-weight: bold !important;font-family: gotham;">
-	                	<img src="/frontend/web/images/icons/<?= $checkDot ?>" alt="" width="14px" style="margin-right: 1rem;"> 
-	                	<span style="font-size:12px !important"><?= $op->name ?> </span>
-	                </p>
+	                	
+	                	<h5 style="color:#064c70;display: inline-block;">
+	                		<img src="/frontend/web/images/icons/<?= $checkDot ?>" alt="" width="14px" style="margin-right: 1rem;margin-top: -5px;">  <?= $op->name ?>
+	                	</h5>
 		        <?php endforeach ?>
 			</div>
 		</div>
 
+		<br>
+		<br>
+		<br>
 		<br>
 		
 </div>
