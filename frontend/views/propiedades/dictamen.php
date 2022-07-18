@@ -24,9 +24,9 @@ $options = \frontend\models\DebidaDiligenciaListado::find()->all();
 				<div style="background: #f2f3f4;padding: 1rem;width: 75%;border-radius: 4px;margin-bottom: 1rem ?>;color:#b7b0b5;margin:auto">
 
 					<div style="width: fit-content;margin:auto;text-align:center;padding-left:1rem; padding-right: 1rem;margin-bottom: 3.5rem;">
-						<p style="font-weight:bold;font-size: 16px;">PRECIO DE VENTA</p>
+						<p style="font-weight:bold;font-size: 14px;">PRECIO DE VENTA</p>
 
-						<p style="font-size: 22px;margin: auto;background:#d72027; border-radius:20px;width:160px;color:white;font-weight:bold">USD$<?= number_format($propiedad->precio) ?></p>
+						<p style="font-size: 20px;margin: auto;background:#d72027; border-radius:20px;width:160px;color:white;font-weight:bold">USD$<?= number_format($propiedad->precio) ?></p>
 					</div>
 					
                         <div style="width:24%;display:inline-block;float: left;">
