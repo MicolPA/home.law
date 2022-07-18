@@ -45,9 +45,9 @@ AppAsset::register($this);
         <div class="container px-4">
             <header class="d-flex flex-wrap justify-content-center py-2 align-items-center">
                 <a href="/" class="d-flex align-items-center mb-3 mb-md-0 me-md-auto text-dark text-decoration-none">
-                    <svg class="bi me-2 my-svg" width="40" height="32">
+                    <!-- <svg class="bi me-2 my-svg" width="40" height="32">
                         <use xlink:href="#bootstrap" />
-                    </svg>
+                    </svg> -->
                     <span class="fs-4">
                         <img src="<?= Yii::getAlias("@web") ?>/images/logo-bestlinting.png" width="150px">
                     </span>
