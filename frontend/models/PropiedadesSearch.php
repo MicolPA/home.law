@@ -19,7 +19,7 @@ class PropiedadesSearch extends Propiedades
         return [
             [['id', 'tipo_propiedad', 'ubicacion_id', 'habitaciones', 'baños', 'created_by_user_id', 'assigned_to_user_id', 'galeria_id'], 'integer'],
             [['codigo', 'titulo_publicacion', 'detalles', 'fecha_publicacion', 'portada', 'extra_text', 'tags', 'date', 'tipo_contrato_id'], 'safe'],
-            [['precio', 'metros', 'pies'], 'number'],
+            [['precio', 'metros', 'pies', 'isLuxury'], 'number'],
         ];
     }
 
@@ -96,6 +96,7 @@ class PropiedadesSearch extends Propiedades
         // grid filtering conditions
         $query->andFilterWhere([
             'id' => $this->id,
+            'isLuxury' => $this->isLuxury,
             'tipo_propiedad' => $this->tipo_propiedad,
             'ubicacion_id' => $this->ubicacion_id,
             'habitaciones' => $this->habitaciones,

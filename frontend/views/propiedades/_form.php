@@ -67,11 +67,20 @@ $this->params['subtitle'] = $model->id ? "Editar Propiedad" : "Registrar Propied
                 </div>
             </div>
             
-            <div class="col-md-3">
+            <div class="col-md-2">
                 <?= $form->field($model, 'precio')->textInput() ?>
             </div>
-            <div class="col-md-3">
+            <div class="col-md-2">
                 <?php echo $form->field($model, 'tipo_contrato_id')->dropDownList(ArrayHelper::map(\frontend\models\PropiedadesTipoContrato::find()->all(), 'id', 'nombre'),['prompt'=>'Seleccionar...', 'required' => 'required'])->label('Tipo Contrato') ?>
+            </div>
+
+            <div class="col-md-2">
+                <div class="form-group pt-5">
+                    <div class="custom-control custom-checkbox">
+                        <input type="checkbox" class="custom-control-input" value="1" name="Propiedades[isLuxury]" id="luxury" <?= $model->isLuxury ? 'checked' : '' ?>>
+                        <label class="custom-control-label" for="luxury">Luxury</label>
+                    </div>
+                </div>
             </div>
 
             <div class="col-md-3">

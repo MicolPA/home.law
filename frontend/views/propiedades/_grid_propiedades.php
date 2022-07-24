@@ -1,7 +1,7 @@
 
 <div class="col-lg-3 text-center my-3 col-md-12 <?= in_array($count, array(1,5,9)) ? '' : 'mobile-hidden'  ?>">
     <a class="text-decoration-none" href="/frontend/web/propiedades/ver/<?= $propiedad->id ?>">
-        <div class="card pb-4 border-0 mb-5">
+        <div class="card <?= $propiedad->isLuxury ? 'pb-0' : 'pb-4' ?> border-0 mb-5">
             <div class=" prop-card-img" style="background-image: url('/frontend/web/<?= $propiedad->portada ?>');"></div>
             <span class="text-center mt-3 prop-title">
                 <span class="py-2 w-100"><?= $propiedad->titulo_publicacion ?></span>
@@ -44,6 +44,9 @@
             <p class="text-secondary h5 fw-lighter mt-1 mb-2">
                 US$<?= number_format($propiedad->precio) ?>
             </p>
+            <?php if ($propiedad->isLuxury): ?>
+                <div class="w-50 m-auto bg-dark text-warning">LUXURY</div>
+            <?php endif ?>
             <!-- <p class="  prop-precio rounded-pill mx-5 mb-4 bg-danger text-white  ">US$<?= number_format($propiedad->precio) ?></p> -->
         </div>
     </a>

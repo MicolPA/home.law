@@ -57,6 +57,7 @@ AppAsset::register($this);
                     <!-- <li class="nav-item"><a href="<?//= Yii::getAlias("@web") ?>/propiedades/index" class="nav-link text-primary font-14">PROPIEDADES</a></li> -->
                     <li class="nav-item"><a href="/frontend/web/propiedades/index?PropiedadesSearch%5Btipo_contrato_id%5D=1" class="nav-link text-primary font-14">VENTAS</a></li>
                     <li class="nav-item"><a href="/frontend/web/propiedades/index?PropiedadesSearch%5Btipo_contrato_id%5D=2" class="nav-link text-primary font-14">RENTAS</a></li>
+                    <li class="nav-item"><a href="/frontend/web/propiedades/index?PropiedadesSearch%5BisLuxury%5D=1" class="nav-link text-primary font-14">LUXURY</a></li>
                     <li class="nav-item"><a href="/frontend/web/agentes" class="nav-link text-primary font-14">AGENTES</a></li>
                     <li class="nav-item"><a href="#" class="nav-link text-primary font-14">CONTACTOS</a></li>
                     <li class="nav-item"><a href="#" class="nav-link text-primary font-14">REP DOM </a></li>
@@ -84,6 +85,7 @@ AppAsset::register($this);
             <ul class="navbar-nav me-auto mb-2">
                 <li class="nav-item"><a href="/frontend/web/propiedades/index?PropiedadesSearch%5Btipo_contrato_id%5D=2" class="nav-link text-primary">RENTAS</a></li>
                 <li class="nav-item"><a href="/frontend/web/propiedades/index?PropiedadesSearch%5Btipo_contrato_id%5D=1" class="nav-link text-primary">VENTAS</a></li>
+                <li class="nav-item"><a href="/frontend/web/propiedades/index?PropiedadesSearch%5BisLuxury%5D=1" class="nav-link text-primary">LUXURY</a></li>
                 <li class="nav-item"><a href="/frontend/web/agentes" class="nav-link text-primary">AGENTES</a></li>
                 <li class="nav-item"><a href="#" class="nav-link text-primary">CONTACTOS</a></li>
                 <li class="nav-item"><a href="#" class="nav-link text-primary">REP DOM </a></li>
@@ -127,7 +129,7 @@ AppAsset::register($this);
                                 <li class="nav-item"><a href="<?= Yii::getAlias("@web") ?>/admin" class="nav-link text-white font-12 px-4">ADMINISTRADOR</a></li>
                             <?php endif ?>
                         <?php endif ?>
-                        <li class="nav-item"><a href="#" class="nav-link text-white font-12 px-4">IDIOMA</a></li>
+                        <!-- <li class="nav-item"><a href="#" class="nav-link text-white font-12 px-4">IDIOMA</a></li> -->
                         <!-- <li class="nav-item"><a href="#" class="nav-link text-white font-14">CONTACTOS</a></li> -->
                     </ul>
                 </div>
