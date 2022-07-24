@@ -26,7 +26,7 @@ $url = strpos($url, '?') ? "$url&" : "$url?"
             </p>
         </div>
         <div class="col-md-4 text-center pt-lg-5 mb-md-5 mt-md-5">
-            <p class="text-center text-primary p-2 m-0 fw-normal h4">PROPIEDADES</p>
+            <p class="text-center text-primary p-2 m-0 fw-normal h4">PROPIEDADES <?= $model->isLuxury ? ' DE LUJO' : '' ?></p>
             <?php if ($keyword or $keyplace): ?>
                 <p class="mb-5 h6 fw-normal">Resultado de la búsqueda <span class="badge bg-primary"><?= $keyword ?></span> <span class="badge bg-primary"><?= $keyplace ?></span></p>
             <?php endif ?>
