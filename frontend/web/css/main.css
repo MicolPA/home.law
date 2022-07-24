@@ -223,6 +223,10 @@ main{
         text-align: center;
     }
 
+    .gallery-icons{
+      border-bottom-right-radius: 15px;
+    }
+
 
 }
 

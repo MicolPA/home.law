@@ -179,7 +179,7 @@ $this->title = $model->titulo_publicacion;
                            <a class="carousel-control-next controlNext opacity-100 bg-white" href="#" role="button" data-slide="next">
                                 <!-- <i class="fas fa-chevron-right text-primary fa-2x font-weight-bold"></i>
                                 <span class="sr-only">Next</span> -->
-                                <img src="/frontend/web/images/icons/boton.svg" width="120px">
+                                <img src="/frontend/web/images/icons/boton.svg" class='bg-white' width="120px">
                             </a>
                         <?php endif ?>
                         <input type="hidden" id='item' value="0">
